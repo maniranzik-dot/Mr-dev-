@@ -1,159 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mr-dev Quiz</title>
+<title>Mr-dev AI Learning</title>
 
 <style>
+
 body{
 background:#071426;
 font-family:Arial;
 color:white;
+margin:0;
 }
 
-.quiz{
+header{
+text-align:center;
+padding:25px;
+}
+
+.card{
 background:#17263d;
-width:85%;
-margin:40px auto;
+margin:15px;
 padding:25px;
 border-radius:20px;
 text-align:center;
 }
 
 button{
-width:90%;
-padding:15px;
-margin:10px;
-border:none;
-border-radius:25px;
-background:#263954;
+background:#20d66b;
 color:white;
-font-size:16px;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
 }
 
-button:hover{
-background:#20d66b;
+input{
+width:80%;
+padding:12px;
+border-radius:20px;
+border:none;
 }
 
-.next{
-background:#20d66b;
+.section{
+display:none;
 }
 
-.correct{
-background:#20d66b;
+.active{
+display:block;
 }
 
-.wrong{
-background:#e63946;
-}
-
-.score{
-font-size:20px;
+.menu button{
+margin:5px;
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
-<div class="quiz">
 
-<h1>📝 Quiz Test</h1>
+<header>
 
-<h2 id="question"></h2>
+<h1>Mr-dev AI Learning</h1>
 
-<div id="answers"></div>
+<p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
 
-<p class="score" id="score">Score: 0</p>
+<div class="menu">
 
-<button class="next" onclick="next()">Next Question ➡️</button>
+<button onclick="show('home')">Home</button>
+<button onclick="show('books')">Books</button>
+<button onclick="show('quiz')">Quiz</button>
+<button onclick="show('settings')">Settings</button>
+
+</div>
+
+</header>
+
+
+
+<div id="home" class="section active">
+
+
+<div class="card">
+
+<h2>📘 Senior 1</h2>
+<p>Mathematics, Science, English</p>
+<button>Start Learning</button>
 
 </div>
 
 
-<script>
+<div class="card">
 
-let data=[
-{
-q:"HTML ikoreshwa iki?",
-a:["Gukora website","Gukina umupira"],
-c:0
-},
-{
-q:"CSS ikoreshwa iki?",
-a:["Gushushanya website","Gufata amafoto"],
-c:0
-},
-{
-q:"JavaScript ikoreshwa iki?",
-a:["Kongera imikorere ya website","Gukora imodoka"],
-c:0
-}
-];
+<h2>📗 Senior 2</h2>
+<p>Lessons and Revision</p>
+<button>Start Learning</button>
+
+</div>
 
 
-let i=0;
-let score=0;
+<div class="card">
+
+<h2>📕 Senior 3</h2>
+<p>Exam Preparation</p>
+<button>Start Learning</button>
+
+</div>
 
 
-function load(){
 
-document.getElementById("question").innerHTML=data[i].q;
+<div class="card">
 
-let box=document.getElementById("answers");
-box.innerHTML="";
+<h2>🤖 AI Teacher</h2>
 
-data[i].a.forEach((x,n)=>{
+<input placeholder="Ask your question">
 
-let btn=document.createElement("button");
-btn.innerHTML=x;
+<br><br>
 
-btn.onclick=function(){
+<button>Ask AI</button>
 
-if(n==data[i].c){
+<p>AI is ready to help you.</p>
 
-score++;
-btn.className="correct";
-
-}else{
-
-btn.className="wrong";
-
-}
-
-document.getElementById("score").innerHTML=
-"Score: "+score;
-
-}
-
-box.appendChild(btn);
-
-});
-
-}
+</div>
 
 
-function next(){
 
-i++;
+<div class="card">
 
-if(i>=data.length){
+<h2>📱 WhatsApp Contact</h2>
 
-alert("Finished! Score: "+score);
+<p>0738939769</p>
 
-i=0;
-score=0;
+<button>WhatsApp Me</button>
 
-}
-
-load();
-
-}
+</div>
 
 
-load();
-
-</script>
-
-</body>
-</html>
+</div>
