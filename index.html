@@ -4,23 +4,22 @@
 <title>Mr-dev AI Learning</title>
 
 <style>
-
 body{
 background:#071426;
-font-family:Arial;
 color:white;
+font-family:Arial;
 margin:0;
 }
 
 header{
 text-align:center;
-padding:25px;
+padding:20px;
 }
 
 .card{
 background:#17263d;
 margin:15px;
-padding:25px;
+padding:20px;
 border-radius:20px;
 text-align:center;
 }
@@ -28,31 +27,30 @@ text-align:center;
 button{
 background:#20d66b;
 color:white;
-border:none;
+border:0;
 padding:12px 25px;
 border-radius:30px;
-cursor:pointer;
-}
-
-input{
-width:80%;
-padding:12px;
-border-radius:20px;
-border:none;
-}
-
-.section{
-display:none;
-}
-
-.active{
-display:block;
-}
-
-.menu button{
 margin:5px;
 }
 
+input{
+padding:12px;
+width:80%;
+border-radius:20px;
+border:0;
+}
+
+.page{
+display:none;
+}
+
+.show{
+display:block;
+}
+
+h2{
+color:#20d66b;
+}
 </style>
 
 </head>
@@ -62,79 +60,289 @@ margin:5px;
 
 <header>
 
-<h1>Mr-dev AI Learning</h1>
+<h1>🎓 Mr-dev AI Learning</h1>
 
-<p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
-
-<div class="menu">
-
-<button onclick="show('home')">Home</button>
-<button onclick="show('books')">Books</button>
-<button onclick="show('quiz')">Quiz</button>
-<button onclick="show('settings')">Settings</button>
-
-</div>
+<button onclick="openPage('home')">Home</button>
+<button onclick="openPage('books')">Books</button>
+<button onclick="openPage('quiz')">Quiz</button>
+<button onclick="openPage('ai')">AI Teacher</button>
 
 </header>
 
 
 
-<div id="home" class="section active">
+<div id="home" class="page show">
 
 
 <div class="card">
-
 <h2>📘 Senior 1</h2>
-<p>Mathematics, Science, English</p>
+<p>Math • Biology • Chemistry • Physics • English</p>
 <button>Start Learning</button>
-
 </div>
 
 
 <div class="card">
-
 <h2>📗 Senior 2</h2>
-<p>Lessons and Revision</p>
+<p>Math • Chemistry • Physics • English</p>
 <button>Start Learning</button>
+</div>
 
+
+<div class="card">
+<h2>📕 Senior 3</h2>
+<p>Math • Chemistry • Physics • English</p>
+<button>Start Learning</button>
 </div>
 
 
 <div class="card">
 
-<h2>📕 Senior 3</h2>
-<p>Exam Preparation</p>
-<button>Start Learning</button>
+<h2>📱 WhatsApp</h2>
+
+<p>0738939769</p>
 
 </div>
 
+
+</div>
+
+
+
+
+
+<div id="books" class="page">
+
+
+<div class="card">
+
+<h2>📚 Books & Notes</h2>
+
+
+<h3>Senior 1</h3>
+<p>Mathematics: Numbers, Algebra, Geometry</p>
+<p>Biology: Cells and Living Things</p>
+<p>Chemistry: Matter and Elements</p>
+<p>Physics: Forces and Energy</p>
+<p>English: Grammar and Writing</p>
+
+
+<h3>Senior 2</h3>
+<p>Mathematics: Algebra and Geometry</p>
+<p>Chemistry: Chemical reactions</p>
+<p>Physics: Motion and Electricity</p>
+<p>English: Reading and Grammar</p>
+
+
+<h3>Senior 3</h3>
+<p>Mathematics: Trigonometry and Statistics</p>
+<p>Chemistry: Organic Chemistry</p>
+<p>Physics: Waves and Electricity</p>
+<p>English: Literature and Writing</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="quiz" class="page">
+
+
+<div class="card">
+
+<h2>📝 Quiz</h2>
+
+<h3 id="question"></h3>
+
+
+<div id="answers"></div>
+
+
+<p id="score">Score: 0</p>
+
+
+<button onclick="nextQuestion()">Next</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div id="ai" class="page">
 
 
 <div class="card">
 
 <h2>🤖 AI Teacher</h2>
 
-<input placeholder="Ask your question">
+<input id="ask" placeholder="Ask question">
 
 <br><br>
 
-<button>Ask AI</button>
+<button onclick="answerAI()">Ask</button>
 
-<p>AI is ready to help you.</p>
+
+<p id="reply">
+AI is ready to help you.
+</p>
+
+
+</div>
+
 
 </div>
 
 
 
-<div class="card">
-
-<h2>📱 WhatsApp Contact</h2>
-
-<p>0738939769</p>
-
-<button>WhatsApp Me</button>
-
-</div>
 
 
-</div>
+<script>
+
+
+function openPage(id){
+
+let pages=document.querySelectorAll(".page");
+
+pages.forEach(p=>p.classList.remove("show"));
+
+document.getElementById(id).classList.add("show");
+
+}
+
+
+
+
+
+let questions=[
+
+{
+q:"Basic unit of life?",
+a:["Cell","Bone","Water"],
+c:0
+},
+
+{
+q:"5 x 6 = ?",
+a:["20","30","40"],
+c:1
+},
+
+{
+q:"Water formula?",
+a:["H2O","CO2","O2"],
+c:0
+}
+
+];
+
+
+let current=0;
+let score=0;
+
+
+
+function loadQuiz(){
+
+let q=questions[current];
+
+document.getElementById("question").innerHTML=q.q;
+
+let box=document.getElementById("answers");
+
+box.innerHTML="";
+
+
+q.a.forEach((x,i)=>{
+
+let b=document.createElement("button");
+
+b.innerHTML=x;
+
+b.onclick=function(){
+
+if(i==q.c){
+
+score++;
+
+alert("Correct ✅");
+
+}else{
+
+alert("Wrong ❌");
+
+}
+
+document.getElementById("score").innerHTML=
+"Score: "+score;
+
+};
+
+
+box.appendChild(b);
+
+
+});
+
+
+}
+
+
+
+function nextQuestion(){
+
+current++;
+
+if(current>=questions.length){
+
+alert("Finished Score: "+score);
+
+current=0;
+score=0;
+
+}
+
+loadQuiz();
+
+}
+
+
+
+
+function answerAI(){
+
+let q=document.getElementById("ask").value.toLowerCase();
+
+let r="Ask me about Senior 1, Senior 2 or Senior 3 lessons.";
+
+if(q.includes("math"))
+r="Math helps us solve problems using numbers.";
+
+if(q.includes("physics"))
+r="Physics studies force, energy and motion.";
+
+if(q.includes("chemistry"))
+r="Chemistry studies matter and reactions.";
+
+document.getElementById("reply").innerHTML=r;
+
+}
+
+
+loadQuiz();
+
+
+</script>
+
+
+</body>
+</html>
