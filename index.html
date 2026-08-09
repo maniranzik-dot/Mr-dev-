@@ -1,22 +1,3 @@
-<section class="contact">
-
-<h2>🤖 AI Teacher</h2>
-
-<input id="question" 
-placeholder="Ask your question..."
-style="padding:15px;width:80%;border-radius:20px;border:none;">
-
-<br><br>
-
-<button onclick="askAI()">Ask AI</button>
-
-<p id="answer">
-AI is ready to help you.
-</p>
-
-</section>
-
-
 <script>
 function askAI(){
 
@@ -24,19 +5,23 @@ let question = document.getElementById("question").value.toLowerCase();
 let answer = document.getElementById("answer");
 
 if(question.includes("math")){
-answer.innerHTML="AI: I can help you solve mathematics problems.";
-}
+answer.innerHTML="🤖 AI: I can help you with Mathematics for Senior 1, 2 and 3.";
 
+}
+else if(question.includes("physics")){
+answer.innerHTML="🤖 AI: I can explain Physics lessons.";
+
+}
+else if(question.includes("chemistry")){
+answer.innerHTML="🤖 AI: I can help you understand Chemistry.";
+
+}
 else if(question.includes("english")){
-answer.innerHTML="AI: I can help you learn English grammar and vocabulary.";
-}
+answer.innerHTML="🤖 AI: I can help you learn English.";
 
-else if(question.includes("science")){
-answer.innerHTML="AI: I can explain science topics for Senior 1, 2 and 3.";
 }
-
 else{
-answer.innerHTML="AI: I received your question: " + question;
+answer.innerHTML="🤖 AI: Your question is: " + question + ". I will help you learn.";
 }
 
 }
