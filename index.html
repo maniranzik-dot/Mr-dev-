@@ -5,18 +5,15 @@
 
 <style>
 body{
+margin:0;
+font-family:Arial;
 background:#071426;
 color:white;
-font-family:Arial;
 text-align:center;
 }
 
-header{
-padding:25px;
-}
-
 .card{
-background:#1d2b45;
+background:#17263d;
 margin:15px;
 padding:25px;
 border-radius:20px;
@@ -26,79 +23,102 @@ button{
 background:#20d66b;
 color:white;
 border:0;
-padding:12px 25px;
+padding:14px 30px;
 border-radius:30px;
 font-weight:bold;
 cursor:pointer;
 }
 
 input{
-width:80%;
 padding:15px;
+width:80%;
 border-radius:20px;
 border:0;
 }
 
+.hide{
+display:none;
+}
+
 #answer{
-background:#101b31;
+background:#0d182b;
 padding:15px;
-margin:15px;
 border-radius:15px;
 }
 
-a{
-color:white;
-text-decoration:none;
-}
 </style>
-
 </head>
+
 
 <body>
 
-<header>
-<h1>📘 Mr-dev AI Learning</h1>
-<p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
-</header>
+
+<div id="login" class="card">
+
+<h1>🎓 Mr-dev AI Learning</h1>
+
+<h2>Student Login</h2>
+
+<input id="name" placeholder="Your name">
+
+<br><br>
+
+<button onclick="login()">Login</button>
+
+</div>
+
+
+
+<div id="app" class="hide">
+
+<h1>Welcome <span id="user"></span> 👋</h1>
 
 
 <div class="card">
 <h2>📘 Senior 1</h2>
-<p>Mathematics, Science, English</p>
+<p>Math • Science • English</p>
 <button>Start Learning</button>
 </div>
 
 
 <div class="card">
 <h2>📗 Senior 2</h2>
-<p>Lessons and exam preparation</p>
+<p>Lessons and exercises</p>
 <button>Start Learning</button>
 </div>
 
 
 <div class="card">
 <h2>📕 Senior 3</h2>
-<p>Advanced lessons and exams</p>
+<p>Exam preparation</p>
 <button>Start Learning</button>
 </div>
 
 
 <div class="card">
+
 <h2>📚 Books</h2>
+
 <p>Senior 1 Books</p>
 <p>Senior 2 Books</p>
 <p>Senior 3 Books</p>
+
 <button>Open Books</button>
+
 </div>
+
 
 
 <div class="card">
+
 <h2>📝 Exercises</h2>
-<p>Math Exercises</p>
-<p>Science Exercises</p>
-<p>English Exercises</p>
-<button>Practice Now</button>
+
+<p>Practice questions and quizzes</p>
+
+<button>Practice</button>
+
 </div>
+
 
 
 <div class="card">
@@ -111,31 +131,39 @@ text-decoration:none;
 
 <button onclick="askAI()">Ask AI</button>
 
-<div id="answer">
-AI is ready to help you.
-</div>
+<p id="answer">
+AI is ready to help.
+</p>
 
 </div>
+
 
 
 <div class="card">
 
-<h2>⚙️ Settings</h2>
+<h2>⚙ Settings</h2>
 
-<button onclick="dark()">Change Theme</button>
+<button onclick="theme()">Change Theme</button>
 
 </div>
 
 
+
 <div class="card">
 
-<h2>🟢 WhatsApp Contact</h2>
+<h2>📱 WhatsApp Contact</h2>
 
 <p>0738939769</p>
 
 <a href="https://wa.me/250738939769">
+
 <button>WhatsApp Me</button>
+
 </a>
+
+</div>
+
+
 
 </div>
 
@@ -143,34 +171,46 @@ AI is ready to help you.
 
 <script>
 
+
+function login(){
+
+let n=document.getElementById("name").value;
+
+document.getElementById("user").innerHTML=n;
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("app").style.display="block";
+
+}
+
+
+
 function askAI(){
 
 let q=document.getElementById("question").value.toLowerCase();
 
-let a="🤖 I can help you with your lessons.";
+let a="🤖 AI: I can help you learn.";
 
-if(q.includes("math")){
-a="🤖 I can explain Mathematics.";
-}
+if(q.includes("math"))
+a="🤖 AI: I can explain Mathematics.";
 
-else if(q.includes("biology")){
-a="🤖 Biology is the study of living things.";
-}
+else if(q.includes("science"))
+a="🤖 AI: I can explain Science.";
 
-else if(q.includes("physics")){
-a="🤖 Physics studies matter and energy.";
-}
+else if(q.includes("english"))
+a="🤖 AI: I can help with English.";
 
-else if(q.includes("chemistry")){
-a="🤖 Chemistry studies substances and reactions.";
-}
+else
+a="🤖 AI: Ask me about Senior 1, Senior 2 or Senior 3.";
 
 document.getElementById("answer").innerHTML=a;
 
 }
 
 
-function dark(){
+
+function theme(){
 
 document.body.style.background="#000";
 
