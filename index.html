@@ -1,125 +1,57 @@
-<!-- PART 2: BOOKS + NOTES + QUIZ -->
+<!-- PART 3: AI + WHATSAPP + SETTINGS -->
 
 
-<button onclick="show('books')">📚 Books</button>
-<button onclick="show('quiz')">📝 Quiz</button>
-
-
-
-<div id="books" class="page">
-
-<div class="card">
-
-<h2>📚 Books & Notes</h2>
-
-
-<h3>📘 Senior 1</h3>
-
-<div class="subject">
-Mathematics S1<br>
-Topics: Numbers, Algebra, Geometry
-</div>
-
-<div class="subject">
-Biology S1<br>
-Topics: Cells, Living things
-</div>
-
-<div class="subject">
-Chemistry S1<br>
-Topics: Matter, Elements
-</div>
-
-<div class="subject">
-Physics S1<br>
-Topics: Force, Energy
-</div>
-
-<div class="subject">
-English S1<br>
-Topics: Grammar, Writing
-</div>
+<button onclick="show('ai')">🤖 AI Teacher</button>
+<button onclick="show('settings')">⚙️ Settings</button>
 
 
 
-<h3>📗 Senior 2</h3>
-
-<div class="subject">
-Mathematics S2<br>
-Topics: Algebra, Equations, Geometry
-</div>
-
-<div class="subject">
-Chemistry S2<br>
-Topics: Chemical reactions
-</div>
-
-<div class="subject">
-Physics S2<br>
-Topics: Motion, Electricity
-</div>
-
-<div class="subject">
-English S2<br>
-Topics: Reading, Grammar
-</div>
-
-
-
-<h3>📕 Senior 3</h3>
-
-<div class="subject">
-Mathematics S3<br>
-Topics: Trigonometry, Statistics
-</div>
-
-<div class="subject">
-Chemistry S3<br>
-Topics: Organic chemistry, Acids
-</div>
-
-<div class="subject">
-Physics S3<br>
-Topics: Waves, Electricity
-</div>
-
-<div class="subject">
-English S3<br>
-Topics: Literature, Writing
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div id="quiz" class="page">
+<div id="ai" class="page">
 
 <div class="card">
 
+<h2>🤖 AI Teacher</h2>
 
-<h2>📝 Student Quiz</h2>
+<p>Ask your learning question:</p>
+
+<input id="question" 
+placeholder="Example: Explain physics">
 
 
-<h3 id="q">
-What is the basic unit of life?
+<br><br>
+
+<button onclick="askAI()">
+Ask AI
+</button>
+
+
+<h3 id="answer">
+AI is ready to help you 📚
 </h3>
 
 
-<div id="answers"></div>
+</div>
+
+</div>
 
 
-<h3 id="score">
-Score: 0
-</h3>
 
 
-<button onclick="nextQuiz()">
-Next Question ➡️
+
+<div id="settings" class="page">
+
+<div class="card">
+
+<h2>⚙️ Settings</h2>
+
+
+<button onclick="darkMode()">
+🌙 Dark Mode
+</button>
+
+
+<button onclick="lightMode()">
+☀️ Light Mode
 </button>
 
 
@@ -131,112 +63,97 @@ Next Question ➡️
 
 
 
+<div class="card">
+
+<h2>📱 Contact</h2>
+
+<p>
+WhatsApp: 0738939769
+</p>
+
+
+<a href="https://wa.me/250738939769">
+
+<button>
+Chat on WhatsApp
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
 <script>
 
 
-let quizData=[
+function askAI(){
 
-{
-q:"What is the basic unit of life?",
-a:["Cell","Bone","Water"],
-c:0
-},
-
-{
-q:"5 × 6 = ?",
-a:["20","30","40"],
-c:1
-},
-
-{
-q:"Chemical formula of water is?",
-a:["H2O","CO2","O2"],
-c:0
-},
-
-{
-q:"Unit of force is?",
-a:["Newton","Meter","Watt"],
-c:0
-}
-
-];
+let q=document
+.getElementById("question")
+.value
+.toLowerCase();
 
 
-let qi=0;
-let points=0;
+let answer="I can help with Senior 1, Senior 2 and Senior 3 lessons.";
 
 
+if(q.includes("math")){
 
-function loadQuiz(){
-
-document.getElementById("q").innerHTML=
-quizData[qi].q;
-
-
-let box=document.getElementById("answers");
-
-box.innerHTML="";
-
-
-quizData[qi].a.forEach(function(x,i){
-
-let btn=document.createElement("button");
-
-btn.innerHTML=x;
-
-
-btn.onclick=function(){
-
-if(i==quizData[qi].c){
-
-points++;
-
-alert("Correct ✅");
-
-}else{
-
-alert("Wrong ❌");
+answer="Mathematics: I can explain algebra, geometry and equations.";
 
 }
 
 
-document.getElementById("score").innerHTML=
-"Score: "+points;
+else if(q.includes("physics")){
+
+answer="Physics: I can explain force, energy, motion and electricity.";
+
+}
 
 
-};
+else if(q.includes("chemistry")){
+
+answer="Chemistry: I can explain atoms, reactions, acids and bases.";
+
+}
 
 
-box.appendChild(btn);
+else if(q.includes("english")){
+
+answer="English: I can help with grammar, writing and reading.";
+
+}
 
 
-});
+document.getElementById("answer").innerHTML=
+answer;
 
 
 }
 
 
 
-function nextQuiz(){
 
-qi++;
+function darkMode(){
 
-if(qi>=quizData.length){
-
-alert("Quiz Finished! Score: "+points);
-
-qi=0;
-points=0;
-
-}
-
-loadQuiz();
+document.body.style.background="#000";
 
 }
 
 
-loadQuiz();
+
+function lightMode(){
+
+document.body.style.background="#ffffff";
+
+document.body.style.color="#000";
+
+}
 
 
-  </script>
+
+</script>
