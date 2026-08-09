@@ -1,29 +1,142 @@
-button{
-background:#25D366;
-color:white;
-border:none;
-padding:15px 35px;
-border-radius:30px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr-dev Learning AI</title>
 
-button:hover{
-transform:scale(1.1);
-background:#128C7E;
-}
-
-section{
-margin:30px;
-padding:25px;
-border-radius:20px;
-background:#202b40;
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
 color:white;
 text-align:center;
 }
 
-h2{
-font-size:30px;
+header{
+padding:40px;
 }
+
+.card{
+background:#1e293b;
+margin:20px;
+padding:25px;
+border-radius:20px;
+}
+
+button{
+background:#22c55e;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+input{
+width:80%;
+padding:15px;
+border-radius:20px;
+border:none;
+}
+
+#answer{
+margin-top:20px;
+background:#334155;
+padding:20px;
+border-radius:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Mr-dev Learning Center</h1>
+<p>Learn with AI Teacher</p>
+</header>
+
+
+<div class="card">
+<h2>📘 Senior 1</h2>
+<p>Mathematics, Science, English lessons</p>
+<button onclick="level('Senior 1')">Start</button>
+</div>
+
+
+<div class="card">
+<h2>📗 Senior 2</h2>
+<p>Improve your knowledge with lessons</p>
+<button onclick="level('Senior 2')">Start</button>
+</div>
+
+
+<div class="card">
+<h2>📕 Senior 3</h2>
+<p>Prepare for exams with AI help</p>
+<button onclick="level('Senior 3')">Start</button>
+</div>
+
+
+
+<div class="card">
+
+<h2>🤖 AI Teacher</h2>
+
+<input id="question" placeholder="Ask your question">
+
+<br><br>
+
+<button onclick="askAI()">Ask AI</button>
+
+<div id="answer">
+AI is ready to help you.
+</div>
+
+</div>
+
+
+
+<script>
+
+function level(x){
+document.getElementById("answer").innerHTML=
+"Welcome to "+x+" lessons. Ask me anything.";
+}
+
+
+function askAI(){
+
+let q=document.getElementById("question").value.toLowerCase();
+
+let a="I am still learning. Try asking about mathematics, science or English.";
+
+if(q.includes("math")){
+a="AI: I can help you solve mathematics problems.";
+}
+
+else if(q.includes("science")){
+a="AI: I can explain science topics.";
+}
+
+else if(q.includes("english")){
+a="AI: I can help you learn English grammar.";
+}
+
+else if(q.includes("hello")){
+a="AI: Hello! How can I help you today?";
+}
+
+document.getElementById("answer").innerHTML=a;
+
+}
+
+</script>
+
+
+</body>
+</html>
