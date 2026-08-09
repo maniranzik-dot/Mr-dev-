@@ -3,17 +3,27 @@
 <head>
 <title>Mr-dev AI Learning</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
+
 body{
+margin:0;
+font-family:Arial;
 background:#071426;
 color:white;
-font-family:Arial;
-margin:0;
 }
 
 header{
-text-align:center;
+background:#0d1f38;
 padding:20px;
+text-align:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#20d66b;
 }
 
 .card{
@@ -27,30 +37,28 @@ text-align:center;
 button{
 background:#20d66b;
 color:white;
-border:0;
+border:none;
 padding:12px 25px;
 border-radius:30px;
+font-weight:bold;
 margin:5px;
 }
 
-input{
-padding:12px;
-width:80%;
-border-radius:20px;
-border:0;
+.subject{
+background:#263954;
+padding:15px;
+margin:10px;
+border-radius:15px;
 }
 
 .page{
 display:none;
 }
 
-.show{
+.active{
 display:block;
 }
 
-h2{
-color:#20d66b;
-}
 </style>
 
 </head>
@@ -60,286 +68,155 @@ color:#20d66b;
 
 <header>
 
-<h1>🎓 Mr-dev AI Learning</h1>
+<div class="logo">
+🎓 Mr-dev AI Learning
+</div>
 
-<button onclick="openPage('home')">Home</button>
-<button onclick="openPage('books')">Books</button>
-<button onclick="openPage('quiz')">Quiz</button>
-<button onclick="openPage('ai')">AI Teacher</button>
+<p>Learn • Practice • Improve</p>
+
+<button onclick="show('home')">Home</button>
+<button onclick="show('senior1')">Senior 1</button>
+<button onclick="show('senior2')">Senior 2</button>
+<button onclick="show('senior3')">Senior 3</button>
 
 </header>
 
 
 
-<div id="home" class="page show">
-
-
-<div class="card">
-<h2>📘 Senior 1</h2>
-<p>Math • Biology • Chemistry • Physics • English</p>
-<button>Start Learning</button>
-</div>
-
-
-<div class="card">
-<h2>📗 Senior 2</h2>
-<p>Math • Chemistry • Physics • English</p>
-<button>Start Learning</button>
-</div>
-
-
-<div class="card">
-<h2>📕 Senior 3</h2>
-<p>Math • Chemistry • Physics • English</p>
-<button>Start Learning</button>
-</div>
-
+<div id="home" class="page active">
 
 <div class="card">
 
-<h2>📱 WhatsApp</h2>
+<h1>Welcome Student 👋</h1>
 
-<p>0738939769</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div id="books" class="page">
-
-
-<div class="card">
-
-<h2>📚 Books & Notes</h2>
-
-
-<h3>Senior 1</h3>
-<p>Mathematics: Numbers, Algebra, Geometry</p>
-<p>Biology: Cells and Living Things</p>
-<p>Chemistry: Matter and Elements</p>
-<p>Physics: Forces and Energy</p>
-<p>English: Grammar and Writing</p>
-
-
-<h3>Senior 2</h3>
-<p>Mathematics: Algebra and Geometry</p>
-<p>Chemistry: Chemical reactions</p>
-<p>Physics: Motion and Electricity</p>
-<p>English: Reading and Grammar</p>
-
-
-<h3>Senior 3</h3>
-<p>Mathematics: Trigonometry and Statistics</p>
-<p>Chemistry: Organic Chemistry</p>
-<p>Physics: Waves and Electricity</p>
-<p>English: Literature and Writing</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div id="quiz" class="page">
-
-
-<div class="card">
-
-<h2>📝 Quiz</h2>
-
-<h3 id="question"></h3>
-
-
-<div id="answers"></div>
-
-
-<p id="score">Score: 0</p>
-
-
-<button onclick="nextQuestion()">Next</button>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div id="ai" class="page">
-
-
-<div class="card">
-
-<h2>🤖 AI Teacher</h2>
-
-<input id="ask" placeholder="Ask question">
-
-<br><br>
-
-<button onclick="answerAI()">Ask</button>
-
-
-<p id="reply">
-AI is ready to help you.
+<p>
+Your smart learning platform
 </p>
 
+</div>
+
+
+<div class="card">
+
+<h2>📚 Available Classes</h2>
+
+<p>Senior 1</p>
+<p>Senior 2</p>
+<p>Senior 3</p>
+
+</div>
 
 </div>
 
 
+
+
+
+<div id="senior1" class="page">
+
+<div class="card">
+
+<h2>📘 Senior 1</h2>
+
+<div class="subject">
+Mathematics
+</div>
+
+<div class="subject">
+Biology
+</div>
+
+<div class="subject">
+Chemistry
+</div>
+
+<div class="subject">
+Physics
+</div>
+
+<div class="subject">
+English
+</div>
+
+</div>
+
 </div>
 
 
+
+
+
+<div id="senior2" class="page">
+
+<div class="card">
+
+<h2>📗 Senior 2</h2>
+
+<div class="subject">
+Mathematics
+</div>
+
+<div class="subject">
+Chemistry
+</div>
+
+<div class="subject">
+Physics
+</div>
+
+<div class="subject">
+English
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div id="senior3" class="page">
+
+<div class="card">
+
+<h2>📕 Senior 3</h2>
+
+<div class="subject">
+Mathematics
+</div>
+
+<div class="subject">
+Chemistry
+</div>
+
+<div class="subject">
+Physics
+</div>
+
+<div class="subject">
+English
+</div>
+
+</div>
+
+</div>
 
 
 
 <script>
 
-
-function openPage(id){
+function show(id){
 
 let pages=document.querySelectorAll(".page");
 
-pages.forEach(p=>p.classList.remove("show"));
-
-document.getElementById(id).classList.add("show");
-
-}
-
-
-
-
-
-let questions=[
-
-{
-q:"Basic unit of life?",
-a:["Cell","Bone","Water"],
-c:0
-},
-
-{
-q:"5 x 6 = ?",
-a:["20","30","40"],
-c:1
-},
-
-{
-q:"Water formula?",
-a:["H2O","CO2","O2"],
-c:0
-}
-
-];
-
-
-let current=0;
-let score=0;
-
-
-
-function loadQuiz(){
-
-let q=questions[current];
-
-document.getElementById("question").innerHTML=q.q;
-
-let box=document.getElementById("answers");
-
-box.innerHTML="";
-
-
-q.a.forEach((x,i)=>{
-
-let b=document.createElement("button");
-
-b.innerHTML=x;
-
-b.onclick=function(){
-
-if(i==q.c){
-
-score++;
-
-alert("Correct ✅");
-
-}else{
-
-alert("Wrong ❌");
-
-}
-
-document.getElementById("score").innerHTML=
-"Score: "+score;
-
-};
-
-
-box.appendChild(b);
-
-
+pages.forEach(function(p){
+p.classList.remove("active");
 });
 
+document.getElementById(id).classList.add("active");
 
 }
-
-
-
-function nextQuestion(){
-
-current++;
-
-if(current>=questions.length){
-
-alert("Finished Score: "+score);
-
-current=0;
-score=0;
-
-}
-
-loadQuiz();
-
-}
-
-
-
-
-function answerAI(){
-
-let q=document.getElementById("ask").value.toLowerCase();
-
-let r="Ask me about Senior 1, Senior 2 or Senior 3 lessons.";
-
-if(q.includes("math"))
-r="Math helps us solve problems using numbers.";
-
-if(q.includes("physics"))
-r="Physics studies force, energy and motion.";
-
-if(q.includes("chemistry"))
-r="Chemistry studies matter and reactions.";
-
-document.getElementById("reply").innerHTML=r;
-
-}
-
-
-loadQuiz();
-
 
 </script>
 
