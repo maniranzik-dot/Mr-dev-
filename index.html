@@ -1,189 +1,109 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Mr-dev AI Quiz</title>
+<!-- QUIZ SECTION -->
+<div class="card">
 
-<style>
-body{
-background:#071426;
-font-family:Arial;
-color:white;
-text-align:center;
-}
+<h2>📝 Quiz Test</h2>
 
-.container{
-background:#17263d;
-margin:30px auto;
-padding:25px;
-border-radius:20px;
-width:85%;
-}
+<h3 id="quizQuestion">HTML ikoreshwa iki?</h3>
 
-button{
-background:#20d66b;
-color:white;
-border:none;
-padding:14px 25px;
-border-radius:30px;
-margin:10px;
-font-weight:bold;
-cursor:pointer;
-}
+<button onclick="answer(0)" id="a1">
+A. Gukora website
+</button>
 
-.option{
-display:block;
-width:90%;
-background:#263954;
-}
+<br><br>
 
-.correct{
-background:#20d66b!important;
-}
+<button onclick="answer(1)" id="a2">
+B. Gukina umupira
+</button>
 
-.wrong{
-background:#e63946!important;
-}
 
-#result{
-font-size:20px;
-}
+<h3 id="quizResult">Score: 0</h3>
 
-.progress{
-background:#333;
-height:15px;
-border-radius:20px;
-}
-
-.bar{
-background:#20d66b;
-height:15px;
-width:0%;
-border-radius:20px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>📝 Quiz Test</h1>
-
-<h2 id="title">Senior 1 Quiz</h2>
-
-<h3 id="question"></h3>
-
-<div id="options"></div>
-
-<p id="result">Score: 0</p>
-
-<div class="progress">
-<div class="bar" id="bar"></div>
-</div>
-
-<button onclick="next()">Next Question ➡️</button>
+<button onclick="nextQuestion()">
+Next Question ➡️
+</button>
 
 </div>
 
 
 <script>
 
-let questions=[
-
+let quiz=[
 {
 q:"HTML ikoreshwa iki?",
-a:["Gukora website","Gukina umupira"],
-c:0
+a:["A. Gukora website","B. Gukina umupira"],
+correct:0
 },
 
 {
-q:"2 + 2 bingana iki?",
-a:["3","4"],
-c:1
+q:"CSS ikoreshwa iki?",
+a:["A. Gushushanya website","B. Gukora telephone"],
+correct:0
 },
 
 {
-q:"Water formula ni iyihe?",
-a:["H2O","CO2"],
-c:0
+q:"JavaScript ikora iki?",
+a:["A. Kongera imikorere ya website","B. Guhindura computer"],
+correct:0
 }
-
 ];
 
 
-let index=0;
+let number=0;
 let score=0;
 
 
-function load(){
+function showQuiz(){
 
-let q=questions[index];
+document.getElementById("quizQuestion").innerHTML=
+quiz[number].q;
 
-document.getElementById("question").innerHTML=q.q;
+document.getElementById("a1").innerHTML=
+quiz[number].a[0];
 
-let box=document.getElementById("options");
-box.innerHTML="";
+document.getElementById("a2").innerHTML=
+quiz[number].a[1];
 
-q.a.forEach((x,i)=>{
+}
 
-let b=document.createElement("button");
 
-b.innerHTML=x;
+function answer(x){
 
-b.className="option";
-
-b.onclick=function(){
-
-if(i==q.c){
+if(x==quiz[number].correct){
 
 score++;
 
-b.classList.add("correct");
+alert("Correct ✅");
 
 }else{
 
-b.classList.add("wrong");
+alert("Wrong ❌");
 
 }
 
-document.getElementById("result").innerHTML=
+document.getElementById("quizResult").innerHTML=
 "Score: "+score;
 
-};
-
-box.appendChild(b);
-
-});
-
-document.getElementById("bar").style.width=
-((index+1)/questions.length*100)+"%";
-
 }
 
 
-function next(){
+function nextQuestion(){
 
-index++;
+number++;
 
-if(index>=questions.length){
+if(number>=quiz.length){
 
-alert("Quiz finished! Your score: "+score);
+alert("Quiz Finished 🎉 Score: "+score);
 
-index=0;
+number=0;
 score=0;
 
 }
 
-load();
+showQuiz();
 
 }
 
 
-load();
+showQuiz();
 
 </script>
-
-</body>
-</html>
