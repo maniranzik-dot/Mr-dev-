@@ -1,190 +1,159 @@
-<!-- AI TEACHER -->
-
-<button onclick="openPage('ai')">🤖 AI Teacher</button>
-
-
-<div id="ai" class="page">
+<div id="books" class="page">
 
 <div class="card">
 
-<h2>🤖 AI Teacher</h2>
-
-<p>Ask your question:</p>
-
-<input id="ask" placeholder="Example: Explain Physics">
+<h2>📚 Mr-dev AI Learning Books</h2>
 
 
-<br><br>
-
-<button onclick="askAI()">
-Ask AI
-</button>
+<h1>📘 Senior 1</h1>
 
 
-<div class="subject" id="reply">
-AI is ready to help you 📚
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- SETTINGS -->
-
-<div id="settings" class="page">
-
-<div class="card">
-
-<h2>⚙️ Settings</h2>
-
-<p>Mr-dev AI Learning</p>
-
-<button onclick="dark()">
-🌙 Dark Mode
-</button>
-
-
-<button onclick="light()">
-☀️ Light Mode
-</button>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- WHATSAPP -->
-
-<div class="card">
-
-<h2>📱 WhatsApp Support</h2>
-
+<h2>📐 Mathematics S1</h2>
 <p>
-0738939769
+• Number Systems<br>
+• Integers<br>
+• Fractions<br>
+• Decimals<br>
+• Sets<br>
+• Algebraic Expressions<br>
+• Linear Equations<br>
+• Geometry<br>
+• Angles<br>
+• Perimeter and Area<br>
+• Data Handling
 </p>
 
 
-<a href="https://wa.me/250738939769">
+<h2>⚗️ Chemistry S1</h2>
+<p>
+• Introduction to Chemistry<br>
+• Laboratory Safety<br>
+• Matter<br>
+• States of Matter<br>
+• Elements and Compounds<br>
+• Mixtures and Separation Methods<br>
+• Atomic Structure<br>
+• Chemical Symbols
+</p>
 
-<button>
-Chat on WhatsApp
-</button>
 
-</a>
+<h2>⚡ Physics S1</h2>
+<p>
+• Introduction to Physics<br>
+• Measurement<br>
+• Units<br>
+• Motion<br>
+• Force<br>
+• Work and Energy<br>
+• Heat<br>
+• Simple Machines
+</p>
+
+
+<h2>📖 English S1</h2>
+<p>
+• Parts of Speech<br>
+• Tenses<br>
+• Sentence Structure<br>
+• Reading Comprehension<br>
+• Writing Skills<br>
+• Vocabulary<br>
+• Conversation
+</p>
+
+
+
+<h1>📗 Senior 2</h1>
+
+
+<h2>📐 Mathematics S2</h2>
+<p>
+• Algebra<br>
+• Equations<br>
+• Inequalities<br>
+• Graphs<br>
+• Geometry<br>
+• Transformations<br>
+• Statistics
+</p>
+
+
+<h2>⚗️ Chemistry S2</h2>
+<p>
+• Atomic Structure<br>
+• Periodic Table<br>
+• Chemical Bonding<br>
+• Acids and Bases<br>
+• Salts<br>
+• Chemical Reactions
+</p>
+
+
+<h2>⚡ Physics S2</h2>
+<p>
+• Speed and Velocity<br>
+• Acceleration<br>
+• Forces<br>
+• Pressure<br>
+• Electricity<br>
+• Light
+</p>
+
+
+<h2>📖 English S2</h2>
+<p>
+• Grammar<br>
+• Reported Speech<br>
+• Essay Writing<br>
+• Comprehension<br>
+• Literature
+</p>
+
+
+
+<h1>📕 Senior 3</h1>
+
+
+<h2>📐 Mathematics S3</h2>
+<p>
+• Quadratic Equations<br>
+• Functions<br>
+• Trigonometry<br>
+• Statistics<br>
+• Probability<br>
+• Vectors
+</p>
+
+
+<h2>⚗️ Chemistry S3</h2>
+<p>
+• Organic Chemistry<br>
+• Hydrocarbons<br>
+• Acids and Bases<br>
+• Electrochemistry<br>
+• Chemical Calculations
+</p>
+
+
+<h2>⚡ Physics S3</h2>
+<p>
+• Waves<br>
+• Electricity<br>
+• Magnetism<br>
+• Optics<br>
+• Energy Transformation
+</p>
+
+
+<h2>📖 English S3</h2>
+<p>
+• Advanced Grammar<br>
+• Literature<br>
+• Formal Writing<br>
+• Communication Skills
+</p>
 
 
 </div>
 
-
-
-
-
-<script>
-
-
-function openPage(id){
-
-let pages=document.querySelectorAll(".page");
-
-
-pages.forEach(function(page){
-
-page.classList.remove("active");
-
-});
-
-
-document.getElementById(id).classList.add("active");
-
-
-}
-
-
-
-
-
-function askAI(){
-
-let q=document.getElementById("ask").value.toLowerCase();
-
-
-let answer=
-"I can help with Senior 1, Senior 2 and Senior 3 lessons.";
-
-
-if(q.includes("math")){
-
-answer=
-"Mathematics: I can explain algebra, geometry and calculations.";
-
-}
-
-
-else if(q.includes("physics")){
-
-answer=
-"Physics: I can explain force, energy, electricity and motion.";
-
-}
-
-
-else if(q.includes("chemistry")){
-
-answer=
-"Chemistry: I can explain atoms, reactions, acids and bases.";
-
-}
-
-
-else if(q.includes("english")){
-
-answer=
-"English: I can help with grammar, writing and reading.";
-
-}
-
-
-document.getElementById("reply").innerHTML=
-answer;
-
-
-}
-
-
-
-
-
-function dark(){
-
-document.body.style.background="#071426";
-document.body.style.color="white";
-
-}
-
-
-
-
-
-function light(){
-
-document.body.style.background="white";
-document.body.style.color="black";
-
-}
-
-
-</script>
-
-
-</body>
-
-</html>
+</div>
