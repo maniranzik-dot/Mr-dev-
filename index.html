@@ -1,223 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Mr-dev AI Learning</title>
+<div class="card">
 
-<style>
-body{
-margin:0;
-font-family:Arial;
-background:#071426;
-color:white;
-text-align:center;
-}
+<h2>📝 Quiz Test</h2>
 
-.card{
-background:#17263d;
-margin:15px;
-padding:25px;
-border-radius:20px;
-}
+<p>1. HTML ikoreshwa iki?</p>
 
-button{
-background:#20d66b;
-color:white;
-border:0;
-padding:14px 30px;
-border-radius:30px;
-font-weight:bold;
-cursor:pointer;
-}
-
-input{
-padding:15px;
-width:80%;
-border-radius:20px;
-border:0;
-}
-
-.hide{
-display:none;
-}
-
-#answer{
-background:#0d182b;
-padding:15px;
-border-radius:15px;
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<div id="login" class="card">
-
-<h1>🎓 Mr-dev AI Learning</h1>
-
-<h2>Student Login</h2>
-
-<input id="name" placeholder="Your name">
+<button onclick="quiz('correct')">
+A. Gukora website
+</button>
 
 <br><br>
 
-<button onclick="login()">Login</button>
+<button onclick="quiz('wrong')">
+B. Gukina umupira
+</button>
+
+
+<p id="score">Score: 0</p>
 
 </div>
-
-
-
-<div id="app" class="hide">
-
-<h1>Welcome <span id="user"></span> 👋</h1>
-
-
-<div class="card">
-<h2>📘 Senior 1</h2>
-<p>Math • Science • English</p>
-<button>Start Learning</button>
-</div>
-
-
-<div class="card">
-<h2>📗 Senior 2</h2>
-<p>Lessons and exercises</p>
-<button>Start Learning</button>
-</div>
-
-
-<div class="card">
-<h2>📕 Senior 3</h2>
-<p>Exam preparation</p>
-<button>Start Learning</button>
-</div>
-
-
-<div class="card">
-
-<h2>📚 Books</h2>
-
-<p>Senior 1 Books</p>
-<p>Senior 2 Books</p>
-<p>Senior 3 Books</p>
-
-<button>Open Books</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>📝 Exercises</h2>
-
-<p>Practice questions and quizzes</p>
-
-<button>Practice</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>🤖 AI Teacher</h2>
-
-<input id="question" placeholder="Ask your question">
-
-<br><br>
-
-<button onclick="askAI()">Ask AI</button>
-
-<p id="answer">
-AI is ready to help.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>⚙ Settings</h2>
-
-<button onclick="theme()">Change Theme</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>📱 WhatsApp Contact</h2>
-
-<p>0738939769</p>
-
-<a href="https://wa.me/250738939769">
-
-<button>WhatsApp Me</button>
-
-</a>
-
-</div>
-
-
-
-</div>
-
 
 
 <script>
 
+let score = 0;
 
-function login(){
+function quiz(answer){
 
-let n=document.getElementById("name").value;
-
-document.getElementById("user").innerHTML=n;
-
-document.getElementById("login").style.display="none";
-
-document.getElementById("app").style.display="block";
-
+if(answer=="correct"){
+score++;
+alert("Correct! 🎉");
 }
 
-
-
-function askAI(){
-
-let q=document.getElementById("question").value.toLowerCase();
-
-let a="🤖 AI: I can help you learn.";
-
-if(q.includes("math"))
-a="🤖 AI: I can explain Mathematics.";
-
-else if(q.includes("science"))
-a="🤖 AI: I can explain Science.";
-
-else if(q.includes("english"))
-a="🤖 AI: I can help with English.";
-
-else
-a="🤖 AI: Ask me about Senior 1, Senior 2 or Senior 3.";
-
-document.getElementById("answer").innerHTML=a;
-
+else{
+alert("Try again!");
 }
 
-
-
-function theme(){
-
-document.body.style.background="#000";
+document.getElementById("score").innerHTML=
+"Score: "+score;
 
 }
 
 </script>
-
-
-</body>
-</html>
