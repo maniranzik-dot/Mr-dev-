@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Mr-dev | Web Developer</title>
 
   <style>
@@ -23,9 +22,8 @@
     nav {
       position: sticky;
       top: 0;
-      background: #0f172a;
-      padding: 22px 10px;
-      border-bottom: 1px solid #334155;
+      background: #111827;
+      padding: 20px;
       z-index: 10;
     }
 
@@ -34,122 +32,94 @@
       text-decoration: none;
       font-size: 22px;
       font-weight: bold;
-      margin: 0 18px;
-    }
-
-    nav a:hover {
-      color: #22c55e;
+      margin: 0 15px;
     }
 
     section {
+      padding: 80px 20px;
       min-height: 100vh;
-      padding: 100px 20px;
-    }
-
-    #home {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
 
     h1 {
-      font-size: 60px;
-      margin: 20px 0;
+      font-size: 50px;
     }
 
     h2 {
-      font-size: 32px;
+      font-size: 30px;
     }
 
     p {
       font-size: 20px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    .hero-text {
-      max-width: 650px;
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    button {
-      margin-top: 30px;
-      padding: 18px 40px;
-      border: none;
-      border-radius: 12px;
+    .hero h1 {
+      font-size: 55px;
+    }
+
+    .button {
+      display: inline-block;
       background: #22c55e;
       color: white;
-      font-size: 22px;
+      padding: 18px 35px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 20px;
       font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #16a34a;
-      transform: scale(1.05);
+      margin-top: 25px;
     }
 
     .services {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .service {
-      width: 280px;
-      padding: 30px 20px;
-      background: #1e293b;
-      border-radius: 15px;
-    }
-
-    .service:hover {
-      transform: translateY(-8px);
-    }
-
-    #about,
-    #services,
-    #contact {
-      padding-top: 120px;
-    }
-
-    .contact-box {
-      max-width: 600px;
+      flex-direction: column;
+      gap: 35px;
+      max-width: 700px;
       margin: auto;
     }
 
-    .email-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 25px;
+    .service,
+    .contact-box {
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 25px;
+      padding: 50px 30px;
+    }
+
+    .contact-box button {
       background: #22c55e;
       color: white;
-      text-decoration: none;
-      border-radius: 10px;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
       font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     footer {
       padding: 30px;
-      background: #020617;
+      background: #111827;
     }
 
     @media (max-width: 600px) {
       nav a {
-        font-size: 16px;
+        font-size: 18px;
         margin: 0 7px;
       }
 
-      h1 {
-        font-size: 45px;
+      h1,
+      .hero h1 {
+        font-size: 42px;
       }
 
-      p {
-        font-size: 18px;
-      }
-
-      .service {
-        width: 90%;
+      h2 {
+        font-size: 27px;
       }
     }
   </style>
@@ -164,114 +134,60 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="home">
-
-    <div class="hero-text">
-
-      <h1>Welcome to<br>Mr-dev</h1>
-
-      <p>
-        Learn coding and build amazing websites.
-      </p>
-
-      <button onclick="goToServices()">
-        Get Started
-      </button>
-
-    </div>
-
+  <section id="home" class="hero">
+    <h1>Welcome to<br>Mr-dev</h1>
+    <p>Learn coding and build amazing websites.</p>
+    <a href="#services" class="button">Get Started</a>
   </section>
-
 
   <section id="about">
-
     <h1>About Me</h1>
-
     <p>
-      I am Mr-dev, a web developer learning and
-      building modern websites using HTML, CSS and JavaScript.
+      I am a web developer learning and building modern websites
+      using HTML, CSS and JavaScript.
     </p>
-
   </section>
 
-
   <section id="services">
-
     <h1>My Services</h1>
 
     <div class="services">
 
       <div class="service">
         <h2>🌐 Website Development</h2>
-        <p>
-          I build modern and responsive websites.
-        </p>
+        <p>I build modern and responsive websites.</p>
       </div>
 
       <div class="service">
         <h2>🎨 Web Design</h2>
-        <p>
-          I create clean and attractive website designs.
-        </p>
+        <p>I create clean and attractive website designs.</p>
       </div>
 
       <div class="service">
         <h2>💻 Coding</h2>
-        <p>
-          I build websites using HTML, CSS and JavaScript.
-        </p>
+        <p>I build websites using HTML, CSS and JavaScript.</p>
       </div>
 
     </div>
-
   </section>
-
 
   <section id="contact">
+    <h1>Contact Me</h1>
 
     <div class="contact-box">
+      <p>📧 Email: your@email.com</p>
+      <p>📱 Phone: +250 7XX XXX XXX</p>
+      <p>💬 WhatsApp: +250 7XX XXX XXX</p>
 
-      <h1>Contact Me</h1>
-
-      <p>
-        Have a project or question?
-      </p>
-
-      <p>
-        📧 Email: your@email.com
-      </p>
-
-      <p>
-        📱 Phone: +250 7XX XXX XXX
-      </p>
-
-      <a
-        class="email-button"
-        href="mailto:your@email.com">
-        Send Me an Email
+      <a href="mailto:your@email.com">
+        <button>Send Me an Email</button>
       </a>
-
     </div>
-
   </section>
-
 
   <footer>
     <p>© 2026 Mr-dev. All rights reserved.</p>
   </footer>
-
-
-  <script>
-
-    function goToServices() {
-      document
-        .getElementById("services")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-    }
-
-  </script>
 
 </body>
 </html>
