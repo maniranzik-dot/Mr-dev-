@@ -1,159 +1,192 @@
-<!-- PART 3: AI + WHATSAPP + SETTINGS -->
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Mr-dev AI Learning</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#071426;
+color:white;
+}
+
+header{
+padding:25px;
+text-align:center;
+background:#0d1f38;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#20d66b;
+}
+
+.menu button{
+margin:5px;
+}
+
+button{
+background:#20d66b;
+color:white;
+border:0;
+padding:12px 25px;
+border-radius:30px;
+font-weight:bold;
+}
+
+.card{
+background:#172943;
+margin:15px;
+padding:25px;
+border-radius:20px;
+}
+
+.subject{
+background:#263954;
+padding:15px;
+margin:10px 0;
+border-radius:15px;
+}
+
+input{
+padding:12px;
+width:80%;
+border-radius:20px;
+border:0;
+}
+
+.page{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+</style>
+
+</head>
 
 
-<button onclick="show('ai')">🤖 AI Teacher</button>
-<button onclick="show('settings')">⚙️ Settings</button>
+<body>
+
+
+<header>
+
+<div class="logo">
+🎓 Mr-dev AI Learning
+</div>
+
+<p>Learn Smarter, Achieve More</p>
+
+
+<div class="menu">
+
+<button onclick="openPage('home')">Home</button>
+<button onclick="openPage('books')">Books</button>
+<button onclick="openPage('quiz')">Quiz</button>
+<button onclick="openPage('ai')">AI Teacher</button>
+
+</div>
+
+
+</header>
 
 
 
-<div id="ai" class="page">
+
+<div id="home" class="page active">
+
 
 <div class="card">
 
-<h2>🤖 AI Teacher</h2>
-
-<p>Ask your learning question:</p>
-
-<input id="question" 
-placeholder="Example: Explain physics">
-
-
-<br><br>
-
-<button onclick="askAI()">
-Ask AI
-</button>
-
-
-<h3 id="answer">
-AI is ready to help you 📚
-</h3>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div id="settings" class="page">
-
-<div class="card">
-
-<h2>⚙️ Settings</h2>
-
-
-<button onclick="darkMode()">
-🌙 Dark Mode
-</button>
-
-
-<button onclick="lightMode()">
-☀️ Light Mode
-</button>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>📱 Contact</h2>
+<h1>Welcome Student 👋</h1>
 
 <p>
-WhatsApp: 0738939769
+Your online learning platform
 </p>
 
+</div>
 
-<a href="https://wa.me/250738939769">
 
-<button>
-Chat on WhatsApp
-</button>
 
-</a>
+<div class="card">
 
+<h2>📘 Senior 1</h2>
+
+<div class="subject">
+Mathematics
+</div>
+
+<div class="subject">
+Chemistry
+</div>
+
+<div class="subject">
+Physics
+</div>
+
+<div class="subject">
+English
+</div>
 
 </div>
 
 
 
 
+<div class="card">
 
-<script>
+<h2>📗 Senior 2</h2>
 
+<div class="subject">
+Mathematics
+</div>
 
-function askAI(){
+<div class="subject">
+Chemistry
+</div>
 
-let q=document
-.getElementById("question")
-.value
-.toLowerCase();
+<div class="subject">
+Physics
+</div>
 
+<div class="subject">
+English
+</div>
 
-let answer="I can help with Senior 1, Senior 2 and Senior 3 lessons.";
-
-
-if(q.includes("math")){
-
-answer="Mathematics: I can explain algebra, geometry and equations.";
-
-}
-
-
-else if(q.includes("physics")){
-
-answer="Physics: I can explain force, energy, motion and electricity.";
-
-}
-
-
-else if(q.includes("chemistry")){
-
-answer="Chemistry: I can explain atoms, reactions, acids and bases.";
-
-}
-
-
-else if(q.includes("english")){
-
-answer="English: I can help with grammar, writing and reading.";
-
-}
-
-
-document.getElementById("answer").innerHTML=
-answer;
-
-
-}
+</div>
 
 
 
 
-function darkMode(){
+<div class="card">
 
-document.body.style.background="#000";
+<h2>📕 Senior 3</h2>
 
-}
+<div class="subject">
+Mathematics
+</div>
+
+<div class="subject">
+Chemistry
+</div>
+
+<div class="subject">
+Physics
+</div>
+
+<div class="subject">
+English
+</div>
+
+</div>
 
 
-
-function lightMode(){
-
-document.body.style.background="#ffffff";
-
-document.body.style.color="#000";
-
-}
-
-
-
-</script>
+</div>
