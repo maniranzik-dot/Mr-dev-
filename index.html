@@ -4,58 +4,76 @@
 <title>Mr-dev | Web Developer</title>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
 body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
+  background:#0b1220;
+  color:white;
 }
 
 header{
-padding:60px 20px;
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#2563eb,#22c55e);
 }
 
-h1{
-font-size:50px;
+header h1{
+  font-size:45px;
 }
 
-p{
-font-size:18px;
+header p{
+  margin:15px;
+  font-size:18px;
 }
 
-.container{
-width:90%;
-max-width:900px;
-margin:auto;
+.btn{
+  display:inline-block;
+  background:white;
+  color:#2563eb;
+  padding:15px 35px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+section{
+  max-width:900px;
+  margin:30px auto;
+  padding:30px;
+  background:#162033;
+  border-radius:20px;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
 }
 
 .card{
-background:#1e293b;
-padding:25px;
-margin:20px;
-border-radius:20px;
+  background:#1e293b;
+  padding:20px;
+  margin:15px 0;
+  border-radius:15px;
 }
 
-button{
-background:#25D366;
-color:white;
-border:none;
-padding:15px 35px;
-border-radius:30px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
+.card:hover{
+  transform:scale(1.03);
+  transition:0.3s;
 }
 
-button:hover{
-transform:scale(1.1);
+.contact{
+  text-align:center;
 }
 
 footer{
-margin-top:50px;
-padding:20px;
-background:#020617;
+  text-align:center;
+  padding:20px;
+  background:#020617;
 }
 </style>
 
@@ -67,53 +85,54 @@ background:#020617;
 <h1>Mr-dev</h1>
 <p>Web Developer | Creating Modern Websites</p>
 
-<a href="https://wa.me/250738939769">
-<button>💬 WhatsApp Me</button>
+<a class="btn" href="https://wa.me/250738393769">
+💬 WhatsApp Me
 </a>
 
 </header>
 
 
-<div class="container">
-
-<div class="card">
+<section>
 <h2>My Projects</h2>
 
-<p>🌐 Website Design</p>
-<p>💻 Portfolio Website</p>
-<p>📱 Responsive Websites</p>
-
+<div class="card">
+<h3>🌐 Website Design</h3>
+<p>Modern and responsive websites for businesses.</p>
 </div>
 
+<div class="card">
+<h3>💻 Portfolio Website</h3>
+<p>Professional websites to show your skills.</p>
+</div>
 
 <div class="card">
+<h3>🚀 Web Applications</h3>
+<p>Fast and beautiful online solutions.</p>
+</div>
 
+</section>
+
+
+<section>
 <h2>About Me</h2>
-
-<p>
-I create modern websites for businesses and individuals.
+<p style="text-align:center;">
+I create beautiful websites that help people and businesses grow online.
 </p>
+</section>
 
-</div>
 
-
-<div class="card">
-
-<h2>Contact</h2>
-
-<p>Need a website? Contact me on WhatsApp.</p>
-
-<a href="https://wa.me/250738939769">
-<button>Chat Now</button>
+<section class="contact">
+<h2>Contact Me</h2>
+<p>Need a website? Let's work together.</p>
+<br>
+<a class="btn" href="https://wa.me/250738393769">
+Chat Now
 </a>
-
-</div>
-
-</div>
+</section>
 
 
 <footer>
-© 2026 Mr-dev
+© 2026 Mr-dev | All Rights Reserved
 </footer>
 
 
