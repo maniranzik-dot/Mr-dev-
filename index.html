@@ -5,34 +5,41 @@
 
 <style>
 body{
-background:#081226;
-color:white;
+margin:0;
 font-family:Arial;
+background:#081426;
+color:white;
 text-align:center;
 }
 
-section{
-background:#202b40;
-margin:25px;
-padding:25px;
-border-radius:20px;
+header{
+padding:40px;
+}
+
+h1{
+font-size:35px;
 }
 
 .card{
-margin:15px;
-padding:20px;
-background:#1b2940;
+background:#17263d;
+margin:20px;
+padding:25px;
 border-radius:20px;
+box-shadow:0 0 15px #000;
 }
 
 button{
-background:#25D366;
+background:#20c768;
 color:white;
-border:none;
-padding:15px 35px;
+border:0;
+padding:14px 30px;
 border-radius:30px;
-font-weight:bold;
 cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+transform:scale(1.1);
 }
 
 input{
@@ -43,45 +50,73 @@ border:none;
 }
 
 #answer{
-margin-top:20px;
-background:#111c33;
+background:#0c182b;
 padding:15px;
 border-radius:15px;
+margin-top:20px;
+}
+
+a{
+text-decoration:none;
+}
+
+.whatsapp{
+color:#20c768;
+font-size:22px;
+}
+
+.menu{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
 }
 </style>
 
 </head>
 
+
 <body>
 
-<h1>Mr-dev AI Learning</h1>
+<header>
+<h1>🎓 Mr-dev AI Learning</h1>
 <p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
+</header>
 
-
-<section>
 
 <div class="card">
 <h2>📘 Senior 1</h2>
-<p>Mathematics, Science, English and more</p>
-<button>Start Learning</button>
+<p>Mathematics, Science, English lessons</p>
+<button onclick="show('Senior 1')">Start Learning</button>
 </div>
+
 
 <div class="card">
 <h2>📗 Senior 2</h2>
-<p>Improve your knowledge and prepare exams</p>
-<button>Start Learning</button>
+<p>Lessons, books and exercises</p>
+<button onclick="show('Senior 2')">Start Learning</button>
 </div>
+
 
 <div class="card">
 <h2>📕 Senior 3</h2>
-<p>Advanced lessons and exam preparation</p>
-<button>Start Learning</button>
+<p>Exam preparation and advanced lessons</p>
+<button onclick="show('Senior 3')">Start Learning</button>
 </div>
 
-</section>
+
+<div class="card">
+<h2>📚 Books & Exercises</h2>
+<p>
+Mathematics books<br>
+Science exercises<br>
+English practice
+</p>
+<button>Open Books</button>
+</div>
 
 
-<section>
+<div class="card">
 
 <h2>🤖 AI Teacher</h2>
 
@@ -91,49 +126,65 @@ border-radius:15px;
 
 <button onclick="askAI()">Ask AI</button>
 
-<p id="answer">AI is ready to help you.</p>
+<p id="answer">
+AI is ready to help you.
+</p>
 
-</section>
+</div>
 
 
-<section>
+<div class="card">
 
-<h2>🟢 WhatsApp Contact</h2>
+<h2>⚙ Settings</h2>
 
-<p>+250 738 393 769</p>
+<button onclick="dark()">Change Theme</button>
 
-<a href="https://wa.me/250738393769" target="_blank">
-<button>💬 WhatsApp Me</button>
+</div>
+
+
+<div class="card">
+
+<h2>📱 WhatsApp Contact</h2>
+
+<p class="whatsapp">
++250 738 393 769
+</p>
+
+<a href="https://wa.me/250738393769">
+<button>WhatsApp Me</button>
 </a>
 
-</section>
+</div>
 
 
 <script>
 
 function askAI(){
 
-let q=document.getElementById("question").value.toLowerCase();
+let q=document.getElementById("question").value;
 
-let answer="🤖 AI: I can help you learn.";
+document.getElementById("answer").innerHTML=
+"🤖 AI: Your question is about "+q+
+". I will help you learn.";
 
-if(q.includes("math")){
-answer="🤖 AI: I can explain Mathematics.";
 }
 
-else if(q.includes("science")){
-answer="🤖 AI: I can explain Science.";
+
+function show(level){
+
+alert(level+" lessons coming soon!");
+
 }
 
-else if(q.includes("english")){
-answer="🤖 AI: I can help with English.";
-}
 
-document.getElementById("answer").innerHTML=answer;
+function dark(){
+
+document.body.style.background="#000";
 
 }
 
 </script>
+
 
 </body>
 </html>
