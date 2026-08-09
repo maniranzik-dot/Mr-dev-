@@ -1,93 +1,159 @@
-<section class="features">
-
-<div class="box">
-<h2>📚 Books</h2>
-<p>Read learning books for Senior 1, Senior 2 and Senior 3</p>
-<button>Open Books</button>
-</div>
-
-
-<div class="box">
-<h2>✏️ Exercises</h2>
-<p>Practice questions and prepare exams</p>
-<button>Start Exercises</button>
-</div>
-
-
-<div class="box">
-<h2>🎓 Senior 1</h2>
-<p>Mathematics, Science, English</p>
-<button>Learn</button>
-</div>
-
-
-<div class="box">
-<h2>🎓 Senior 2</h2>
-<p>Lessons and revision</p>
-<button>Learn</button>
-</div>
-
-
-<div class="box">
-<h2>🎓 Senior 3</h2>
-<p>Advanced lessons and exams</p>
-<button>Learn</button>
-</div>
-
-
-<div class="box">
-<h2>🤖 AI Teacher</h2>
-<input placeholder="Ask your question">
-<button>Ask AI</button>
-</div>
-
-
-<div class="box">
-<h2>⚙️ Settings</h2>
-<p>Change app preferences</p>
-<button>Settings</button>
-</div>
-
-
-<div class="box">
-<h2>📱 WhatsApp Contact</h2>
-<p>0738939769</p>
-<button>WhatsApp Me</button>
-</div>
-
-</section>
-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr-dev Quiz</title>
 
 <style>
-
-.features{
+body{
 background:#071426;
-padding:20px;
-color:white;
 font-family:Arial;
+color:white;
 }
 
-.box{
+.quiz{
 background:#17263d;
+width:85%;
+margin:40px auto;
 padding:25px;
-margin:15px;
 border-radius:20px;
 text-align:center;
 }
 
 button{
-background:#20d66b;
+width:90%;
+padding:15px;
+margin:10px;
+border:none;
+border-radius:25px;
+background:#263954;
 color:white;
-border:0;
-padding:12px 25px;
-border-radius:30px;
+font-size:16px;
 }
 
-input{
-padding:12px;
-width:80%;
-border-radius:20px;
-border:none;
+button:hover{
+background:#20d66b;
+}
+
+.next{
+background:#20d66b;
+}
+
+.correct{
+background:#20d66b;
+}
+
+.wrong{
+background:#e63946;
+}
+
+.score{
+font-size:20px;
 }
 
 </style>
+</head>
+
+
+<body>
+
+<div class="quiz">
+
+<h1>📝 Quiz Test</h1>
+
+<h2 id="question"></h2>
+
+<div id="answers"></div>
+
+<p class="score" id="score">Score: 0</p>
+
+<button class="next" onclick="next()">Next Question ➡️</button>
+
+</div>
+
+
+<script>
+
+let data=[
+{
+q:"HTML ikoreshwa iki?",
+a:["Gukora website","Gukina umupira"],
+c:0
+},
+{
+q:"CSS ikoreshwa iki?",
+a:["Gushushanya website","Gufata amafoto"],
+c:0
+},
+{
+q:"JavaScript ikoreshwa iki?",
+a:["Kongera imikorere ya website","Gukora imodoka"],
+c:0
+}
+];
+
+
+let i=0;
+let score=0;
+
+
+function load(){
+
+document.getElementById("question").innerHTML=data[i].q;
+
+let box=document.getElementById("answers");
+box.innerHTML="";
+
+data[i].a.forEach((x,n)=>{
+
+let btn=document.createElement("button");
+btn.innerHTML=x;
+
+btn.onclick=function(){
+
+if(n==data[i].c){
+
+score++;
+btn.className="correct";
+
+}else{
+
+btn.className="wrong";
+
+}
+
+document.getElementById("score").innerHTML=
+"Score: "+score;
+
+}
+
+box.appendChild(btn);
+
+});
+
+}
+
+
+function next(){
+
+i++;
+
+if(i>=data.length){
+
+alert("Finished! Score: "+score);
+
+i=0;
+score=0;
+
+}
+
+load();
+
+}
+
+
+load();
+
+</script>
+
+</body>
+</html>
