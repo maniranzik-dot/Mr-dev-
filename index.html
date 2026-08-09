@@ -1,6 +1,136 @@
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr-dev</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background: #0f172a;
+      padding: 18px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #334155;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #22c55e;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 20px;
+    }
+
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #22c55e;
+      color: white;
+      padding: 16px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #1e293b;
+      border-radius: 15px;
+    }
+
+    footer {
+      padding: 25px;
+      background: #0f172a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h1>Welcome to Mr-dev</h1>
+    <p>Learn coding and build amazing websites.</p>
+    <a class="btn" href="#about">Get Started</a>
+  </section>
+
+  <section id="about">
+    <h1>About Me</h1>
+    <div class="card">
+      <p>Hello! I am Mr-dev.</p>
+      <p>I am learning web development and coding.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h1>My Services</h1>
+    <div class="card">
+      <p>🌐 Website Development</p>
+      <p>💻 HTML & CSS</p>
+      <p>📱 Responsive Websites</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <div class="card">
+      <p>Email: mrdev@example.com</p>
+      <p>Phone: +250 7XX XXX XXX</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Mr-dev. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
