@@ -1,6 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr-dev AI Learning</title>
+
+<style>
+body{
+background:#081226;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+section{
+background:#202b40;
+margin:25px;
+padding:25px;
+border-radius:20px;
+}
+
+.card{
+margin:15px;
+padding:20px;
+background:#1b2940;
+border-radius:20px;
+}
+
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:15px 35px;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+}
+
+input{
+width:80%;
+padding:15px;
+border-radius:20px;
+border:none;
+}
+
+#answer{
+margin-top:20px;
+background:#111c33;
+padding:15px;
+border-radius:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Mr-dev AI Learning</h1>
+<p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
+
+
+<section>
+
 <div class="card">
-<h2>📱 WhatsApp</h2>
-<a href="https://wa.me/250738939769" target="_blank">
-<button>💬 WhatsApp +250 738 939 769</button>
-</a>
+<h2>📘 Senior 1</h2>
+<p>Mathematics, Science, English and more</p>
+<button>Start Learning</button>
 </div>
+
+<div class="card">
+<h2>📗 Senior 2</h2>
+<p>Improve your knowledge and prepare exams</p>
+<button>Start Learning</button>
+</div>
+
+<div class="card">
+<h2>📕 Senior 3</h2>
+<p>Advanced lessons and exam preparation</p>
+<button>Start Learning</button>
+</div>
+
+</section>
+
+
+<section>
+
+<h2>🤖 AI Teacher</h2>
+
+<input id="question" placeholder="Ask your question">
+
+<br><br>
+
+<button onclick="askAI()">Ask AI</button>
+
+<p id="answer">AI is ready to help you.</p>
+
+</section>
+
+
+<section>
+
+<h2>🟢 WhatsApp Contact</h2>
+
+<p>+250 738 393 769</p>
+
+<a href="https://wa.me/250738393769" target="_blank">
+<button>💬 WhatsApp Me</button>
+</a>
+
+</section>
+
+
+<script>
+
+function askAI(){
+
+let q=document.getElementById("question").value.toLowerCase();
+
+let answer="🤖 AI: I can help you learn.";
+
+if(q.includes("math")){
+answer="🤖 AI: I can explain Mathematics.";
+}
+
+else if(q.includes("science")){
+answer="🤖 AI: I can explain Science.";
+}
+
+else if(q.includes("english")){
+answer="🤖 AI: I can help with English.";
+}
+
+document.getElementById("answer").innerHTML=answer;
+
+}
+
+</script>
+
+</body>
+</html>
