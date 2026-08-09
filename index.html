@@ -1,43 +1,189 @@
-<div class="card">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr-dev AI Quiz</title>
 
-<h2>📝 Quiz Test</h2>
+<style>
+body{
+background:#071426;
+font-family:Arial;
+color:white;
+text-align:center;
+}
 
-<p>1. HTML ikoreshwa iki?</p>
+.container{
+background:#17263d;
+margin:30px auto;
+padding:25px;
+border-radius:20px;
+width:85%;
+}
 
-<button onclick="quiz('correct')">
-A. Gukora website
-</button>
+button{
+background:#20d66b;
+color:white;
+border:none;
+padding:14px 25px;
+border-radius:30px;
+margin:10px;
+font-weight:bold;
+cursor:pointer;
+}
 
-<br><br>
+.option{
+display:block;
+width:90%;
+background:#263954;
+}
 
-<button onclick="quiz('wrong')">
-B. Gukina umupira
-</button>
+.correct{
+background:#20d66b!important;
+}
 
+.wrong{
+background:#e63946!important;
+}
 
-<p id="score">Score: 0</p>
+#result{
+font-size:20px;
+}
+
+.progress{
+background:#333;
+height:15px;
+border-radius:20px;
+}
+
+.bar{
+background:#20d66b;
+height:15px;
+width:0%;
+border-radius:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📝 Quiz Test</h1>
+
+<h2 id="title">Senior 1 Quiz</h2>
+
+<h3 id="question"></h3>
+
+<div id="options"></div>
+
+<p id="result">Score: 0</p>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<button onclick="next()">Next Question ➡️</button>
 
 </div>
 
 
 <script>
 
-let score = 0;
+let questions=[
 
-function quiz(answer){
+{
+q:"HTML ikoreshwa iki?",
+a:["Gukora website","Gukina umupira"],
+c:0
+},
 
-if(answer=="correct"){
+{
+q:"2 + 2 bingana iki?",
+a:["3","4"],
+c:1
+},
+
+{
+q:"Water formula ni iyihe?",
+a:["H2O","CO2"],
+c:0
+}
+
+];
+
+
+let index=0;
+let score=0;
+
+
+function load(){
+
+let q=questions[index];
+
+document.getElementById("question").innerHTML=q.q;
+
+let box=document.getElementById("options");
+box.innerHTML="";
+
+q.a.forEach((x,i)=>{
+
+let b=document.createElement("button");
+
+b.innerHTML=x;
+
+b.className="option";
+
+b.onclick=function(){
+
+if(i==q.c){
+
 score++;
-alert("Correct! 🎉");
+
+b.classList.add("correct");
+
+}else{
+
+b.classList.add("wrong");
+
 }
 
-else{
-alert("Try again!");
-}
-
-document.getElementById("score").innerHTML=
+document.getElementById("result").innerHTML=
 "Score: "+score;
 
+};
+
+box.appendChild(b);
+
+});
+
+document.getElementById("bar").style.width=
+((index+1)/questions.length*100)+"%";
+
 }
 
+
+function next(){
+
+index++;
+
+if(index>=questions.length){
+
+alert("Quiz finished! Your score: "+score);
+
+index=0;
+score=0;
+
+}
+
+load();
+
+}
+
+
+load();
+
 </script>
+
+</body>
+</html>
