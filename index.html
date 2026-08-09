@@ -1,119 +1,56 @@
-<!-- BOOKS AND NOTES -->
+<!-- AI TEACHER -->
 
-<button onclick="openPage('books')">📚 Books</button>
-
-
-<div id="books" class="page">
+<button onclick="openPage('ai')">🤖 AI Teacher</button>
 
 
-<div class="card">
-
-<h2>📚 Books & Notes</h2>
-
-
-<h2>📘 Senior 1</h2>
-
-<div class="subject">
-📐 Mathematics S1<br>
-Numbers, Algebra, Geometry
-</div>
-
-<div class="subject">
-⚗️ Chemistry S1<br>
-Matter, Elements, Chemical changes
-</div>
-
-<div class="subject">
-⚡ Physics S1<br>
-Force, Energy, Measurement
-</div>
-
-<div class="subject">
-📖 English S1<br>
-Grammar, Reading, Writing
-</div>
-
-
-
-
-<h2>📗 Senior 2</h2>
-
-<div class="subject">
-📐 Mathematics S2<br>
-Equations, Algebra, Geometry
-</div>
-
-<div class="subject">
-⚗️ Chemistry S2<br>
-Atoms, Reactions, Acids
-</div>
-
-<div class="subject">
-⚡ Physics S2<br>
-Motion, Electricity
-</div>
-
-<div class="subject">
-📖 English S2<br>
-Grammar, Comprehension
-</div>
-
-
-
-
-<h2>📕 Senior 3</h2>
-
-<div class="subject">
-📐 Mathematics S3<br>
-Trigonometry, Statistics
-</div>
-
-<div class="subject">
-⚗️ Chemistry S3<br>
-Organic Chemistry, Acids and Bases
-</div>
-
-<div class="subject">
-⚡ Physics S3<br>
-Waves, Electricity, Light
-</div>
-
-<div class="subject">
-📖 English S3<br>
-Literature, Writing Skills
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<!-- QUIZ -->
-
-<div id="quiz" class="page">
+<div id="ai" class="page">
 
 <div class="card">
 
-<h2>📝 Quiz Test</h2>
+<h2>🤖 AI Teacher</h2>
+
+<p>Ask your question:</p>
+
+<input id="ask" placeholder="Example: Explain Physics">
 
 
-<h3 id="question"></h3>
+<br><br>
+
+<button onclick="askAI()">
+Ask AI
+</button>
 
 
-<div id="answers"></div>
+<div class="subject" id="reply">
+AI is ready to help you 📚
+</div>
 
 
-<h3 id="score">
-Score: 0
-</h3>
+</div>
+
+</div>
 
 
-<button onclick="nextQuestion()">
-Next Question ➡️
+
+
+
+<!-- SETTINGS -->
+
+<div id="settings" class="page">
+
+<div class="card">
+
+<h2>⚙️ Settings</h2>
+
+<p>Mr-dev AI Learning</p>
+
+<button onclick="dark()">
+🌙 Dark Mode
+</button>
+
+
+<button onclick="light()">
+☀️ Light Mode
 </button>
 
 
@@ -123,110 +60,131 @@ Next Question ➡️
 
 
 
+
+
+<!-- WHATSAPP -->
+
+<div class="card">
+
+<h2>📱 WhatsApp Support</h2>
+
+<p>
+0738939769
+</p>
+
+
+<a href="https://wa.me/250738939769">
+
+<button>
+Chat on WhatsApp
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
 <script>
 
 
-let questions=[
+function openPage(id){
 
-{
-q:"What is the basic unit of life?",
-a:["Cell","Bone","Water"],
-c:0
-},
-
-{
-q:"5 × 6 = ?",
-a:["20","30","40"],
-c:1
-},
-
-{
-q:"Chemical formula of water is?",
-a:["H2O","CO2","O2"],
-c:0
-},
-
-{
-q:"Unit of force is?",
-a:["Newton","Meter","Watt"],
-c:0
-}
-
-];
+let pages=document.querySelectorAll(".page");
 
 
-let current=0;
-let score=0;
+pages.forEach(function(page){
 
-
-
-function loadQuiz(){
-
-let q=questions[current];
-
-document.getElementById("question").innerHTML=q.q;
-
-let box=document.getElementById("answers");
-
-box.innerHTML="";
-
-
-q.a.forEach(function(answer,index){
-
-let btn=document.createElement("button");
-
-btn.innerHTML=answer;
-
-
-btn.onclick=function(){
-
-if(index==q.c){
-
-score++;
-
-alert("Correct ✅");
-
-}else{
-
-alert("Wrong ❌");
-
-}
-
-
-document.getElementById("score").innerHTML=
-"Score: "+score;
-
-
-};
-
-
-box.appendChild(btn);
+page.classList.remove("active");
 
 });
 
 
-}
+document.getElementById(id).classList.add("active");
 
-
-function nextQuestion(){
-
-current++;
-
-if(current>=questions.length){
-
-alert("Finished! Score: "+score);
-
-current=0;
-score=0;
-
-}
-
-loadQuiz();
 
 }
 
 
-loadQuiz();
+
+
+
+function askAI(){
+
+let q=document.getElementById("ask").value.toLowerCase();
+
+
+let answer=
+"I can help with Senior 1, Senior 2 and Senior 3 lessons.";
+
+
+if(q.includes("math")){
+
+answer=
+"Mathematics: I can explain algebra, geometry and calculations.";
+
+}
+
+
+else if(q.includes("physics")){
+
+answer=
+"Physics: I can explain force, energy, electricity and motion.";
+
+}
+
+
+else if(q.includes("chemistry")){
+
+answer=
+"Chemistry: I can explain atoms, reactions, acids and bases.";
+
+}
+
+
+else if(q.includes("english")){
+
+answer=
+"English: I can help with grammar, writing and reading.";
+
+}
+
+
+document.getElementById("reply").innerHTML=
+answer;
+
+
+}
+
+
+
+
+
+function dark(){
+
+document.body.style.background="#071426";
+document.body.style.color="white";
+
+}
+
+
+
+
+
+function light(){
+
+document.body.style.background="white";
+document.body.style.color="black";
+
+}
 
 
 </script>
+
+
+</body>
+
+</html>
