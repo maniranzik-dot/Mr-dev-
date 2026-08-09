@@ -5,49 +5,56 @@
 
 <style>
 body{
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
+  margin:0;
+  font-family:Arial;
+  background:#0b1220;
+  color:white;
+  text-align:center;
 }
 
 header{
-padding:40px;
+  padding:50px 20px;
+}
+
+h1{
+  font-size:45px;
 }
 
 .card{
-background:#1e293b;
-margin:20px;
-padding:25px;
-border-radius:20px;
+  background:#1e293b;
+  margin:20px;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 0 20px #000;
 }
 
 button{
-background:#22c55e;
-color:white;
-border:none;
-padding:15px 30px;
-border-radius:30px;
-font-size:16px;
-cursor:pointer;
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:15px 30px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
 }
 
 button:hover{
-transform:scale(1.1);
+  background:#16a34a;
 }
 
 input{
-width:80%;
-padding:15px;
-border-radius:20px;
-border:none;
+  width:80%;
+  padding:15px;
+  border-radius:20px;
+  border:none;
+  margin:15px;
 }
 
 #answer{
-margin-top:20px;
-background:#334155;
-padding:20px;
-border-radius:15px;
+  background:#111827;
+  padding:20px;
+  border-radius:15px;
+  margin:20px;
 }
 </style>
 
@@ -56,31 +63,30 @@ border-radius:15px;
 <body>
 
 <header>
-<h1>Mr-dev Learning Center</h1>
-<p>Learn with AI Teacher</p>
+<h1>Mr-dev AI Learning</h1>
+<p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
 </header>
 
 
 <div class="card">
 <h2>📘 Senior 1</h2>
-<p>Mathematics, Science, English lessons</p>
-<button onclick="level('Senior 1')">Start</button>
+<p>Mathematics, Science, English and more</p>
+<button onclick="askAI('Senior 1')">Start Learning</button>
 </div>
 
 
 <div class="card">
 <h2>📗 Senior 2</h2>
-<p>Improve your knowledge with lessons</p>
-<button onclick="level('Senior 2')">Start</button>
+<p>Improve your knowledge and prepare exams</p>
+<button onclick="askAI('Senior 2')">Start Learning</button>
 </div>
 
 
 <div class="card">
 <h2>📕 Senior 3</h2>
-<p>Prepare for exams with AI help</p>
-<button onclick="level('Senior 3')">Start</button>
+<p>Advanced lessons and exam preparation</p>
+<button onclick="askAI('Senior 3')">Start Learning</button>
 </div>
-
 
 
 <div class="card">
@@ -89,46 +95,47 @@ border-radius:15px;
 
 <input id="question" placeholder="Ask your question">
 
-<br><br>
+<br>
 
-<button onclick="askAI()">Ask AI</button>
+<button onclick="answerAI()">Ask AI</button>
 
-<div id="answer">
-AI is ready to help you.
-</div>
+<p id="answer">AI is ready to help you.</p>
 
 </div>
-
 
 
 <script>
 
-function level(x){
+function askAI(level){
 document.getElementById("answer").innerHTML=
-"Welcome to "+x+" lessons. Ask me anything.";
+"AI Teacher: Welcome to "+level+" lessons. Ask me any question.";
 }
 
 
-function askAI(){
+function answerAI(){
 
 let q=document.getElementById("question").value.toLowerCase();
 
-let a="I am still learning. Try asking about mathematics, science or English.";
+let a="AI: I will help you learn.";
 
 if(q.includes("math")){
 a="AI: I can help you solve mathematics problems.";
 }
 
-else if(q.includes("science")){
-a="AI: I can explain science topics.";
+else if(q.includes("physics")){
+a="AI: I can explain physics lessons.";
+}
+
+else if(q.includes("chemistry")){
+a="AI: I can explain chemistry.";
 }
 
 else if(q.includes("english")){
-a="AI: I can help you learn English grammar.";
+a="AI: I can help you learn English.";
 }
 
-else if(q.includes("hello")){
-a="AI: Hello! How can I help you today?";
+else{
+a="AI: Please ask a question about your lessons.";
 }
 
 document.getElementById("answer").innerHTML=a;
@@ -136,7 +143,6 @@ document.getElementById("answer").innerHTML=a;
 }
 
 </script>
-
 
 </body>
 </html>
