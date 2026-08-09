@@ -1,88 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mr-dev- Learning</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
-header{background:#123b70;color:#fff;text-align:center;padding:22px 12px}
-nav{display:flex;gap:8px;overflow:auto;padding:10px;background:#fff;position:sticky;top:0}
-nav button,.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:bold}
-nav button{background:#e8eef7;color:#123b70;white-space:nowrap}
-main{max-width:900px;margin:auto;padding:16px}
-.page{display:none}.page.active{display:block}
-.card{background:#fff;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 3px 12px #0001}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
-.level{padding:20px;border-radius:14px;background:#eaf2ff;text-align:center}
-.btn{background:#123b70;color:#fff}
-.item{background:#f7faff;border-left:5px solid #123b70;padding:13px;margin:10px 0;border-radius:8px}
-input,textarea,select{width:100%;padding:12px;margin:7px 0;border:1px solid #ccd5e2;border-radius:10px;box-sizing:border-box}
-.answer{margin-top:10px;padding:12px;background:#eef8ee;border-radius:10px}
-</style>
-</head>
-<body>
-<header><h1>Mr-dev- Learning</h1><p>Learn • Books • Exercises • AI</p></header>
+<section id="services">
+  <h1>My Services</h1>
 
-<nav>
-<button onclick="show('home')">Home</button>
-<button onclick="show('books')">📚 Books</button>
-<button onclick="show('exercise')">✏️ Exercise</button>
-<button onclick="show('ai')">🤖 AI</button>
-<button onclick="show('settings')">⚙️ Settings</button>
-</nav>
+  <div class="services">
+    <div class="service">
+      <h2>🌐 Website Development</h2>
+      <p>I build modern and responsive websites.</p>
+    </div>
 
-<main>
-<section id="home" class="page active">
-<div class="card"><h2>Welcome!</h2><p>Choose your class and start learning.</p></div>
-<div class="grid">
-<div class="level"><h2>Senior 1</h2><button class="btn" onclick="show('books')">Open</button></div>
-<div class="level"><h2>Senior 2</h2><button class="btn" onclick="show('books')">Open</button></div>
-<div class="level"><h2>Senior 3</h2><button class="btn" onclick="show('books')">Open</button></div>
-</div>
+    <div class="service">
+      <h2>🎨 Web Design</h2>
+      <p>I create clean and attractive website designs.</p>
+    </div>
+
+    <div class="service">
+      <h2>💻 Coding</h2>
+      <p>I build websites using HTML, CSS and JavaScript.</p>
+    </div>
+  </div>
 </section>
-
-<section id="books" class="page">
-<div class="card"><h2>📚 Books</h2><p>Hitamo igitabo cyangwa subject.</p>
-<div class="item"><b>Senior 1</b><br>Mathematics • English • Biology • Physics</div>
-<div class="item"><b>Senior 2</b><br>Mathematics • English • Biology • Physics</div>
-<div class="item"><b>Senior 3</b><br>Mathematics • English • Biology • Physics</div>
-</div>
-</section>
-
-<section id="exercise" class="page">
-<div class="card"><h2>✏️ Exercises</h2>
-<div class="item"><b>1. Mathematics:</b> What is 12 × 5?<br>
-<input id="q1" placeholder="Your answer"><button class="btn" onclick="check('q1','a1','60')">Check</button><div id="a1"></div></div>
-<div class="item"><b>2. English:</b> Opposite of “big”?<br>
-<input id="q2" placeholder="Your answer"><button class="btn" onclick="check('q2','a2','small')">Check</button><div id="a2"></div></div>
-<div class="item"><b>3. Science:</b> What planet do we live on?<br>
-<input id="q3" placeholder="Your answer"><button class="btn" onclick="check('q3','a3','earth')">Check</button><div id="a3"></div></div>
-</div>
-</section>
-
-<section id="ai" class="page">
-<div class="card"><h2>🤖 AI Question Answer</h2>
-<textarea id="question" rows="5" placeholder="Andika ikibazo cyawe..."></textarea>
-<button class="btn" onclick="ask()">Ask AI</button>
-<div id="aiAnswer" class="answer" style="display:none"></div>
-<p><small>Iyi ni demo; AI nyayo izakenera API/backend.</small></p>
-</div>
-</section>
-
-<section id="settings" class="page">
-<div class="card"><h2>⚙️ Settings</h2>
-<label>Language</label><select><option>English</option><option>Kinyarwanda</option></select>
-<label>Student name</label><input placeholder="Andika izina">
-<button class="btn" onclick="alert('Settings saved!')">Save Settings</button>
-</div>
-</section>
-</main>
-
-<script>
-function show(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');scrollTo(0,0)}
-function check(i,a,correct){let v=document.getElementById(i).value.trim().toLowerCase();document.getElementById(a).innerHTML='<div class="answer">'+(v===correct.toLowerCase()?'✅ Correct!':'❌ Try again.')+'</div>'}
-function ask(){let q=document.getElementById('question').value.trim(),b=document.getElementById('aiAnswer');b.style.display='block';b.textContent=q?'AI demo: Ikibazo cyawe ni "'+q+'".':'Andika ikibazo mbere.'}
-</script>
-</body>
-</html>
