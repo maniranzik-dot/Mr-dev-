@@ -1,109 +1,93 @@
-<!-- QUIZ SECTION -->
-<div class="card">
+<section class="features">
 
-<h2>📝 Quiz Test</h2>
-
-<h3 id="quizQuestion">HTML ikoreshwa iki?</h3>
-
-<button onclick="answer(0)" id="a1">
-A. Gukora website
-</button>
-
-<br><br>
-
-<button onclick="answer(1)" id="a2">
-B. Gukina umupira
-</button>
-
-
-<h3 id="quizResult">Score: 0</h3>
-
-<button onclick="nextQuestion()">
-Next Question ➡️
-</button>
-
+<div class="box">
+<h2>📚 Books</h2>
+<p>Read learning books for Senior 1, Senior 2 and Senior 3</p>
+<button>Open Books</button>
 </div>
 
 
-<script>
-
-let quiz=[
-{
-q:"HTML ikoreshwa iki?",
-a:["A. Gukora website","B. Gukina umupira"],
-correct:0
-},
-
-{
-q:"CSS ikoreshwa iki?",
-a:["A. Gushushanya website","B. Gukora telephone"],
-correct:0
-},
-
-{
-q:"JavaScript ikora iki?",
-a:["A. Kongera imikorere ya website","B. Guhindura computer"],
-correct:0
-}
-];
+<div class="box">
+<h2>✏️ Exercises</h2>
+<p>Practice questions and prepare exams</p>
+<button>Start Exercises</button>
+</div>
 
 
-let number=0;
-let score=0;
+<div class="box">
+<h2>🎓 Senior 1</h2>
+<p>Mathematics, Science, English</p>
+<button>Learn</button>
+</div>
 
 
-function showQuiz(){
-
-document.getElementById("quizQuestion").innerHTML=
-quiz[number].q;
-
-document.getElementById("a1").innerHTML=
-quiz[number].a[0];
-
-document.getElementById("a2").innerHTML=
-quiz[number].a[1];
-
-}
+<div class="box">
+<h2>🎓 Senior 2</h2>
+<p>Lessons and revision</p>
+<button>Learn</button>
+</div>
 
 
-function answer(x){
-
-if(x==quiz[number].correct){
-
-score++;
-
-alert("Correct ✅");
-
-}else{
-
-alert("Wrong ❌");
-
-}
-
-document.getElementById("quizResult").innerHTML=
-"Score: "+score;
-
-}
+<div class="box">
+<h2>🎓 Senior 3</h2>
+<p>Advanced lessons and exams</p>
+<button>Learn</button>
+</div>
 
 
-function nextQuestion(){
+<div class="box">
+<h2>🤖 AI Teacher</h2>
+<input placeholder="Ask your question">
+<button>Ask AI</button>
+</div>
 
-number++;
 
-if(number>=quiz.length){
+<div class="box">
+<h2>⚙️ Settings</h2>
+<p>Change app preferences</p>
+<button>Settings</button>
+</div>
 
-alert("Quiz Finished 🎉 Score: "+score);
 
-number=0;
-score=0;
+<div class="box">
+<h2>📱 WhatsApp Contact</h2>
+<p>0738939769</p>
+<button>WhatsApp Me</button>
+</div>
 
+</section>
+
+
+<style>
+
+.features{
+background:#071426;
+padding:20px;
+color:white;
+font-family:Arial;
 }
 
-showQuiz();
-
+.box{
+background:#17263d;
+padding:25px;
+margin:15px;
+border-radius:20px;
+text-align:center;
 }
 
+button{
+background:#20d66b;
+color:white;
+border:0;
+padding:12px 25px;
+border-radius:30px;
+}
 
-showQuiz();
+input{
+padding:12px;
+width:80%;
+border-radius:20px;
+border:none;
+}
 
-</script>
+</style>
