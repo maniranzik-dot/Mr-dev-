@@ -1,189 +1,641 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mr-dev AI Learning</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
-font-family:Arial;
-background:#07152d;
-color:white;
-margin:0;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#071426;
+  color:#fff;
 }
 
 header{
-text-align:center;
-padding:25px;
+  background:linear-gradient(135deg,#101f3d,#142b52);
+  padding:22px 15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.card{
-background:#182b4a;
-margin:20px;
-padding:20px;
-border-radius:15px;
+.logo{
+  color:#20e875;
+  font-size:27px;
+  font-weight:bold;
 }
 
-.subject{
-background:#0e203d;
-padding:15px;
-border-radius:10px;
-line-height:1.6;
+.tagline{
+  color:#b9c7d9;
+  margin:8px 0 15px;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
 }
 
 button{
-background:#20d760;
-border:none;
-padding:10px 20px;
-border-radius:20px;
-color:white;
+  border:0;
+  border-radius:25px;
+  padding:11px 18px;
+  background:#20d66b;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-h1,h2{
-color:#ffffff;
+button:hover{
+  opacity:.85;
 }
 
-.topic{
-margin-bottom:15px;
+.page{
+  display:none;
+  max-width:1050px;
+  margin:auto;
+  padding:20px 15px 60px;
+}
+
+.page.active{
+  display:block;
+}
+
+.hero{
+  background:linear-gradient(135deg,#172f55,#15203c);
+  border-radius:25px;
+  padding:35px 25px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:35px;
+  margin:5px 0;
+}
+
+.green{
+  color:#20e875;
+}
+
+.card{
+  background:#12243e;
+  border:1px solid #203958;
+  border-radius:22px;
+  padding:22px;
+  margin:18px 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.subject{
+  background:#1a3150;
+  border-radius:18px;
+  padding:20px;
+  margin:10px 0;
+}
+
+.subject h3{
+  margin-top:0;
+}
+
+.subject p{
+  color:#c3cede;
+  line-height:1.6;
+}
+
+.book-btn{
+  width:100%;
+  margin-top:10px;
+}
+
+.senior-title{
+  color:#20e875;
+  margin-top:35px;
+}
+
+.quiz-answer{
+  display:block;
+  width:100%;
+  margin:10px 0;
+  background:#203a5d;
+  text-align:left;
+}
+
+.quiz-answer:hover{
+  background:#20d66b;
+}
+
+input{
+  width:100%;
+  padding:15px;
+  border-radius:15px;
+  border:1px solid #294463;
+  background:#09192d;
+  color:white;
+  margin:10px 0;
+}
+
+.ai-answer{
+  background:#1a3150;
+  padding:18px;
+  border-radius:15px;
+  line-height:1.7;
+}
+
+.whatsapp{
+  background:linear-gradient(135deg,#0c5535,#123d35);
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  color:#8ea0b8;
+  padding:30px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-<h1>📚 Mr-dev AI Learning</h1>
-<p>Senior 1, Senior 2 and Senior 3 Full Notes</p>
+
+<div class="logo">🎓 Mr-dev AI Learning</div>
+
+<div class="tagline">
+Learn Smarter • Achieve More
+</div>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('books')">📚 Books</button>
+<button onclick="showPage('quiz')">📝 Quiz</button>
+<button onclick="showPage('ai')">🤖 AI Teacher</button>
+</nav>
+
 </header>
 
 
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+<h1>Learn <span class="green">Smarter</span></h1>
+<p>
+Study Senior 1, Senior 2 and Senior 3 with REB learning resources.
+</p>
+
+<button onclick="showPage('books')">
+Start Learning 🚀
+</button>
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+<h2>📘 Senior 1</h2>
+<p>Mathematics • Chemistry • Physics • English</p>
+<button onclick="showPage('books')">Open</button>
+</div>
+
+<div class="card">
+<h2>📗 Senior 2</h2>
+<p>Mathematics • Chemistry • Physics • English</p>
+<button onclick="showPage('books')">Open</button>
+</div>
+
+<div class="card">
+<h2>📕 Senior 3</h2>
+<p>Mathematics • Chemistry • Physics • English</p>
+<button onclick="showPage('books')">Open</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOOKS -->
+
+<section id="books" class="page">
+
+<div class="hero">
+<h1>📚 REB Books</h1>
+<p>
+Choose your Senior and subject. The button opens the official REB
+e-Learning platform where the learning materials are hosted.
+</p>
+</div>
+
+
+<h2 class="senior-title">📘 Senior 1</h2>
+
+<div class="grid">
+
+<div class="subject">
+<h3>📐 Mathematics S1</h3>
+<p>REB Mathematics learning materials.</p>
+<button class="book-btn"
+onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>⚗️ Chemistry S1</h3>
+<p>REB Chemistry learning materials.</p>
+<button class="book-btn"
+onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>⚡ Physics S1</h3>
+<p>REB Physics learning materials.</p>
+<button class="book-btn"
+onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>📖 English S1</h3>
+<p>REB English learning materials.</p>
+<button class="book-btn"
+onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+</div>
+
+
+<h2 class="senior-title">📗 Senior 2</h2>
+
+<div class="grid">
+
+<div class="subject">
+<h3>📐 Mathematics S2</h3>
+<p>REB Mathematics learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>⚗️ Chemistry S2</h3>
+<p>REB Chemistry learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>⚡ Physics S2</h3>
+<p>REB Physics learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>📖 English S2</h3>
+<p>REB English learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+</div>
+
+
+<h2 class="senior-title">📕 Senior 3</h2>
+
+<div class="grid">
+
+<div class="subject">
+<h3>📐 Mathematics S3</h3>
+<p>REB Mathematics learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>⚗️ Chemistry S3</h3>
+<p>REB Chemistry learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>⚡ Physics S3</h3>
+<p>REB Physics learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+<div class="subject">
+<h3>📖 English S3</h3>
+<p>REB English learning materials.</p>
+<button class="book-btn" onclick="openREB()">
+Open REB Book
+</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section id="quiz" class="page">
+
+<div class="hero">
+<h1>📝 Quiz</h1>
+<p>Test what you have learned.</p>
+</div>
+
 <div class="card">
 
-<h1>📘 Senior 1 Books & Notes</h1>
+<h2 id="question"></h2>
 
+<div id="answers"></div>
 
-<h2>📐 Mathematics S1</h2>
+<p id="score">Score: 0</p>
 
-<div class="subject">
-
-<b>Topic 1: Numbers</b><br>
-• Natural numbers<br>
-• Integers<br>
-• Fractions<br>
-• Decimals<br>
-• Percentages<br>
-
-<br>
-
-<b>Topic 2: Algebra</b><br>
-• Algebraic expressions<br>
-• Simplification<br>
-• Equations<br>
-• Factorization<br>
-
-<br>
-
-<b>Topic 3: Geometry</b><br>
-• Lines and angles<br>
-• Triangles<br>
-• Quadrilaterals<br>
-• Circles<br>
-
-<br>
-
-<b>Topic 4: Measurement</b><br>
-• Length<br>
-• Area<br>
-• Volume<br>
-• Units conversion
+<button onclick="nextQuestion()">
+Next Question ➡️
+</button>
 
 </div>
 
+</section>
 
 
-<h2>⚗️ Chemistry S1</h2>
+<!-- AI -->
 
-<div class="subject">
+<section id="ai" class="page">
 
-<b>Topic 1: Matter</b><br>
-• States of matter<br>
-• Changes of state<br>
-• Properties of matter<br>
-
-<br>
-
-<b>Topic 2: Elements and Compounds</b><br>
-• Elements<br>
-• Compounds<br>
-• Mixtures<br>
-• Separation methods<br>
-
-<br>
-
-<b>Topic 3: Chemical Changes</b><br>
-• Chemical reactions<br>
-• Reactants and products<br>
-• Energy changes
-
+<div class="hero">
+<h1>🤖 AI Teacher</h1>
+<p>Ask a learning question.</p>
 </div>
 
+<div class="card">
 
+<input
+id="aiQuestion"
+placeholder="Example: Explain photosynthesis"
+/>
 
-<h2>⚡ Physics S1</h2>
-
-<div class="subject">
-
-<b>Topic 1: Measurement</b><br>
-• Physical quantities<br>
-• SI units<br>
-• Measuring instruments<br>
-
-<br>
-
-<b>Topic 2: Force and Energy</b><br>
-• Types of forces<br>
-• Work<br>
-• Energy<br>
-• Power
+<button onclick="askAI()">
+Ask AI
+</button>
 
 <br><br>
 
-<b>Topic 3: Heat</b><br>
-• Temperature<br>
-• Heat transfer<br>
-• Expansion
-
-</div>
-
-
-
-<h2>📖 English S1</h2>
-
-<div class="subject">
-
-<b>Topic 1: Grammar</b><br>
-• Parts of speech<br>
-• Tenses<br>
-• Sentence construction<br>
-
-<br>
-
-<b>Topic 2: Reading</b><br>
-• Comprehension<br>
-• Vocabulary<br>
-• Summaries
-
-<br><br>
-
-<b>Topic 3: Writing</b><br>
-• Paragraph writing<br>
-• Letters<br>
-• Essays
-
+<div class="ai-answer" id="aiAnswer">
+AI Teacher is ready to help you 📚
 </div>
 
 </div>
 
+</section>
+
+
+<!-- WHATSAPP -->
+
+<div class="page active">
+
+<div class="card whatsapp">
+
+<h2>📱 Need Help?</h2>
+
+<p>Chat with us on WhatsApp</p>
+
+<h2>0738939769</h2>
+
+<a href="https://wa.me/250738939769"
+target="_blank">
+
+<button>
+💬 Chat on WhatsApp
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+Mr-dev AI Learning © 2026<br>
+Learn Today • Lead Tomorrow
+</footer>
+
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll(".page")
+.forEach(function(page){
+page.classList.remove("active");
+});
+
+document.getElementById(id)
+.classList.add("active");
+
+window.scrollTo(0,0);
+}
+
+
+function openREB(){
+
+window.open(
+"https://elearning.reb.rw/",
+"_blank"
+);
+
+}
+
+
+/* QUIZ */
+
+const questions = [
+
+{
+q:"What is the basic unit of life?",
+a:["Cell","Organ","Tissue"],
+correct:0
+},
+
+{
+q:"What is 5 × 6?",
+a:["20","30","40"],
+correct:1
+},
+
+{
+q:"What is the chemical formula of water?",
+a:["CO₂","O₂","H₂O"],
+correct:2
+},
+
+{
+q:"What is the SI unit of force?",
+a:["Newton","Watt","Joule"],
+correct:0
+},
+
+{
+q:"Which tense describes an action happening now?",
+a:["Present continuous","Past simple","Future"],
+correct:0
+}
+
+];
+
+let current=0;
+let score=0;
+
+function loadQuestion(){
+
+let q=questions[current];
+
+document.getElementById("question").innerText=q.q;
+
+let box=document.getElementById("answers");
+
+box.innerHTML="";
+
+q.a.forEach(function(answer,index){
+
+let button=document.createElement("button");
+
+button.className="quiz-answer";
+
+button.innerText=answer;
+
+button.onclick=function(){
+
+if(index===q.correct){
+
+score++;
+
+alert("Correct ✅");
+
+}else{
+
+alert("Wrong ❌");
+
+}
+
+document.getElementById("score").innerText=
+"Score: "+score;
+
+};
+
+box.appendChild(button);
+
+});
+
+}
+
+function nextQuestion(){
+
+current++;
+
+if(current>=questions.length){
+
+alert("Quiz finished! Your score: "+score);
+
+current=0;
+score=0;
+
+}
+
+loadQuestion();
+
+}
+
+
+/* SIMPLE AI TEACHER */
+
+function askAI(){
+
+let question=
+document.getElementById("aiQuestion")
+.value
+.toLowerCase();
+
+let answer=
+"I can help you study Senior 1, Senior 2 and Senior 3.";
+
+if(question.includes("math")){
+
+answer=
+"Mathematics: tell me the exact problem and I can explain the steps.";
+
+}
+
+else if(question.includes("chemistry")){
+
+answer=
+"Chemistry: I can help explain atoms, elements, compounds, reactions, acids and bases.";
+
+}
+
+else if(question.includes("physics")){
+
+answer=
+"Physics: I can explain motion, forces, energy, electricity, waves and other physics concepts.";
+
+}
+
+else if(question.includes("english")){
+
+answer=
+"English: I can help with grammar, vocabulary, comprehension and writing.";
+
+}
+
+else if(question.includes("biology")){
+
+answer=
+"Biology: I can explain cells, organisms and other biology concepts.";
+
+}
+
+document.getElementById("aiAnswer")
+.innerText=answer;
+
+}
+
+
+loadQuestion();
+
+</script>
 
 </body>
 </html>
