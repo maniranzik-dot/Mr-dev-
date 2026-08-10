@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mr-dev Learning Hub</title>
 
 <style>
@@ -20,238 +19,140 @@ body{
 
 header{
   background:#102b48;
-  padding:20px 15px;
+  padding:22px 15px;
   text-align:center;
   border-bottom:2px solid #234b75;
 }
 
-.logo{
-  font-size:30px;
-  font-weight:bold;
-  margin-bottom:20px;
-}
-
-.logo span{
-  color:#20df70;
+header h1{
+  margin:0 0 20px;
+  font-size:32px;
 }
 
 nav{
   display:flex;
-  gap:12px;
   justify-content:center;
+  gap:15px;
   flex-wrap:wrap;
 }
 
 nav button{
-  background:#153555;
+  background:#163653;
   color:white;
-  border:2px solid #285783;
-  padding:14px 25px;
-  border-radius:12px;
-  font-size:17px;
-  cursor:pointer;
+  border:2px solid #28557f;
+  border-radius:18px;
+  padding:15px 28px;
+  font-size:20px;
 }
 
-nav button:hover{
-  background:#20df70;
-  color:#000;
-}
-
-.container{
+main{
   max-width:900px;
   margin:auto;
-  padding:25px 20px;
+  padding:30px 20px;
 }
 
-.hero{
+.intro{
   text-align:center;
-  padding:20px 0;
-}
-
-.hero h1{
-  font-size:34px;
-}
-
-.hero p{
-  font-size:19px;
+  font-size:22px;
   line-height:1.6;
-  color:#b9c9dc;
+  color:#b8c9dc;
 }
 
 .search-box{
-  margin:25px 0;
+  margin:30px 0;
 }
 
-.search-box input{
+input{
   width:100%;
-  padding:18px;
+  padding:16px;
   border-radius:12px;
-  border:2px solid #285783;
-  background:#153555;
+  border:2px solid #28557f;
+  background:#163653;
   color:white;
-  font-size:17px;
-  outline:none;
-}
-
-.search-box input::placeholder{
-  color:#b9c9dc;
+  font-size:18px;
 }
 
 .search-btn{
   width:100%;
   margin-top:10px;
-  padding:17px;
-  background:#20df70;
-  color:#000;
+  padding:16px;
   border:0;
   border-radius:12px;
-  font-size:18px;
+  background:#20df73;
+  color:#071426;
+  font-size:20px;
   font-weight:bold;
-  cursor:pointer;
 }
 
-.search-btn:hover{
-  background:#16c961;
-}
-
-h2.section-title{
+h2{
   font-size:32px;
-  margin-top:40px;
 }
 
-.class-buttons{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-bottom:25px;
-}
-
-.class-buttons button{
-  padding:18px;
-  background:#153555;
-  color:white;
-  border:2px solid #285783;
-  border-radius:12px;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.class-buttons button.active{
-  background:#20df70;
-  color:#000;
-}
-
-.topics{
-  display:grid;
-  gap:20px;
-}
-
-.topic-card{
-  background:#153555;
-  border:3px solid #20df70;
-  border-radius:25px;
+.card{
+  background:#163653;
+  border:3px solid #20df73;
+  border-radius:30px;
   padding:25px;
+  margin:20px 0;
   cursor:pointer;
   transition:.2s;
 }
 
-.topic-card:hover{
+.card:hover{
   transform:scale(1.01);
-  background:#194163;
 }
 
-.topic-card h3{
-  margin:0 0 18px;
-  color:#20df70;
+.card h3{
+  margin:0 0 15px;
+  color:#20df73;
   font-size:27px;
 }
 
-.topic-card p{
-  font-size:18px;
+.card p{
+  font-size:20px;
   line-height:1.5;
   margin:0;
+}
+
+.content{
+  display:none;
+  margin-top:20px;
+  padding:20px;
+  background:#071426;
+  border-radius:15px;
+}
+
+.content button{
+  padding:12px 20px;
+  margin-top:10px;
+  border:0;
+  border-radius:10px;
+  background:#20df73;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:40px 15px;
+  border-top:2px solid #234b75;
+  color:#b8c9dc;
 }
 
 .hidden{
   display:none;
 }
 
-#topicPage{
-  display:none;
-}
-
-.back-btn{
-  background:#20df70;
-  color:#000;
-  border:0;
-  border-radius:10px;
-  padding:14px 22px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-  margin-bottom:20px;
-}
-
-.lesson{
-  background:#153555;
-  border:2px solid #20df70;
-  border-radius:20px;
-  padding:25px;
-  line-height:1.7;
-}
-
-.lesson h1{
-  color:#20df70;
-}
-
-.lesson h2{
-  color:#20df70;
-}
-
-.quiz-question{
-  background:#102b48;
-  border-radius:15px;
-  padding:20px;
-  margin-top:20px;
-}
-
-.quiz-question button{
-  width:100%;
-  margin-top:10px;
-  padding:14px;
-  border:2px solid #285783;
-  border-radius:10px;
-  background:#153555;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
-}
-
-.quiz-question button:hover{
-  background:#20df70;
-  color:#000;
-}
-
-footer{
-  margin-top:50px;
-  padding:35px 15px;
-  text-align:center;
-  border-top:2px solid #234b75;
-  color:#b9c9dc;
-}
-
 @media(max-width:600px){
-  .class-buttons{
-    grid-template-columns:1fr;
+  main{
+    padding:25px 20px;
   }
 
-  .hero h1{
+  header h1{
     font-size:28px;
   }
 
-  .topic-card h3{
-    font-size:24px;
+  .card h3{
+    font-size:25px;
   }
 }
 </style>
@@ -260,289 +161,299 @@ footer{
 <body>
 
 <header>
+  <h1>📚 <span style="color:#20df73">Mr-dev</span> Learning Hub</h1>
 
-<div class="logo">
-📚 <span>Mr-dev</span> Learning Hub
-</div>
-
-<nav>
-<button onclick="goHome()">🏠 Home</button>
-<button onclick="showAllTopics()">📚 Books</button>
-<button onclick="showQuiz()">📝 Quiz</button>
-</nav>
-
+  <nav>
+    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="showBooks()">📚 Books</button>
+    <button onclick="showQuiz()">📝 Quiz</button>
+    <button onclick="toggleTheme()">🌙 Theme</button>
+  </nav>
 </header>
 
+<main>
 
-<!-- HOME PAGE -->
-
-<main id="homePage">
-
-<div class="container">
-
-<section class="hero">
-
-<h1>Learn • Practise • Succeed</h1>
-
-<p>
-Learn Senior 1, Senior 2 and Senior 3
-Mathematics, Chemistry, Physics and English.
-Read notes, study topics and practise with quizzes.
+<p class="intro">
+Learn Senior 1, Senior 2 and Senior 3 Mathematics, Chemistry,
+Physics and English. Read notes, study topics and practise with quizzes.
 </p>
-
-</section>
-
-
-<!-- SEARCH -->
 
 <div class="search-box">
+  <input id="searchInput" type="text"
+         placeholder="Search subject or topic...">
 
-<input
-id="searchInput"
-type="text"
-placeholder="Search subject or topic..."
-oninput="searchTopics()"
->
+  <button class="search-btn" onclick="searchTopics()">
+    🔎 Search
+  </button>
+</div>
 
-<button class="search-btn" onclick="searchTopics()">
-🔎 Search
-</button>
+<h2>🎓 Choose Your Class</h2>
+
+<div id="classes">
+
+  <div class="card" onclick="showClass('Senior 1')">
+    <h3>Senior 1</h3>
+    <p>Open Senior 1 subjects and topics.</p>
+  </div>
+
+  <div class="card" onclick="showClass('Senior 2')">
+    <h3>Senior 2</h3>
+    <p>Open Senior 2 subjects and topics.</p>
+  </div>
+
+  <div class="card" onclick="showClass('Senior 3')">
+    <h3>Senior 3</h3>
+    <p>Open Senior 3 subjects and topics.</p>
+  </div>
 
 </div>
 
+<div id="topics"></div>
+
+<div id="searchResults"></div>
+
+</main>
+
+<footer>
+  📚 Mr-dev Learning Hub<br><br>
+  Senior 1 • Senior 2 • Senior 3<br><br>
+  Learn • Practise • Succeed
+</footer>
+
+<script>
+
+const data = {
+
+"Senior 1":{
+"Mathematics":[
+"Numbers",
+"Algebra",
+"Fractions",
+"Linear equations",
+"Geometry",
+"Statistics"
+],
+"Physics":[
+"Measurement",
+"Motion",
+"Force",
+"Energy",
+"Heat"
+],
+"Chemistry":[
+"Matter",
+"Atoms",
+"Elements",
+"Compounds",
+"Chemical reactions"
+],
+"English":[
+"Grammar",
+"Vocabulary",
+"Reading",
+"Writing"
+]
+},
+
+"Senior 2":{
+"Mathematics":[
+"Algebra",
+"Fractions",
+"Linear equations",
+"Geometry",
+"Statistics"
+],
+"Physics":[
+"Motion",
+"Force",
+"Energy",
+"Heat",
+"Light"
+],
+"Chemistry":[
+"Atomic structure",
+"Periodic table",
+"Chemical bonding",
+"Reactions"
+],
+"English":[
+"Grammar",
+"Reading",
+"Writing",
+"Vocabulary"
+]
+},
+
+"Senior 3":{
+"Mathematics":[
+"Algebra",
+"Functions",
+"Geometry",
+"Statistics",
+"Probability"
+],
+"Physics":[
+"Mechanics",
+"Electricity",
+"Magnetism",
+"Light",
+"Energy"
+],
+"Chemistry":[
+"Organic chemistry",
+"Acids and bases",
+"Chemical reactions",
+"Metals"
+],
+"English":[
+"Grammar",
+"Essay writing",
+"Comprehension",
+"Literature"
+]
+}
 
-<h2 class="section-title">
-🎓 Choose Your Class
-</h2>
+};
 
 
-<div class="class-buttons">
+function showClass(className){
 
-<button id="S1" class="active" onclick="selectClass('S1')">
-Senior 1
-</button>
+  const topics = document.getElementById("topics");
 
-<button id="S2" onclick="selectClass('S2')">
-Senior 2
-</button>
+  topics.innerHTML = `
+    <h2>📚 ${className}</h2>
+  `;
 
-<button id="S3" onclick="selectClass('S3')">
-Senior 3
-</button>
+  const subjects = data[className];
 
-</div>
+  for(const subject in subjects){
 
+    topics.innerHTML += `
+      <div class="card">
+        <h3>${subject}</h3>
+        <p>Choose a topic:</p>
+        <div class="content" style="display:block">
+          ${subjects[subject].map(topic => `
+            <button onclick="openTopic('${className}','${subject}','${topic}')">
+              📖 ${topic}
+            </button>
+          `).join("<br>")}
+        </div>
+      </div>
+    `;
+  }
 
-<div id="topics" class="topics">
+  topics.scrollIntoView({behavior:"smooth"});
+}
 
-<!-- MATHEMATICS -->
 
-<div class="topic-card"
-data-class="S1"
-data-search="mathematics maths number algebra">
+function openTopic(className,subject,topic){
 
-<h3>📘 Mathematics</h3>
+  alert(
+    "📖 "+topic+
+    "\\n\\nClass: "+className+
+    "\\nSubject: "+subject+
+    "\\n\\nNotes and practice questions will open here."
+  );
 
-<p>
-Study Mathematics and practise questions.
-</p>
+}
 
-</div>
 
+function searchTopics(){
 
-<div class="topic-card"
-data-class="S1"
-data-search="algebra mathematics maths">
+  const query =
+    document.getElementById("searchInput")
+    .value
+    .trim()
+    .toLowerCase();
 
-<h3>Topic 2: Algebra</h3>
+  const results =
+    document.getElementById("searchResults");
 
-<p>
-📘 Study Algebra and practise questions related to this topic.
-</p>
+  results.innerHTML="";
 
-</div>
+  if(!query){
+    results.innerHTML =
+      "<p style='font-size:20px'>Please type a subject or topic.</p>";
+    return;
+  }
 
+  let found=0;
 
-<div class="topic-card"
-data-class="S1"
-data-search="fractions mathematics maths">
+  for(const className in data){
 
-<h3>Topic 3: Fractions</h3>
+    for(const subject in data[className]){
 
-<p>
-📘 Study Fractions and practise questions related to this topic.
-</p>
+      data[className][subject].forEach(topic => {
 
-</div>
+        if(
+          topic.toLowerCase().includes(query) ||
+          subject.toLowerCase().includes(query) ||
+          className.toLowerCase().includes(query)
+        ){
 
+          found++;
 
-<div class="topic-card"
-data-class="S1"
-data-search="linear equations mathematics algebra">
+          results.innerHTML += `
+            <div class="card">
+              <h3>📖 ${topic}</h3>
+              <p>${className} • ${subject}</p>
+              <button onclick="openTopic('${className}','${subject}','${topic}')">
+                Open Topic
+              </button>
+            </div>
+          `;
+        }
 
-<h3>Topic 4: Linear Equations</h3>
+      });
 
-<p>
-📘 Study Linear Equations and practise questions related to this topic.
-</p>
+    }
+  }
 
-</div>
+  if(found===0){
+    results.innerHTML =
+      "<p style='font-size:20px'>❌ No topic found.</p>";
+  }
 
+  results.scrollIntoView({behavior:"smooth"});
+}
 
-<div class="topic-card"
-data-class="S1"
-data-search="geometry mathematics shapes">
 
-<h3>Topic 5: Geometry</h3>
+function goHome(){
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
 
-<p>
-📘 Study Geometry and practise questions related to this topic.
-</p>
 
-</div>
+function showBooks(){
+  alert("📚 Books section");
+}
 
 
-<div class="topic-card"
-data-class="S1"
-data-search="statistics mathematics data">
+function showQuiz(){
+  alert("📝 Quiz section");
+}
 
-<h3>Topic 6: Statistics</h3>
 
-<p>
-📘 Study Statistics and practise questions related to this topic.
-</p>
+function toggleTheme(){
 
-</div>
+  if(document.body.style.background === "white"){
 
+    document.body.style.background="#071426";
+    document.body.style.color="white";
 
-<!-- PHYSICS -->
+  }else{
 
-<div class="topic-card"
-data-class="S1"
-data-search="physics measurement">
+    document.body.style.background="white";
+    document.body.style.color="#071426";
 
-<h3>Physics Topic 1: Measurement</h3>
+  }
 
-<p>
-📘 Study Measurement and practise questions related to this topic.
-</p>
+}
 
-</div>
+</script>
 
-
-<div class="topic-card"
-data-class="S1"
-data-search="physics motion">
-
-<h3>Physics Topic 2: Motion</h3>
-
-<p>
-📘 Study Motion and practise questions related to this topic.
-</p>
-
-</div>
-
-
-<div class="topic-card"
-data-class="S1"
-data-search="physics force">
-
-<h3>Physics Topic 3: Force</h3>
-
-<p>
-📘 Study Force and practise questions related to this topic.
-</p>
-
-</div>
-
-
-<div class="topic-card"
-data-class="S1"
-data-search="physics energy">
-
-<h3>Physics Topic 4: Energy</h3>
-
-<p>
-📘 Study Energy and practise questions related to this topic.
-</p>
-
-</div>
-
-
-<div class="topic-card"
-data-class="S1"
-data-search="physics heat">
-
-<h3>Physics Topic 5: Heat</h3>
-
-<p>
-📘 Study Heat and practise questions related to this topic.
-</p>
-
-</div>
-
-
-<!-- S2 -->
-
-<div class="topic-card"
-data-class="S2"
-data-search="mathematics algebra">
-
-<h3>Senior 2: Algebra</h3>
-
-<p>
-📘 Learn Algebra for Senior 2.
-</p>
-
-</div>
-
-
-<div class="topic-card"
-data-class="S2"
-data-search="mathematics geometry">
-
-<h3>Senior 2: Geometry</h3>
-
-<p>
-📘 Learn Geometry for Senior 2.
-</p>
-
-</div>
-
-
-<div class="topic-card"
-data-class="S2"
-data-search="physics motion">
-
-<h3>Senior 2: Motion</h3>
-
-<p>
-📘 Learn Motion for Senior 2.
-</p>
-
-</div>
-
-
-<!-- S3 -->
-
-<div class="topic-card"
-data-class="S3"
-data-search="mathematics algebra">
-
-<h3>Senior 3: Algebra</h3>
-
-<p>
-📘 Learn Algebra for Senior 3.
-</p>
-
-</div>
-
-
-<div class="topic-card"
-data-class="S3"
-data-search="physics energy">
-
-<h3>Senior 3: Energy</h3>
-
-<p>
-📘 Learn Energy for
+</body>
+</html>
