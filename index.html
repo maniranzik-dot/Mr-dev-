@@ -29,7 +29,7 @@ header{
 }
 
 .logo{
-  font-size:30px;
+  font-size:34px;
   font-weight:bold;
   margin-bottom:20px;
 }
@@ -39,18 +39,17 @@ header{
 }
 
 nav{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
   gap:12px;
-  max-width:900px;
-  margin:auto;
 }
 
 nav button{
-  border:2px solid #315d8c;
-  background:#122e4c;
+  border:2px solid #31577f;
+  background:#102b48;
   color:white;
-  padding:18px 8px;
+  padding:16px 28px;
   border-radius:16px;
   font-size:18px;
   font-weight:bold;
@@ -59,23 +58,23 @@ nav button{
 
 nav button:hover{
   background:#20df72;
-  color:#061426;
+  color:#071426;
 }
 
-main{
-  max-width:1000px;
+.container{
+  width:94%;
+  max-width:900px;
   margin:auto;
-  padding:25px 15px 60px;
 }
 
 .hero{
   text-align:center;
-  padding:25px 10px;
+  padding:45px 10px;
 }
 
 .hero h1{
   font-size:42px;
-  margin:10px 0;
+  margin:0 0 20px;
 }
 
 .green{
@@ -83,269 +82,174 @@ main{
 }
 
 .hero p{
-  color:#b8c9dd;
-  font-size:20px;
-  line-height:1.7;
+  color:#aec0d5;
+  font-size:22px;
+  line-height:1.6;
 }
 
 .search-box{
-  margin:25px auto 45px;
-  max-width:800px;
+  margin:25px 0 70px;
 }
 
 .search-box input{
   width:100%;
   padding:18px;
-  border-radius:15px;
-  border:2px solid #315d8c;
-  background:#153655;
+  border-radius:14px;
+  border:2px solid #31577f;
+  background:#123453;
   color:white;
   font-size:17px;
   outline:none;
 }
 
-.search-box input::placeholder{
-  color:#b7c7d8;
-}
-
-.search-btn{
+.search-box button{
   width:100%;
   margin-top:10px;
   padding:18px;
   border:0;
-  border-radius:15px;
+  border-radius:14px;
   background:#20df72;
-  color:#061426;
+  color:#071426;
   font-size:19px;
   font-weight:bold;
   cursor:pointer;
 }
 
 h2{
-  font-size:32px;
-  margin-top:35px;
+  font-size:36px;
+  margin-bottom:25px;
 }
 
 .class-buttons{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+  display:flex;
   gap:15px;
+  overflow-x:auto;
+  padding-bottom:15px;
+  margin-bottom:40px;
 }
 
-.class-btn{
-  padding:22px 10px;
-  border-radius:17px;
-  border:2px solid #315d8c;
-  background:#122e4c;
+.class-buttons button{
+  min-width:180px;
+  padding:20px;
+  border-radius:16px;
+  border:2px solid #31577f;
+  background:#102b48;
   color:white;
   font-size:20px;
   font-weight:bold;
   cursor:pointer;
 }
 
-.class-btn.active,
-.class-btn:hover{
+.class-buttons button.active{
   background:#20df72;
-  color:#061426;
+  color:#071426;
 }
 
-.subject-grid{
+.subject-title{
+  font-size:30px;
+  color:#20df72;
+  margin:35px 0 20px;
+}
+
+.topics{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin-top:20px;
+  gap:20px;
 }
 
-.card{
-  background:#122e4c;
-  border:2px solid #20df72;
-  border-radius:22px;
-  padding:25px;
+.topic{
+  background:#123453;
+  border:3px solid #20df72;
+  border-radius:28px;
+  padding:28px;
   cursor:pointer;
   transition:.2s;
 }
 
-.card:hover{
-  transform:translateY(-3px);
-  background:#173b5e;
+.topic:hover{
+  transform:scale(1.01);
+  background:#174368;
 }
 
-.card h3{
+.topic h3{
   color:#20df72;
-  font-size:25px;
-  margin-top:0;
+  font-size:27px;
+  margin:0 0 18px;
 }
 
-.card p{
-  color:#d7e2ee;
-  font-size:17px;
+.topic p{
+  font-size:20px;
   line-height:1.5;
-}
-
-.topic-card{
-  background:#122e4c;
-  border:2px solid #20df72;
-  border-radius:22px;
-  padding:25px;
-  margin:18px 0;
-  cursor:pointer;
-}
-
-.topic-card:hover{
-  background:#173b5e;
-}
-
-.topic-card h3{
-  color:#20df72;
-  font-size:25px;
-  margin:0 0 12px;
+  margin:0;
 }
 
 .lesson{
+  display:none;
   background:#102b48;
-  border:2px solid #315d8c;
-  border-radius:20px;
+  border:2px solid #20df72;
+  border-radius:22px;
   padding:25px;
-  margin-top:20px;
+  margin-top:30px;
 }
 
-.lesson h3{
+.lesson h2{
   color:#20df72;
 }
 
 .lesson p,
 .lesson li{
-  color:#d7e2ee;
-  font-size:18px;
-  line-height:1.7;
-}
-
-.formula{
-  background:#071426;
-  border-left:5px solid #20df72;
-  padding:15px;
-  margin:15px 0;
   font-size:19px;
+  line-height:1.6;
 }
 
-.quiz-question{
-  background:#122e4c;
-  border:2px solid #315d8c;
-  border-radius:18px;
-  padding:20px;
-  margin:15px 0;
-}
-
-.quiz-question label{
-  display:block;
-  background:#173b5e;
-  padding:12px;
-  margin:8px 0;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-.quiz-submit{
-  width:100%;
-  padding:18px;
+.back{
   background:#20df72;
+  color:#071426;
   border:0;
-  border-radius:15px;
-  font-size:19px;
+  padding:14px 25px;
+  border-radius:12px;
+  font-size:17px;
   font-weight:bold;
   cursor:pointer;
 }
 
-.result{
-  background:#102b48;
-  border:2px solid #20df72;
-  border-radius:18px;
-  padding:20px;
-  margin-top:20px;
-}
-
-.hidden{
-  display:none;
-}
-
-.back-btn{
-  padding:14px 20px;
-  border:2px solid #315d8c;
-  background:#122e4c;
-  color:white;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:16px;
-}
-
 footer{
-  border-top:2px solid #234b75;
-  text-align:center;
+  margin-top:70px;
   padding:35px 15px;
-  color:#b8c9dd;
+  text-align:center;
+  border-top:2px solid #234b75;
+  color:#aec0d5;
+  font-size:20px;
 }
 
-.light{
-  background:#f4f7fb;
-  color:#102033;
-}
-
-.light header,
-.light .lesson,
-.light .result{
-  background:#ffffff;
-}
-
-.light .card,
-.light .topic-card,
-.light nav button,
-.light .class-btn,
-.light .back-btn,
-.light .quiz-question{
-  background:#ffffff;
-  color:#102033;
-}
-
-.light .hero p,
-.light .card p,
-.light .lesson p,
-.light .lesson li{
-  color:#30445b;
-}
-
-@media(max-width:650px){
-
+@media(max-width:600px){
   .logo{
-    font-size:27px;
-  }
-
-  nav{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  nav button{
-    font-size:16px;
-    padding:15px 5px;
+    font-size:30px;
   }
 
   .hero h1{
-    font-size:32px;
+    font-size:34px;
   }
 
   .hero p{
-    font-size:18px;
-  }
-
-  .class-buttons{
-    grid-template-columns:1fr;
-  }
-
-  .subject-grid{
-    grid-template-columns:1fr;
+    font-size:20px;
   }
 
   h2{
-    font-size:28px;
+    font-size:32px;
+  }
+
+  .topic h3{
+    font-size:25px;
+  }
+
+  .topic p{
+    font-size:18px;
+  }
+
+  nav button{
+    flex:1;
+    min-width:110px;
+    padding:14px 10px;
   }
 }
 </style>
@@ -355,117 +259,159 @@ footer{
 
 <header>
 
-<div class="logo">
-📚 <span>Mr-dev</span> Learning Hub
-</div>
+  <div class="logo">
+    📚 <span>Mr-dev</span> Learning Hub
+  </div>
 
-<nav>
-<button onclick="home()">🏠 Home</button>
-<button onclick="books()">📚 Books</button>
-<button onclick="showQuiz()">📝 Quiz</button>
-<button onclick="toggleTheme()">🌙 Theme</button>
-</nav>
+  <nav>
+    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="showBooks()">📚 Books</button>
+    <button onclick="showQuiz()">📝 Quiz</button>
+    <button onclick="toggleTheme()">🌙 Theme</button>
+  </nav>
 
 </header>
 
-<main>
 
-<section id="homePage">
+<main class="container">
 
-<div class="hero">
+<section id="home">
 
-<h1>
-Welcome to <span class="green">Mr-dev Learning Hub</span>
-</h1>
+  <div class="hero">
 
-<p>
-Learn Senior 1, Senior 2 and Senior 3
-subjects, study topics, read notes and
-practise with quizzes.
-</p>
+    <h1>
+      Welcome to <span class="green">Mr-dev</span><br>
+      Learning Hub
+    </h1>
 
-</div>
+    <p>
+      Learn Senior 1, Senior 2 and Senior 3
+      Mathematics, Chemistry, Physics and English.
+      Read notes, study topics and practise with quizzes.
+    </p>
 
-<div class="search-box">
-
-<input
-id="searchInput"
-type="text"
-placeholder="Search subject or topic..."
-onkeydown="if(event.key==='Enter') searchSite()"
->
-
-<button class="search-btn" onclick="searchSite()">
-🔎 Search
-</button>
-
-<div id="searchResults"></div>
-
-</div>
-
-<h2>🎓 Choose Your Class</h2>
-
-<div class="class-buttons">
-
-<button id="s1" class="class-btn active"
-onclick="selectClass('Senior 1')">
-Senior 1
-</button>
-
-<button id="s2" class="class-btn"
-onclick="selectClass('Senior 2')">
-Senior 2
-</button>
-
-<button id="s3" class="class-btn"
-onclick="selectClass('Senior 3')">
-Senior 3
-</button>
-
-</div>
-
-<h2 id="subjectTitle">📚 Senior 1 Subjects</h2>
-
-<div id="subjects" class="subject-grid"></div>
-
-</section>
+  </div>
 
 
-<section id="topicPage" class="hidden">
+  <!-- SEARCH -->
+  <div class="search-box">
 
-<button class="back-btn" onclick="home()">
-← Back
-</button>
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search subject or topic..."
+      onkeydown="if(event.key==='Enter') searchTopic()"
+    >
 
-<h2 id="topicTitle"></h2>
+    <button onclick="searchTopic()">
+      🔎 Search
+    </button>
 
-<div id="topics"></div>
-
-</section>
-
-
-<section id="lessonPage" class="hidden">
-
-<button class="back-btn" onclick="backToTopics()">
-← Back to Topics
-</button>
-
-<h2 id="lessonTitle"></h2>
-
-<div id="lessonContent"></div>
-
-</section>
+  </div>
 
 
-<section id="quizPage" class="hidden">
+  <!-- CLASS -->
+  <h2>🎓 Choose Your Class</h2>
 
-<button class="back-btn" onclick="home()">
-← Back
-</button>
+  <div class="class-buttons">
 
-<h2>📝 Practice Quiz</h2>
+    <button
+      id="s1"
+      class="active"
+      onclick="selectClass('Senior 1')">
+      Senior 1
+    </button>
 
-<div id="quizContent"></div>
+    <button
+      id="s2"
+      onclick="selectClass('Senior 2')">
+      Senior 2
+    </button>
+
+    <button
+      id="s3"
+      onclick="selectClass('Senior 3')">
+      Senior 3
+    </button>
+
+  </div>
+
+
+  <!-- SUBJECT -->
+  <div class="subject-title">
+    📘 Physics
+  </div>
+
+  <div id="topics" class="topics">
+
+    <div class="topic" onclick="openTopic('Measurement')">
+      <h3>Topic 1: Measurement</h3>
+      <p>
+        📘 Study Measurement and practise
+        questions related to this topic.
+      </p>
+    </div>
+
+
+    <div class="topic" onclick="openTopic('Motion')">
+      <h3>Topic 2: Motion</h3>
+      <p>
+        📘 Study Motion and practise
+        questions related to this topic.
+      </p>
+    </div>
+
+
+    <div class="topic" onclick="openTopic('Force')">
+      <h3>Topic 3: Force</h3>
+      <p>
+        📘 Study Force and practise
+        questions related to this topic.
+      </p>
+    </div>
+
+
+    <div class="topic" onclick="openTopic('Energy')">
+      <h3>Topic 4: Energy</h3>
+      <p>
+        📘 Study Energy and practise
+        questions related to this topic.
+      </p>
+    </div>
+
+
+    <div class="topic" onclick="openTopic('Heat')">
+      <h3>Topic 5: Heat</h3>
+      <p>
+        📘 Study Heat and practise
+        questions related to this topic.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- LESSON -->
+  <div id="lesson" class="lesson">
+
+    <button class="back" onclick="closeLesson()">
+      ← Back to Topics
+    </button>
+
+    <h2 id="lessonTitle"></h2>
+
+    <p id="lessonText"></p>
+
+    <h3>📚 What you will learn</h3>
+
+    <ul>
+      <li>Understand the main ideas of the topic.</li>
+      <li>Learn important definitions and formulas.</li>
+      <li>Practise examples and questions.</li>
+      <li>Prepare for school examinations.</li>
+    </ul>
+
+  </div>
 
 </section>
 
@@ -473,905 +419,183 @@ Senior 3
 
 
 <footer>
-
-📚 Mr-dev Learning Hub
-
-<br><br>
-
-Senior 1 • Senior 2 • Senior 3
-
+  📚 Mr-dev Learning Hub
+  <br><br>
+  Senior 1 • Senior 2 • Senior 3
 </footer>
 
 
 <script>
 
-let currentClass="Senior 1";
-let currentSubject="";
-let currentTopic="";
+let currentClass = "Senior 1";
 
 
-const data={
+function goHome(){
 
-"Senior 1":{
+  document.getElementById("home").style.display = "block";
 
-"Mathematics":[
-"Numbers",
-"Algebra",
-"Fractions",
-"Linear equations",
-"Geometry",
-"Statistics"
-],
+  document.getElementById("lesson").style.display = "none";
 
-"Physics":[
-"Measurement",
-"Motion",
-"Force",
-"Energy",
-"Heat",
-"Light"
-],
-
-"Chemistry":[
-"Introduction to Chemistry",
-"Matter",
-"Atoms and Elements",
-"Mixtures",
-"Chemical Reactions"
-],
-
-"English":[
-"Grammar",
-"Vocabulary",
-"Reading",
-"Writing",
-"Speaking"
-]
-
-},
-
-"Senior 2":{
-
-"Mathematics":[
-"Algebra",
-"Equations",
-"Geometry",
-"Graphs",
-"Statistics"
-],
-
-"Physics":[
-"Measurement",
-"Motion",
-"Force",
-"Work and Energy",
-"Heat",
-"Electricity"
-],
-
-"Chemistry":[
-"Atomic Structure",
-"Chemical Bonding",
-"Acids and Bases",
-"Chemical Reactions",
-"Separation"
-],
-
-"English":[
-"Grammar",
-"Comprehension",
-"Writing",
-"Literature",
-"Communication"
-]
-
-},
-
-"Senior 3":{
-
-"Mathematics":[
-"Algebra",
-"Quadratic Equations",
-"Geometry",
-"Trigonometry",
-"Statistics"
-],
-
-"Physics":[
-"Motion",
-"Forces",
-"Energy",
-"Electricity",
-"Magnetism",
-"Waves"
-],
-
-"Chemistry":[
-"Periodic Table",
-"Chemical Bonding",
-"Acids Bases and Salts",
-"Organic Chemistry",
-"Chemical Equations"
-],
-
-"English":[
-"Advanced Grammar",
-"Writing",
-"Reading",
-"Literature",
-"Speaking"
-]
-
-}
-
-};
-
-
-function getIcon(subject){
-
-if(subject==="Mathematics") return "🧮";
-
-if(subject==="Physics") return "⚛️";
-
-if(subject==="Chemistry") return "🧪";
-
-if(subject==="English") return "📖";
-
-return "📚";
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
 
-function selectClass(cls){
+function selectClass(className){
 
-currentClass=cls;
+  currentClass = className;
 
-document.querySelectorAll(".class-btn")
-.forEach(btn=>btn.classList.remove("active"));
+  document.getElementById("s1").classList.remove("active");
+  document.getElementById("s2").classList.remove("active");
+  document.getElementById("s3").classList.remove("active");
 
-if(cls==="Senior 1")
-document.getElementById("s1").classList.add("active");
+  if(className === "Senior 1"){
+    document.getElementById("s1").classList.add("active");
+  }
 
-if(cls==="Senior 2")
-document.getElementById("s2").classList.add("active");
+  if(className === "Senior 2"){
+    document.getElementById("s2").classList.add("active");
+  }
 
-if(cls==="Senior 3")
-document.getElementById("s3").classList.add("active");
-
-showSubjects();
-
-}
-
-
-function showSubjects(){
-
-document.getElementById("homePage").classList.remove("hidden");
-document.getElementById("topicPage").classList.add("hidden");
-document.getElementById("lessonPage").classList.add("hidden");
-document.getElementById("quizPage").classList.add("hidden");
-
-document.getElementById("subjectTitle").textContent=
-"📚 "+currentClass+" Subjects";
-
-const container=document.getElementById("subjects");
-
-container.innerHTML="";
-
-const subjects=data[currentClass];
-
-Object.keys(subjects).forEach(subject=>{
-
-const card=document.createElement("div");
-
-card.className="card";
-
-card.innerHTML=`
-
-<h3>${getIcon(subject)} ${subject}</h3>
-
-<p>
-${subjects[subject].length} topics available.
-</p>
-
-<p>
-👉 Tap here to open topics
-</p>
-
-`;
-
-card.onclick=()=>openSubject(subject);
-
-container.appendChild(card);
-
-});
-
-}
-
-
-function openSubject(subject){
-
-currentSubject=subject;
-
-document.getElementById("homePage").classList.add("hidden");
-document.getElementById("topicPage").classList.remove("hidden");
-document.getElementById("lessonPage").classList.add("hidden");
-document.getElementById("quizPage").classList.add("hidden");
-
-document.getElementById("topicTitle").textContent=
-getIcon(subject)+" "+currentClass+" - "+subject;
-
-const container=document.getElementById("topics");
-
-container.innerHTML="";
-
-data[currentClass][subject].forEach((topic,index)=>{
-
-const card=document.createElement("div");
-
-card.className="topic-card";
-
-card.innerHTML=`
-
-<h3>
-📘 Topic ${index+1}: ${topic}
-</h3>
-
-<p>
-Study ${topic} and practise questions
-related to this topic.
-</p>
-
-<p>
-👉 Tap to open lesson
-</p>
-
-`;
-
-card.onclick=()=>openTopic(topic);
-
-container.appendChild(card);
-
-});
-
-window.scrollTo(0,0);
+  if(className === "Senior 3"){
+    document.getElementById("s3").classList.add("active");
+  }
 
 }
 
 
 function openTopic(topic){
 
-currentTopic=topic;
+  document.getElementById("lessonTitle").innerText =
+    "📘 " + topic + " - " + currentClass;
 
-document.getElementById("topicPage").classList.add("hidden");
-document.getElementById("lessonPage").classList.remove("hidden");
+  let text = "";
 
-document.getElementById("lessonTitle").textContent=
-"📖 "+currentTopic;
+  if(topic === "Measurement"){
+    text =
+      "Measurement is the process of finding the size, amount, length, mass, time or other quantity of an object. Learn SI units, measuring instruments and conversions.";
+  }
 
-let notes=getNotes(currentTopic);
+  else if(topic === "Motion"){
+    text =
+      "Motion describes the change of position of an object with time. Learn distance, displacement, speed, velocity and acceleration.";
+  }
 
-document.getElementById("lessonContent").innerHTML=`
+  else if(topic === "Force"){
+    text =
+      "Force is a push or pull that can change the motion or shape of an object. Learn Newton's laws, mass, acceleration and different types of forces.";
+  }
 
-<div class="lesson">
+  else if(topic === "Energy"){
+    text =
+      "Energy is the ability to do work. Learn kinetic energy, potential energy, mechanical energy and conservation of energy.";
+  }
 
-<h3>📚 ${currentTopic}</h3>
+  else if(topic === "Heat"){
+    text =
+      "Heat is energy transferred from a hotter object to a colder object. Learn temperature, heat transfer, conduction, convection and radiation.";
+  }
 
-<p>
-<b>Class:</b> ${currentClass}
-</p>
+  document.getElementById("lessonText").innerText = text;
 
-<p>
-<b>Subject:</b> ${currentSubject}
-</p>
+  document.getElementById("home").style.display = "none";
 
-<hr>
+  document.getElementById("lesson").style.display = "block";
 
-${notes}
-
-</div>
-
-<div class="lesson">
-
-<h3>📝 Practice Questions</h3>
-
-<p>
-1. What is ${currentTopic}?
-</p>
-
-<p>
-2. Explain ${currentTopic} using your own words.
-</p>
-
-<p>
-3. Give one example related to ${currentTopic}.
-</p>
-
-<p>
-4. Why is ${currentTopic} important?
-</p>
-
-<button class="quiz-submit"
-onclick="showQuizForTopic()">
-📝 Take Quiz
-</button>
-
-</div>
-
-`;
-
-window.scrollTo(0,0);
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
 
-function getNotes(topic){
+function closeLesson(){
 
-const notes={
+  document.getElementById("lesson").style.display = "none";
 
-"Measurement":`
-
-<h3>📏 Introduction</h3>
-
-<p>
-Measurement is the process of finding the size,
-amount or quantity of something using a suitable unit.
-</p>
-
-<h3>📌 Common quantities</h3>
-
-<ul>
-<li>Length → metre (m)</li>
-<li>Mass → kilogram (kg)</li>
-<li>Time → second (s)</li>
-<li>Temperature → kelvin (K) or degree Celsius (°C)</li>
-</ul>
-
-<div class="formula">
-1 km = 1000 m
-<br>
-1 m = 100 cm
-</div>
-`,
-
-"Motion":`
-
-<h3>🏃 What is Motion?</h3>
-
-<p>
-Motion is the change in position of an object
-with time.
-</p>
-
-<h3>📌 Speed</h3>
-
-<div class="formula">
-Speed = Distance ÷ Time
-</div>
-
-<p>
-Example: If a car travels 100 m in 20 s:
-</p>
-
-<div class="formula">
-Speed = 100 ÷ 20 = 5 m/s
-</div>
-`,
-
-"Force":`
-
-<h3>💪 What is Force?</h3>
-
-<p>
-A force is a push or pull that can change
-the motion or shape of an object.
-</p>
-
-<div class="formula">
-Force = Mass × Acceleration
-<br>
-F = ma
-</div>
-`,
-
-"Energy":`
-
-<h3>⚡ What is Energy?</h3>
-
-<p>
-Energy is the ability to do work.
-</p>
-
-<ul>
-<li>Kinetic energy</li>
-<li>Potential energy</li>
-<li>Heat energy</li>
-<li>Electrical energy</li>
-<li>Light energy</li>
-</ul>
-`,
-
-"Heat":`
-
-<h3>🔥 Heat</h3>
-
-<p>
-Heat is energy transferred from a hotter object
-to a colder object.
-</p>
-
-<p>
-Temperature tells us how hot or cold something is.
-</p>
-`,
-
-"Algebra":`
-
-<h3>🔢 Algebra</h3>
-
-<p>
-Algebra uses letters and symbols to represent
-unknown numbers.
-</p>
-
-<p>
-Example:
-</p>
-
-<div class="formula">
-x + 5 = 12
-<br><br>
-x = 12 - 5
-<br>
-x = 7
-</div>
-`,
-
-"Fractions":`
-
-<h3>➗ Fractions</h3>
-
-<p>
-A fraction represents part of a whole.
-</p>
-
-<div class="formula">
-Numerator / Denominator
-</div>
-
-<p>
-Example: 1/2 means one part out of two equal parts.
-</p>
-`,
-
-"Linear equations":`
-
-<h3>📐 Linear Equations</h3>
-
-<p>
-A linear equation is an equation where the highest
-power of the variable is 1.
-</p>
-
-<div class="formula">
-2x + 4 = 10
-<br><br>
-2x = 6
-<br>
-x = 3
-</div>
-`,
-
-"Geometry":`
-
-<h3>📐 Geometry</h3>
-
-<p>
-Geometry is the study of shapes, sizes,
-angles and spaces.
-</p>
-
-<div class="formula">
-Area of rectangle = length × width
-<br><br>
-Perimeter = 2(length + width)
-</div>
-`,
-
-"Statistics":`
-
-<h3>📊 Statistics</h3>
-
-<p>
-Statistics is the collection, organisation,
-analysis and interpretation of data.
-</p>
-
-<div class="formula">
-Mean = Sum of values ÷ Number of values
-</div>
-`,
-
-"Numbers":`
-
-<h3>🔢 Numbers</h3>
-
-<p>
-Numbers are symbols used to represent quantities.
-We use natural numbers, whole numbers,
-integers, fractions and decimals.
-</p>
-`
-
-};
-
-return notes[topic] || `
-
-<h3>📘 Study ${topic}</h3>
-
-<p>
-${topic} is an important topic in
-${currentSubject} for ${currentClass}.
-</p>
-
-<p>
-Read your textbook carefully, make notes,
-and practise exercises related to this topic.
-</p>
-
-<h3>💡 Study Tip</h3>
-
-<p>
-Learn the definitions first, then practise
-examples and questions.
-</p>
-
-`;
+  document.getElementById("home").style.display = "block";
 
 }
 
 
-function backToTopics(){
+function searchTopic(){
 
-document.getElementById("lessonPage").classList.add("hidden");
-document.getElementById("topicPage").classList.remove("hidden");
+  let value =
+    document.getElementById("searchInput").value
+    .trim()
+    .toLowerCase();
 
-window.scrollTo(0,0);
+  if(value === ""){
+    alert("Please type a subject or topic.");
+    return;
+  }
 
-}
+  let topics = [
+    "measurement",
+    "motion",
+    "force",
+    "energy",
+    "heat"
+  ];
 
+  let found = topics.find(
+    topic => topic.toLowerCase().includes(value)
+  );
 
-function searchSite(){
+  if(found){
 
-const input=document
-.getElementById("searchInput")
-.value
-.trim()
-.toLowerCase();
+    openTopic(
+      found.charAt(0).toUpperCase() + found.slice(1)
+    );
 
-const results=document.getElementById("searchResults");
+  }else{
 
-results.innerHTML="";
+    alert(
+      "Topic not found. Try Measurement, Motion, Force, Energy or Heat."
+    );
 
-if(!input){
-
-results.innerHTML=`
-<div class="result">
-Please enter a subject or topic.
-</div>
-`;
-
-return;
-
-}
-
-let found=[];
-
-Object.keys(data).forEach(cls=>{
-
-Object.keys(data[cls]).forEach(subject=>{
-
-if(subject.toLowerCase().includes(input)){
-
-found.push({
-type:"subject",
-class:cls,
-subject:subject
-});
-
-}
-
-data[cls][subject].forEach(topic=>{
-
-if(topic.toLowerCase().includes(input)){
-
-found.push({
-type:"topic",
-class:cls,
-subject:subject,
-topic:topic
-});
-
-}
-
-});
-
-});
-
-});
-
-if(found.length===0){
-
-results.innerHTML=`
-<div class="result">
-❌ No subject or topic found.
-</div>
-`;
-
-return;
-
-}
-
-found.forEach(item=>{
-
-const div=document.createElement("div");
-
-div.className="result";
-
-if(item.type==="subject"){
-
-div.innerHTML=`
-
-<h3>
-${getIcon(item.subject)} ${item.subject}
-</h3>
-
-<p>
-${item.class}
-</p>
-
-<button class="search-btn"
-onclick="searchOpenSubject('${item.class}','${item.subject}')">
-Open Subject
-</button>
-
-`;
-
-}else{
-
-div.innerHTML=`
-
-<h3>
-📘 ${item.topic}
-</h3>
-
-<p>
-${item.class} • ${item.subject}
-</p>
-
-<button class="search-btn"
-onclick="searchOpenTopic('${item.class}','${item.subject}','${item.topic}')">
-Open Topic
-</button>
-
-`;
-
-}
-
-results.appendChild(div);
-
-});
+  }
 
 }
 
 
-function searchOpenSubject(cls,subject){
+function showBooks(){
 
-currentClass=cls;
-currentSubject=subject;
-
-openSubject(subject);
-
-}
-
-
-function searchOpenTopic(cls,subject,topic){
-
-currentClass=cls;
-currentSubject=subject;
-
-openSubject(subject);
-
-setTimeout(()=>{
-openTopic(topic);
-},100);
+  alert(
+    "📚 Books section is ready. Select a class and topic to start learning."
+  );
 
 }
 
 
 function showQuiz(){
 
-document.getElementById("homePage").classList.add("hidden");
-document.getElementById("topicPage").classList.add("hidden");
-document.getElementById("lessonPage").classList.add("hidden");
-document.getElementById("quizPage").classList.remove("hidden");
-
-createQuiz();
-
-window.scrollTo(0,0);
-
-}
-
-
-function showQuizForTopic(){
-
-document.getElementById("topicPage").classList.add("hidden");
-document.getElementById("lessonPage").classList.add("hidden");
-document.getElementById("quizPage").classList.remove("hidden");
-
-createQuiz();
-
-window.scrollTo(0,0);
-
-}
-
-
-function createQuiz(){
-
-const quiz=document.getElementById("quizContent");
-
-quiz.innerHTML=`
-
-<div class="quiz-question">
-
-<h3>1. What is ${currentTopic || "Motion"}?</h3>
-
-<label>
-<input type="radio" name="q1" value="a">
-A. A type of food
-</label>
-
-<label>
-<input type="radio" name="q1" value="b">
-B. A scientific or academic concept
-</label>
-
-<label>
-<input type="radio" name="q1" value="c">
-C. A country
-</label>
-
-</div>
-
-
-<div class="quiz-question">
-
-<h3>2. What should a student do to understand a topic?</h3>
-
-<label>
-<input type="radio" name="q2" value="a">
-A. Practise questions
-</label>
-
-<label>
-<input type="radio" name="q2" value="b">
-B. Never read
-</label>
-
-<label>
-<input type="radio" name="q2" value="c">
-C. Stop studying
-</label>
-
-</div>
-
-
-<div class="quiz-question">
-
-<h3>3. Which one is useful when studying?</h3>
-
-<label>
-<input type="radio" name="q3" value="a">
-A. Notes
-</label>
-
-<label>
-<input type="radio" name="q3" value="b">
-B. Nothing
-</label>
-
-<label>
-<input type="radio" name="q3" value="c">
-C. Guessing everything
-</label>
-
-</div>
-
-
-<button class="quiz-submit" onclick="checkQuiz()">
-✅ Submit Quiz
-</button>
-
-<div id="score"></div>
-
-`;
-
-}
-
-
-function checkQuiz(){
-
-let score=0;
-
-if(document.querySelector(
-'input[name="q1"]:checked'
-)?.value==="b") score++;
-
-if(document.querySelector(
-'input[name="q2"]:checked'
-)?.value==="a") score++;
-
-if(document.querySelector(
-'input[name="q3"]:checked'
-)?.value==="a") score++;
-
-document.getElementById("score").innerHTML=`
-
-<div class="result">
-
-<h3>🎉 Your Score</h3>
-
-<p>
-You got <b>${score}/3</b>.
-</p>
-
-<p>
-${score===3
-?"Excellent! 🌟"
-:score===2
-?"Good job! 👍"
-:"Keep practising! 💪"
-}
-</p>
-
-</div>
-
-`;
-
-}
-
-
-function books(){
-
-alert(
-"📚 Books section\n\n"+
-"Choose your class and subject to study topics and lessons."
-);
-
-home();
-
-}
-
-
-function home(){
-
-document.getElementById("homePage").classList.remove("hidden");
-document.getElementById("topicPage").classList.add("hidden");
-document.getElementById("lessonPage").classList.add("hidden");
-document.getElementById("quizPage").classList.add("hidden");
-
-window.scrollTo(0,0);
+  alert(
+    "📝 Quiz section is coming soon."
+  );
 
 }
 
 
 function toggleTheme(){
 
-document.body.classList.toggle("light");
+  if(document.body.style.background === "white"){
+
+    document.body.style.background = "#071426";
+    document.body.style.color = "white";
+
+  }else{
+
+    document.body.style.background = "white";
+    document.body.style.color = "#071426";
+
+  }
 
 }
-
-
-showSubjects();
 
 </script>
 
