@@ -3,15 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mr-dev Learning Hub</title>
 
 <style>
 *{
   box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
@@ -23,132 +20,126 @@ body{
 
 header{
   background:#102b48;
-  padding:22px 15px;
+  padding:20px 15px;
   text-align:center;
   border-bottom:2px solid #234b75;
 }
 
 .logo{
-  font-size:34px;
+  font-size:30px;
   font-weight:bold;
   margin-bottom:20px;
 }
 
 .logo span{
-  color:#20df72;
+  color:#20df70;
 }
 
 nav{
   display:flex;
+  gap:12px;
   justify-content:center;
   flex-wrap:wrap;
-  gap:12px;
 }
 
 nav button{
-  border:2px solid #31577f;
-  background:#102b48;
+  background:#153555;
   color:white;
-  padding:16px 28px;
-  border-radius:16px;
-  font-size:18px;
-  font-weight:bold;
+  border:2px solid #285783;
+  padding:14px 25px;
+  border-radius:12px;
+  font-size:17px;
   cursor:pointer;
 }
 
 nav button:hover{
-  background:#20df72;
-  color:#071426;
+  background:#20df70;
+  color:#000;
 }
 
 .container{
-  width:94%;
   max-width:900px;
   margin:auto;
+  padding:25px 20px;
 }
 
 .hero{
   text-align:center;
-  padding:45px 10px;
+  padding:20px 0;
 }
 
 .hero h1{
-  font-size:42px;
-  margin:0 0 20px;
-}
-
-.green{
-  color:#20df72;
+  font-size:34px;
 }
 
 .hero p{
-  color:#aec0d5;
-  font-size:22px;
+  font-size:19px;
   line-height:1.6;
+  color:#b9c9dc;
 }
 
 .search-box{
-  margin:25px 0 70px;
+  margin:25px 0;
 }
 
 .search-box input{
   width:100%;
   padding:18px;
-  border-radius:14px;
-  border:2px solid #31577f;
-  background:#123453;
+  border-radius:12px;
+  border:2px solid #285783;
+  background:#153555;
   color:white;
   font-size:17px;
   outline:none;
 }
 
-.search-box button{
+.search-box input::placeholder{
+  color:#b9c9dc;
+}
+
+.search-btn{
   width:100%;
   margin-top:10px;
-  padding:18px;
+  padding:17px;
+  background:#20df70;
+  color:#000;
   border:0;
-  border-radius:14px;
-  background:#20df72;
-  color:#071426;
-  font-size:19px;
+  border-radius:12px;
+  font-size:18px;
   font-weight:bold;
   cursor:pointer;
 }
 
-h2{
-  font-size:36px;
-  margin-bottom:25px;
+.search-btn:hover{
+  background:#16c961;
+}
+
+h2.section-title{
+  font-size:32px;
+  margin-top:40px;
 }
 
 .class-buttons{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  padding-bottom:15px;
-  margin-bottom:40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:25px;
 }
 
 .class-buttons button{
-  min-width:180px;
-  padding:20px;
-  border-radius:16px;
-  border:2px solid #31577f;
-  background:#102b48;
+  padding:18px;
+  background:#153555;
   color:white;
-  font-size:20px;
+  border:2px solid #285783;
+  border-radius:12px;
+  font-size:18px;
   font-weight:bold;
   cursor:pointer;
 }
 
 .class-buttons button.active{
-  background:#20df72;
-  color:#071426;
-}
-
-.subject-title{
-  font-size:30px;
-  color:#20df72;
-  margin:35px 0 20px;
+  background:#20df70;
+  color:#000;
 }
 
 .topics{
@@ -156,100 +147,111 @@ h2{
   gap:20px;
 }
 
-.topic{
-  background:#123453;
-  border:3px solid #20df72;
-  border-radius:28px;
-  padding:28px;
+.topic-card{
+  background:#153555;
+  border:3px solid #20df70;
+  border-radius:25px;
+  padding:25px;
   cursor:pointer;
   transition:.2s;
 }
 
-.topic:hover{
+.topic-card:hover{
   transform:scale(1.01);
-  background:#174368;
+  background:#194163;
 }
 
-.topic h3{
-  color:#20df72;
-  font-size:27px;
+.topic-card h3{
   margin:0 0 18px;
+  color:#20df70;
+  font-size:27px;
 }
 
-.topic p{
-  font-size:20px;
+.topic-card p{
+  font-size:18px;
   line-height:1.5;
   margin:0;
 }
 
-.lesson{
+.hidden{
   display:none;
-  background:#102b48;
-  border:2px solid #20df72;
-  border-radius:22px;
-  padding:25px;
-  margin-top:30px;
 }
 
-.lesson h2{
-  color:#20df72;
+#topicPage{
+  display:none;
 }
 
-.lesson p,
-.lesson li{
-  font-size:19px;
-  line-height:1.6;
-}
-
-.back{
-  background:#20df72;
-  color:#071426;
+.back-btn{
+  background:#20df70;
+  color:#000;
   border:0;
-  padding:14px 25px;
-  border-radius:12px;
+  border-radius:10px;
+  padding:14px 22px;
   font-size:17px;
   font-weight:bold;
   cursor:pointer;
+  margin-bottom:20px;
+}
+
+.lesson{
+  background:#153555;
+  border:2px solid #20df70;
+  border-radius:20px;
+  padding:25px;
+  line-height:1.7;
+}
+
+.lesson h1{
+  color:#20df70;
+}
+
+.lesson h2{
+  color:#20df70;
+}
+
+.quiz-question{
+  background:#102b48;
+  border-radius:15px;
+  padding:20px;
+  margin-top:20px;
+}
+
+.quiz-question button{
+  width:100%;
+  margin-top:10px;
+  padding:14px;
+  border:2px solid #285783;
+  border-radius:10px;
+  background:#153555;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.quiz-question button:hover{
+  background:#20df70;
+  color:#000;
 }
 
 footer{
-  margin-top:70px;
+  margin-top:50px;
   padding:35px 15px;
   text-align:center;
   border-top:2px solid #234b75;
-  color:#aec0d5;
-  font-size:20px;
+  color:#b9c9dc;
 }
 
 @media(max-width:600px){
-  .logo{
-    font-size:30px;
+  .class-buttons{
+    grid-template-columns:1fr;
   }
 
   .hero h1{
-    font-size:34px;
+    font-size:28px;
   }
 
-  .hero p{
-    font-size:20px;
-  }
-
-  h2{
-    font-size:32px;
-  }
-
-  .topic h3{
-    font-size:25px;
-  }
-
-  .topic p{
-    font-size:18px;
-  }
-
-  nav button{
-    flex:1;
-    min-width:110px;
-    padding:14px 10px;
+  .topic-card h3{
+    font-size:24px;
   }
 }
 </style>
@@ -259,345 +261,288 @@ footer{
 
 <header>
 
-  <div class="logo">
-    📚 <span>Mr-dev</span> Learning Hub
-  </div>
+<div class="logo">
+📚 <span>Mr-dev</span> Learning Hub
+</div>
 
-  <nav>
-    <button onclick="goHome()">🏠 Home</button>
-    <button onclick="showBooks()">📚 Books</button>
-    <button onclick="showQuiz()">📝 Quiz</button>
-    <button onclick="toggleTheme()">🌙 Theme</button>
-  </nav>
+<nav>
+<button onclick="goHome()">🏠 Home</button>
+<button onclick="showAllTopics()">📚 Books</button>
+<button onclick="showQuiz()">📝 Quiz</button>
+</nav>
 
 </header>
 
 
-<main class="container">
+<!-- HOME PAGE -->
 
-<section id="home">
+<main id="homePage">
 
-  <div class="hero">
+<div class="container">
 
-    <h1>
-      Welcome to <span class="green">Mr-dev</span><br>
-      Learning Hub
-    </h1>
+<section class="hero">
 
-    <p>
-      Learn Senior 1, Senior 2 and Senior 3
-      Mathematics, Chemistry, Physics and English.
-      Read notes, study topics and practise with quizzes.
-    </p>
+<h1>Learn • Practise • Succeed</h1>
 
-  </div>
-
-
-  <!-- SEARCH -->
-  <div class="search-box">
-
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="Search subject or topic..."
-      onkeydown="if(event.key==='Enter') searchTopic()"
-    >
-
-    <button onclick="searchTopic()">
-      🔎 Search
-    </button>
-
-  </div>
-
-
-  <!-- CLASS -->
-  <h2>🎓 Choose Your Class</h2>
-
-  <div class="class-buttons">
-
-    <button
-      id="s1"
-      class="active"
-      onclick="selectClass('Senior 1')">
-      Senior 1
-    </button>
-
-    <button
-      id="s2"
-      onclick="selectClass('Senior 2')">
-      Senior 2
-    </button>
-
-    <button
-      id="s3"
-      onclick="selectClass('Senior 3')">
-      Senior 3
-    </button>
-
-  </div>
-
-
-  <!-- SUBJECT -->
-  <div class="subject-title">
-    📘 Physics
-  </div>
-
-  <div id="topics" class="topics">
-
-    <div class="topic" onclick="openTopic('Measurement')">
-      <h3>Topic 1: Measurement</h3>
-      <p>
-        📘 Study Measurement and practise
-        questions related to this topic.
-      </p>
-    </div>
-
-
-    <div class="topic" onclick="openTopic('Motion')">
-      <h3>Topic 2: Motion</h3>
-      <p>
-        📘 Study Motion and practise
-        questions related to this topic.
-      </p>
-    </div>
-
-
-    <div class="topic" onclick="openTopic('Force')">
-      <h3>Topic 3: Force</h3>
-      <p>
-        📘 Study Force and practise
-        questions related to this topic.
-      </p>
-    </div>
-
-
-    <div class="topic" onclick="openTopic('Energy')">
-      <h3>Topic 4: Energy</h3>
-      <p>
-        📘 Study Energy and practise
-        questions related to this topic.
-      </p>
-    </div>
-
-
-    <div class="topic" onclick="openTopic('Heat')">
-      <h3>Topic 5: Heat</h3>
-      <p>
-        📘 Study Heat and practise
-        questions related to this topic.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- LESSON -->
-  <div id="lesson" class="lesson">
-
-    <button class="back" onclick="closeLesson()">
-      ← Back to Topics
-    </button>
-
-    <h2 id="lessonTitle"></h2>
-
-    <p id="lessonText"></p>
-
-    <h3>📚 What you will learn</h3>
-
-    <ul>
-      <li>Understand the main ideas of the topic.</li>
-      <li>Learn important definitions and formulas.</li>
-      <li>Practise examples and questions.</li>
-      <li>Prepare for school examinations.</li>
-    </ul>
-
-  </div>
+<p>
+Learn Senior 1, Senior 2 and Senior 3
+Mathematics, Chemistry, Physics and English.
+Read notes, study topics and practise with quizzes.
+</p>
 
 </section>
 
-</main>
 
+<!-- SEARCH -->
 
-<footer>
-  📚 Mr-dev Learning Hub
-  <br><br>
-  Senior 1 • Senior 2 • Senior 3
-</footer>
+<div class="search-box">
 
+<input
+id="searchInput"
+type="text"
+placeholder="Search subject or topic..."
+oninput="searchTopics()"
+>
 
-<script>
+<button class="search-btn" onclick="searchTopics()">
+🔎 Search
+</button>
 
-let currentClass = "Senior 1";
+</div>
 
 
-function goHome(){
+<h2 class="section-title">
+🎓 Choose Your Class
+</h2>
 
-  document.getElementById("home").style.display = "block";
 
-  document.getElementById("lesson").style.display = "none";
+<div class="class-buttons">
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+<button id="S1" class="active" onclick="selectClass('S1')">
+Senior 1
+</button>
 
-}
+<button id="S2" onclick="selectClass('S2')">
+Senior 2
+</button>
 
+<button id="S3" onclick="selectClass('S3')">
+Senior 3
+</button>
 
-function selectClass(className){
+</div>
 
-  currentClass = className;
 
-  document.getElementById("s1").classList.remove("active");
-  document.getElementById("s2").classList.remove("active");
-  document.getElementById("s3").classList.remove("active");
+<div id="topics" class="topics">
 
-  if(className === "Senior 1"){
-    document.getElementById("s1").classList.add("active");
-  }
+<!-- MATHEMATICS -->
 
-  if(className === "Senior 2"){
-    document.getElementById("s2").classList.add("active");
-  }
+<div class="topic-card"
+data-class="S1"
+data-search="mathematics maths number algebra">
 
-  if(className === "Senior 3"){
-    document.getElementById("s3").classList.add("active");
-  }
+<h3>📘 Mathematics</h3>
 
-}
+<p>
+Study Mathematics and practise questions.
+</p>
 
+</div>
 
-function openTopic(topic){
 
-  document.getElementById("lessonTitle").innerText =
-    "📘 " + topic + " - " + currentClass;
+<div class="topic-card"
+data-class="S1"
+data-search="algebra mathematics maths">
 
-  let text = "";
+<h3>Topic 2: Algebra</h3>
 
-  if(topic === "Measurement"){
-    text =
-      "Measurement is the process of finding the size, amount, length, mass, time or other quantity of an object. Learn SI units, measuring instruments and conversions.";
-  }
+<p>
+📘 Study Algebra and practise questions related to this topic.
+</p>
 
-  else if(topic === "Motion"){
-    text =
-      "Motion describes the change of position of an object with time. Learn distance, displacement, speed, velocity and acceleration.";
-  }
+</div>
 
-  else if(topic === "Force"){
-    text =
-      "Force is a push or pull that can change the motion or shape of an object. Learn Newton's laws, mass, acceleration and different types of forces.";
-  }
 
-  else if(topic === "Energy"){
-    text =
-      "Energy is the ability to do work. Learn kinetic energy, potential energy, mechanical energy and conservation of energy.";
-  }
+<div class="topic-card"
+data-class="S1"
+data-search="fractions mathematics maths">
 
-  else if(topic === "Heat"){
-    text =
-      "Heat is energy transferred from a hotter object to a colder object. Learn temperature, heat transfer, conduction, convection and radiation.";
-  }
+<h3>Topic 3: Fractions</h3>
 
-  document.getElementById("lessonText").innerText = text;
+<p>
+📘 Study Fractions and practise questions related to this topic.
+</p>
 
-  document.getElementById("home").style.display = "none";
+</div>
 
-  document.getElementById("lesson").style.display = "block";
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+<div class="topic-card"
+data-class="S1"
+data-search="linear equations mathematics algebra">
 
-}
+<h3>Topic 4: Linear Equations</h3>
 
+<p>
+📘 Study Linear Equations and practise questions related to this topic.
+</p>
 
-function closeLesson(){
+</div>
 
-  document.getElementById("lesson").style.display = "none";
 
-  document.getElementById("home").style.display = "block";
+<div class="topic-card"
+data-class="S1"
+data-search="geometry mathematics shapes">
 
-}
+<h3>Topic 5: Geometry</h3>
 
+<p>
+📘 Study Geometry and practise questions related to this topic.
+</p>
 
-function searchTopic(){
+</div>
 
-  let value =
-    document.getElementById("searchInput").value
-    .trim()
-    .toLowerCase();
 
-  if(value === ""){
-    alert("Please type a subject or topic.");
-    return;
-  }
+<div class="topic-card"
+data-class="S1"
+data-search="statistics mathematics data">
 
-  let topics = [
-    "measurement",
-    "motion",
-    "force",
-    "energy",
-    "heat"
-  ];
+<h3>Topic 6: Statistics</h3>
 
-  let found = topics.find(
-    topic => topic.toLowerCase().includes(value)
-  );
+<p>
+📘 Study Statistics and practise questions related to this topic.
+</p>
 
-  if(found){
+</div>
 
-    openTopic(
-      found.charAt(0).toUpperCase() + found.slice(1)
-    );
 
-  }else{
+<!-- PHYSICS -->
 
-    alert(
-      "Topic not found. Try Measurement, Motion, Force, Energy or Heat."
-    );
+<div class="topic-card"
+data-class="S1"
+data-search="physics measurement">
 
-  }
+<h3>Physics Topic 1: Measurement</h3>
 
-}
+<p>
+📘 Study Measurement and practise questions related to this topic.
+</p>
 
+</div>
 
-function showBooks(){
 
-  alert(
-    "📚 Books section is ready. Select a class and topic to start learning."
-  );
+<div class="topic-card"
+data-class="S1"
+data-search="physics motion">
 
-}
+<h3>Physics Topic 2: Motion</h3>
 
+<p>
+📘 Study Motion and practise questions related to this topic.
+</p>
 
-function showQuiz(){
+</div>
 
-  alert(
-    "📝 Quiz section is coming soon."
-  );
 
-}
+<div class="topic-card"
+data-class="S1"
+data-search="physics force">
 
+<h3>Physics Topic 3: Force</h3>
 
-function toggleTheme(){
+<p>
+📘 Study Force and practise questions related to this topic.
+</p>
 
-  if(document.body.style.background === "white"){
+</div>
 
-    document.body.style.background = "#071426";
-    document.body.style.color = "white";
 
-  }else{
+<div class="topic-card"
+data-class="S1"
+data-search="physics energy">
 
-    document.body.style.background = "white";
-    document.body.style.color = "#071426";
+<h3>Physics Topic 4: Energy</h3>
 
-  }
+<p>
+📘 Study Energy and practise questions related to this topic.
+</p>
 
-}
+</div>
 
-</script>
 
-</body>
-</html>
+<div class="topic-card"
+data-class="S1"
+data-search="physics heat">
+
+<h3>Physics Topic 5: Heat</h3>
+
+<p>
+📘 Study Heat and practise questions related to this topic.
+</p>
+
+</div>
+
+
+<!-- S2 -->
+
+<div class="topic-card"
+data-class="S2"
+data-search="mathematics algebra">
+
+<h3>Senior 2: Algebra</h3>
+
+<p>
+📘 Learn Algebra for Senior 2.
+</p>
+
+</div>
+
+
+<div class="topic-card"
+data-class="S2"
+data-search="mathematics geometry">
+
+<h3>Senior 2: Geometry</h3>
+
+<p>
+📘 Learn Geometry for Senior 2.
+</p>
+
+</div>
+
+
+<div class="topic-card"
+data-class="S2"
+data-search="physics motion">
+
+<h3>Senior 2: Motion</h3>
+
+<p>
+📘 Learn Motion for Senior 2.
+</p>
+
+</div>
+
+
+<!-- S3 -->
+
+<div class="topic-card"
+data-class="S3"
+data-search="mathematics algebra">
+
+<h3>Senior 3: Algebra</h3>
+
+<p>
+📘 Learn Algebra for Senior 3.
+</p>
+
+</div>
+
+
+<div class="topic-card"
+data-class="S3"
+data-search="physics energy">
+
+<h3>Senior 3: Energy</h3>
+
+<p>
+📘 Learn Energy for
