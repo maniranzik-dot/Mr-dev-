@@ -2,193 +2,329 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mr-dev AI Learning</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mr-dev Learning Hub</title>
 
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
+
 :root{
- --bg:#071426;
- --card:#10233d;
- --card2:#172e4d;
- --text:#fff;
- --muted:#aebed1;
- --green:#20df72;
- --blue:#318cff;
- --border:#28435f;
+  --bg:#071426;
+  --card:#10233d;
+  --card2:#172e4d;
+  --text:#fff;
+  --muted:#aebed1;
+  --green:#20df72;
+  --blue:#318cff;
+  --danger:#ff5263;
+  --border:#294565;
 }
-body.light{
- --bg:#f3f6fa;
- --card:#fff;
- --card2:#edf3fa;
- --text:#101828;
- --muted:#536273;
- --border:#d7e0ea;
-}
+
 body{
- margin:0;
- background:var(--bg);
- color:var(--text);
- font-family:Arial,sans-serif;
- transition:.3s;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#071426,#0c1d35,#071426);
+  color:var(--text);
+  min-height:100vh;
 }
+
+body.light{
+  --bg:#f3f6fa;
+  --card:#fff;
+  --card2:#edf3f9;
+  --text:#102033;
+  --muted:#53677d;
+  --border:#cbd8e5;
+  background:#f3f6fa;
+}
+
 header{
- position:sticky;
- top:0;
- z-index:100;
- background:rgba(7,20,38,.96);
- border-bottom:1px solid var(--border);
- padding:14px;
+  background:rgba(7,20,38,.96);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
-body.light header{background:rgba(255,255,255,.96)}
+
+.light header{background:#fff}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
 .logo{
- font-size:25px;
- font-weight:800;
- color:var(--green);
- text-align:center;
+  font-size:22px;
+  font-weight:bold;
+  color:var(--green);
 }
-.tag{
- text-align:center;
- color:var(--muted);
- margin:5px 0 13px;
-}
+
+.logo span{color:var(--text)}
+
 nav{
- display:flex;
- gap:7px;
- overflow-x:auto;
- padding-bottom:3px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
 }
-nav button{
- white-space:nowrap;
+
+button,.btn{
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:10px 15px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
 }
-button{
- border:0;
- border-radius:12px;
- padding:11px 15px;
- font-weight:700;
- cursor:pointer;
- background:var(--green);
- color:#04150b;
+
+button:hover,.btn:hover{
+  border-color:var(--green);
+  transform:translateY(-1px);
 }
-button.secondary{
- background:var(--card2);
- color:var(--text);
- border:1px solid var(--border);
+
+.primary{
+  background:var(--green);
+  color:#04130b;
+  border:none;
 }
-button.blue{background:var(--blue);color:white}
-.container{
- max-width:1100px;
- margin:auto;
- padding:20px 14px 70px;
+
+.blue{
+  background:var(--blue);
+  color:white;
+  border:none;
 }
-.page{display:none}
-.page.active{display:block}
+
 .hero{
- padding:30px 22px;
- border-radius:25px;
- background:linear-gradient(135deg,#102d50,#123b55);
- margin-bottom:20px;
+  max-width:1200px;
+  margin:auto;
+  padding:55px 20px 30px;
+  text-align:center;
 }
-.hero h1{font-size:34px;margin:0 0 10px}
-.hero p{color:#d2deea;line-height:1.6}
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:15px;
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:15px;
 }
-.card{
- background:var(--card);
- border:1px solid var(--border);
- border-radius:20px;
- padding:19px;
- margin-bottom:15px;
+
+.hero h1 span{color:var(--green)}
+
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.6;
+  max-width:750px;
+  margin:auto;
 }
-.card h2,.card h3{margin-top:0}
-.green{color:var(--green)}
-.muted{color:var(--muted)}
-.senior{
- margin-top:30px;
- padding:12px 15px;
- border-left:5px solid var(--green);
- background:var(--card);
- border-radius:10px;
-}
-.subject{
- background:var(--card2);
- border:1px solid var(--border);
- border-radius:18px;
- padding:18px;
-}
-.subject p{color:var(--muted)}
-.topic{
- background:var(--card);
- padding:15px;
- border-radius:15px;
- border:1px solid var(--border);
- margin:10px 0;
-}
-.topic h4{margin:0 0 8px;color:var(--green)}
-.topic ul{
- margin:5px 0 0;
- padding-left:20px;
- color:var(--muted);
- line-height:1.7;
-}
-input,select,textarea{
- width:100%;
- padding:13px;
- border-radius:12px;
- border:1px solid var(--border);
- background:var(--card);
- color:var(--text);
- margin:7px 0 12px;
-}
+
 .search{
- font-size:16px;
+  max-width:750px;
+  margin:25px auto;
+  display:flex;
+  gap:10px;
 }
+
+.search input{
+  flex:1;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  font-size:16px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.section-title{
+  margin:30px 0 18px;
+  font-size:27px;
+}
+
+.senior-tabs{
+  display:flex;
+  gap:10px;
+  overflow:auto;
+  padding-bottom:10px;
+}
+
+.senior-tab{
+  min-width:120px;
+  text-align:center;
+}
+
+.senior-tab.active{
+  background:var(--green);
+  color:#031208;
+  border:none;
+}
+
+.subject-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+
+.subject{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  transition:.2s;
+}
+
+.subject:hover{
+  transform:translateY(-4px);
+  border-color:var(--green);
+}
+
+.subject-icon{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.subject h3{
+  margin-bottom:8px;
+}
+
+.subject p{
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.subject button{
+  margin-top:15px;
+  width:100%;
+}
+
+.topic-list{
+  margin-top:15px;
+}
+
+.topic{
+  background:var(--card2);
+  border:1px solid var(--border);
+  margin:8px 0;
+  padding:13px;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+.topic:hover{
+  border-color:var(--green);
+}
+
+.topic-content{
+  display:none;
+  padding:15px;
+  margin-top:8px;
+  background:var(--card);
+  border-radius:8px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+.topic.open .topic-content{display:block}
+
+.note{
+  border-left:4px solid var(--green);
+  padding:12px 15px;
+  background:var(--card2);
+  margin:12px 0;
+  border-radius:6px;
+}
+
+.quiz-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:25px;
+  margin-top:20px;
+}
+
+.question{
+  font-size:20px;
+  margin-bottom:18px;
+  line-height:1.5;
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+}
+
 .answer{
- display:block;
- width:100%;
- text-align:left;
- margin:8px 0;
- background:var(--card2);
- color:var(--text);
- border:1px solid var(--border);
+  text-align:left;
+  width:100%;
 }
-.answer:hover{border-color:var(--green)}
-.correct{background:#176b3b!important;color:white!important}
-.wrong{background:#8b2635!important;color:white!important}
-.badge{
- display:inline-block;
- padding:6px 10px;
- border-radius:20px;
- background:var(--card2);
- color:var(--green);
- margin:3px;
- font-size:13px;
+
+.correct{
+  background:#126b3b!important;
+  border-color:var(--green)!important;
 }
-.book{
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:10px;
- flex-wrap:wrap;
+
+.wrong{
+  background:#722431!important;
+  border-color:var(--danger)!important;
 }
-.whatsapp{
- background:#0d4c35;
- color:white;
- text-align:center;
+
+.score{
+  font-size:20px;
+  color:var(--green);
+  margin:15px 0;
 }
+
+.teacher{
+  background:linear-gradient(135deg,#102b4d,#10233d);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:25px;
+  margin-top:25px;
+}
+
+.teacher textarea{
+  width:100%;
+  min-height:100px;
+  margin:15px 0;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--bg);
+  color:var(--text);
+}
+
+.response{
+  margin-top:15px;
+  padding:18px;
+  background:var(--card);
+  border-radius:10px;
+  line-height:1.7;
+  display:none;
+}
+
 footer{
- text-align:center;
- color:var(--muted);
- padding:30px 10px;
- border-top:1px solid var(--border);
+  margin-top:50px;
+  padding:30px 20px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  color:var(--muted);
 }
-.hidden{display:none}
-@media(max-width:600px){
- .hero h1{font-size:27px}
- .container{padding:15px 10px 50px}
+
+.hidden{display:none!important}
+
+@media(max-width:700px){
+  .hero h1{font-size:30px}
+  .nav{align-items:flex-start;flex-direction:column}
+  nav{width:100%}
+  nav button{flex:1}
+  .search{flex-direction:column}
 }
 </style>
 </head>
@@ -196,865 +332,64 @@ footer{
 <body>
 
 <header>
-<div class="logo">🎓 Mr-dev AI Learning</div>
-<div class="tag">Learn • Practice • Improve • Succeed</div>
+<div class="nav">
+  <div class="logo">📚 Mr-dev <span>Learning Hub</span></div>
 
-<nav>
-<button onclick="showPage('home')">🏠 Home</button>
-<button onclick="showPage('books')">📚 Books</button>
-<button onclick="showPage('topics')">📖 Topics</button>
-<button onclick="showPage('quiz')">📝 Quiz</button>
-<button onclick="showPage('ai')">🤖 AI Teacher</button>
-<button class="secondary" onclick="toggleTheme()">🌙/☀️</button>
-</nav>
+  <nav>
+    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="showBooks()">📚 Books</button>
+    <button onclick="showQuiz()">📝 Quiz</button>
+    <button onclick="showTeacher()">🤖 AI Teacher</button>
+    <button onclick="toggleTheme()">🌙 Theme</button>
+  </nav>
+</div>
 </header>
+
+<section class="hero">
+  <h1>Welcome to <span>Mr-dev Learning Hub</span></h1>
+  <p>
+    Learn Senior 1, Senior 2 and Senior 3 subjects,
+    explore topics, read notes and practise with quizzes.
+  </p>
+
+  <div class="search">
+    <input id="searchInput"
+      placeholder="Search subject or topic..."
+      oninput="searchContent()">
+    <button class="primary" onclick="searchContent()">🔎 Search</button>
+  </div>
+</section>
 
 <main class="container">
 
-<!-- HOME -->
-<section id="home" class="page active">
+<section id="home">
 
-<div class="hero">
-<h1>Welcome to <span class="green">Mr-dev</span></h1>
-<p>
-A learning website for Senior 1, Senior 2 and Senior 3 students.
-Study Mathematics, Chemistry, Physics and English.
-</p>
-<button onclick="showPage('topics')">Start Learning 🚀</button>
+<h2 class="section-title">🎓 Choose Your Class</h2>
+
+<div class="senior-tabs">
+  <button class="senior-tab active" onclick="selectSenior(1,this)">
+    Senior 1
+  </button>
+
+  <button class="senior-tab" onclick="selectSenior(2,this)">
+    Senior 2
+  </button>
+
+  <button class="senior-tab" onclick="selectSenior(3,this)">
+    Senior 3
+  </button>
 </div>
 
-<div class="grid">
-
-<div class="card">
-<h2>📘 Senior 1</h2>
-<p class="muted">Build your foundation.</p>
-<button onclick="openSenior(1)">Open Senior 1</button>
-</div>
-
-<div class="card">
-<h2>📗 Senior 2</h2>
-<p class="muted">Develop your knowledge.</p>
-<button onclick="openSenior(2)">Open Senior 2</button>
-</div>
-
-<div class="card">
-<h2>📕 Senior 3</h2>
-<p class="muted">Prepare for advanced study.</p>
-<button onclick="openSenior(3)">Open Senior 3</button>
-</div>
-
-</div>
-
-<div class="card">
-<h2>✨ What you can do</h2>
-<span class="badge">📚 Books</span>
-<span class="badge">📖 Notes</span>
-<span class="badge">📝 Quiz</span>
-<span class="badge">🤖 AI Teacher</span>
-<span class="badge">🔎 Search</span>
-<span class="badge">📊 Progress</span>
-</div>
+<div id="subjects" class="subject-grid"></div>
 
 </section>
 
 
-<!-- BOOKS -->
-<section id="books" class="page">
+<section id="books" class="hidden">
 
-<div class="hero">
-<h1>📚 REB Books</h1>
-<p>
-Use the official REB e-Learning platform to access curriculum learning
-materials and books.
-</p>
-</div>
+<h2 class="section-title">📚 Books & Notes</h2>
 
-<div class="card">
-<h2>📘 Official REB e-Learning</h2>
-<p class="muted">
-Open the official REB learning platform and search for your Senior,
-subject and Student Book.
-</p>
-<button class="blue"
-onclick="window.open('https://elearning.reb.rw/','_blank')">
-Open REB e-Learning ↗
-</button>
-</div>
-
-<div id="bookList"></div>
-
-</section>
-
-
-<!-- TOPICS -->
-<section id="topics" class="page">
-
-<div class="hero">
-<h1>📖 Books & Notes</h1>
-<p>Select a Senior and subject to see the learning topics.</p>
-</div>
-
-<input id="search"
-class="search"
-placeholder="🔎 Search Senior, subject or topic..."
-oninput="searchTopics()">
-
-<div id="topicsList"></div>
-
-</section>
-
-
-<!-- QUIZ -->
-<section id="quiz" class="page">
-
-<div class="hero">
-<h1>📝 Quiz Test</h1>
-<p>Test your knowledge.</p>
-</div>
-
-<div class="card">
-<label>Choose level</label>
-
-<select id="quizLevel" onchange="startQuiz()">
-<option value="all">All Seniors</option>
-<option value="s1">Senior 1</option>
-<option value="s2">Senior 2</option>
-<option value="s3">Senior 3</option>
-</select>
-
-<h2 id="quizQuestion">Question</h2>
-
-<div id="quizAnswers"></div>
-
-<p id="quizResult" class="muted"></p>
-
-<h3 id="score">Score: 0 / 0</h3>
-
-<button onclick="nextQuestion()">Next Question ➡️</button>
-<button class="secondary" onclick="startQuiz()">Restart</button>
-</div>
-
-</section>
-
-
-<!-- AI -->
-<section id="ai" class="page">
-
-<div class="hero">
-<h1>🤖 AI Teacher</h1>
-<p>
-Ask for an explanation, example, formula or study help.
-</p>
-</div>
-
-<div class="card">
-
-<label>Your question</label>
-
-<textarea
-id="aiQuestion"
-rows="4"
-placeholder="Example: Explain Newton's second law"></textarea>
-
-<button onclick="askTeacher()">Ask Teacher 🤖</button>
-
-<div id="aiAnswer" class="topic" style="margin-top:18px">
-AI Teacher is ready to help you 📚
-</div>
-
-</div>
-
-<div class="card">
-<h3>Try asking:</h3>
-
-<button class="secondary"
-onclick="fillQuestion('Explain quadratic equations')">
-Mathematics
-</button>
-
-<button class="secondary"
-onclick="fillQuestion('Explain acids and bases')">
-Chemistry
-</button>
-
-<button class="secondary"
-onclick="fillQuestion('Explain Newton laws of motion')">
-Physics
-</button>
-
-<button class="secondary"
-onclick="fillQuestion('Explain English grammar')">
-English
-</button>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="page">
-
-<div class="hero">
-<h1>📱 Contact</h1>
-<p>Need help with the website or learning?</p>
-</div>
-
-<div class="card whatsapp">
-<h2>WhatsApp</h2>
-<p>0738939769</p>
-
-<a
-href="https://wa.me/250738939769"
-target="_blank">
-<button>💬 Chat on WhatsApp</button>
-</a>
-</div>
-
-</section>
-
-</main>
-
-
-<footer>
-Mr-dev AI Learning © 2026<br>
-Education • Knowledge • Success
-</footer>
-
-
-<script>
-
-/* =========================
-   DATA
-========================= */
-
-const data={
-
-s1:{
-name:"Senior 1",
-subjects:{
-
-"Mathematics":[
-["Numbers","Natural numbers, integers, fractions, decimals, percentages"],
-["Algebra","Algebraic expressions, substitution, simplification, equations"],
-["Geometry","Lines, angles, triangles, quadrilaterals, polygons"],
-["Measurement","Length, mass, time, area, perimeter and volume"],
-["Graphs","Coordinates, tables, graphs and interpretation"],
-["Ratio and Proportion","Ratio, rates, proportion and applications"],
-["Statistics","Data collection, tables, charts, averages"]
-],
-
-"Chemistry":[
-["Introduction to Chemistry","Laboratory safety, apparatus, measurements and observations"],
-["Matter","States of matter, properties and changes of state"],
-["Elements","Elements, symbols, atoms and molecules"],
-["Mixtures","Mixtures, solutions and separation methods"],
-["Chemical Changes","Physical and chemical changes"],
-["Chemical Reactions","Reactants, products and evidence of reactions"],
-["Air and Water","Composition, properties and importance"]
-],
-
-"Physics":[
-["Measurement","Physical quantities, SI units and measuring instruments"],
-["Motion","Distance, displacement, speed and simple motion"],
-["Force","Forces, effects of forces and simple calculations"],
-["Energy","Forms of energy, energy transfer and conservation"],
-["Matter","Solids, liquids, gases and density"],
-["Heat","Temperature, heat transfer and expansion"],
-["Light","Sources of light, reflection and shadows"]
-],
-
-"English":[
-["Grammar","Parts of speech, sentences and punctuation"],
-["Tenses","Present, past and future forms"],
-["Vocabulary","Words, meanings, synonyms and antonyms"],
-["Reading","Reading comprehension and main ideas"],
-["Writing","Paragraphs, descriptions and short compositions"],
-["Speaking","Conversation and communication"],
-["Listening","Listening comprehension and instructions"]
-]
-
-}},
-
-
-s2:{
-name:"Senior 2",
-subjects:{
-
-"Mathematics":[
-["Numbers","Indices, fractions, decimals, percentages and number operations"],
-["Algebra","Expressions, equations, inequalities and factorisation"],
-["Functions","Relations, functions, tables and graphs"],
-["Geometry","Angles, triangles, quadrilaterals and circle properties"],
-["Mensuration","Area, perimeter, surface area and volume"],
-["Statistics","Data collection, presentation and averages"],
-["Probability","Events, outcomes and simple probability"],
-["Coordinates","Coordinates, straight lines and graphs"]
-],
-
-"Chemistry":[
-["Atomic Structure","Atoms, subatomic particles and electronic arrangement"],
-["Periodic Table","Elements, groups, periods and properties"],
-["Chemical Bonding","Ionic, covalent and metallic bonding"],
-["Chemical Formulae","Valency, formulae and equations"],
-["Acids and Bases","Properties, indicators, pH and neutralisation"],
-["Salts","Preparation and properties of salts"],
-["Metals","Properties, extraction and reactivity"],
-["Chemical Reactions","Types of reactions and energy changes"]
-],
-
-"Physics":[
-["Motion","Speed, velocity, acceleration and motion graphs"],
-["Forces","Force, mass, weight and Newton's laws"],
-["Work and Energy","Work, power, kinetic and potential energy"],
-["Pressure","Pressure in solids, liquids and gases"],
-["Electricity","Current, voltage, resistance and circuits"],
-["Magnetism","Magnets, magnetic fields and electromagnets"],
-["Heat","Thermal energy, conduction, convection and radiation"],
-["Waves","Wave properties, sound and applications"]
-],
-
-"English":[
-["Grammar","Sentence structure, clauses and agreement"],
-["Tenses","All major tense forms and their uses"],
-["Comprehension","Reading, inference and interpretation"],
-["Vocabulary","Context, word formation and vocabulary building"],
-["Writing","Letters, reports, narratives and descriptions"],
-["Literature","Poetry, prose, drama and literary devices"],
-["Speaking","Discussion, presentation and communication"]
-]
-
-}},
-
-
-s3:{
-name:"Senior 3",
-subjects:{
-
-"Mathematics":[
-["Algebra","Quadratic equations, factorisation, algebraic fractions and surds"],
-["Functions","Linear and quadratic functions, graphs, domain and range"],
-["Trigonometry","Trigonometric ratios, sine rule, cosine rule and applications"],
-["Geometry","Circle theorems, transformations, similar shapes, area and volume"],
-["Statistics","Data analysis, probability, charts, graphs and standard deviation"],
-["Vectors","Vector notation, addition, subtraction and applications"],
-["Sequences","Patterns, sequences and general terms"],
-["Probability","Probability calculations and interpretation"]
-],
-
-"Chemistry":[
-["Organic Chemistry","Hydrocarbons, alkanes, alkenes and alcohols"],
-["Chemical Calculations","Mole concept, relative atomic mass, equations and calculations"],
-["Acids and Bases","Strong and weak acids, pH, neutralisation and salts"],
-["Metals","Properties, extraction and reactivity series"],
-["Electrochemistry","Electrolysis, electrodes and applications"],
-["Chemical Reactions","Reaction types, rates and energy changes"],
-["Periodic Table","Periodic trends and chemical properties"],
-["Environmental Chemistry","Air, water, pollution and environmental protection"]
-],
-
-"Physics":[
-["Electricity","Current, voltage, resistance, Ohm's law and electrical circuits"],
-["Electrical Energy","Power, energy consumption and electrical safety"],
-["Waves","Types of waves, properties, sound and light waves"],
-["Magnetism","Magnetic fields and electromagnetism"],
-["Motors and Generators","Electric motors, generators and electromagnetic induction"],
-["Light","Reflection, refraction, lenses and optical applications"],
-["Mechanics","Motion, force, work, energy and momentum"],
-["Thermal Physics","Heat, temperature and thermal transfer"]
-],
-
-"English":[
-["Grammar","Advanced grammar, clauses, agreement and sentence transformation"],
-["Literature","Poetry, prose, drama and literary analysis"],
-["Reading","Comprehension, inference, summary and critical reading"],
-["Writing","Essays, reports, letters, speeches and narratives"],
-["Vocabulary","Advanced vocabulary, idioms and word formation"],
-["Speaking","Debate, presentation and formal communication"],
-["Listening","Listening comprehension and note taking"]
-]
-
-}}
-};
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-function showPage(id){
-
-document.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
-
-document.getElementById(id).classList.add("active");
-
-window.scrollTo({top:0,behavior:"smooth"});
-
-if(id==="topics") renderTopics();
-if(id==="books") renderBooks();
-
-}
-
-function openSenior(n){
-
-showPage("topics");
-
-setTimeout(()=>{
-document.getElementById("search").value="Senior "+n;
-searchTopics();
-},50);
-
-}
-
-
-/* =========================
-   TOPICS
-========================= */
-
-function renderTopics(filter=""){
-
-const box=document.getElementById("topicsList");
-box.innerHTML="";
-
-Object.entries(data).forEach(([key,senior])=>{
-
-let seniorText=`
-<div class="senior">
-<h2>📘 ${senior.name}</h2>
-</div>`;
-
-let content="";
-
-Object.entries(senior.subjects).forEach(([subject,topics])=>{
-
-let topicHTML="";
-
-topics.forEach((t,i)=>{
-
-let text=(senior.name+" "+subject+" "+t[0]+" "+t[1]).toLowerCase();
-
-if(filter && !text.includes(filter.toLowerCase())) return;
-
-topicHTML+=`
-<div class="topic">
-<h4>${i+1}. ${t[0]}</h4>
-<ul>
-<li>${t[1]}</li>
-</ul>
-</div>`;
-
-});
-
-if(topicHTML){
-
-content+=`
-<div class="card">
-<h2>${subject}</h2>
-${topicHTML}
-</div>`;
-
-}
-
-});
-
-if(content) box.innerHTML+=seniorText+content;
-
-});
-
-if(!box.innerHTML){
-box.innerHTML=`
-<div class="card">
-<h3>❌ No topic found</h3>
-<p class="muted">Try another search.</p>
-</div>`;
-}
-
-}
-
-function searchTopics(){
-
-renderTopics(
-document.getElementById("search").value
-);
-
-}
-
-
-/* =========================
-   BOOKS
-========================= */
-
-function renderBooks(){
-
-const box=document.getElementById("bookList");
-
-box.innerHTML="";
-
-Object.values(data).forEach(senior=>{
-
-let html=`
-<div class="senior">
-<h2>${senior.name}</h2>
-</div>`;
-
-Object.keys(senior.subjects).forEach(subject=>{
-
-html+=`
-<div class="card book">
-<div>
-<h3>📖 ${subject}</h3>
-<p class="muted">
-Open official REB learning resources for ${senior.name}.
-</p>
-</div>
-
-<button
-onclick="window.open('https://elearning.reb.rw/','_blank')">
-Open REB ↗
-</button>
-</div>`;
-
-});
-
-box.innerHTML+=html;
-
-});
-
-}
-
-
-/* =========================
-   QUIZ
-========================= */
-
-const questions=[
-
-{
-level:"s1",
-q:"What is the basic unit of life?",
-a:["Cell","Atom","Organ"],
-c:0
-},
-
-{
-level:"s1",
-q:"What is 25% of 100?",
-a:["20","25","50"],
-c:1
-},
-
-{
-level:"s1",
-q:"Which formula represents water?",
-a:["CO2","H2O","O2"],
-c:1
-},
-
-{
-level:"s1",
-q:"Which instrument measures temperature?",
-a:["Thermometer","Balance","Ruler"],
-c:0
-},
-
-{
-level:"s2",
-q:"What is the SI unit of force?",
-a:["Joule","Newton","Watt"],
-c:1
-},
-
-{
-level:"s2",
-q:"A substance with pH below 7 is generally:",
-a:["Acidic","Neutral","Basic"],
-c:0
-},
-
-{
-level:"s2",
-q:"What is the gradient of a straight line?",
-a:["Change in y / change in x","x + y","x × y"],
-c:0
-},
-
-{
-level:"s2",
-q:"Which particle has a negative charge?",
-a:["Proton","Neutron","Electron"],
-c:2
-},
-
-{
-level:"s3",
-q:"Which law relates voltage, current and resistance?",
-a:["Ohm's law","Boyle's law","Newton's law"],
-c:0
-},
-
-{
-level:"s3",
-q:"What is sin 90°?",
-a:["0","1","-1"],
-c:1
-},
-
-{
-level:"s3",
-q:"The mole is used to measure:",
-a:["Amount of substance","Temperature","Pressure"],
-c:0
-},
-
-{
-level:"s3",
-q:"Which wave can travel through a vacuum?",
-a:["Sound","Light","Water wave"],
-c:1
-}
-
-];
-
-let quizQuestions=[];
-let quizIndex=0;
-let quizScore=0;
-
-function startQuiz(){
-
-let level=document.getElementById("quizLevel").value;
-
-quizQuestions=level==="all"
-? [...questions]
-: questions.filter(q=>q.level===level);
-
-quizIndex=0;
-quizScore=0;
-
-document.getElementById("quizResult").innerText="";
-
-showQuizQuestion();
-
-}
-
-function showQuizQuestion(){
-
-if(!quizQuestions.length) return;
-
-let q=quizQuestions[quizIndex];
-
-document.getElementById("quizQuestion").innerText=
-(quizIndex+1)+". "+q.q;
-
-let box=document.getElementById("quizAnswers");
-
-box.innerHTML="";
-
-q.a.forEach((answer,i)=>{
-
-let btn=document.createElement("button");
-
-btn.className="answer";
-btn.innerText=answer;
-
-btn.onclick=()=>checkAnswer(i,btn);
-
-box.appendChild(btn);
-
-});
-
-document.getElementById("score").innerText=
-"Score: "+quizScore+" / "+quizQuestions.length;
-
-}
-
-function checkAnswer(index,btn){
-
-let q=quizQuestions[quizIndex];
-
-document.querySelectorAll(".answer")
-.forEach(b=>b.disabled=true);
-
-if(index===q.c){
-
-btn.classList.add("correct");
-
-quizScore++;
-
-document.getElementById("quizResult").innerText=
-"✅ Correct!";
-
-}else{
-
-btn.classList.add("wrong");
-
-document.getElementById("quizResult").innerText=
-"❌ Incorrect.";
-
-}
-
-document.getElementById("score").innerText=
-"Score: "+quizScore+" / "+quizQuestions.length;
-
-}
-
-function nextQuestion(){
-
-if(quizIndex<quizQuestions.length-1){
-
-quizIndex++;
-showQuizQuestion();
-
-}else{
-
-document.getElementById("quizResult").innerText=
-"🎉 Quiz finished! Final score: "+
-quizScore+" / "+quizQuestions.length;
-
-}
-
-}
-
-
-/* =========================
-   AI TEACHER
-========================= */
-
-function fillQuestion(text){
-
-document.getElementById("aiQuestion").value=text;
-
-showPage("ai");
-
-}
-
-function askTeacher(){
-
-let q=document.getElementById("aiQuestion").value
-.toLowerCase().trim();
-
-let answer="";
-
-if(!q){
-
-answer="Please type a question first.";
-
-}
-
-else if(
-q.includes("quadratic") ||
-q.includes("algebra") ||
-q.includes("equation")
-){
-
-answer=
-"📐 Mathematics\n\n"+
-"Start by identifying the equation. For a quadratic equation "+
-"ax² + bx + c = 0, common methods include factorisation, "+
-"completing the square and the quadratic formula:\n\n"+
-"x = (-b ± √(b² - 4ac)) / 2a\n\n"+
-"Give me your exact question and I can explain it step by step.";
-
-}
-
-else if(
-q.includes("acid") ||
-q.includes("base") ||
-q.includes("chemistry") ||
-q.includes("mole")
-){
-
-answer=
-"⚗️ Chemistry\n\n"+
-"Chemistry studies matter and the changes it undergoes. "+
-"For calculations, identify the given quantities, choose the "+
-"correct formula, substitute values and check the units.\n\n"+
-"Send me the exact Chemistry question for a step-by-step explanation.";
-
-}
-
-else if(
-q.includes("physics") ||
-q.includes("force") ||
-q.includes("newton") ||
-q.includes("electricity") ||
-q.includes("wave")
-){
-
-answer=
-"⚡ Physics\n\n"+
-"Physics explains matter, motion, forces, energy, electricity "+
-"and waves. For numerical problems: write the known values, "+
-"choose the formula, substitute and give the correct unit.\n\n"+
-"Send me the exact Physics problem.";
-
-}
-
-else if(
-q.includes("english") ||
-q.includes("grammar") ||
-q.includes("tense") ||
-q.includes("writing")
-){
-
-answer=
-"📖 English\n\n"+
-"I can help with grammar, vocabulary, comprehension, literature, "+
-"speaking and writing. Tell me the sentence, passage or topic "+
-"you want to understand.";
-
-}
-
-else{
-
-answer=
-"🤖 AI Teacher\n\n"+
-"I can help you with Senior 1, Senior 2 and Senior 3 Mathematics, "+
-"Chemistry, Physics and English.\n\n"+
-"Try asking something like:\n"+
-"• Explain quadratic equations\n"+
-"• Explain acids and bases\n"+
-"• Explain Newton's laws\n"+
-"• Explain English tenses";
-
-}
-
-document.getElementById("aiAnswer")
-.innerText=answer;
-
-}
-
-
-/* =========================
-   THEME
-========================= */
-
-function toggleTheme(){
-
-document.body.classList.toggle("light");
-
-localStorage.setItem(
-"theme",
-document.body.classList.contains("light")
-?"light":"dark"
-);
-
-}
-
-if(localStorage.getItem("theme")==="light"){
-document.body.classList.add("light");
-}
-
-
-/* =========================
-   START
-========================= */
-
-renderTopics();
-renderBooks();
-startQuiz();
-
-</script>
-
-</body>
-</html>
+<p style="color:var(--muted);line-height:1.6">
+Choose a Senior and subject to study the available topics and notes.
+The topics below are organized as a learning guide and are not a
+replacement for
