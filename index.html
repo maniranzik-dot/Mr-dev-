@@ -3,16 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mr-dev Learning Hub</title>
 
 <style>
 *{
   box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
@@ -29,188 +24,130 @@ header{
   border-bottom:2px solid #234b75;
 }
 
-.logo{
+header h1{
+  margin:0 0 20px;
   font-size:32px;
-  font-weight:bold;
-}
-
-.logo span{
-  color:#20df70;
 }
 
 nav{
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
   gap:12px;
-  margin-top:20px;
+  flex-wrap:wrap;
 }
 
 nav button{
-  background:#123453;
+  background:#153653;
   color:white;
   border:2px solid #234b75;
-  padding:15px 25px;
   border-radius:15px;
+  padding:15px 25px;
   font-size:18px;
-  cursor:pointer;
 }
 
-nav button:hover{
-  background:#20df70;
-  color:#071426;
-}
-
-.container{
+main{
   max-width:900px;
   margin:auto;
   padding:25px 20px;
 }
 
+.hidden{
+  display:none;
+}
+
 .intro{
   text-align:center;
-  font-size:24px;
-  line-height:1.6;
-  color:#b9c9dc;
+  font-size:22px;
+  line-height:1.5;
+  color:#b8c9df;
 }
 
 .search-box{
-  margin:30px 0;
+  margin:25px 0;
 }
 
-.search-box input{
+input{
   width:100%;
-  padding:18px;
+  padding:16px;
   border-radius:12px;
-  border:2px solid #234b75;
-  background:#123453;
+  border:2px solid #285783;
+  background:#153653;
   color:white;
   font-size:17px;
-  outline:none;
 }
 
-.search-box button{
+.search-btn{
   width:100%;
   margin-top:10px;
-  padding:17px;
+  padding:16px;
   border:0;
   border-radius:12px;
   background:#20df70;
-  color:#071426;
+  color:#000;
   font-size:18px;
   font-weight:bold;
-  cursor:pointer;
 }
 
 h2{
-  font-size:32px;
-  margin-top:40px;
-}
-
-.class-buttons{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.class-btn{
-  padding:20px;
-  background:#123453;
-  border:2px solid #234b75;
-  border-radius:18px;
-  color:white;
-  font-size:20px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.class-btn.active{
-  background:#20df70;
-  color:#071426;
-}
-
-.subjects{
-  margin-top:30px;
-}
-
-.subject{
-  background:#123453;
-  border:2px solid #234b75;
-  padding:18px;
-  border-radius:15px;
-  margin-bottom:15px;
-  cursor:pointer;
-  font-size:20px;
-}
-
-.subject:hover{
-  border-color:#20df70;
+  font-size:30px;
 }
 
 .topics{
-  display:none;
-  margin-top:20px;
+  display:grid;
+  gap:20px;
 }
 
 .topic{
-  background:#123453;
+  background:#153653;
   border:3px solid #20df70;
-  border-radius:22px;
+  border-radius:25px;
   padding:25px;
-  margin:18px 0;
   cursor:pointer;
   transition:.2s;
 }
 
 .topic:hover{
-  transform:scale(1.01);
-  background:#194567;
+  transform:scale(1.02);
+  background:#1b4265;
 }
 
 .topic h3{
+  margin:0 0 15px;
   color:#20df70;
   font-size:27px;
-  margin:0 0 20px;
 }
 
 .topic p{
   font-size:19px;
   line-height:1.5;
-}
-
-.notes-page{
-  min-height:100vh;
-  padding:25px 20px;
-  background:#071426;
+  margin:0;
 }
 
 .back{
   background:#20df70;
-  color:#071426;
+  color:#000;
   border:0;
-  padding:14px 20px;
+  padding:14px 22px;
   border-radius:12px;
-  font-weight:bold;
   font-size:17px;
-  cursor:pointer;
+  font-weight:bold;
+  margin-bottom:20px;
 }
 
 .notes{
-  max-width:850px;
-  margin:25px auto;
-  background:#123453;
-  border:2px solid #20df70;
+  background:#102b48;
   border-radius:20px;
   padding:25px;
-}
-
-.notes h1{
-  color:#20df70;
+  border:2px solid #20df70;
 }
 
 .notes h2{
   color:#20df70;
-  font-size:25px;
+}
+
+.notes h3{
+  color:#20df70;
+  margin-top:25px;
 }
 
 .notes p,
@@ -219,324 +156,340 @@ h2{
   line-height:1.7;
 }
 
-.formula{
-  background:#071426;
-  border-left:5px solid #20df70;
-  padding:15px;
-  margin:15px 0;
-  font-size:20px;
-}
-
 footer{
+  margin-top:40px;
+  padding:30px;
   text-align:center;
-  padding:35px 15px;
-  margin-top:50px;
   border-top:2px solid #234b75;
-  color:#b9c9dc;
-}
-
-@media(max-width:600px){
-  .class-buttons{
-    grid-template-columns:1fr;
-  }
-
-  .logo{
-    font-size:27px;
-  }
-
-  .intro{
-    font-size:20px;
-  }
-
-  .topic h3{
-    font-size:23px;
-  }
+  color:#b8c9df;
 }
 </style>
 </head>
 
 <body>
 
-<div id="app">
-
 <header>
-  <div class="logo">📚 <span>Mr-dev</span> Learning Hub</div>
+  <h1>📚 <span style="color:#20df70">Mr-dev</span> Learning Hub</h1>
 
   <nav>
-    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="showHome()">🏠 Home</button>
+    <button onclick="showHome()">📚 Books</button>
     <button onclick="showSearch()">🔎 Search</button>
-    <button onclick="showAllTopics()">📚 Topics</button>
   </nav>
 </header>
 
-<div class="container">
 
-<p class="intro">
-Learn Senior 1, Senior 2 and Senior 3 Mathematics,
-Chemistry, Physics and English.
-Read notes, study topics and practise.
-</p>
+<main>
 
-<div class="search-box" id="searchBox">
-  <input id="searchInput"
-         type="text"
-         placeholder="Search subject or topic...">
+<!-- HOME PAGE -->
+<section id="homePage">
 
-  <button onclick="searchTopics()">🔎 Search</button>
-</div>
+  <p class="intro">
+    Learn Senior 1, Senior 2 and Senior 3 Mathematics,
+    Chemistry, Physics and English.
+    Read notes, study topics and practise with quizzes.
+  </p>
 
-<h2>🎓 Choose Your Class</h2>
+  <div class="search-box">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search subject or topic..."
+    >
 
-<div class="class-buttons">
+    <button class="search-btn" onclick="searchTopics()">
+      🔎 Search
+    </button>
+  </div>
 
-<button class="class-btn active"
-onclick="selectClass(1,this)">
-Senior 1
-</button>
+  <h2>🎓 Choose Your Topic</h2>
 
-<button class="class-btn"
-onclick="selectClass(2,this)">
-Senior 2
-</button>
+  <div class="topics" id="topicList">
 
-<button class="class-btn"
-onclick="selectClass(3,this)">
-Senior 3
-</button>
+    <div class="topic" data-name="Algebra"
+         onclick="openNotes('Algebra')">
+      <h3>Topic 1: Algebra</h3>
+      <p>📘 Study Algebra and practise questions related to this topic.</p>
+    </div>
 
-</div>
+    <div class="topic" data-name="Fractions"
+         onclick="openNotes('Fractions')">
+      <h3>Topic 2: Fractions</h3>
+      <p>📘 Study Fractions and practise questions related to this topic.</p>
+    </div>
 
-<div class="subjects">
+    <div class="topic" data-name="Linear equations"
+         onclick="openNotes('Linear equations')">
+      <h3>Topic 3: Linear equations</h3>
+      <p>📘 Study Linear equations and practise questions.</p>
+    </div>
 
-<div class="subject" onclick="openSubject('Mathematics')">
-📐 Mathematics
-</div>
+    <div class="topic" data-name="Geometry"
+         onclick="openNotes('Geometry')">
+      <h3>Topic 4: Geometry</h3>
+      <p>📘 Study Geometry and practise questions related to this topic.</p>
+    </div>
 
-<div class="subject" onclick="openSubject('Physics')">
-⚛️ Physics
-</div>
+    <div class="topic" data-name="Statistics"
+         onclick="openNotes('Statistics')">
+      <h3>Topic 5: Statistics</h3>
+      <p>📘 Study Statistics and practise questions related to this topic.</p>
+    </div>
 
-<div class="subject" onclick="openSubject('Chemistry')">
-🧪 Chemistry
-</div>
+    <div class="topic" data-name="Measurement"
+         onclick="openNotes('Measurement')">
+      <h3>Topic 6: Measurement</h3>
+      <p>📘 Study Measurement and practise questions.</p>
+    </div>
 
-<div class="subject" onclick="openSubject('English')">
-📖 English
-</div>
+    <div class="topic" data-name="Motion"
+         onclick="openNotes('Motion')">
+      <h3>Topic 7: Motion</h3>
+      <p>📘 Study Motion and practise questions.</p>
+    </div>
 
-</div>
+    <div class="topic" data-name="Force"
+         onclick="openNotes('Force')">
+      <h3>Topic 8: Force</h3>
+      <p>📘 Study Force and practise questions.</p>
+    </div>
 
-<div id="topics" class="topics"></div>
+    <div class="topic" data-name="Energy"
+         onclick="openNotes('Energy')">
+      <h3>Topic 9: Energy</h3>
+      <p>📘 Study Energy and practise questions.</p>
+    </div>
 
-</div>
+    <div class="topic" data-name="Heat"
+         onclick="openNotes('Heat')">
+      <h3>Topic 10: Heat</h3>
+      <p>📘 Study Heat and practise questions.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- NOTES PAGE -->
+<section id="notesPage" class="hidden">
+
+  <button class="back" onclick="showHome()">
+    ← Back to Topics
+  </button>
+
+  <div class="notes">
+
+    <h2 id="notesTitle">📘 Notes</h2>
+
+    <div id="notesContent"></div>
+
+  </div>
+
+</section>
+
+</main>
+
 
 <footer>
-📚 Mr-dev Learning Hub<br><br>
-Senior 1 • Senior 2 • Senior 3<br><br>
-Learn • Practise • Succeed
+  📚 Mr-dev Learning Hub
+  <br><br>
+  Senior 1 • Senior 2 • Senior 3
+  <br><br>
+  Learn • Practise • Succeed
 </footer>
-
-</div>
 
 
 <script>
 
-let currentClass = 1;
+const notes = {
 
-const data = {
+  "Algebra": `
+    <h3>📖 Introduction to Algebra</h3>
+    <p>
+      Algebra uses letters and numbers to represent unknown values.
+    </p>
 
-Mathematics: [
-  ["Algebra",
-   "Learn algebra and practise questions.",
-   "Algebra is the study of numbers, symbols and rules for manipulating them.",
-   "Examples include simplifying expressions and solving equations."],
+    <h3>Example</h3>
+    <p>
+      If x + 5 = 10, then:
+    </p>
 
-  ["Fractions",
-   "Study fractions and practise questions.",
-   "A fraction represents part of a whole.",
-   "Examples: 1/2, 3/4 and 5/8."],
+    <p>
+      x = 10 - 5
+      <br>
+      <b>x = 5</b>
+    </p>
 
-  ["Linear Equations",
-   "Study linear equations.",
-   "A linear equation is an equation where the highest power of the variable is 1.",
-   "Example: 2x + 4 = 10. Therefore x = 3."],
+    <h3>Practice</h3>
+    <p>Solve: x + 7 = 15</p>
+  `,
 
-  ["Geometry",
-   "Study shapes, angles and measurements.",
-   "Geometry deals with shapes, sizes, angles and properties of space.",
-   "Important topics include triangles, circles and quadrilaterals."],
+  "Fractions": `
+    <h3>📖 Fractions</h3>
+    <p>
+      A fraction represents part of a whole.
+    </p>
 
-  ["Statistics",
-   "Study statistics and data.",
-   "Statistics is the study of collecting, organising and analysing data.",
-   "Mean, median and mode are important measures."]
-],
+    <h3>Example</h3>
+    <p>
+      1/2 means one part out of two equal parts.
+    </p>
 
-Physics: [
-  ["Measurement",
-   "Study measurement and practise questions.",
-   "Measurement is the process of finding the size or amount of something.",
-   "Common quantities include length, mass, time and temperature."],
+    <h3>Practice</h3>
+    <p>Add: 1/2 + 1/2</p>
+  `,
 
-  ["Motion",
-   "Study motion and practise questions.",
-   "Motion is the change in position of an object with time.",
-   "Speed = Distance ÷ Time."],
+  "Linear equations": `
+    <h3>📖 Linear Equations</h3>
+    <p>
+      A linear equation is an equation where the highest power
+      of the variable is 1.
+    </p>
 
-  ["Force",
-   "Study force and practise questions.",
-   "Force is a push or pull that can change the motion or shape of an object.",
-   "Force is measured in Newtons (N). F = m × a."],
+    <h3>Example</h3>
+    <p>
+      2x + 4 = 10
+      <br>
+      2x = 6
+      <br>
+      <b>x = 3</b>
+    </p>
+  `,
 
-  ["Energy",
-   "Study energy and practise questions.",
-   "Energy is the ability to do work.",
-   "Forms include kinetic, potential, heat, light and electrical energy."],
+  "Geometry": `
+    <h3>📖 Geometry</h3>
+    <p>
+      Geometry studies shapes, sizes, angles and positions.
+    </p>
 
-  ["Heat",
-   "Study heat and temperature.",
-   "Heat is energy transferred from a hotter object to a colder object.",
-   "Temperature measures how hot or cold something is."]
-],
+    <h3>Example</h3>
+    <p>
+      Area of a rectangle = length × width.
+    </p>
+  `,
 
-Chemistry: [
-  ["Matter",
-   "Study matter and its properties.",
-   "Matter is anything that has mass and occupies space.",
-   "The three common states are solid, liquid and gas."],
+  "Statistics": `
+    <h3>📖 Statistics</h3>
+    <p>
+      Statistics is the study of collecting, organising and
+      interpreting data.
+    </p>
 
-  ["Atoms",
-   "Study atoms and their structure.",
-   "An atom is the smallest unit of an element that retains its chemical properties.",
-   "Atoms contain protons, neutrons and electrons."],
+    <h3>Example</h3>
+    <p>
+      Mean = Sum of values ÷ Number of values.
+    </p>
+  `,
 
-  ["Elements",
-   "Study chemical elements.",
-   "An element is a pure substance made of only one type of atom.",
-   "Examples include oxygen, hydrogen and carbon."]
-],
+  "Measurement": `
+    <h3>📖 Measurement</h3>
+    <p>
+      Measurement is finding the size or amount of something.
+    </p>
 
-English: [
-  ["Grammar",
-   "Study English grammar.",
-   "Grammar is the set of rules used to form correct sentences.",
-   "It includes nouns, verbs, adjectives and other parts of speech."],
+    <h3>Common Units</h3>
+    <ul>
+      <li>Length → metre (m)</li>
+      <li>Mass → kilogram (kg)</li>
+      <li>Time → second (s)</li>
+    </ul>
+  `,
 
-  ["Tenses",
-   "Study English tenses.",
-   "Tenses show the time when an action happens.",
-   "Examples are past, present and future tense."],
+  "Motion": `
+    <h3>📖 Motion</h3>
+    <p>
+      Motion is the change in position of an object with time.
+    </p>
 
-  ["Writing",
-   "Practise English writing.",
-   "Good writing requires clear ideas, correct grammar and good organisation.",
-   "Always organise your introduction, body and conclusion."]
-]
+    <h3>Formula</h3>
+    <p>
+      Speed = Distance ÷ Time
+    </p>
+  `,
+
+  "Force": `
+    <h3>📖 Force</h3>
+    <p>
+      Force is a push or pull acting on an object.
+    </p>
+
+    <h3>Formula</h3>
+    <p>
+      Force = Mass × Acceleration
+      <br>
+      F = ma
+    </p>
+  `,
+
+  "Energy": `
+    <h3>📖 Energy</h3>
+    <p>
+      Energy is the ability to do work.
+    </p>
+
+    <h3>Types of Energy</h3>
+    <ul>
+      <li>Kinetic energy</li>
+      <li>Potential energy</li>
+      <li>Thermal energy</li>
+      <li>Electrical energy</li>
+    </ul>
+  `,
+
+  "Heat": `
+    <h3>📖 Heat</h3>
+    <p>
+      Heat is energy transferred from a hotter object to a colder object.
+    </p>
+
+    <h3>Examples</h3>
+    <ul>
+      <li>Conduction</li>
+      <li>Convection</li>
+      <li>Radiation</li>
+    </ul>
+  `
 
 };
 
 
-function selectClass(number,button){
+function openNotes(topic){
 
-  currentClass = number;
+  document.getElementById("homePage").classList.add("hidden");
 
-  document.querySelectorAll(".class-btn")
-  .forEach(btn => btn.classList.remove("active"));
+  document.getElementById("notesPage").classList.remove("hidden");
 
-  button.classList.add("active");
+  document.getElementById("notesTitle").innerHTML =
+    "📘 " + topic + " Notes";
 
-  document.getElementById("topics").style.display="none";
+  document.getElementById("notesContent").innerHTML =
+    notes[topic] || "<p>No notes available yet.</p>";
+
+  window.scrollTo(0,0);
+
 }
 
 
-function openSubject(subject){
+function showHome(){
 
-  const topics = data[subject];
+  document.getElementById("notesPage").classList.add("hidden");
 
-  const box = document.getElementById("topics");
+  document.getElementById("homePage").classList.remove("hidden");
 
-  box.innerHTML = `
-    <h2>📚 ${subject} - Senior ${currentClass}</h2>
-  `;
+  window.scrollTo(0,0);
 
-  topics.forEach((item,index)=>{
-
-    box.innerHTML += `
-      <div class="topic"
-           onclick="openNotes('${subject}',${index})">
-
-        <h3>Topic ${index+1}: ${item[0]}</h3>
-
-        <p>
-          📘 ${item[1]}
-        </p>
-
-      </div>
-    `;
-
-  });
-
-  box.style.display="block";
-
-  box.scrollIntoView({
-    behavior:"smooth"
-  });
 }
 
 
-function openNotes(subject,index){
+function showSearch(){
 
-  const item = data[subject][index];
+  showHome();
 
-  document.getElementById("app").innerHTML = `
+  document.getElementById("searchInput").focus();
 
-    <div class="notes-page">
+  window.scrollTo(0,200);
 
-      <button class="back" onclick="location.reload()">
-        ← Back to Topics
-      </button>
-
-      <div class="notes">
-
-        <h1>📘 ${item[0]}</h1>
-
-        <p>
-          <b>Class:</b> Senior ${currentClass}
-        </p>
-
-        <hr>
-
-        <h2>📖 Notes</h2>
-
-        <p>
-          ${item[2]}
-        </p>
-
-        <h2>📝 Important points</h2>
-
-        <p>
-          ${item[3]}
-        </p>
-
-        <h2>🎯 Example</h2>
-
-        <div class="formula">
-          Study this topic carefully and practise
-          questions related to it.
-        </div>
-
-        <h2>✅ Practice</h2>
-
-        <p>
-          Write down what you have learned about
-          <b>${item[0]}</b> and practise at least
-          five questions.
-        </p>
-
-      </div>
-
-    </div>
-  `;
 }
 
 
@@ -548,105 +501,20 @@ function searchTopics(){
     .toLowerCase()
     .trim();
 
-  if(!search){
-    alert("Please enter a subject or topic.");
-    return;
-  }
+  const topics =
+    document.querySelectorAll(".topic");
 
-  const results=[];
+  topics.forEach(topic => {
 
-  Object.keys(data).forEach(subject=>{
+    const name =
+      topic.dataset.name.toLowerCase();
 
-    data[subject].forEach((item,index)=>{
+    if(name.includes(search)){
+      topic.style.display = "block";
+    }else{
+      topic.style.display = "none";
+    }
 
-      if(
-        subject.toLowerCase().includes(search) ||
-        item[0].toLowerCase().includes(search) ||
-        item[1].toLowerCase().includes(search)
-      ){
-
-        results.push({
-          subject:subject,
-          index:index,
-          name:item[0],
-          description:item[1]
-        });
-
-      }
-
-    });
-
-  });
-
-  const box=document.getElementById("topics");
-
-  if(results.length===0){
-
-    box.innerHTML=`
-      <h2>❌ No results found</h2>
-      <p>Try another subject or topic.</p>
-    `;
-
-  }else{
-
-    box.innerHTML=`
-      <h2>🔎 Search Results</h2>
-    `;
-
-    results.forEach(result=>{
-
-      box.innerHTML += `
-
-        <div class="topic"
-             onclick="openNotes('${result.subject}',${result.index})">
-
-          <h3>
-            ${result.subject}: ${result.name}
-          </h3>
-
-          <p>
-            📘 ${result.description}
-          </p>
-
-        </div>
-
-      `;
-
-    });
-
-  }
-
-  box.style.display="block";
-
-  box.scrollIntoView({
-    behavior:"smooth"
-  });
-}
-
-
-function showSearch(){
-
-  document
-    .getElementById("searchBox")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-function showAllTopics(){
-
-  openSubject("Mathematics");
-
-}
-
-
-function goHome(){
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
   });
 
 }
