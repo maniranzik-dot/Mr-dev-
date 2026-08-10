@@ -1,395 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mr-dev Learning Hub</title>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --bg:#071426;
-  --card:#10233d;
-  --card2:#172e4d;
-  --text:#fff;
-  --muted:#aebed1;
-  --green:#20df72;
-  --blue:#318cff;
-  --danger:#ff5263;
-  --border:#294565;
+/* ===== MOBILE VIEW FIX ===== */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-body{
-  font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#071426,#0c1d35,#071426);
-  color:var(--text);
-  min-height:100vh;
+* {
+  box-sizing: border-box;
 }
 
-body.light{
-  --bg:#f3f6fa;
-  --card:#fff;
-  --card2:#edf3f9;
-  --text:#102033;
-  --muted:#53677d;
-  --border:#cbd8e5;
-  background:#f3f6fa;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-header{
-  background:rgba(7,20,38,.96);
-  border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  z-index:1000;
+/* Main containers */
+.container,
+section,
+main,
+header,
+nav {
+  width: 100%;
+  max-width: 100%;
 }
 
-.light header{background:#fff}
-
-.nav{
-  max-width:1200px;
-  margin:auto;
-  padding:15px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.logo{
-  font-size:22px;
-  font-weight:bold;
-  color:var(--green);
+nav button,
+nav a {
+  flex: 1 1 140px;
+  min-width: 0;
 }
 
-.logo span{color:var(--text)}
-
-nav{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
+/* Cards */
+.cards,
+.class-buttons,
+.subjects,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
 }
 
-button,.btn{
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  padding:10px 15px;
-  border-radius:9px;
-  cursor:pointer;
-  font-weight:bold;
+/* Prevent text from pushing the page sideways */
+h1, h2, h3, p, div, button, a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
-button:hover,.btn:hover{
-  border-color:var(--green);
-  transform:translateY(-1px);
+/* Phone */
+@media (max-width: 600px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  .container,
+  main,
+  section {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  /* Senior 1, 2, 3 */
+  .cards,
+  .class-buttons,
+  .subjects,
+  .grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav button,
+  nav a {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+  }
 }
 
-.primary{
-  background:var(--green);
-  color:#04130b;
-  border:none;
+/* Medium screens */
+@media (min-width: 601px) and (max-width: 900px) {
+  .cards,
+  .class-buttons,
+  .subjects,
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
-
-.blue{
-  background:var(--blue);
-  color:white;
-  border:none;
-}
-
-.hero{
-  max-width:1200px;
-  margin:auto;
-  padding:55px 20px 30px;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:42px;
-  margin-bottom:15px;
-}
-
-.hero h1 span{color:var(--green)}
-
-.hero p{
-  color:var(--muted);
-  font-size:18px;
-  line-height:1.6;
-  max-width:750px;
-  margin:auto;
-}
-
-.search{
-  max-width:750px;
-  margin:25px auto;
-  display:flex;
-  gap:10px;
-}
-
-.search input{
-  flex:1;
-  padding:15px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  font-size:16px;
-}
-
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:20px;
-}
-
-.section-title{
-  margin:30px 0 18px;
-  font-size:27px;
-}
-
-.senior-tabs{
-  display:flex;
-  gap:10px;
-  overflow:auto;
-  padding-bottom:10px;
-}
-
-.senior-tab{
-  min-width:120px;
-  text-align:center;
-}
-
-.senior-tab.active{
-  background:var(--green);
-  color:#031208;
-  border:none;
-}
-
-.subject-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
-}
-
-.subject{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:20px;
-  transition:.2s;
-}
-
-.subject:hover{
-  transform:translateY(-4px);
-  border-color:var(--green);
-}
-
-.subject-icon{
-  font-size:34px;
-  margin-bottom:10px;
-}
-
-.subject h3{
-  margin-bottom:8px;
-}
-
-.subject p{
-  color:var(--muted);
-  line-height:1.5;
-}
-
-.subject button{
-  margin-top:15px;
-  width:100%;
-}
-
-.topic-list{
-  margin-top:15px;
-}
-
-.topic{
-  background:var(--card2);
-  border:1px solid var(--border);
-  margin:8px 0;
-  padding:13px;
-  border-radius:9px;
-  cursor:pointer;
-}
-
-.topic:hover{
-  border-color:var(--green);
-}
-
-.topic-content{
-  display:none;
-  padding:15px;
-  margin-top:8px;
-  background:var(--card);
-  border-radius:8px;
-  line-height:1.7;
-  color:var(--muted);
-}
-
-.topic.open .topic-content{display:block}
-
-.note{
-  border-left:4px solid var(--green);
-  padding:12px 15px;
-  background:var(--card2);
-  margin:12px 0;
-  border-radius:6px;
-}
-
-.quiz-box{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:15px;
-  padding:25px;
-  margin-top:20px;
-}
-
-.question{
-  font-size:20px;
-  margin-bottom:18px;
-  line-height:1.5;
-}
-
-.answers{
-  display:grid;
-  gap:10px;
-}
-
-.answer{
-  text-align:left;
-  width:100%;
-}
-
-.correct{
-  background:#126b3b!important;
-  border-color:var(--green)!important;
-}
-
-.wrong{
-  background:#722431!important;
-  border-color:var(--danger)!important;
-}
-
-.score{
-  font-size:20px;
-  color:var(--green);
-  margin:15px 0;
-}
-
-.teacher{
-  background:linear-gradient(135deg,#102b4d,#10233d);
-  border:1px solid var(--border);
-  border-radius:15px;
-  padding:25px;
-  margin-top:25px;
-}
-
-.teacher textarea{
-  width:100%;
-  min-height:100px;
-  margin:15px 0;
-  padding:15px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:var(--bg);
-  color:var(--text);
-}
-
-.response{
-  margin-top:15px;
-  padding:18px;
-  background:var(--card);
-  border-radius:10px;
-  line-height:1.7;
-  display:none;
-}
-
-footer{
-  margin-top:50px;
-  padding:30px 20px;
-  text-align:center;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-}
-
-.hidden{display:none!important}
-
-@media(max-width:700px){
-  .hero h1{font-size:30px}
-  .nav{align-items:flex-start;flex-direction:column}
-  nav{width:100%}
-  nav button{flex:1}
-  .search{flex-direction:column}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="nav">
-  <div class="logo">📚 Mr-dev <span>Learning Hub</span></div>
-
-  <nav>
-    <button onclick="goHome()">🏠 Home</button>
-    <button onclick="showBooks()">📚 Books</button>
-    <button onclick="showQuiz()">📝 Quiz</button>
-    <button onclick="showTeacher()">🤖 AI Teacher</button>
-    <button onclick="toggleTheme()">🌙 Theme</button>
-  </nav>
-</div>
-</header>
-
-<section class="hero">
-  <h1>Welcome to <span>Mr-dev Learning Hub</span></h1>
-  <p>
-    Learn Senior 1, Senior 2 and Senior 3 subjects,
-    explore topics, read notes and practise with quizzes.
-  </p>
-
-  <div class="search">
-    <input id="searchInput"
-      placeholder="Search subject or topic..."
-      oninput="searchContent()">
-    <button class="primary" onclick="searchContent()">🔎 Search</button>
-  </div>
-</section>
-
-<main class="container">
-
-<section id="home">
-
-<h2 class="section-title">🎓 Choose Your Class</h2>
-
-<div class="senior-tabs">
-  <button class="senior-tab active" onclick="selectSenior(1,this)">
-    Senior 1
-  </button>
-
-  <button class="senior-tab" onclick="selectSenior(2,this)">
-    Senior 2
-  </button>
-
-  <button class="senior-tab" onclick="selectSenior(3,this)">
-    Senior 3
-  </button>
-</div>
-
-<div id="subjects" class="subject-grid"></div>
-
-</section>
-
-
-<section id="books" class="hidden">
-
-<h2 class="section-title">📚 Books & Notes</h2>
-
-<p style="color:var(--muted);line-height:1.6">
-Choose a Senior and subject to study the available topics and notes.
-The topics below are organized as a learning guide and are not a
-replacement for
