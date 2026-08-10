@@ -1,161 +1,170 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mr-dev Learning Hub</title>
 
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
-body{
-  font-family:Arial,sans-serif;
-  background:#071426;
-  color:#fff;
-  line-height:1.6;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
-button,input,select{font:inherit}
-button{cursor:pointer}
 
 :root{
   --bg:#071426;
-  --card:#102b48;
-  --card2:#163957;
+  --card:#10233d;
+  --card2:#172e4d;
+  --text:#ffffff;
+  --muted:#aebed1;
   --green:#20df72;
   --blue:#318cff;
-  --text:#fff;
-  --muted:#aec0d8;
-  --border:#28527b;
+  --danger:#ff5d6c;
+  --border:#29486c;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  min-height:100vh;
 }
 
 body.light{
-  --bg:#f3f6fa;
-  --card:#fff;
+  --bg:#f4f7fb;
+  --card:#ffffff;
   --card2:#eaf1f8;
-  --text:#101820;
+  --text:#102033;
   --muted:#526579;
-  --border:#c8d6e5;
+  --border:#c9d7e5;
 }
 
 header{
+  background:var(--card);
+  border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
-  z-index:50;
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-  padding:16px;
+  z-index:100;
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
 }
 
 .logo{
-  font-size:28px;
-  font-weight:800;
-  margin-bottom:14px;
-}
-.logo span{color:var(--green)}
-
-nav{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-}
-
-nav button,.theme{
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  padding:13px 8px;
-  border-radius:15px;
+  font-size:25px;
   font-weight:bold;
 }
 
-nav button:hover,.theme:hover{
+.logo span{
+  color:var(--green);
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+button{
+  border:1px solid var(--border);
+  background:var(--card2);
+  color:var(--text);
+  padding:11px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+button:hover{
   background:var(--green);
-  color:#06130d;
+  color:#06130b;
 }
 
-.theme{
-  width:100%;
-  margin-top:10px;
-}
-
-main{
-  width:min(1100px,100%);
+.container{
+  width:94%;
+  max-width:1200px;
   margin:auto;
-  padding:25px 16px 70px;
 }
 
 .hero{
   text-align:center;
-  padding:35px 10px;
+  padding:55px 15px 35px;
 }
 
 .hero h1{
-  font-size:45px;
-  margin:0 0 12px;
+  font-size:42px;
+  margin-bottom:12px;
 }
 
-.hero h1 span{color:var(--green)}
+.hero h1 span{
+  color:var(--green);
+}
 
 .hero p{
   color:var(--muted);
   font-size:19px;
-  max-width:760px;
+  max-width:750px;
   margin:auto;
 }
 
 .search{
   display:flex;
   gap:10px;
-  max-width:700px;
-  margin:25px auto;
+  max-width:800px;
+  margin:30px auto;
 }
 
-.search input{
-  flex:1;
-  min-width:0;
-  padding:15px;
-  border-radius:12px;
+input,select,textarea{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
   border:1px solid var(--border);
   background:var(--card);
   color:var(--text);
+  font-size:16px;
 }
 
-.greenBtn{
+.search button{
   background:var(--green);
-  color:#06130d;
-  border:0;
-  padding:14px 20px;
-  border-radius:12px;
+  color:#06130b;
   font-weight:bold;
 }
 
 .section-title{
-  font-size:32px;
+  font-size:30px;
   margin:35px 0 18px;
 }
 
-.class-tabs{
+.classes{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:15px;
 }
 
-.class-tabs button{
-  padding:16px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
+.class-btn{
+  padding:25px;
+  text-align:center;
+  font-size:22px;
   font-weight:bold;
+  background:var(--card);
 }
 
-.class-tabs button.active{
+.class-btn.active{
   background:var(--green);
-  color:#06130d;
+  color:#06130b;
 }
 
-.subject-grid{
+.subjects{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:15px;
@@ -165,169 +174,140 @@ main{
 .subject{
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:18px;
-  padding:20px;
-  text-align:center;
+  border-radius:15px;
+  padding:22px;
+  cursor:pointer;
 }
 
-.subject button{
-  width:100%;
-  padding:12px;
-  border:0;
-  border-radius:10px;
-  background:var(--blue);
-  color:white;
-  font-weight:bold;
-}
-
-.topic{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-  margin:15px 0;
-}
-
-.topic h3{
-  color:var(--green);
-  margin-top:0;
-}
-
-.topic ul{padding-left:22px}
-
-.note{
-  background:var(--card2);
-  border-left:4px solid var(--green);
-  padding:14px;
-  border-radius:8px;
-  color:var(--muted);
-}
-
-.page{display:none}
-.page.active{display:block}
-
-.book-controls{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.book-controls select{
-  padding:12px;
-  border-radius:10px;
-  background:var(--card);
-  color:var(--text);
-  border:1px solid var(--border);
-}
-
-.quiz-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:25px;
-  border-radius:18px;
-  margin-top:20px;
-}
-
-.answers{
-  display:grid;
-  gap:10px;
-  margin:20px 0;
-}
-
-.answers button{
-  text-align:left;
-  padding:14px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:var(--card2);
-  color:var(--text);
-}
-
-.answers button:hover{
+.subject:hover{
+  transform:translateY(-3px);
   border-color:var(--green);
 }
 
+.subject h3{
+  margin-bottom:7px;
+}
+
+.subject p{
+  color:var(--muted);
+}
+
+.book{
+  margin-top:25px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:25px;
+}
+
+.book h2{
+  color:var(--green);
+  margin-bottom:15px;
+}
+
+.topic{
+  border:1px solid var(--border);
+  background:var(--card2);
+  border-radius:12px;
+  margin:10px 0;
+  overflow:hidden;
+}
+
+.topic-title{
+  width:100%;
+  text-align:left;
+  background:transparent;
+  border:0;
+  font-size:17px;
+  font-weight:bold;
+}
+
+.note{
+  display:none;
+  padding:18px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+}
+
+.note.show{
+  display:block;
+}
+
+.note strong{
+  color:var(--text);
+}
+
+.quiz{
+  margin:40px 0;
+  padding:25px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+}
+
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  margin:8px 0;
+}
+
 .score{
+  margin-top:15px;
   font-weight:bold;
   color:var(--green);
 }
 
-.ai-box{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:20px;
-}
-
-.ai-box textarea{
-  width:100%;
-  min-height:110px;
-  resize:vertical;
-  padding:14px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  background:var(--bg);
-  color:var(--text);
-}
-
-.ai-answer{
-  margin-top:20px;
-  padding:18px;
-  background:var(--card2);
-  border-radius:12px;
-  white-space:pre-wrap;
-}
-
-.result{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:15px;
-  margin:10px 0;
-  border-radius:12px;
-}
-
 footer{
-  text-align:center;
+  margin-top:50px;
   padding:30px;
+  text-align:center;
   color:var(--muted);
   border-top:1px solid var(--border);
 }
 
-@media(max-width:700px){
-  header{padding:12px}
-  .logo{font-size:24px}
+.hidden{
+  display:none!important;
+}
+
+@media(max-width:800px){
+  .header-inner{
+    flex-direction:column;
+  }
 
   nav{
+    width:100%;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .subjects{
     grid-template-columns:repeat(2,1fr);
   }
 
-  main{padding:18px 12px 50px}
-
-  .hero h1{font-size:34px}
-  .hero p{font-size:17px}
+  .classes{
+    grid-template-columns:1fr;
+  }
 
   .search{
     flex-direction:column;
   }
-
-  .class-tabs{
-    grid-template-columns:1fr;
-  }
-
-  .subject-grid{
-    grid-template-columns:1fr;
-  }
-
-  .section-title{font-size:26px}
-
-  .topic{
-    padding:16px;
-  }
 }
 
-@media(min-width:701px) and (max-width:950px){
-  .subject-grid{
-    grid-template-columns:repeat(2,1fr);
+@media(max-width:500px){
+  .subjects{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:35px;
+  }
+
+  .hero h1{
+    font-size:28px;
   }
 }
 </style>
@@ -336,433 +316,392 @@ footer{
 <body>
 
 <header>
-  <div class="logo">📚 <span>Mr-dev</span> Learning Hub</div>
+<div class="header-inner">
 
-  <nav>
-    <button onclick="showPage('home')">🏠 Home</button>
-    <button onclick="showPage('books')">📚 Books</button>
-    <button onclick="showPage('quiz')">📝 Quiz</button>
-    <button onclick="showPage('teacher')">🤖 AI Teacher</button>
-  </nav>
+<div class="logo">
+📚 <span>Mr-dev</span> Learning Hub
+</div>
 
-  <button class="theme" onclick="toggleTheme()">🌙 / ☀️ Theme</button>
+<nav>
+<button onclick="showHome()">🏠 Home</button>
+<button onclick="showBooks()">📚 Books</button>
+<button onclick="showQuiz()">📝 Quiz</button>
+<button onclick="toggleTheme()">🌙 Theme</button>
+</nav>
+
+</div>
 </header>
 
-<main>
 
-<!-- HOME -->
-<section id="home" class="page active">
+<main class="container">
 
-  <div class="hero">
-    <h1>Welcome to <span>Mr-dev</span> Learning Hub</h1>
-    <p>
-      Learn Senior 1, Senior 2 and Senior 3 subjects,
-      study topics, read notes and practise with quizzes.
-    </p>
-  </div>
+<section class="hero" id="home">
 
-  <div class="search">
-    <input id="searchInput" placeholder="Search Mathematics, Chemistry, Physics, English...">
-    <button class="greenBtn" onclick="searchSite()">🔎 Search</button>
-  </div>
+<h1>Welcome to <span>Mr-dev Learning Hub</span></h1>
 
-  <div id="searchResults"></div>
+<p>
+Learn Senior 1, Senior 2 and Senior 3 Mathematics,
+Chemistry, Physics and English. Read notes,
+study topics and practise with quizzes.
+</p>
 
-  <h2 class="section-title">🎓 Choose Your Class</h2>
-
-  <div class="class-tabs">
-    <button class="active" onclick="selectClass(1,this)">Senior 1</button>
-    <button onclick="selectClass(2,this)">Senior 2</button>
-    <button onclick="selectClass(3,this)">Senior 3</button>
-  </div>
-
-  <div id="homeSubjects"></div>
+<div class="search">
+<input
+id="searchInput"
+placeholder="Search a topic e.g. Algebra, Electricity..."
+oninput="searchTopics()">
+<button onclick="searchTopics()">🔎 Search</button>
+</div>
 
 </section>
 
 
-<!-- BOOKS -->
-<section id="books" class="page">
+<section id="books">
 
-  <h1>📚 Books & Notes</h1>
+<h2 class="section-title">🎓 Choose Your Class</h2>
 
-  <p class="note">
-    Notes are organised by Senior class and subject.
-    They are study notes aligned with school-level topics, not full copyrighted textbook copies.
-  </p>
+<div class="classes">
 
-  <div class="book-controls">
-    <select id="bookClass" onchange="loadBooks()">
-      <option value="1">Senior 1</option>
-      <option value="2">Senior 2</option>
-      <option value="3">Senior 3</option>
-    </select>
+<button class="class-btn active" onclick="loadClass(1)">
+Senior 1
+</button>
 
-    <select id="bookSubject" onchange="loadBooks()">
-      <option value="Mathematics">Mathematics</option>
-      <option value="Chemistry">Chemistry</option>
-      <option value="Physics">Physics</option>
-      <option value="English">English</option>
-    </select>
-  </div>
+<button class="class-btn" onclick="loadClass(2)">
+Senior 2
+</button>
 
-  <div id="bookContent"></div>
+<button class="class-btn" onclick="loadClass(3)">
+Senior 3
+</button>
+
+</div>
+
+<div id="subjects"></div>
 
 </section>
 
 
-<!-- QUIZ -->
-<section id="quiz" class="page">
+<section class="quiz" id="quiz">
 
-  <h1>📝 Quiz Test</h1>
+<h2>📝 Practice Quiz</h2>
 
-  <div class="book-controls">
-    <select id="quizClass" onchange="newQuiz()">
-      <option value="1">Senior 1</option>
-      <option value="2">Senior 2</option>
-      <option value="3">Senior 3</option>
-    </select>
+<p id="question"></p>
 
-    <select id="quizSubject" onchange="newQuiz()">
-      <option>Mathematics</option>
-      <option>Chemistry</option>
-      <option>Physics</option>
-      <option>English</option>
-    </select>
-  </div>
+<div id="options"></div>
 
-  <div class="quiz-card">
-    <h2 id="question">Question</h2>
-    <div id="answers" class="answers"></div>
-    <p class="score">Score: <span id="score">0</span></p>
-    <button class="greenBtn" onclick="newQuiz()">Next Question ➡️</button>
-  </div>
+<p class="score" id="score"></p>
 
-</section>
-
-
-<!-- AI TEACHER -->
-<section id="teacher" class="page">
-
-  <h1>🤖 AI Teacher</h1>
-
-  <p class="note">
-    Ask for an explanation, formula, definition, example or revision help.
-  </p>
-
-  <div class="ai-box">
-    <textarea id="aiQuestion"
-      placeholder="Example: Explain photosynthesis..."></textarea>
-
-    <br><br>
-
-    <button class="greenBtn" onclick="askTeacher()">Ask Teacher</button>
-
-    <div id="aiAnswer" class="ai-answer">
-      👋 AI Teacher is ready to help you.
-    </div>
-  </div>
+<button onclick="nextQuestion()">Next Question ➡️</button>
 
 </section>
 
 </main>
 
+
 <footer>
-  📚 Mr-dev Learning Hub<br>
-  Senior 1 • Senior 2 • Senior 3
+<p>📚 Mr-dev Learning Hub</p>
+<p>Study • Practise • Improve</p>
 </footer>
 
 
 <script>
 
-/* =========================
-   DATA
-========================= */
-
-const subjects = ["Mathematics","Chemistry","Physics","English"];
-
 const data = {
 
 1:{
- Mathematics:{
-  "Numbers & Sets":[
-   "Natural numbers",
-   "Integers",
-   "Fractions",
-   "Decimals",
-   "Percentages",
-   "Ratio and proportion",
-   "Approximation"
-  ],
-  "Algebra":[
-   "Algebraic expressions",
-   "Simplification",
-   "Linear equations",
-   "Substitution",
-   "Sequences"
-  ],
-  "Geometry":[
-   "Lines and angles",
-   "Triangles",
-   "Quadrilaterals",
-   "Polygons",
-   "Perimeter",
-   "Area"
-  ],
-  "Statistics":[
-   "Data collection",
-   "Tables",
-   "Bar charts",
-   "Pie charts",
-   "Mean, median and mode"
-  ]
- },
 
- Chemistry:{
-  "Matter":[
-   "States of matter",
-   "Physical properties",
-   "Changes of state"
-  ],
-  "Elements & Compounds":[
-   "Elements",
-   "Compounds",
-   "Mixtures",
-   "Symbols and formulae"
-  ],
-  "Chemical Changes":[
-   "Physical and chemical changes",
-   "Signs of chemical reactions",
-   "Word equations"
-  ],
-  "Laboratory":[
-   "Laboratory apparatus",
-   "Safety rules",
-   "Separation techniques"
-  ]
- },
+"Mathematics":[
 
- Physics:{
-  "Measurement":[
-   "Physical quantities",
-   "SI units",
-   "Length",
-   "Mass",
-   "Time",
-   "Temperature"
-  ],
-  "Force & Energy":[
-   "Force",
-   "Mass and weight",
-   "Work",
-   "Energy",
-   "Power"
-  ],
-  "Motion":[
-   "Distance",
-   "Displacement",
-   "Speed",
-   "Velocity"
-  ]
- },
+["Numbers","Natural numbers, integers, fractions, decimals and percentages."],
 
- English:{
-  "Grammar":[
-   "Parts of speech",
-   "Nouns",
-   "Pronouns",
-   "Verbs",
-   "Adjectives",
-   "Adverbs",
-   "Prepositions",
-   "Conjunctions"
-  ],
-  "Reading":[
-   "Reading comprehension",
-   "Main idea",
-   "Supporting details",
-   "Vocabulary"
-  ],
-  "Writing":[
-   "Paragraph writing",
-   "Descriptive writing",
-   "Narrative writing",
-   "Letter writing"
-  ]
- }
+["Sets","A set is a collection of well-defined objects. Learn notation, subsets and operations."],
+
+["Algebra","Use letters to represent unknown quantities and simplify algebraic expressions."],
+
+["Linear Equations","Solve equations such as 2x + 5 = 15 by performing the same operation on both sides."],
+
+["Ratio and Proportion","Compare quantities using ratios and solve proportional problems."],
+
+["Indices","Learn laws of indices including aᵐ × aⁿ = aᵐ⁺ⁿ."],
+
+["Geometry","Study points, lines, angles, triangles, quadrilaterals and polygons."],
+
+["Measurement","Calculate length, perimeter, area, volume and capacity."],
+
+["Coordinates","Represent points using ordered pairs on the Cartesian plane."],
+
+["Statistics","Collect data and represent it using tables, charts and graphs."]
+
+],
+
+"Chemistry":[
+
+["Introduction to Chemistry","Chemistry studies matter, its properties and the changes it undergoes."],
+
+["Matter","Matter exists mainly as solids, liquids and gases."],
+
+["Elements","An element contains only one type of atom."],
+
+["Atoms","Atoms contain protons, neutrons and electrons."],
+
+["Compounds","A compound is formed when elements chemically combine."],
+
+["Mixtures","Mixtures contain two or more substances that are not chemically combined."],
+
+["Separation of Mixtures","Use filtration, evaporation, distillation and chromatography."],
+
+["Physical and Chemical Changes","Physical changes do not form new substances; chemical changes do."],
+
+["Laboratory Safety","Learn safe handling of chemicals, apparatus and laboratory equipment."]
+
+],
+
+"Physics":[
+
+["Introduction to Physics","Physics studies matter, energy, motion and forces."],
+
+["Measurement","Learn physical quantities, SI units and measuring instruments."],
+
+["Motion","Study distance, displacement, speed and velocity."],
+
+["Force","A force can change the motion or shape of an object."],
+
+["Energy","Energy is the ability to do work."],
+
+["Work","Work is done when a force moves an object through a distance."],
+
+["Pressure","Pressure is force acting per unit area."],
+
+["Heat","Heat is energy transferred because of temperature difference."],
+
+["Light","Study sources, reflection, refraction and simple optical systems."]
+
+],
+
+"English":[
+
+["Grammar","Study nouns, pronouns, verbs, adjectives, adverbs, conjunctions and prepositions."],
+
+["Tenses","Learn present, past and future forms and their uses."],
+
+["Reading","Develop skills for finding main ideas, details and meanings."],
+
+["Writing","Learn paragraphs, letters, stories, reports and descriptions."],
+
+["Vocabulary","Build vocabulary through context and word families."],
+
+["Speaking","Practise correct pronunciation, conversations and presentations."],
+
+["Listening","Develop understanding of spoken English."]
+
+]
+
 },
+
 
 2:{
- Mathematics:{
-  "Algebra":[
-   "Linear equations",
-   "Simultaneous equations",
-   "Algebraic fractions",
-   "Factorisation",
-   "Indices"
-  ],
-  "Geometry":[
-   "Angles",
-   "Congruence",
-   "Similarity",
-   "Pythagoras theorem",
-   "Circle geometry"
-  ],
-  "Graphs":[
-   "Coordinates",
-   "Linear graphs",
-   "Gradient",
-   "Distance-time graphs"
-  ],
-  "Statistics":[
-   "Frequency tables",
-   "Mean",
-   "Median",
-   "Mode",
-   "Range",
-   "Probability"
-  ]
- },
 
- Chemistry:{
-  "Atoms":[
-   "Structure of the atom",
-   "Protons",
-   "Neutrons",
-   "Electrons",
-   "Atomic number",
-   "Mass number"
-  ],
-  "Chemical Bonding":[
-   "Ionic bonding",
-   "Covalent bonding",
-   "Metallic bonding"
-  ],
-  "Acids & Bases":[
-   "Acids",
-   "Bases",
-   "Indicators",
-   "pH scale",
-   "Neutralisation",
-   "Salts"
-  ],
-  "Chemical Reactions":[
-   "Types of reactions",
-   "Balancing equations",
-   "Energy changes"
-  ]
- },
+"Mathematics":[
 
- Physics:{
-  "Motion":[
-   "Distance and displacement",
-   "Speed",
-   "Velocity",
-   "Acceleration",
-   "Motion graphs"
-  ],
-  "Electricity":[
-   "Electric current",
-   "Potential difference",
-   "Resistance",
-   "Ohm's law",
-   "Series circuits",
-   "Parallel circuits"
-  ],
-  "Energy":[
-   "Forms of energy",
-   "Energy transformation",
-   "Conservation of energy",
-   "Efficiency"
-  ],
-  "Pressure":[
-   "Pressure",
-   "Pressure in liquids",
-   "Atmospheric pressure"
-  ]
- },
+["Integers and Rational Numbers","Perform operations with positive and negative numbers and fractions."],
 
- English:{
-  "Grammar":[
-   "Tenses",
-   "Active and passive voice",
-   "Direct and indirect speech",
-   "Conditionals",
-   "Clauses"
-  ],
-  "Comprehension":[
-   "Reading strategies",
-   "Inference",
-   "Vocabulary in context",
-   "Summarising"
-  ],
-  "Writing":[
-   "Formal letters",
-   "Reports",
-   "Essays",
-   "Articles",
-   "Speeches"
-  ],
-  "Literature":[
-   "Characters",
-   "Setting",
-   "Plot",
-   "Theme",
-   "Literary devices"
-  ]
- }
+["Algebraic Expressions","Expand, simplify and factorise algebraic expressions."],
+
+["Linear Equations","Solve equations with one unknown and apply them to real problems."],
+
+["Simultaneous Equations","Solve two equations containing two unknowns."],
+
+["Sequences","Identify patterns and find terms of arithmetic sequences."],
+
+["Geometry","Study angles, triangles, quadrilaterals, circles and geometric constructions."],
+
+["Pythagoras' Theorem","In a right-angled triangle, a² + b² = c²."],
+
+["Mensuration","Calculate areas, surface areas and volumes."],
+
+["Graphs","Plot and interpret linear graphs."],
+
+["Statistics","Calculate and interpret mean, median, mode and range."],
+
+["Probability","Study possible outcomes and calculate simple probabilities."]
+
+],
+
+"Chemistry":[
+
+["Atomic Structure","Study protons, neutrons, electrons, atomic number and mass number."],
+
+["Periodic Table","Elements are arranged according to increasing atomic number."],
+
+["Chemical Bonding","Study ionic and covalent bonding."],
+
+["Chemical Formulae","Write formulae and interpret chemical symbols."],
+
+["Chemical Equations","Represent chemical reactions using balanced equations."],
+
+["Acids","Acids have characteristic properties and react with bases."],
+
+["Bases","Bases react with acids to form salts and water."],
+
+["Salts","Learn preparation, properties and uses of salts."],
+
+["Indicators","Indicators help identify acidic and alkaline substances."],
+
+["Chemical Reactions","Study combination, decomposition, displacement and neutralisation."]
+
+],
+
+"Physics":[
+
+["Motion","Calculate speed, distance and time."],
+
+["Force and Pressure","Study forces, pressure and their applications."],
+
+["Density","Density = mass ÷ volume."],
+
+["Heat Transfer","Study conduction, convection and radiation."],
+
+["Temperature","Learn temperature scales and thermometers."],
+
+["Electricity","Study current, voltage, resistance and electrical circuits."],
+
+["Ohm's Law","For an ohmic conductor, V = IR."],
+
+["Magnetism","Study magnetic fields, magnets and magnetic effects."],
+
+["Waves","Study wave properties, frequency, wavelength and amplitude."],
+
+["Sound","Sound is produced by vibrating sources and travels through media."]
+
+],
+
+"English":[
+
+["Parts of Speech","Identify nouns, pronouns, verbs, adjectives, adverbs and other word classes."],
+
+["Sentence Structure","Construct simple, compound and complex sentences."],
+
+["Direct and Indirect Speech","Learn how to report statements and questions."],
+
+["Active and Passive Voice","Transform sentences between active and passive forms."],
+
+["Comprehension","Read passages and answer questions using evidence from the text."],
+
+["Essay Writing","Plan, organise and write clear essays."],
+
+["Formal Letters","Learn the correct format and language of formal letters."],
+
+["Informal Letters","Write friendly letters using appropriate language."],
+
+["Summary Writing","Identify important ideas and express them briefly."]
+
+]
+
 },
 
-3:{
- Mathematics:{
-  "Algebra":[
-   "Quadratic equations",
-   "Factorisation",
-   "Algebraic fractions",
-   "Surds",
-   "Indices"
-  ],
-  "Functions":[
-   "Linear functions",
-   "Quadratic functions",
-   "Graphs",
-   "Domain and range"
-  ],
-  "Trigonometry":[
-   "Trigonometric ratios",
-   "Sine rule",
-   "Cosine rule",
-   "Applications of trigonometry"
-  ],
-  "Geometry":[
-   "Circle theorems",
-   "Transformations",
-   "Similar shapes",
-   "Area and volume"
-  ],
-  "Statistics & Probability":[
-   "Data analysis",
-   "Probability calculations",
-   "Charts and graphs",
-   "Standard deviation"
-  ],
-  "Vectors":[
-   "Vector notation",
-   "Addition of vectors",
-   "Vector applications"
-  ]
- },
 
- Chemistry:{
-  "Organic Chemistry":[
-   "Hydrocarbons",
-   "Alkanes",
-   "Alkenes",
-   "Alcohols",
-   "Homologous series"
-  ],
-  "Chemical Calculations":[
-   "Mole concept",
-   "Relative atomic mass",
-   "Chemical equations",
-   "Calcul
+3:{
+
+"Mathematics":[
+
+["Quadratic Equations","Solve equations of the form ax² + bx + c = 0 using factorisation or the quadratic formula."],
+
+["Factorisation","Factorise algebraic expressions using common factors and identities."],
+
+["Algebraic Fractions","Simplify and perform operations with algebraic fractions."],
+
+["Surds","Simplify expressions involving square roots."],
+
+["Linear Functions","Study equations, tables and graphs of linear functions."],
+
+["Quadratic Functions","Study parabolas, roots, turning points and graphs."],
+
+["Trigonometry","Use sine, cosine and tangent in right-angled triangles."],
+
+["Sine Rule","Use a/sin A = b/sin B = c/sin C."],
+
+["Cosine Rule","Use c² = a² + b² − 2ab cos C."],
+
+["Applications of Trigonometry","Solve problems involving heights, distances and angles."],
+
+["Circle Theorems","Study angles in circles, chords, tangents and cyclic quadrilaterals."],
+
+["Transformations","Study translation, reflection, rotation and enlargement."],
+
+["Similarity","Identify similar shapes and use scale factors."],
+
+["Area and Volume","Calculate areas, surface areas and volumes of common solids."],
+
+["Statistics","Collect, organise, analyse and interpret data."],
+
+["Probability","Calculate probabilities of events and combined events."],
+
+["Charts and Graphs","Interpret bar charts, pie charts, histograms and frequency diagrams."],
+
+["Standard Deviation","Measure how spread out data values are."],
+
+["Vectors","Study vector notation, addition, subtraction and applications."]
+
+],
+
+"Chemistry":[
+
+["Hydrocarbons","Hydrocarbons contain only carbon and hydrogen."],
+
+["Alkanes","Alkanes are saturated hydrocarbons with single carbon-carbon bonds."],
+
+["Alkenes","Alkenes contain carbon-carbon double bonds."],
+
+["Alcohols","Study properties, preparation and uses of common alcohols."],
+
+["Mole Concept","The mole measures amount of substance."],
+
+["Relative Atomic Mass","Compare atomic masses using the relative atomic mass scale."],
+
+["Chemical Calculations","Use formulae and balanced equations to solve quantitative problems."],
+
+["Strong and Weak Acids","Compare the degree of ionisation of acids."],
+
+["pH Scale","The pH scale indicates how acidic or alkaline a solution is."],
+
+["Neutralisation","Acid + base → salt + water."],
+
+["Salts","Study preparation, properties and uses of salts."],
+
+["Properties of Metals","Study physical and chemical properties of metals."],
+
+["Extraction of Metals","Learn principles used to obtain metals from ores."],
+
+["Reactivity Series","Arrange metals according to their reactivity."],
+
+["Electrolysis","Use electricity to cause chemical decomposition."],
+
+["Electrodes","Study anode, cathode and movement of ions."],
+
+["Applications of Electrolysis","Learn electroplating and industrial applications."]
+
+],
+
+"Physics":[
+
+["Current Electricity","Study electric current and charge."],
+
+["Ohm's Law","V = IR and applications to electrical circuits."],
+
+["Electrical Circuits","Study series and parallel circuits."],
+
+["Electrical Energy","Calculate electrical energy and power."],
+
+["Wave Types","Distinguish transverse and longitudinal waves."],
+
+["Wave Properties","Study wavelength, frequency, amplitude and period."],
+
+["Sound Waves","Study production, transmission and properties of sound."],
+
+["Light Waves","Study reflection, refraction, lenses and optical systems."],
+
+["Magnetic Fields","Study magnetic field patterns and magnetic effects."],
+
+["Electromagnetism","Study the relationship between electricity and magnetism."],
+
+["Mot
