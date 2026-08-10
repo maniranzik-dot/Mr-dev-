@@ -1,162 +1,955 @@
-<!-- SEARCH -->
-<section id="searchSection">
-  <h2>🔎 Search</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <input
-    id="searchInput"
-    type="text"
-    placeholder="Search subject or topic..."
-  >
-
-  <button id="searchBtn" type="button">
-    🔎 Search
-  </button>
-
-  <div id="searchResults"></div>
-</section>
+<title>Mr-dev Learning Hub</title>
 
 <style>
-#searchSection {
-  width: 100%;
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
+*{
+  box-sizing:border-box;
 }
 
-#searchInput {
-  width: 100%;
-  padding: 18px;
-  box-sizing: border-box;
-  border-radius: 14px;
-  border: 2px solid #315b87;
-  background: #102f4d;
-  color: white;
-  font-size: 18px;
-  margin-bottom: 12px;
+html{
+  scroll-behavior:smooth;
 }
 
-#searchInput::placeholder {
-  color: #aebed1;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#071426;
+  color:white;
 }
 
-#searchBtn {
-  width: 100%;
-  padding: 18px;
-  border: 0;
-  border-radius: 14px;
-  background: #20df72;
-  color: #071426;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
+header{
+  background:#102b48;
+  padding:25px 15px;
+  text-align:center;
+  border-bottom:2px solid #234b75;
 }
 
-#searchResults {
-  margin-top: 20px;
+.logo{
+  font-size:38px;
+  font-weight:bold;
 }
 
-.searchItem {
-  background: #102f4d;
-  border: 1px solid #315b87;
-  border-radius: 14px;
-  padding: 18px;
-  margin-bottom: 12px;
-  color: white;
+.logo span{
+  color:#20df72;
 }
 
-.searchItem h3 {
-  margin: 0 0 8px;
-  color: #20df72;
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+nav button{
+  background:#122f4f;
+  color:white;
+  border:2px solid #28537e;
+  border-radius:18px;
+  padding:18px 30px;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+nav button:hover{
+  background:#20df72;
+  color:#061426;
+}
+
+main{
+  width:100%;
+  max-width:1000px;
+  margin:auto;
+  padding:30px 18px;
+}
+
+.hero{
+  text-align:center;
+  padding:25px 5px 50px;
+}
+
+.hero h1{
+  font-size:45px;
+  margin:10px 0;
+}
+
+.green{
+  color:#20df72;
+}
+
+.hero p{
+  color:#aec0d8;
+  font-size:24px;
+  line-height:1.6;
+}
+
+.search-box{
+  margin:25px auto 55px;
+  max-width:850px;
+}
+
+.search-box input{
+  width:100%;
+  padding:20px;
+  border-radius:15px;
+  border:2px solid #28537e;
+  background:#123354;
+  color:white;
+  font-size:18px;
+  outline:none;
+}
+
+.search-box input::placeholder{
+  color:#a9bdd4;
+}
+
+.search-btn{
+  width:100%;
+  margin-top:12px;
+  padding:18px;
+  border:0;
+  border-radius:15px;
+  background:#20df72;
+  color:#061426;
+  font-size:21px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.search-btn:hover{
+  background:#16c761;
+}
+
+#searchResults{
+  margin-top:20px;
+}
+
+.result{
+  background:#102b48;
+  border:2px solid #28537e;
+  border-radius:15px;
+  padding:20px;
+  margin:12px 0;
+}
+
+.result h3{
+  color:#20df72;
+  margin-top:0;
+}
+
+.class-title{
+  font-size:38px;
+  margin-bottom:25px;
+}
+
+.class-buttons{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:50px;
+}
+
+.class-btn{
+  padding:25px 10px;
+  background:#122f4f;
+  border:2px solid #28537e;
+  border-radius:18px;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.class-btn.active,
+.class-btn:hover{
+  background:#20df72;
+  color:#061426;
+}
+
+.subjects{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.subject{
+  background:#102b48;
+  border:2px solid #28537e;
+  border-radius:18px;
+  padding:25px;
+  cursor:pointer;
+}
+
+.subject:hover{
+  border-color:#20df72;
+  transform:translateY(-3px);
+}
+
+.subject h3{
+  margin:0 0 10px;
+  font-size:24px;
+  color:#20df72;
+}
+
+.subject p{
+  color:#aec0d8;
+}
+
+.topic-list{
+  margin-top:15px;
+  display:none;
+}
+
+.topic-list.show{
+  display:block;
+}
+
+.topic{
+  background:#071a2e;
+  padding:13px;
+  border-radius:10px;
+  margin-top:8px;
+  color:#dce7f5;
+}
+
+#message{
+  text-align:center;
+  color:#20df72;
+  font-size:20px;
+  margin:20px 0;
+}
+
+footer{
+  margin-top:60px;
+  padding:35px 15px;
+  text-align:center;
+  border-top:2px solid #234b75;
+  color:#aec0d8;
+  font-size:20px;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+@media(max-width:650px){
+
+  .logo{
+    font-size:30px;
+  }
+
+  nav button{
+    width:45%;
+    padding:15px 8px;
+    font-size:17px;
+  }
+
+  .hero h1{
+    font-size:35px;
+  }
+
+  .hero p{
+    font-size:19px;
+  }
+
+  .class-buttons{
+    grid-template-columns:1fr;
+  }
+
+  .subjects{
+    grid-template-columns:1fr;
+  }
 }
 </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    📚 <span>Mr-dev</span> Learning Hub
+  </div>
+
+  <nav>
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('books')">📚 Books</button>
+    <button onclick="showPage('quiz')">📝 Quiz</button>
+    <button onclick="toggleTheme()">🌙 Theme</button>
+  </nav>
+
+</header>
+
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <div class="hero">
+
+    <h1>
+      Welcome to <span class="green">Mr-dev</span>
+      Learning Hub
+    </h1>
+
+    <p>
+      Learn Senior 1, Senior 2 and Senior 3 subjects,
+      study topics, read notes and practise with quizzes.
+    </p>
+
+  </div>
+
+
+  <!-- SEARCH -->
+  <div class="search-box">
+
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search subject or topic..."
+      onkeydown="if(event.key==='Enter') searchContent()"
+    >
+
+    <button class="search-btn" onclick="searchContent()">
+      🔎 Search
+    </button>
+
+    <div id="searchResults"></div>
+
+  </div>
+
+
+  <h2 class="class-title">
+    🎓 Choose Your Class
+  </h2>
+
+  <div class="class-buttons">
+
+    <button
+      class="class-btn active"
+      onclick="selectClass(1,this)">
+      Senior 1
+    </button>
+
+    <button
+      class="class-btn"
+      onclick="selectClass(2,this)">
+      Senior 2
+    </button>
+
+    <button
+      class="class-btn"
+      onclick="selectClass(3,this)">
+      Senior 3
+    </button>
+
+  </div>
+
+
+  <div id="message"></div>
+
+  <div id="subjects" class="subjects"></div>
+
+</section>
+
+
+<!-- BOOKS -->
+<section id="books" class="page">
+
+  <div class="hero">
+
+    <h1>📚 REB Books & Notes</h1>
+
+    <p>
+      Select your class and subject to study.
+    </p>
+
+  </div>
+
+  <div id="bookSubjects" class="subjects"></div>
+
+</section>
+
+
+<!-- QUIZ -->
+<section id="quiz" class="page">
+
+  <div class="hero">
+
+    <h1>📝 Quiz</h1>
+
+    <p>
+      Test your knowledge.
+    </p>
+
+  </div>
+
+  <div class="result">
+
+    <h3>Mathematics</h3>
+
+    <p>
+      What is 5 × 6?
+    </p>
+
+    <button class="search-btn" onclick="checkAnswer(30)">
+      30
+    </button>
+
+    <br><br>
+
+    <button
+      class="search-btn"
+      style="background:#d9534f;color:white"
+      onclick="checkAnswer(25)">
+      25
+    </button>
+
+    <p id="quizResult"></p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  📚 Mr-dev Learning Hub
+
+  <br><br>
+
+  Senior 1 • Senior 2 • Senior 3
+
+</footer>
+
 
 <script>
-const searchData = [
-  ["Senior 1","Mathematics","Numbers"],
-  ["Senior 1","Mathematics","Algebra"],
-  ["Senior 1","Mathematics","Geometry"],
-  ["Senior 1","Chemistry","Matter"],
-  ["Senior 1","Chemistry","Elements and Compounds"],
-  ["Senior 1","Chemistry","Chemical Changes"],
-  ["Senior 1","Physics","Measurement"],
-  ["Senior 1","Physics","Motion"],
-  ["Senior 1","Physics","Energy"],
-  ["Senior 1","English","Grammar"],
-  ["Senior 1","English","Reading"],
-  ["Senior 1","English","Writing"],
 
-  ["Senior 2","Mathematics","Equations"],
-  ["Senior 2","Mathematics","Algebra"],
-  ["Senior 2","Mathematics","Geometry"],
-  ["Senior 2","Mathematics","Graphs"],
-  ["Senior 2","Chemistry","Atoms"],
-  ["Senior 2","Chemistry","Chemical Reactions"],
-  ["Senior 2","Chemistry","Acids and Bases"],
-  ["Senior 2","Physics","Motion"],
-  ["Senior 2","Physics","Electricity"],
-  ["Senior 2","Physics","Light"],
-  ["Senior 2","English","Grammar"],
-  ["Senior 2","English","Comprehension"],
-  ["Senior 2","English","Writing"],
+/* =========================
+   DATA
+========================= */
 
-  ["Senior 3","Mathematics","Algebra"],
-  ["Senior 3","Mathematics","Functions"],
-  ["Senior 3","Mathematics","Trigonometry"],
-  ["Senior 3","Mathematics","Geometry"],
-  ["Senior 3","Mathematics","Statistics and Probability"],
-  ["Senior 3","Mathematics","Vectors"],
-  ["Senior 3","Chemistry","Organic Chemistry"],
-  ["Senior 3","Chemistry","Chemical Calculations"],
-  ["Senior 3","Chemistry","Acids and Bases"],
-  ["Senior 3","Chemistry","Metals"],
-  ["Senior 3","Chemistry","Electrochemistry"],
-  ["Senior 3","Physics","Electricity"],
-  ["Senior 3","Physics","Waves"],
-  ["Senior 3","Physics","Magnetism"],
-  ["Senior 3","Physics","Light"],
-  ["Senior 3","English","Literature"],
-  ["Senior 3","English","Grammar"],
-  ["Senior 3","English","Writing Skills"]
-];
+const data = {
 
-function doSearch() {
-  const input = document.getElementById("searchInput");
-  const results = document.getElementById("searchResults");
+  1: {
 
-  const query = input.value.trim().toLowerCase();
+    Mathematics:[
+      "Numbers",
+      "Algebra",
+      "Linear equations",
+      "Geometry",
+      "Statistics"
+    ],
 
-  if (query === "") {
-    results.innerHTML =
-      "<div class='searchItem'>✏️ Andika icyo ushaka gushaka.</div>";
-    return;
+    Chemistry:[
+      "Matter",
+      "Elements and compounds",
+      "Mixtures",
+      "Chemical changes"
+    ],
+
+    Physics:[
+      "Measurement",
+      "Force",
+      "Motion",
+      "Energy"
+    ],
+
+    English:[
+      "Grammar",
+      "Vocabulary",
+      "Reading",
+      "Writing"
+    ]
+
+  },
+
+
+  2: {
+
+    Mathematics:[
+      "Algebra",
+      "Equations",
+      "Geometry",
+      "Graphs",
+      "Statistics"
+    ],
+
+    Chemistry:[
+      "Atomic structure",
+      "Chemical bonding",
+      "Acids and bases",
+      "Chemical reactions"
+    ],
+
+    Physics:[
+      "Force and pressure",
+      "Work and energy",
+      "Heat",
+      "Light"
+    ],
+
+    English:[
+      "Grammar",
+      "Comprehension",
+      "Writing",
+      "Literature"
+    ]
+
+  },
+
+
+  3: {
+
+    Mathematics:[
+      "Quadratic equations",
+      "Factorization",
+      "Algebraic fractions",
+      "Functions",
+      "Trigonometry",
+      "Circle theorems",
+      "Statistics",
+      "Probability",
+      "Vectors"
+    ],
+
+    Chemistry:[
+      "Hydrocarbons",
+      "Alkanes",
+      "Alkenes",
+      "Alcohols",
+      "Mole concept",
+      "Chemical equations",
+      "Acids and bases",
+      "Metals",
+      "Electrolysis"
+    ],
+
+    Physics:[
+      "Current electricity",
+      "Ohm's law",
+      "Electrical circuits",
+      "Electrical energy",
+      "Types of waves",
+      "Wave properties",
+      "Sound waves",
+      "Light waves",
+      "Magnetic fields",
+      "Electromagnets",
+      "Motors and generators"
+    ],
+
+    English:[
+      "Grammar",
+      "Comprehension",
+      "Essay writing",
+      "Literature",
+      "Vocabulary",
+      "Communication"
+    ]
+
   }
 
-  const found = searchData.filter(item =>
-    item[0].toLowerCase().includes(query) ||
-    item[1].toLowerCase().includes(query) ||
-    item[2].toLowerCase().includes(query)
-  );
+};
 
-  if (found.length === 0) {
-    results.innerHTML =
-      "<div class='searchItem'>❌ Nta topic yabonetse.</div>";
-    return;
-  }
 
-  results.innerHTML = found.map(item => `
-    <div class="searchItem">
-      <h3>📚 ${item[0]}</h3>
-      <div>📖 Subject: <b>${item[1]}</b></div>
-      <div>📌 Topic: <b>${item[2]}</b></div>
-    </div>
-  `).join("");
+/* =========================
+   CURRENT CLASS
+========================= */
+
+let currentClass = 1;
+
+
+/* =========================
+   SHOW SUBJECTS
+========================= */
+
+function selectClass(classNumber, button){
+
+  currentClass = classNumber;
+
+  document
+    .querySelectorAll(".class-btn")
+    .forEach(btn => btn.classList.remove("active"));
+
+  button.classList.add("active");
+
+  displaySubjects();
+
+  window.scrollTo({
+    top:document.getElementById("subjects").offsetTop - 100,
+    behavior:"smooth"
+  });
 }
 
-document.getElementById("searchBtn").addEventListener("click", doSearch);
 
-document.getElementById("searchInput").addEventListener("keydown", function(e) {
-  if (e.key === "Enter") {
-    doSearch();
+/* =========================
+   DISPLAY SUBJECTS
+========================= */
+
+function displaySubjects(){
+
+  const container =
+    document.getElementById("subjects");
+
+  container.innerHTML = "";
+
+  const subjects = data[currentClass];
+
+  for(const subject in subjects){
+
+    const div =
+      document.createElement("div");
+
+    div.className = "subject";
+
+    let topicsHTML = "";
+
+    subjects[subject].forEach(topic => {
+
+      topicsHTML += `
+        <div class="topic">
+          📖 ${topic}
+        </div>
+      `;
+
+    });
+
+    div.innerHTML = `
+
+      <h3>${getIcon(subject)} ${subject}</h3>
+
+      <p>
+        ${subjects[subject].length}
+        topics available
+      </p>
+
+      <div class="topic-list">
+        ${topicsHTML}
+      </div>
+
+    `;
+
+    div.onclick = function(){
+
+      const list =
+        div.querySelector(".topic-list");
+
+      list.classList.toggle("show");
+
+    };
+
+    container.appendChild(div);
+
   }
-});
+
+}
+
+
+/* =========================
+   SUBJECT ICON
+========================= */
+
+function getIcon(subject){
+
+  if(subject === "Mathematics")
+    return "📐";
+
+  if(subject === "Chemistry")
+    return "🧪";
+
+  if(subject === "Physics")
+    return "⚡";
+
+  if(subject === "English")
+    return "📖";
+
+  return "📚";
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchContent(){
+
+  const input =
+    document.getElementById("searchInput");
+
+  const query =
+    input.value.trim().toLowerCase();
+
+  const results =
+    document.getElementById("searchResults");
+
+  results.innerHTML = "";
+
+  if(query === ""){
+
+    results.innerHTML = `
+      <div class="result">
+        ⚠️ Andika icyo ushaka gushaka.
+      </div>
+    `;
+
+    return;
+  }
+
+
+  let found = [];
+
+
+  /* Search all classes */
+
+  for(const classNumber in data){
+
+    const subjects = data[classNumber];
+
+    for(const subject in subjects){
+
+      /* Search subject */
+
+      if(subject.toLowerCase().includes(query)){
+
+        found.push({
+          classNumber,
+          subject,
+          topic: "All topics"
+        });
+
+      }
+
+
+      /* Search topics */
+
+      subjects[subject].forEach(topic => {
+
+        if(topic.toLowerCase().includes(query)){
+
+          found.push({
+            classNumber,
+            subject,
+            topic
+          });
+
+        }
+
+      });
+
+    }
+
+  }
+
+
+  if(found.length === 0){
+
+    results.innerHTML = `
+      <div class="result">
+        ❌ Nta byabonetse kuri:
+        <strong>${input.value}</strong>
+      </div>
+    `;
+
+    return;
+  }
+
+
+  found.forEach(item => {
+
+    const result =
+      document.createElement("div");
+
+    result.className = "result";
+
+    result.innerHTML = `
+
+      <h3>
+        ${getIcon(item.subject)}
+        ${item.subject}
+      </h3>
+
+      <p>
+        🎓 Senior ${item.classNumber}
+      </p>
+
+      <p>
+        📖 ${item.topic}
+      </p>
+
+    `;
+
+    results.appendChild(result);
+
+  });
+
+}
+
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+function showPage(page){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(section =>
+      section.classList.remove("active")
+    );
+
+  document
+    .getElementById(page)
+    .classList.add("active");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+
+  if(page === "books"){
+
+    displayBookSubjects();
+
+  }
+
+}
+
+
+/* =========================
+   BOOKS
+========================= */
+
+function displayBookSubjects(){
+
+  const container =
+    document.getElementById("bookSubjects");
+
+  container.innerHTML = "";
+
+  const subjects = data[currentClass];
+
+  for(const subject in subjects){
+
+    const div =
+      document.createElement("div");
+
+    div.className = "subject";
+
+    div.innerHTML = `
+
+      <h3>
+        ${getIcon(subject)}
+        ${subject}
+      </h3>
+
+      <p>
+        Senior ${currentClass}
+      </p>
+
+      <div class="topic-list show">
+
+        ${subjects[subject].map(topic => `
+
+          <div class="topic">
+            📖 ${topic}
+          </div>
+
+        `).join("")}
+
+      </div>
+
+    `;
+
+    container.appendChild(div);
+
+  }
+
+}
+
+
+/* =========================
+   THEME
+========================= */
+
+let lightMode = false;
+
+function toggleTheme(){
+
+  lightMode = !lightMode;
+
+  if(lightMode){
+
+    document.body.style.background =
+      "#f2f6fa";
+
+    document.body.style.color =
+      "#071426";
+
+  }else{
+
+    document.body.style.background =
+      "#071426";
+
+    document.body.style.color =
+      "white";
+
+  }
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+function checkAnswer(answer){
+
+  const result =
+    document.getElementById("quizResult");
+
+  if(answer === 30){
+
+    result.innerHTML =
+      "✅ Correct! Well done.";
+
+    result.style.color =
+      "#20df72";
+
+  }else{
+
+    result.innerHTML =
+      "❌ Wrong answer. Try again.";
+
+    result.style.color =
+      "#ff6b6b";
+
+  }
+
+}
+
+
+/* =========================
+   START WEBSITE
+========================= */
+
+displaySubjects();
+
 </script>
+
+</body>
+</html>
