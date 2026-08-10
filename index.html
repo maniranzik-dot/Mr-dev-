@@ -1,114 +1,768 @@
-/* ===== MOBILE VIEW FIX ===== */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr-dev Learning Hub</title>
+
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
+body{
+  font-family:Arial,sans-serif;
+  background:#071426;
+  color:#fff;
+  line-height:1.6;
+}
+button,input,select{font:inherit}
+button{cursor:pointer}
+
+:root{
+  --bg:#071426;
+  --card:#102b48;
+  --card2:#163957;
+  --green:#20df72;
+  --blue:#318cff;
+  --text:#fff;
+  --muted:#aec0d8;
+  --border:#28527b;
 }
 
-* {
-  box-sizing: border-box;
+body.light{
+  --bg:#f3f6fa;
+  --card:#fff;
+  --card2:#eaf1f8;
+  --text:#101820;
+  --muted:#526579;
+  --border:#c8d6e5;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  padding:16px;
 }
 
-/* Main containers */
-.container,
-section,
-main,
-header,
-nav {
-  width: 100%;
-  max-width: 100%;
+.logo{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+.logo span{color:var(--green)}
+
+nav{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
 }
 
-/* Navigation */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+nav button,.theme{
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:13px 8px;
+  border-radius:15px;
+  font-weight:bold;
 }
 
-nav button,
-nav a {
-  flex: 1 1 140px;
-  min-width: 0;
+nav button:hover,.theme:hover{
+  background:var(--green);
+  color:#06130d;
 }
 
-/* Cards */
-.cards,
-.class-buttons,
-.subjects,
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;
+.theme{
+  width:100%;
+  margin-top:10px;
 }
 
-/* Prevent text from pushing the page sideways */
-h1, h2, h3, p, div, button, a {
-  max-width: 100%;
-  overflow-wrap: anywhere;
+main{
+  width:min(1100px,100%);
+  margin:auto;
+  padding:25px 16px 70px;
 }
 
-/* Phone */
-@media (max-width: 600px) {
+.hero{
+  text-align:center;
+  padding:35px 10px;
+}
 
-  body {
-    font-size: 16px;
+.hero h1{
+  font-size:45px;
+  margin:0 0 12px;
+}
+
+.hero h1 span{color:var(--green)}
+
+.hero p{
+  color:var(--muted);
+  font-size:19px;
+  max-width:760px;
+  margin:auto;
+}
+
+.search{
+  display:flex;
+  gap:10px;
+  max-width:700px;
+  margin:25px auto;
+}
+
+.search input{
+  flex:1;
+  min-width:0;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+}
+
+.greenBtn{
+  background:var(--green);
+  color:#06130d;
+  border:0;
+  padding:14px 20px;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+.section-title{
+  font-size:32px;
+  margin:35px 0 18px;
+}
+
+.class-tabs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.class-tabs button{
+  padding:16px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  font-weight:bold;
+}
+
+.class-tabs button.active{
+  background:var(--green);
+  color:#06130d;
+}
+
+.subject-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:20px;
+}
+
+.subject{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+}
+
+.subject button{
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:10px;
+  background:var(--blue);
+  color:white;
+  font-weight:bold;
+}
+
+.topic{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  margin:15px 0;
+}
+
+.topic h3{
+  color:var(--green);
+  margin-top:0;
+}
+
+.topic ul{padding-left:22px}
+
+.note{
+  background:var(--card2);
+  border-left:4px solid var(--green);
+  padding:14px;
+  border-radius:8px;
+  color:var(--muted);
+}
+
+.page{display:none}
+.page.active{display:block}
+
+.book-controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.book-controls select{
+  padding:12px;
+  border-radius:10px;
+  background:var(--card);
+  color:var(--text);
+  border:1px solid var(--border);
+}
+
+.quiz-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:18px;
+  margin-top:20px;
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+  margin:20px 0;
+}
+
+.answers button{
+  text-align:left;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--card2);
+  color:var(--text);
+}
+
+.answers button:hover{
+  border-color:var(--green);
+}
+
+.score{
+  font-weight:bold;
+  color:var(--green);
+}
+
+.ai-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+}
+
+.ai-box textarea{
+  width:100%;
+  min-height:110px;
+  resize:vertical;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--bg);
+  color:var(--text);
+}
+
+.ai-answer{
+  margin-top:20px;
+  padding:18px;
+  background:var(--card2);
+  border-radius:12px;
+  white-space:pre-wrap;
+}
+
+.result{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:15px;
+  margin:10px 0;
+  border-radius:12px;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+}
+
+@media(max-width:700px){
+  header{padding:12px}
+  .logo{font-size:24px}
+
+  nav{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .container,
-  main,
-  section {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+  main{padding:18px 12px 50px}
+
+  .hero h1{font-size:34px}
+  .hero p{font-size:17px}
+
+  .search{
+    flex-direction:column;
   }
 
-  h1 {
-    font-size: 32px;
+  .class-tabs{
+    grid-template-columns:1fr;
   }
 
-  h2 {
-    font-size: 25px;
+  .subject-grid{
+    grid-template-columns:1fr;
   }
 
-  /* Senior 1, 2, 3 */
-  .cards,
-  .class-buttons,
-  .subjects,
-  .grid {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
+  .section-title{font-size:26px}
 
-  nav {
-    width: 100%;
-  }
-
-  nav button,
-  nav a {
-    width: 100%;
-    flex: 1 1 100%;
-  }
-
-  input,
-  select,
-  textarea,
-  button {
-    max-width: 100%;
+  .topic{
+    padding:16px;
   }
 }
 
-/* Medium screens */
-@media (min-width: 601px) and (max-width: 900px) {
-  .cards,
-  .class-buttons,
-  .subjects,
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media(min-width:701px) and (max-width:950px){
+  .subject-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">📚 <span>Mr-dev</span> Learning Hub</div>
+
+  <nav>
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('books')">📚 Books</button>
+    <button onclick="showPage('quiz')">📝 Quiz</button>
+    <button onclick="showPage('teacher')">🤖 AI Teacher</button>
+  </nav>
+
+  <button class="theme" onclick="toggleTheme()">🌙 / ☀️ Theme</button>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <div class="hero">
+    <h1>Welcome to <span>Mr-dev</span> Learning Hub</h1>
+    <p>
+      Learn Senior 1, Senior 2 and Senior 3 subjects,
+      study topics, read notes and practise with quizzes.
+    </p>
+  </div>
+
+  <div class="search">
+    <input id="searchInput" placeholder="Search Mathematics, Chemistry, Physics, English...">
+    <button class="greenBtn" onclick="searchSite()">🔎 Search</button>
+  </div>
+
+  <div id="searchResults"></div>
+
+  <h2 class="section-title">🎓 Choose Your Class</h2>
+
+  <div class="class-tabs">
+    <button class="active" onclick="selectClass(1,this)">Senior 1</button>
+    <button onclick="selectClass(2,this)">Senior 2</button>
+    <button onclick="selectClass(3,this)">Senior 3</button>
+  </div>
+
+  <div id="homeSubjects"></div>
+
+</section>
+
+
+<!-- BOOKS -->
+<section id="books" class="page">
+
+  <h1>📚 Books & Notes</h1>
+
+  <p class="note">
+    Notes are organised by Senior class and subject.
+    They are study notes aligned with school-level topics, not full copyrighted textbook copies.
+  </p>
+
+  <div class="book-controls">
+    <select id="bookClass" onchange="loadBooks()">
+      <option value="1">Senior 1</option>
+      <option value="2">Senior 2</option>
+      <option value="3">Senior 3</option>
+    </select>
+
+    <select id="bookSubject" onchange="loadBooks()">
+      <option value="Mathematics">Mathematics</option>
+      <option value="Chemistry">Chemistry</option>
+      <option value="Physics">Physics</option>
+      <option value="English">English</option>
+    </select>
+  </div>
+
+  <div id="bookContent"></div>
+
+</section>
+
+
+<!-- QUIZ -->
+<section id="quiz" class="page">
+
+  <h1>📝 Quiz Test</h1>
+
+  <div class="book-controls">
+    <select id="quizClass" onchange="newQuiz()">
+      <option value="1">Senior 1</option>
+      <option value="2">Senior 2</option>
+      <option value="3">Senior 3</option>
+    </select>
+
+    <select id="quizSubject" onchange="newQuiz()">
+      <option>Mathematics</option>
+      <option>Chemistry</option>
+      <option>Physics</option>
+      <option>English</option>
+    </select>
+  </div>
+
+  <div class="quiz-card">
+    <h2 id="question">Question</h2>
+    <div id="answers" class="answers"></div>
+    <p class="score">Score: <span id="score">0</span></p>
+    <button class="greenBtn" onclick="newQuiz()">Next Question ➡️</button>
+  </div>
+
+</section>
+
+
+<!-- AI TEACHER -->
+<section id="teacher" class="page">
+
+  <h1>🤖 AI Teacher</h1>
+
+  <p class="note">
+    Ask for an explanation, formula, definition, example or revision help.
+  </p>
+
+  <div class="ai-box">
+    <textarea id="aiQuestion"
+      placeholder="Example: Explain photosynthesis..."></textarea>
+
+    <br><br>
+
+    <button class="greenBtn" onclick="askTeacher()">Ask Teacher</button>
+
+    <div id="aiAnswer" class="ai-answer">
+      👋 AI Teacher is ready to help you.
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  📚 Mr-dev Learning Hub<br>
+  Senior 1 • Senior 2 • Senior 3
+</footer>
+
+
+<script>
+
+/* =========================
+   DATA
+========================= */
+
+const subjects = ["Mathematics","Chemistry","Physics","English"];
+
+const data = {
+
+1:{
+ Mathematics:{
+  "Numbers & Sets":[
+   "Natural numbers",
+   "Integers",
+   "Fractions",
+   "Decimals",
+   "Percentages",
+   "Ratio and proportion",
+   "Approximation"
+  ],
+  "Algebra":[
+   "Algebraic expressions",
+   "Simplification",
+   "Linear equations",
+   "Substitution",
+   "Sequences"
+  ],
+  "Geometry":[
+   "Lines and angles",
+   "Triangles",
+   "Quadrilaterals",
+   "Polygons",
+   "Perimeter",
+   "Area"
+  ],
+  "Statistics":[
+   "Data collection",
+   "Tables",
+   "Bar charts",
+   "Pie charts",
+   "Mean, median and mode"
+  ]
+ },
+
+ Chemistry:{
+  "Matter":[
+   "States of matter",
+   "Physical properties",
+   "Changes of state"
+  ],
+  "Elements & Compounds":[
+   "Elements",
+   "Compounds",
+   "Mixtures",
+   "Symbols and formulae"
+  ],
+  "Chemical Changes":[
+   "Physical and chemical changes",
+   "Signs of chemical reactions",
+   "Word equations"
+  ],
+  "Laboratory":[
+   "Laboratory apparatus",
+   "Safety rules",
+   "Separation techniques"
+  ]
+ },
+
+ Physics:{
+  "Measurement":[
+   "Physical quantities",
+   "SI units",
+   "Length",
+   "Mass",
+   "Time",
+   "Temperature"
+  ],
+  "Force & Energy":[
+   "Force",
+   "Mass and weight",
+   "Work",
+   "Energy",
+   "Power"
+  ],
+  "Motion":[
+   "Distance",
+   "Displacement",
+   "Speed",
+   "Velocity"
+  ]
+ },
+
+ English:{
+  "Grammar":[
+   "Parts of speech",
+   "Nouns",
+   "Pronouns",
+   "Verbs",
+   "Adjectives",
+   "Adverbs",
+   "Prepositions",
+   "Conjunctions"
+  ],
+  "Reading":[
+   "Reading comprehension",
+   "Main idea",
+   "Supporting details",
+   "Vocabulary"
+  ],
+  "Writing":[
+   "Paragraph writing",
+   "Descriptive writing",
+   "Narrative writing",
+   "Letter writing"
+  ]
+ }
+},
+
+2:{
+ Mathematics:{
+  "Algebra":[
+   "Linear equations",
+   "Simultaneous equations",
+   "Algebraic fractions",
+   "Factorisation",
+   "Indices"
+  ],
+  "Geometry":[
+   "Angles",
+   "Congruence",
+   "Similarity",
+   "Pythagoras theorem",
+   "Circle geometry"
+  ],
+  "Graphs":[
+   "Coordinates",
+   "Linear graphs",
+   "Gradient",
+   "Distance-time graphs"
+  ],
+  "Statistics":[
+   "Frequency tables",
+   "Mean",
+   "Median",
+   "Mode",
+   "Range",
+   "Probability"
+  ]
+ },
+
+ Chemistry:{
+  "Atoms":[
+   "Structure of the atom",
+   "Protons",
+   "Neutrons",
+   "Electrons",
+   "Atomic number",
+   "Mass number"
+  ],
+  "Chemical Bonding":[
+   "Ionic bonding",
+   "Covalent bonding",
+   "Metallic bonding"
+  ],
+  "Acids & Bases":[
+   "Acids",
+   "Bases",
+   "Indicators",
+   "pH scale",
+   "Neutralisation",
+   "Salts"
+  ],
+  "Chemical Reactions":[
+   "Types of reactions",
+   "Balancing equations",
+   "Energy changes"
+  ]
+ },
+
+ Physics:{
+  "Motion":[
+   "Distance and displacement",
+   "Speed",
+   "Velocity",
+   "Acceleration",
+   "Motion graphs"
+  ],
+  "Electricity":[
+   "Electric current",
+   "Potential difference",
+   "Resistance",
+   "Ohm's law",
+   "Series circuits",
+   "Parallel circuits"
+  ],
+  "Energy":[
+   "Forms of energy",
+   "Energy transformation",
+   "Conservation of energy",
+   "Efficiency"
+  ],
+  "Pressure":[
+   "Pressure",
+   "Pressure in liquids",
+   "Atmospheric pressure"
+  ]
+ },
+
+ English:{
+  "Grammar":[
+   "Tenses",
+   "Active and passive voice",
+   "Direct and indirect speech",
+   "Conditionals",
+   "Clauses"
+  ],
+  "Comprehension":[
+   "Reading strategies",
+   "Inference",
+   "Vocabulary in context",
+   "Summarising"
+  ],
+  "Writing":[
+   "Formal letters",
+   "Reports",
+   "Essays",
+   "Articles",
+   "Speeches"
+  ],
+  "Literature":[
+   "Characters",
+   "Setting",
+   "Plot",
+   "Theme",
+   "Literary devices"
+  ]
+ }
+},
+
+3:{
+ Mathematics:{
+  "Algebra":[
+   "Quadratic equations",
+   "Factorisation",
+   "Algebraic fractions",
+   "Surds",
+   "Indices"
+  ],
+  "Functions":[
+   "Linear functions",
+   "Quadratic functions",
+   "Graphs",
+   "Domain and range"
+  ],
+  "Trigonometry":[
+   "Trigonometric ratios",
+   "Sine rule",
+   "Cosine rule",
+   "Applications of trigonometry"
+  ],
+  "Geometry":[
+   "Circle theorems",
+   "Transformations",
+   "Similar shapes",
+   "Area and volume"
+  ],
+  "Statistics & Probability":[
+   "Data analysis",
+   "Probability calculations",
+   "Charts and graphs",
+   "Standard deviation"
+  ],
+  "Vectors":[
+   "Vector notation",
+   "Addition of vectors",
+   "Vector applications"
+  ]
+ },
+
+ Chemistry:{
+  "Organic Chemistry":[
+   "Hydrocarbons",
+   "Alkanes",
+   "Alkenes",
+   "Alcohols",
+   "Homologous series"
+  ],
+  "Chemical Calculations":[
+   "Mole concept",
+   "Relative atomic mass",
+   "Chemical equations",
+   "Calcul
