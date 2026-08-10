@@ -1,89 +1,162 @@
+<!-- SEARCH -->
+<section id="searchSection">
+  <h2>🔎 Search</h2>
+
+  <input
+    id="searchInput"
+    type="text"
+    placeholder="Search subject or topic..."
+  >
+
+  <button id="searchBtn" type="button">
+    🔎 Search
+  </button>
+
+  <div id="searchResults"></div>
+</section>
+
+<style>
+#searchSection {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 18px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  border: 2px solid #315b87;
+  background: #102f4d;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+#searchInput::placeholder {
+  color: #aebed1;
+}
+
+#searchBtn {
+  width: 100%;
+  padding: 18px;
+  border: 0;
+  border-radius: 14px;
+  background: #20df72;
+  color: #071426;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#searchResults {
+  margin-top: 20px;
+}
+
+.searchItem {
+  background: #102f4d;
+  border: 1px solid #315b87;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.searchItem h3 {
+  margin: 0 0 8px;
+  color: #20df72;
+}
+</style>
+
 <script>
-const topics = [
-  // SENIOR 1
-  {class:"Senior 1", subject:"Mathematics", topic:"Numbers"},
-  {class:"Senior 1", subject:"Mathematics", topic:"Algebra"},
-  {class:"Senior 1", subject:"Mathematics", topic:"Geometry"},
-  {class:"Senior 1", subject:"Mathematics", topic:"Statistics"},
-  {class:"Senior 1", subject:"Chemistry", topic:"Matter"},
-  {class:"Senior 1", subject:"Chemistry", topic:"Elements and Compounds"},
-  {class:"Senior 1", subject:"Chemistry", topic:"Chemical Changes"},
-  {class:"Senior 1", subject:"Physics", topic:"Force and Energy"},
-  {class:"Senior 1", subject:"Physics", topic:"Measurement"},
-  {class:"Senior 1", subject:"Physics", topic:"Motion"},
-  {class:"Senior 1", subject:"English", topic:"Grammar"},
-  {class:"Senior 1", subject:"English", topic:"Reading"},
-  {class:"Senior 1", subject:"English", topic:"Writing"},
+const searchData = [
+  ["Senior 1","Mathematics","Numbers"],
+  ["Senior 1","Mathematics","Algebra"],
+  ["Senior 1","Mathematics","Geometry"],
+  ["Senior 1","Chemistry","Matter"],
+  ["Senior 1","Chemistry","Elements and Compounds"],
+  ["Senior 1","Chemistry","Chemical Changes"],
+  ["Senior 1","Physics","Measurement"],
+  ["Senior 1","Physics","Motion"],
+  ["Senior 1","Physics","Energy"],
+  ["Senior 1","English","Grammar"],
+  ["Senior 1","English","Reading"],
+  ["Senior 1","English","Writing"],
 
-  // SENIOR 2
-  {class:"Senior 2", subject:"Mathematics", topic:"Equations"},
-  {class:"Senior 2", subject:"Mathematics", topic:"Algebra"},
-  {class:"Senior 2", subject:"Mathematics", topic:"Geometry"},
-  {class:"Senior 2", subject:"Mathematics", topic:"Graphs"},
-  {class:"Senior 2", subject:"Chemistry", topic:"Atoms"},
-  {class:"Senior 2", subject:"Chemistry", topic:"Chemical Reactions"},
-  {class:"Senior 2", subject:"Chemistry", topic:"Acids and Bases"},
-  {class:"Senior 2", subject:"Physics", topic:"Motion"},
-  {class:"Senior 2", subject:"Physics", topic:"Electricity"},
-  {class:"Senior 2", subject:"Physics", topic:"Light"},
-  {class:"Senior 2", subject:"English", topic:"Grammar"},
-  {class:"Senior 2", subject:"English", topic:"Comprehension"},
-  {class:"Senior 2", subject:"English", topic:"Writing"},
+  ["Senior 2","Mathematics","Equations"],
+  ["Senior 2","Mathematics","Algebra"],
+  ["Senior 2","Mathematics","Geometry"],
+  ["Senior 2","Mathematics","Graphs"],
+  ["Senior 2","Chemistry","Atoms"],
+  ["Senior 2","Chemistry","Chemical Reactions"],
+  ["Senior 2","Chemistry","Acids and Bases"],
+  ["Senior 2","Physics","Motion"],
+  ["Senior 2","Physics","Electricity"],
+  ["Senior 2","Physics","Light"],
+  ["Senior 2","English","Grammar"],
+  ["Senior 2","English","Comprehension"],
+  ["Senior 2","English","Writing"],
 
-  // SENIOR 3
-  {class:"Senior 3", subject:"Mathematics", topic:"Algebra"},
-  {class:"Senior 3", subject:"Mathematics", topic:"Functions"},
-  {class:"Senior 3", subject:"Mathematics", topic:"Trigonometry"},
-  {class:"Senior 3", subject:"Mathematics", topic:"Geometry"},
-  {class:"Senior 3", subject:"Mathematics", topic:"Statistics and Probability"},
-  {class:"Senior 3", subject:"Mathematics", topic:"Vectors"},
-  {class:"Senior 3", subject:"Chemistry", topic:"Organic Chemistry"},
-  {class:"Senior 3", subject:"Chemistry", topic:"Chemical Calculations"},
-  {class:"Senior 3", subject:"Chemistry", topic:"Acids and Bases"},
-  {class:"Senior 3", subject:"Chemistry", topic:"Metals"},
-  {class:"Senior 3", subject:"Chemistry", topic:"Electrochemistry"},
-  {class:"Senior 3", subject:"Physics", topic:"Electricity"},
-  {class:"Senior 3", subject:"Physics", topic:"Waves"},
-  {class:"Senior 3", subject:"Physics", topic:"Magnetism"},
-  {class:"Senior 3", subject:"Physics", topic:"Light"},
-  {class:"Senior 3", subject:"English", topic:"Literature"},
-  {class:"Senior 3", subject:"English", topic:"Grammar"},
-  {class:"Senior 3", subject:"English", topic:"Writing Skills"}
+  ["Senior 3","Mathematics","Algebra"],
+  ["Senior 3","Mathematics","Functions"],
+  ["Senior 3","Mathematics","Trigonometry"],
+  ["Senior 3","Mathematics","Geometry"],
+  ["Senior 3","Mathematics","Statistics and Probability"],
+  ["Senior 3","Mathematics","Vectors"],
+  ["Senior 3","Chemistry","Organic Chemistry"],
+  ["Senior 3","Chemistry","Chemical Calculations"],
+  ["Senior 3","Chemistry","Acids and Bases"],
+  ["Senior 3","Chemistry","Metals"],
+  ["Senior 3","Chemistry","Electrochemistry"],
+  ["Senior 3","Physics","Electricity"],
+  ["Senior 3","Physics","Waves"],
+  ["Senior 3","Physics","Magnetism"],
+  ["Senior 3","Physics","Light"],
+  ["Senior 3","English","Literature"],
+  ["Senior 3","English","Grammar"],
+  ["Senior 3","English","Writing Skills"]
 ];
 
-function searchTopics() {
+function doSearch() {
   const input = document.getElementById("searchInput");
   const results = document.getElementById("searchResults");
 
   const query = input.value.trim().toLowerCase();
 
-  if (!query) {
+  if (query === "") {
     results.innerHTML =
-      "<p>🔎 Andika subject cyangwa topic ushaka.</p>";
+      "<div class='searchItem'>✏️ Andika icyo ushaka gushaka.</div>";
     return;
   }
 
-  const found = topics.filter(item =>
-    item.class.toLowerCase().includes(query) ||
-    item.subject.toLowerCase().includes(query) ||
-    item.topic.toLowerCase().includes(query)
+  const found = searchData.filter(item =>
+    item[0].toLowerCase().includes(query) ||
+    item[1].toLowerCase().includes(query) ||
+    item[2].toLowerCase().includes(query)
   );
 
   if (found.length === 0) {
     results.innerHTML =
-      "<p>❌ Nta topic yabonetse. Gerageza: Physics, Chemistry, Algebra, English...</p>";
+      "<div class='searchItem'>❌ Nta topic yabonetse.</div>";
     return;
   }
 
-  results.innerHTML = `
-    <h2>🔎 Search Results</h2>
-    ${found.map(item => `
-      <div class="search-result">
-        <strong>📚 ${item.class}</strong><br>
-        <span>📖 ${item.subject}</span><br>
-        <b>📌 ${item.topic}</b>
-      </div>
-    `).join("")}
-  `;
+  results.innerHTML = found.map(item => `
+    <div class="searchItem">
+      <h3>📚 ${item[0]}</h3>
+      <div>📖 Subject: <b>${item[1]}</b></div>
+      <div>📌 Topic: <b>${item[2]}</b></div>
+    </div>
+  `).join("");
 }
-    </script>
+
+document.getElementById("searchBtn").addEventListener("click", doSearch);
+
+document.getElementById("searchInput").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    doSearch();
+  }
+});
+</script>
