@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mr-dev | Science & Mathematics</title>
+<title>Mr-dev | Science & Mathematics Notes</title>
 
 <style>
 *{
@@ -19,562 +18,299 @@ body{
   color:white;
 }
 
-nav{
+header{
+  background:#0d1b32;
+  padding:20px;
+  text-align:center;
   position:sticky;
   top:0;
-  z-index:100;
-  background:#0d172a;
-  padding:18px 10px;
-  text-align:center;
-  border-bottom:2px solid #20e875;
+  z-index:10;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 15px;
-  font-size:18px;
-  font-weight:bold;
+header h1{
+  margin:5px;
+  color:#20e879;
 }
 
-.hero{
-  text-align:center;
-  padding:55px 20px;
-  background:#1d2a40;
-}
-
-.hero h1{
-  font-size:45px;
-  margin:10px;
-}
-
-.hero p{
-  font-size:22px;
-}
-
-.container{
-  max-width:1000px;
-  margin:auto;
-  padding:25px 15px;
+header p{
+  margin:5px;
+  color:#ddd;
 }
 
 .search{
+  padding:20px;
+  max-width:700px;
+  margin:auto;
+}
+
+.search input{
   width:100%;
   padding:17px;
   border-radius:12px;
-  border:2px solid #20e875;
-  background:#142b45;
-  color:white;
-  font-size:18px;
+  border:2px solid #20e879;
+  font-size:17px;
   outline:none;
 }
 
-.search::placeholder{
-  color:#aaa;
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
 
-.searchBtn{
-  width:100%;
-  margin-top:12px;
-  padding:16px;
-  border:0;
-  border-radius:12px;
-  background:#20e875;
-  color:#001b10;
-  font-size:20px;
-  font-weight:bold;
-}
-
-h2{
+.title{
   text-align:center;
+  margin:25px 0;
   font-size:32px;
-  margin-top:45px;
+}
+
+.classes{
+  display:grid;
+  gap:20px;
 }
 
 .class-card{
-  background:#142f4a;
-  border:3px solid #275e91;
-  border-radius:22px;
+  background:#173451;
+  border:3px solid #20e879;
+  border-radius:20px;
   padding:25px;
-  margin:25px 0;
-  transition:.3s;
+  cursor:pointer;
+  transition:.2s;
 }
 
 .class-card:hover{
-  border-color:#20e875;
-  transform:translateY(-3px);
+  transform:scale(1.02);
+  background:#1c4161;
 }
 
-.class-card h3{
-  color:#20e875;
-  font-size:30px;
+.class-card h2{
+  color:#20e879;
   margin-top:0;
 }
 
 .subjects{
+  color:#eee;
+  font-size:18px;
+}
+
+.hidden{
+  display:none;
+}
+
+.back{
+  background:#20e879;
+  border:0;
+  padding:13px 20px;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-bottom:20px;
+}
+
+.subject-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:18px;
 }
 
 .subject{
-  background:#0e2036;
-  border:2px solid #275e91;
-  border-radius:15px;
-  padding:20px;
+  background:#173451;
+  border-radius:18px;
+  padding:22px;
+  border:2px solid #285b82;
   cursor:pointer;
 }
 
-.subject:hover{
-  border-color:#20e875;
-}
-
-.subject h4{
-  color:#20e875;
-  font-size:22px;
-  margin:0 0 12px;
-}
-
-.topics{
-  display:none;
-  margin-top:15px;
+.subject h3{
+  color:#20e879;
+  font-size:23px;
 }
 
 .topic{
-  background:#1c3955;
+  background:#102943;
   padding:15px;
-  border-radius:10px;
   margin:10px 0;
+  border-radius:12px;
+  border-left:4px solid #20e879;
   cursor:pointer;
 }
 
 .topic:hover{
-  background:#24516f;
+  background:#183d5b;
 }
 
-.notes{
-  display:none;
-  background:#071426;
-  border-left:4px solid #20e875;
-  padding:15px;
-  margin-top:10px;
+.note{
+  background:#f4f7fa;
+  color:#111;
+  padding:20px;
+  border-radius:15px;
+  margin-top:20px;
   line-height:1.7;
 }
 
-.contact{
-  text-align:center;
-  background:#104d3c;
-  border:2px solid #20e875;
-  border-radius:22px;
-  padding:30px 20px;
-  margin:45px 0;
-}
-
-.phone{
-  font-size:30px;
-  font-weight:bold;
-  margin:20px 0;
+.note h2{
+  color:#087b43;
 }
 
 .whatsapp{
+  background:#075e35;
+  margin:40px auto 20px;
+  max-width:700px;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.whatsapp h2{
+  color:#20e879;
+}
+
+.whatsapp-number{
+  font-size:28px;
+  font-weight:bold;
+  margin:15px;
+}
+
+.whatsapp a{
   display:inline-block;
-  background:#20e875;
-  color:#002415;
-  padding:17px 28px;
+  background:#20e879;
+  color:#001b0c;
+  padding:15px 25px;
   border-radius:30px;
   text-decoration:none;
-  font-size:20px;
   font-weight:bold;
+  font-size:18px;
 }
 
 footer{
+  background:#0d1b32;
   text-align:center;
-  background:#0d172a;
   padding:30px;
-  margin-top:30px;
-}
-
-@media(max-width:600px){
-  .hero h1{
-    font-size:38px;
-  }
-
-  nav a{
-    margin:0 7px;
-    font-size:15px;
-  }
+  margin-top:40px;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#classes">Classes</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section class="hero" id="home">
-  <h1>Mr-dev</h1>
-  <p>Mathematics & Science Learning Website</p>
-  <p>Senior 1 • Senior 2 • Senior 3</p>
-</section>
-
-<div class="container">
-
-<input
-  class="search"
-  id="search"
-  type="text"
-  placeholder="Search subject or topic..."
-  onkeyup="searchTopics()">
-
-<button class="searchBtn" onclick="searchTopics()">
-🔎 Search
-</button>
-
-<section id="classes">
-
-<h2>🎓 Select Your Senior</h2>
-
-<!-- SENIOR 1 -->
-<div class="class-card">
-<h3>🎓 Senior 1</h3>
-
-<div class="subjects">
-
-<div class="subject">
-<h4>➗ Mathematics</h4>
-<div class="topics">
-
-<div class="topic">
-Numbers & Sets
-<div class="notes">
-<strong>Notes:</strong><br>
-Learn natural numbers, integers, fractions, decimals,
-sets and basic operations.
-</div>
-</div>
-
-<div class="topic">
-Algebra
-<div class="notes">
-<strong>Notes:</strong><br>
-Introduction to algebraic expressions, collecting like terms
-and simple equations.
-</div>
-</div>
-
-<div class="topic">
-Geometry
-<div class="notes">
-<strong>Notes:</strong><br>
-Basic geometric shapes, angles, lines and simple constructions.
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="subject">
-<h4>⚡ Physics</h4>
-<div class="topics">
-
-<div class="topic">
-Measurement
-<div class="notes">
-<strong>Notes:</strong><br>
-Physical quantities, SI units, measuring instruments and
-measurement errors.
-</div>
-</div>
-
-<div class="topic">
-Motion
-<div class="notes">
-<strong>Notes:</strong><br>
-Distance, displacement, speed and simple motion.
-</div>
-</div>
-
-<div class="topic">
-Forces
-<div class="notes">
-<strong>Notes:</strong><br>
-Meaning of force, effects of force and simple examples.
-</div>
-</div>
-
-</div>
-</div>
+<header>
+  <h1>🎓 Mr-dev</h1>
+  <p>Science & Mathematics Learning Website</p>
+</header>
 
-<div class="subject">
-<h4>🧪 Chemistry</h4>
-<div class="topics">
-
-<div class="topic">
-Matter
-<div class="notes">
-<strong>Notes:</strong><br>
-Matter, solids, liquids, gases and changes of state.
-</div>
-</div>
-
-<div class="topic">
-Elements & Compounds
-<div class="notes">
-<strong>Notes:</strong><br>
-Difference between elements, compounds and mixtures.
-</div>
-</div>
-
-<div class="topic">
-Separation of Mixtures
-<div class="notes">
-<strong>Notes:</strong><br>
-Filtration, evaporation, distillation and other methods.
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="subject">
-<h4>🧬 Biology</h4>
-<div class="topics">
-
-<div class="topic">
-Introduction to Biology
-<div class="notes">
-<strong>Notes:</strong><br>
-Biology is the study of living organisms.
-</div>
-</div>
-
-<div class="topic">
-Cells
-<div class="notes">
-<strong>Notes:</strong><br>
-Cell structure, cell parts and functions.
-</div>
-</div>
-
-<div class="topic">
-Living Organisms
-<div class="notes">
-<strong>Notes:</strong><br>
-Characteristics and classification of living organisms.
-</div>
-</div>
-
-</div>
-</div>
+<div id="home">
 
-</div>
-</div>
+  <div class="search">
+    <input
+      type="text"
+      id="searchBox"
+      placeholder="🔎 Search subject or topic..."
+      oninput="searchNotes()">
+  </div>
 
+  <div class="container">
 
-<!-- SENIOR 2 -->
-<div class="class-card">
-<h3>🎓 Senior 2</h3>
+    <h1 class="title">🎓 Select Senior</h1>
 
-<div class="subjects">
+    <div class="classes">
 
-<div class="subject">
-<h4>➗ Mathematics</h4>
-<div class="topics">
+      <div class="class-card" onclick="openClass(1)">
+        <h2>🎓 Senior 1</h2>
+        <p class="subjects">
+          Mathematics • Physics • Chemistry • Biology
+        </p>
+      </div>
 
-<div class="topic">
-Functions
-<div class="notes">
-<strong>Notes:</strong><br>
-Understand functions, inputs, outputs and simple function notation.
-</div>
-</div>
+      <div class="class-card" onclick="openClass(2)">
+        <h2>🎓 Senior 2</h2>
+        <p class="subjects">
+          Mathematics • Physics • Chemistry • Biology
+        </p>
+      </div>
 
-<div class="topic">
-Linear Equations
-<div class="notes">
-<strong>Notes:</strong><br>
-Solve linear equations and represent solutions using graphs.
-</div>
-</div>
+      <div class="class-card" onclick="openClass(3)">
+        <h2>🎓 Senior 3</h2>
+        <p class="subjects">
+          Mathematics • Physics • Chemistry • Biology
+        </p>
+      </div>
 
-<div class="topic">
-Statistics
-<div class="notes">
-<strong>Notes:</strong><br>
-Collect data and calculate mean, median, mode and range.
-</div>
-</div>
+    </div>
 
-</div>
-</div>
+    <div id="searchResults"></div>
 
-<div class="subject">
-<h4>⚡ Physics</h4>
-<div class="topics">
-
-<div class="topic">
-Energy
-<div class="notes">
-<strong>Notes:</strong><br>
-Forms of energy, energy transformation and conservation.
-</div>
-</div>
+    <div class="whatsapp">
+      <h2>💬 Contact Mr-dev</h2>
+      <p>You can contact me on WhatsApp:</p>
+      <div class="whatsapp-number">📱 0738 939 769</div>
 
-<div class="topic">
-Work & Power
-<div class="notes">
-<strong>Notes:</strong><br>
-Work, energy, power and their relationship.
-</div>
-</div>
+      <a href="https://wa.me/250738939769" target="_blank">
+        💬 Chat on WhatsApp
+      </a>
+    </div>
 
-<div class="topic">
-Pressure
-<div class="notes">
-<strong>Notes:</strong><br>
-Pressure in solids and fluids with practical examples.
+  </div>
 </div>
-</div>
 
-</div>
-</div>
 
-<div class="subject">
-<h4>🧪 Chemistry</h4>
-<div class="topics">
-
-<div class="topic">
-Atomic Structure
-<div class="notes">
-<strong>Notes:</strong><br>
-Atoms, protons, neutrons, electrons and atomic number.
-</div>
-</div>
+<div id="classPage" class="hidden">
 
-<div class="topic">
-Chemical Bonding
-<div class="notes">
-<strong>Notes:</strong><br>
-Introduction to ionic and covalent bonding.
-</div>
-</div>
+  <div class="container">
 
-<div class="topic">
-Chemical Reactions
-<div class="notes">
-<strong>Notes:</strong><br>
-Reactants, products and signs of chemical reactions.
-</div>
-</div>
+    <button class="back" onclick="goHome()">← Back</button>
 
-</div>
-</div>
+    <h1 id="classTitle" class="title"></h1>
 
-<div class="subject">
-<h4>🧬 Biology</h4>
-<div class="topics">
-
-<div class="topic">
-Nutrition
-<div class="notes">
-<strong>Notes:</strong><br>
-Nutrients, balanced diet and importance of food.
-</div>
-</div>
+    <div id="subjects" class="subject-grid"></div>
 
-<div class="topic">
-Digestion
-<div class="notes">
-<strong>Notes:</strong><br>
-Digestive system and digestion of different nutrients.
-</div>
-</div>
+  </div>
 
-<div class="topic">
-Respiration
-<div class="notes">
-<strong>Notes:</strong><br>
-Aerobic respiration and the importance of oxygen.
 </div>
-</div>
 
-</div>
-</div>
 
-</div>
-</div>
+<div id="topicPage" class="hidden">
 
+  <div class="container">
 
-<!-- SENIOR 3 -->
-<div class="class-card">
-<h3>🎓 Senior 3</h3>
+    <button class="back" onclick="backToClass()">← Subjects</button>
 
-<div class="subjects">
+    <h1 id="topicTitle" class="title"></h1>
 
-<div class="subject">
-<h4>➗ Mathematics</h4>
-<div class="topics">
+    <div id="topics"></div>
 
-<div class="topic">
-Quadratic Equations
-<div class="notes">
-<strong>Notes:</strong><br>
-Learn quadratic expressions, equations and methods of solving them.
-</div>
-</div>
+    <div id="note"></div>
 
-<div class="topic">
-Trigonometry
-<div class="notes">
-<strong>Notes:</strong><br>
-Introduction to sine, cosine and tangent in right triangles.
-</div>
-</div>
+  </div>
 
-<div class="topic">
-Probability
-<div class="notes">
-<strong>Notes:</strong><br>
-Basic probability, events and calculating chances.
 </div>
-</div>
 
-</div>
-</div>
 
-<div class="subject">
-<h4>⚡ Physics</h4>
-<div class="topics">
-
-<div class="topic">
-Electricity
-<div class="notes">
-<strong>Notes:</strong><br>
-Electric current, voltage, resistance and simple circuits.
-</div>
-</div>
+<footer>
+  © 2026 Mr-dev | Science & Mathematics
+</footer>
 
-<div class="topic">
-Magnetism
-<div class="notes">
-<strong>Notes:</strong><br>
-Magnets, magnetic fields and applications.
-</div>
-</div>
 
-<div class="topic">
-Light
-<div class="notes">
-<strong>Notes:</strong><br>
-Reflection, refraction and basic properties of light.
-</div>
-</div>
+<script>
 
-</div>
-</div>
+const data = {
 
-<div class="
+1:{
+ Mathematics:[
+  ["Numbers","Introduction to numbers, integers, fractions and decimals."],
+  ["Algebra","Basic algebraic expressions and equations."],
+  ["Geometry","Lines, angles, triangles and basic shapes."],
+  ["Statistics","Collecting, organizing and presenting data."]
+ ],
+
+ Physics:[
+  ["Introduction to Physics","Meaning of physics, measurements and SI units."],
+  ["Measurement","Length, mass, time and measuring instruments."],
+  ["Force","Introduction to force and its effects."],
+  ["Energy","Forms of energy and energy transformation."]
+ ],
+
+ Chemistry:[
+  ["Introduction to Chemistry","Matter, substances and chemistry in everyday life."],
+  ["States of Matter","Solids, liquids and gases."],
+  ["Elements","Introduction to
