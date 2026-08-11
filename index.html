@@ -1,296 +1,340 @@
 <!DOCTYPE html>
-<html lang="rw">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mr-dev Learning Platform</title>
+<title>Mr-dev Science & Mathematics</title>
 
 <style>
 body{
 font-family:Arial;
-background:#071426;
+background:#061426;
 color:white;
 margin:0;
 }
 
-header{
-background:#16c172;
+nav{
+background:#101c33;
 padding:20px;
 text-align:center;
 }
 
-section{
+nav a{
+color:white;
+margin:20px;
+font-size:20px;
+text-decoration:none;
+}
+
+.container{
 padding:20px;
 }
 
 .card{
-background:#102d49;
+background:#153452;
+border:3px solid #00ff66;
+border-radius:20px;
 padding:20px;
-margin:15px;
-border-radius:15px;
+margin:20px 0;
+}
+
+h1,h2,h3{
+color:#00ff66;
 }
 
 button{
-background:#16c172;
-border:none;
-padding:12px;
-border-radius:10px;
-font-weight:bold;
-}
-
-input{
-padding:12px;
-width:90%;
-border-radius:10px;
-}
-
-#chat{
-background:white;
-color:black;
+background:#00ff66;
+border:0;
 padding:15px;
-border-radius:15px;
-height:300px;
-overflow:auto;
+border-radius:20px;
+font-size:18px;
 }
 
 .answer{
-color:#16c172;
-font-weight:bold;
+background:#fff4b8;
+color:black;
+padding:15px;
+border-radius:10px;
 }
+
+.whatsapp{
+background:#075e54;
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
 </style>
 
 </head>
 
-
 <body>
 
-<header>
-
-<h1>🎓 Mr-dev Learning</h1>
-
-<p>Senior 1 • Senior 2 • Senior 3</p>
-
-</header>
+<nav>
+<a href="#">Home</a>
+<a href="#">Classes</a>
+<a href="#">Contact</a>
+</nav>
 
 
-<section>
+<div class="container">
 
-<h2>📖 Classes</h2>
-
+<h1>📚 Mr-dev Science & Mathematics</h1>
 
 <div class="card">
+<h2>Select Class</h2>
 
-<h3>Senior One</h3>
-
-<button onclick="openClass('S1')">
-Open
-</button>
-
-</div>
-
-
-<div class="card">
-
-<h3>Senior Two</h3>
-
-<button onclick="openClass('S2')">
-Open
-</button>
+<button onclick="show('s1')">Senior 1</button>
+<button onclick="show('s2')">Senior 2</button>
+<button onclick="show('s3')">Senior 3</button>
 
 </div>
 
 
-<div class="card">
-
-<h3>Senior Three</h3>
-
-<button onclick="openClass('S3')">
-Open
-</button>
-
-</div>
+<div id="content"></div>
 
 
-<div id="notes" class="card">
-
-Select class to see Units
-
-</div>
-
-
-</section>
-
-
-
-<section>
-
-<h2>🤖 AI Teacher</h2>
-
-
-<div id="chat">
-
-AI Teacher: Muraho! Baza ikibazo cyawe.
-
-</div>
-
-
-<input id="question" placeholder="Ask AI Teacher">
-
-
-<button onclick="askAI()">
-
-Send
-
-</button>
-
-
-</section>
-
-
-
-<section>
-
-<h2>💬 WhatsApp</h2>
-
-<a href="https://wa.me/250738939769">
+<div class="whatsapp">
+<h2>💬 AI Teacher / Contact</h2>
+<p>Ask your questions on WhatsApp</p>
+<h1>0738 939 769</h1>
 
 <button>
-Chat 0738939769
+Chat on WhatsApp
 </button>
 
-</a>
+</div>
 
-
-</section>
-
+</div>
 
 
 <script>
 
+function show(className){
 
-let units={
+let data={
 
+s1:`
 
-S1:[
+<div class="card">
 
-"Unit 1: Mathematics Introduction",
+<h2>📖 Senior 1 Mathematics</h2>
 
-"Unit 2: Algebra",
+<h3>Unit 1: Sets</h3>
 
-"Unit 3: Geometry",
+<p>
+A set is a collection of well defined objects.
+Examples:
+A={1,2,3,4}
+</p>
 
-"Unit 4: Biology Cells",
+<h3>Notes</h3>
 
-"Unit 5: Chemistry Matter",
-
-"Unit 6: Physics Measurement"
-
-],
-
-
-S2:[
-
-"Unit 1: Algebra",
-
-"Unit 2: Statistics",
-
-"Unit 3: Electricity",
-
-"Unit 4: Chemical Reactions",
-
-"Unit 5: Human Biology"
-
-],
+<p>
+Types of sets:
+<br>
+- Empty set
+<br>
+- Finite set
+<br>
+- Infinite set
+<br>
+- Universal set
+</p>
 
 
-S3:[
+<h3>Exercises</h3>
 
-"Unit 1: Trigonometry",
+<p>
+1. Define a set.
+<br>
+2. Give three examples of sets.
+<br>
+3. Find the elements of A={2,4,6,8}
+</p>
 
-"Unit 2: Physics Motion",
 
-"Unit 3: Organic Chemistry",
+<div class="answer">
+Answers:
+<br>
+1. A collection of objects.
+<br>
+2. Example: numbers, students, days.
+<br>
+3. {2,4,6,8}
+</div>
 
-"Unit 4: Genetics"
+</div>
 
-]
 
+
+<div class="card">
+
+<h2>🔬 Senior 1 Science</h2>
+
+<h3>Unit 1: Introduction to Biology</h3>
+
+<p>
+Biology is the study of living things.
+Living organisms have characteristics such as growth, respiration and reproduction.
+</p>
+
+
+<h3>Exercises</h3>
+
+<p>
+1. What is Biology?
+<br>
+2. Mention three characteristics of living things.
+</p>
+
+
+</div>
+
+`,
+
+
+
+s2:`
+
+<div class="card">
+
+<h2>📖 Senior 2 Mathematics</h2>
+
+<h3>Unit 1: Algebra</h3>
+
+<p>
+Algebra uses letters and numbers to represent unknown values.
+</p>
+
+<h3>Example</h3>
+
+<p>
+Solve:
+2x + 4 = 10
+<br>
+2x=6
+<br>
+x=3
+</p>
+
+
+<h3>Exercises</h3>
+
+<p>
+1. Solve 3x+5=14
+<br>
+2. Simplify 4a+2a
+</p>
+
+<div class="answer">
+Answers:
+<br>
+1. x=3
+<br>
+2. 6a
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>⚗️ Senior 2 Chemistry</h2>
+
+<h3>Unit 1: Matter</h3>
+
+<p>
+Matter is anything that has mass and occupies space.
+States of matter:
+Solid, Liquid and Gas.
+</p>
+
+</div>
+
+`,
+
+
+
+s3:`
+
+<div class="card">
+
+<h2>📖 Senior 3 Mathematics</h2>
+
+<h3>Unit 1: Quadratic Equations</h3>
+
+<p>
+A quadratic equation has the form:
+<br>
+ax² + bx + c = 0
+</p>
+
+
+<h3>Methods of solving</h3>
+
+<p>
+1. Factorization
+<br>
+2. Completing square
+<br>
+3. Formula method
+</p>
+
+
+<h3>Exercise</h3>
+
+<p>
+Solve:
+x²+5x+6=0
+</p>
+
+
+<div class="answer">
+Answer:
+<br>
+(x+2)(x+3)=0
+<br>
+x=-2 or x=-3
+</div>
+
+
+</div>
+
+
+<div class="card">
+
+<h2>⚡ Senior 3 Physics</h2>
+
+<h3>Unit 1: Light</h3>
+
+<p>
+Light is a form of energy that enables us to see objects.
+</p>
+
+<h3>Exercises</h3>
+
+<p>
+1. What is light?
+<br>
+2. Explain reflection.
+</p>
+
+
+</div>
+
+`
 
 };
 
 
-
-function openClass(c){
-
-let box=document.getElementById("notes");
-
-box.innerHTML="<h3>"+c+"</h3>";
-
-units[c].forEach(function(u){
-
-box.innerHTML +=
-
-"<div class='card'>📖 "+u+
-"<br><br>Notes: Explanation will appear here."
-+
-"<br><br>Exercise: Practice questions here."
-+
-"</div>";
-
-});
+document.getElementById("content").innerHTML=data[className];
 
 }
-
-
-
-function askAI(){
-
-let q=document.getElementById("question").value;
-
-let chat=document.getElementById("chat");
-
-
-chat.innerHTML +=
-
-"<p><b>You:</b> "+q+"</p>";
-
-
-let answer="";
-
-if(q.toLowerCase().includes("photosynthesis")){
-
-answer="Photosynthesis ni uburyo ibimera bikoresha urumuri gukora ibiryo.";
-
-}
-
-else if(q.toLowerCase().includes("math")){
-
-answer="Nshobora kugufasha Mathematics intambwe ku yindi.";
-
-}
-
-else{
-
-answer="AI Teacher: Ndakwigisha. Banza umbwire Unit cyangwa subject.";
-
-}
-
-
-chat.innerHTML +=
-
-"<p class='answer'>"+answer+"</p>";
-
-
-
-document.getElementById("question").value="";
-
-
-}
-
 
 </script>
-
 
 </body>
 </html>
