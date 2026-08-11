@@ -1,92 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="google-site-verification" content="bYCk1Y9nKeSapzJZdpqCAsht6_ZQ7-X2kkra1DQgFI4" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mr-dev | Web Developer</title>
+<title>Mr-dev Learning Hub</title>
 
-  <!-- Google Search Console verification -->
-  <meta name="google-site-verification" content="bYCk1Y9nKeSapzJZdpqCAsht6_ZQ7-X2kkra1DQgFI4">
+<meta name="google-site-verification"
+content="bYCk1Y9nKeSapzJZdpqCAsht6_ZQ7-X2kkra1DQgFI4">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111827;
-      color: white;
-      text-align: center;
-    }
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#071426;
+  color:white;
+}
 
-    nav {
-      background: #0f172a;
-      padding: 20px;
-    }
+header{
+  background:#102b48;
+  padding:25px 15px;
+  text-align:center;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 10px;
-    }
+header h1{
+  margin:0;
+  color:#20df70;
+}
 
-    header {
-      padding: 60px 20px;
-      background: #1e293b;
-    }
+nav{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
-    header h1 {
-      font-size: 40px;
-      margin: 0 0 10px;
-    }
+button{
+  border:0;
+  border-radius:12px;
+  padding:13px 20px;
+  font-size:16px;
+  cursor:pointer;
+}
 
-    main {
-      padding: 50px 20px;
-    }
+nav button{
+  background:#183a59;
+  color:white;
+}
 
-    .box {
-      max-width: 600px;
-      margin: auto;
-      padding: 30px;
-      background: #1e293b;
-      border-radius: 15px;
-    }
+.container{
+  max-width:950px;
+  margin:auto;
+  padding:25px 20px;
+}
 
-    footer {
-      padding: 25px;
-      background: #0f172a;
-      margin-top: 40px;
-    }
-  </style>
+.intro{
+  text-align:center;
+  color:#b9c9dc;
+  font-size:19px;
+  line-height:1.6;
+}
+
+.search{
+  margin:25px 0;
+}
+
+.search input{
+  width:100%;
+  padding:16px;
+  border-radius:12px;
+  border:2px solid #28557f;
+  background:#153653;
+  color:white;
+  font-size:17px;
+}
+
+.search button{
+  width:100%;
+  margin-top:10px;
+  background:#20df70;
+  font-weight:bold;
+}
+
+.class-grid,
+.subject-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.subject-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.class-card,
+.subject-card,
+.topic-card{
+  background:#153653;
+  border:2px solid #28557f;
+  border-radius:20px;
+  padding:22px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.class-card:hover,
+.subject-card:hover,
+.topic-card:hover{
+  border-color:#20df70;
+  transform:scale(1.01);
+}
+
+.class-card h3,
+.subject-card h3,
+.topic-card h3{
+  color:#20df70;
+}
+
+#subjects,
+#topics,
+#notes{
+  display:none;
+  margin-top:30px;
+}
+
+.back{
+  background:#20df70;
+  color:#071426;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.notes-box{
+  background:#102b48;
+  border:2px solid #20df70;
+  border-radius:20px;
+  padding:25px;
+  line-height:1.7;
+}
+
+.notes-box h2,
+.notes-box h3{
+  color:#20df70;
+}
+
+.notes-box li{
+  margin:8px 0;
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  z-index:9999;
+}
+
+footer{
+  margin-top:50px;
+  padding:30px;
+  text-align:center;
+  border-top:2px solid #234b75;
+  color:#b9c9dc;
+}
+
+@media(max-width:650px){
+  .class-grid,
+  .subject-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header>
+<h1>📚 Mr-dev Learning Hub</h1>
 
-  <header>
-    <h1>Mr-dev</h1>
-    <p>Web Developer</p>
-  </header>
+<nav>
+<button onclick="home()">🏠 Home</button>
+<button onclick="showSearch()">🔎 Search</button>
+</nav>
+</header>
 
-  <main>
-    <div class="box" id="about">
-      <h2>Welcome to Mr-dev</h2>
-      <p>This is my personal website.</p>
-      <p>I am learning and building websites.</p>
-    </div>
-  </main>
+<div class="container">
 
-  <footer id="contact">
-    <p>© 2026 Mr-dev</p>
-  </footer>
+<p class="intro">
+Learn Senior 1, Senior 2 and Senior 3.
+Study Mathematics, Physics, Chemistry and Biology.
+</p>
 
-</body>
-</html>
+<div class="search">
+<input id="searchInput"
+placeholder="Search subject or topic...">
+
+<button onclick="searchTopics()">🔎 Search</button>
+</div>
+
+<h2>🎓 Select Senior</h2>
+
+<div class="class-grid">
+
+<div class="class-card" onclick="selectSenior(1)">
+<h3>🎓 Senior 1</h3>
+<p>Mathematics • Physics • Chemistry • Biology</p>
+</div>
+
+<div class="class-card" onclick="selectSenior(2)">
+<h3>🎓 Senior 2</h3>
+<p>Mathematics • Physics • Chemistry • Biology</p>
+</div>
+
+<div class="class-card" onclick="selectSenior(3)">
+<h3>🎓 Senior 3</h3>
+<p>Mathematics • Physics • Chemistry • Biology</p>
+</div>
+
+</div>
+
+<div id="subjects">
+
+<button class="back" onclick="home()">← Back</button>
+
+<h2 id="seniorTitle"></h2>
+
+<div class="subject-grid">
+
+<div class="subject-card"
+onclick="selectSubject('Mathematics')">
+<h3>🔢 Mathematics</h3>
+<p>Mathematics lessons and topics</p>
+</div>
+
+<div class="subject-card"
+onclick="selectSubject('Physics')">
+<h3>⚡ Physics</h3>
+<p>Physics lessons and topics</p>
+</div>
+
+<div class="subject-card"
+onclick="selectSubject('Chemistry')">
+<h3>⚗️
