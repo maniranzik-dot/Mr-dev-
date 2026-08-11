@@ -1,243 +1,131 @@
-<!DOCTYPE html>
-<html>
-<head>
+const S1_MATH = [
 
-<title>Mr-dev REB Learning</title>
+{
+unit:"Unit 1: Sets",
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+notes:`
 
-<style>
+<h2>📖 Unit 1: Sets</h2>
 
-body{
-font-family:Arial;
-margin:0;
-background:#061426;
-color:white;
-}
+<h3>Meaning of a set</h3>
 
-header{
-background:#0d1b32;
-padding:25px;
-text-align:center;
-border-bottom:4px solid #20e875;
-}
+<p>
+A set is a well-defined collection of objects called elements.
+</p>
 
-h1{
-color:#20e875;
-}
+<p>
+Example:
+<br>
+A = {1,2,3,4}
+</p>
 
-.container{
-padding:20px;
-}
-
-.card{
-background:#153653;
-padding:20px;
-margin:15px 0;
-border-radius:20px;
-}
-
-button{
-background:#20e875;
-border:0;
-padding:15px;
-border-radius:15px;
-font-weight:bold;
-margin:5px;
-cursor:pointer;
-}
-
-select{
-padding:15px;
-width:100%;
-border-radius:15px;
-font-size:18px;
-}
-
-.lesson{
-background:white;
-color:black;
-padding:20px;
-border-radius:15px;
-margin-top:20px;
-}
-
-</style>
-
-</head>
+<p>
+The numbers 1,2,3 and 4 are elements of set A.
+</p>
 
 
-<body>
+<h3>Set notation</h3>
+
+<p>
+Sets are represented using curly brackets { }.
+</p>
+
+<p>
+If an object belongs to a set we write:
+<br>
+x ∈ A
+</p>
+
+<p>
+If an object does not belong to a set we write:
+<br>
+x ∉ A
+</p>
 
 
-<header>
+<h3>Types of sets</h3>
 
-<h1>📚 Mr-dev REB Learning</h1>
+<ul>
 
-<p>Senior 1 - Senior 3 Science & Mathematics</p>
+<li>
+Empty set: A set with no element.
+Example: { }
+</li>
 
-</header>
+<li>
+Finite set: A set with limited elements.
+</li>
 
+<li>
+Infinite set: A set with unlimited elements.
+</li>
 
-<div class="container">
+<li>
+Universal set: A set containing all objects under discussion.
+</li>
 
-
-<div class="card">
-
-
-<h2>Select Class</h2>
-
-
-<select id="classSelect" onchange="loadSubjects()">
-
-<option>Select Senior</option>
-
-<option value="S1">Senior One</option>
-
-<option value="S2">Senior Two</option>
-
-<option value="S3">Senior Three</option>
+</ul>
 
 
-</select>
+<h3>Operations on sets</h3>
 
+<p>
+Union (A ∪ B):
+Elements found in A or B.
+</p>
 
-</div>
+<p>
+Intersection (A ∩ B):
+Elements common to both sets.
+</p>
 
+<p>
+Difference (A - B):
+Elements in A but not in B.
+</p>
 
+`,
 
-<div id="subjects"></div>
+example:`
 
+<h2>💡 Example</h2>
 
+<p>
+A={1,2,3,4}
+<br>
+B={3,4,5,6}
+</p>
 
-<div id="content"></div>
+<p>
+A ∪ B = {1,2,3,4,5,6}
+</p>
 
+<p>
+A ∩ B = {3,4}
+</p>
 
-</div>
+`,
 
+exercises:[
 
-
-<script>
-
-
-const books={
-
-
-S1:[
-
-"Mathematics",
-"Biology",
-"Chemistry",
-"Physics"
+"Define a set.",
+"Write the elements of A={5,10,15}.",
+"Find A∪B if A={1,2} and B={2,3}.",
+"Find A∩B if A={1,2,3} and B={2,3,4}.",
+"What is an empty set?"
 
 ],
 
+answers:[
 
-S2:[
-
-"Mathematics",
-"Biology",
-"Chemistry",
-"Physics"
-
-],
-
-
-S3:[
-
-"Mathematics",
-"Biology",
-"Chemistry",
-"Physics"
+"A well-defined collection of objects.",
+"{5,10,15}.",
+"{1,2,3}.",
+"{2,3}.",
+"A set with no element."
 
 ]
 
-
-};
-
-
-
-function loadSubjects(){
-
-
-let cls=document.getElementById("classSelect").value;
-
-
-let html="<div class='card'><h2>Select Subject</h2>";
-
-
-books[cls].forEach((subject)=>{
-
-
-html+=`
-
-<button onclick="openBook('${cls}','${subject}')">
-
-${subject}
-
-</button>
-
-`;
-
-});
-
-
-html+="</div>";
-
-
-document.getElementById("subjects").innerHTML=html;
-
-
 }
 
-
-
-function openBook(cls,subject){
-
-
-document.getElementById("content").innerHTML=`
-
-<div class="lesson">
-
-
-<h2>${cls} ${subject}</h2>
-
-
-<p>
-
-Units zose za REB zizashyirwamo hano.
-
-</p>
-
-
-<p>
-
-Buri Unit izaba ifite:
-
-<br>✅ Notes zuzuye
-
-<br>✅ Explanation
-
-<br>✅ Examples
-
-<br>✅ Exercises
-
-<br>✅ Answers
-
-</p>
-
-
-</div>
-
-
-`;
-
-
-}
-
-
-</script>
-
-
-</body>
-</html>
+];
