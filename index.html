@@ -4,54 +4,99 @@
 <title>Mr-dev Learning Platform</title>
 
 <style>
-body{
+
+*{
+box-sizing:border-box;
 font-family:Arial;
-background:#071a33;
+}
+
+body{
 margin:0;
+background:#071a33;
 color:white;
 }
 
-header{
+
+/* Sidebar */
+.sidebar{
+position:fixed;
+width:230px;
+height:100%;
 background:#041020;
-padding:25px;
-text-align:center;
-}
-
-nav{
-background:#16ff78;
-padding:15px;
-text-align:center;
-}
-
-nav a{
-color:#041020;
-margin:15px;
-font-weight:bold;
-text-decoration:none;
-}
-
-.container{
 padding:20px;
 }
 
-.box{
-background:white;
-color:black;
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#16ff78;
+margin-bottom:30px;
+}
+
+.menu a{
+display:block;
+color:white;
+text-decoration:none;
+padding:15px;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.menu a:hover{
+background:#16ff78;
+color:#041020;
+}
+
+
+/* Main */
+
+.main{
+margin-left:250px;
 padding:25px;
-margin:20px 0;
+}
+
+
+.hero{
+background:#102b55;
+padding:30px;
 border-radius:20px;
 }
 
-h1,h2{
+.hero h1{
 color:#16ff78;
 }
 
-.item{
-background:#e8f5ff;
-padding:15px;
-margin:10px;
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:25px;
+}
+
+
+.card{
+background:white;
+color:black;
+padding:20px;
+border-radius:20px;
+}
+
+
+.card h2{
+color:#16ff78;
+}
+
+
+.subject{
+background:#eaf5ff;
+padding:12px;
+margin:8px;
 border-radius:10px;
 }
+
+
+/* AI */
 
 .ai{
 background:#111827;
@@ -61,67 +106,144 @@ color:white;
 button{
 background:#16ff78;
 border:0;
-padding:12px;
+padding:12px 20px;
 border-radius:10px;
+}
+
+
+/* Mobile */
+
+@media(max-width:700px){
+
+.sidebar{
+position:relative;
+width:100%;
+height:auto;
+}
+
+.main{
+margin-left:0;
+}
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<header>
-<h1>📚 Mr-dev Learning Platform</h1>
-<p>REB Notes | Science | Mathematics | AI Teacher</p>
-</header>
 
+<div class="sidebar">
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Classes</a>
-<a href="#">AI</a>
-<a href="#">Contact</a>
-</nav>
-
-
-<div class="container">
-
-
-<div class="box">
-<h2>🎓 Classes</h2>
-
-<div class="item">
-<h3>Senior One</h3>
-<p>Mathematics | Biology | Chemistry | Physics</p>
+<div class="logo">
+📚 Mr-dev
 </div>
 
 
-<div class="item">
-<h3>Senior Two</h3>
-<p>Mathematics | Biology | Chemistry | Physics</p>
-</div>
+<div class="menu">
 
+<a href="#">🏠 Home</a>
 
-<div class="item">
-<h3>Senior Three</h3>
-<p>Mathematics | Biology | Chemistry | Physics</p>
+<a href="#">📚 Classes</a>
+
+<a href="#">🤖 AI Teacher</a>
+
+<a href="#">📝 Notes</a>
+
+<a href="#">🧪 Lab</a>
+
+<a href="#">📢 Announcements</a>
+
+<a href="#">📞 Contact</a>
+
 </div>
 
 </div>
 
 
 
-<div class="box ai">
+<div class="main">
+
+
+<div class="hero">
+
+<h1>
+Welcome to Mr-dev Learning Platform
+</h1>
+
+<p>
+Learn Science and Mathematics with REB notes.
+</p>
+
+<button>
+Start Learning
+</button>
+
+</div>
+
+
+
+<h2>Classes</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h2>🎓 Senior One</h2>
+
+<div class="subject">📘 Mathematics</div>
+<div class="subject">🧬 Biology</div>
+<div class="subject">⚗️ Chemistry</div>
+<div class="subject">⚡ Physics</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🎓 Senior Two</h2>
+
+<div class="subject">📘 Mathematics</div>
+<div class="subject">🧬 Biology</div>
+<div class="subject">⚗️ Chemistry</div>
+<div class="subject">⚡ Physics</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>🎓 Senior Three</h2>
+
+<div class="subject">📘 Mathematics</div>
+<div class="subject">🧬 Biology</div>
+<div class="subject">⚗️ Chemistry</div>
+<div class="subject">⚡ Physics</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="card ai">
 
 <h2>🤖 AI Teacher</h2>
 
 <p>
-Ask questions and get help with your lessons.
+Ask questions about your lessons.
 </p>
 
-<input placeholder="Write your question here..."
-style="width:90%;padding:12px;border-radius:10px;">
+<input placeholder="Type your question..."
+style="padding:12px;width:80%;border-radius:10px;">
 
 <br><br>
 
@@ -133,19 +255,23 @@ Ask AI
 
 
 
-<div class="box">
+<div class="card">
 
 <h2>📞 Contact</h2>
 
-<p>WhatsApp: 0738 939 769</p>
+<p>
+WhatsApp: 0738 939 769
+</p>
 
 <a href="https://wa.me/250738939769">
 <button>
-Chat on WhatsApp
+Chat WhatsApp
 </button>
 </a>
 
+
 </div>
+
 
 
 </div>
