@@ -1,256 +1,147 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Mr-dev AI Learning</title>
-
-<style>
-body{
-margin:0;
-background:#061225;
-color:white;
-font-family:Arial;
-}
-
-header{
-background:#101b33;
-padding:20px;
-text-align:center;
-}
-
-.logo{
-color:#20e060;
-font-size:28px;
-font-weight:bold;
-}
-
-.container{
-padding:20px;
-}
-
-.card{
-background:#16243b;
-padding:25px;
-border-radius:20px;
-margin:20px 0;
-}
-
-button{
-background:#20e060;
-color:white;
-border:0;
-padding:12px 25px;
-border-radius:20px;
-cursor:pointer;
-}
-
-input{
-width:90%;
-padding:12px;
-margin:8px;
-border-radius:10px;
-border:0;
-}
-
-.subjects{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.subject{
-background:#1c2d49;
-padding:20px;
-border-radius:15px;
-flex:1;
-}
-
-.whatsapp{
-background:#25D366;
-padding:15px;
-border-radius:20px;
-color:white;
-text-decoration:none;
-}
-
-#dashboard,#login{
-display:none;
-}
-</style>
-
-</head>
-
-
-<body>
-
-
-<header>
-<div class="logo">🎓 Mr-dev AI Learning</div>
-<p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
-</header>
-
-
-
-<div class="container">
-
-
-<div id="login" class="card">
-
-<h2>🔐 Student Login</h2>
-
-<input id="name" placeholder="Your Name">
-
-<input id="email" placeholder="Email">
-
-<input id="password" type="password" placeholder="Password">
-
-<br>
-
-<button onclick="register()">Register</button>
-
-<button onclick="login()">Login</button>
-
-</div>
-
-
-
-
-<div id="dashboard">
-
+<!-- SENIOR ONE CHEMISTRY NOTES -->
 
 <div class="card">
 
-<h2>📚 Senior One</h2>
-<p>Mathematics | Biology | Chemistry | Physics</p>
+<h2>⚗️ Senior One Chemistry</h2>
+
+
+<h3>Unit 1: Chemistry of Science</h3>
+
+<h4>1. Meaning of Chemistry</h4>
+
+<p>
+Chemistry is the branch of science that deals with the study of matter,
+its composition, properties, changes and reactions.
+</p>
+
+<h4>2. Importance of Chemistry</h4>
+
+<ul>
+<li>Used in medicine production.</li>
+<li>Used in agriculture to make fertilizers and pesticides.</li>
+<li>Used in industries to produce different materials.</li>
+<li>Helps us understand substances around us.</li>
+<li>Used in food processing and preservation.</li>
+</ul>
+
+
+<h4>3. Branches of Chemistry</h4>
+
+<ul>
+<li><b>Organic Chemistry:</b> Study of carbon compounds.</li>
+<li><b>Inorganic Chemistry:</b> Study of substances without carbon compounds.</li>
+<li><b>Physical Chemistry:</b> Study of energy changes during reactions.</li>
+<li><b>Analytical Chemistry:</b> Identification and measurement of substances.</li>
+<li><b>Biochemistry:</b> Study of chemical processes in living organisms.</li>
+</ul>
+
+
+<h4>4. Chemistry in Daily Life</h4>
+
+<ul>
+<li>Cooking and food preservation.</li>
+<li>Cleaning products like soaps and detergents.</li>
+<li>Making clothes and plastics.</li>
+<li>Water treatment.</li>
+</ul>
+
+
+
+<hr>
+
+
+<h3>Unit 2: Laboratory Safety and Apparatus</h3>
+
+
+<h4>1. Laboratory Safety Rules</h4>
+
+<ul>
+<li>Always wear protective equipment like lab coat and goggles.</li>
+<li>Do not eat or drink in the laboratory.</li>
+<li>Follow instructions from the teacher.</li>
+<li>Handle chemicals carefully.</li>
+<li>Keep the laboratory clean.</li>
+<li>Report accidents immediately.</li>
+</ul>
+
+
+
+<h4>2. Laboratory Apparatus and Uses</h4>
+
+
+<table border="1" width="100%" cellpadding="8">
+
+<tr>
+<th>Apparatus</th>
+<th>Uses</th>
+</tr>
+
+
+<tr>
+<td>Test tube</td>
+<td>Used for holding and heating small amounts of chemicals.</td>
+</tr>
+
+
+<tr>
+<td>Beaker</td>
+<td>Used for mixing and measuring liquids.</td>
+</tr>
+
+
+<tr>
+<td>Measuring cylinder</td>
+<td>Used to measure liquid volume.</td>
+</tr>
+
+
+<tr>
+<td>Conical flask</td>
+<td>Used for mixing solutions.</td>
+</tr>
+
+
+<tr>
+<td>Bunsen burner</td>
+<td>Used as a source of heat.</td>
+</tr>
+
+
+<tr>
+<td>Thermometer</td>
+<td>Used to measure temperature.</td>
+</tr>
+
+
+<tr>
+<td>Balance</td>
+<td>Used to measure mass.</td>
+</tr>
+
+
+</table>
+
+
+
+<h4>3. Laboratory Safety Symbols</h4>
+
+<ul>
+<li>Flammable - substances that catch fire easily.</li>
+<li>Toxic - substances that can poison.</li>
+<li>Corrosive - substances that destroy materials.</li>
+<li>Explosive - substances that can explode.</li>
+<li>Irritant - substances that cause harm to skin or eyes.</li>
+</ul>
+
+
+<h4>Exercise</h4>
+
+<ol>
+<li>Define Chemistry.</li>
+<li>List four branches of Chemistry.</li>
+<li>Give five laboratory safety rules.</li>
+<li>State the use of a measuring cylinder.</li>
+</ol>
+
 
 </div>
-
-
-<div class="card">
-
-<h2>📗 Senior Two</h2>
-<p>Mathematics | Biology | Chemistry | Physics</p>
-
-</div>
-
-
-<div class="card">
-
-<h2>📕 Senior Three</h2>
-<p>Mathematics | Biology | Chemistry | Physics</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>📖 Subjects</h2>
-
-<div class="subjects">
-
-<div class="subject">📐 Mathematics</div>
-<div class="subject">🧬 Biology</div>
-<div class="subject">⚗️ Chemistry</div>
-<div class="subject">⚡ Physics</div>
-
-</div>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>🤖 AI Teacher</h2>
-
-<input placeholder="Ask your question">
-
-<button>Ask AI</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>📞 Contact</h2>
-
-<a class="whatsapp"
-href="https://wa.me/250738939769">
-
-WhatsApp 0738 939 769
-
-</a>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<script>
-
-if(localStorage.getItem("user")){
-document.getElementById("dashboard").style.display="block";
-}
-else{
-document.getElementById("login").style.display="block";
-}
-
-
-
-function register(){
-
-let user={
-name:document.getElementById("name").value,
-email:document.getElementById("email").value,
-password:document.getElementById("password").value
-};
-
-
-localStorage.setItem("user",JSON.stringify(user));
-
-alert("Account created!");
-
-location.reload();
-
-}
-
-
-
-function login(){
-
-let user=JSON.parse(localStorage.getItem("user"));
-
-let email=document.getElementById("email").value;
-let password=document.getElementById("password").value;
-
-
-if(user && user.email==email && user.password==password){
-
-document.getElementById("login").style.display="none";
-document.getElementById("dashboard").style.display="block";
-
-alert("Welcome "+user.name);
-
-}
-
-else{
-
-alert("Wrong login details");
-
-}
-
-}
-
-
-</script>
-
-
-</body>
-</html>
