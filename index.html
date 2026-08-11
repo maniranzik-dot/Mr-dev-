@@ -1,525 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr-dev Learning Hub</title>
-<meta name="google-site-verification" content="bYCk1Y9nKeSapzJZdpqCAsht6_ZQ7-X2kkra1DQgFI4" />
-<style>
-*{
-  box-sizing:border-box;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#071426;
-  color:white;
-}
+  <title>Mr-dev | Web Developer</title>
 
-header{
-  background:#102b48;
-  padding:25px 15px;
-  text-align:center;
-  border-bottom:2px solid #234b75;
-}
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="bYCk1Y9nKeSapzJZdpqCAsht6_ZQ7-X2kkra1DQgFI4">
 
-header h1{
-  margin:0 0 20px;
-  font-size:32px;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-nav{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: white;
+      text-align: center;
+    }
 
-nav button{
-  background:#153653;
-  color:white;
-  border:2px solid #234b75;
-  border-radius:15px;
-  padding:15px 25px;
-  font-size:18px;
-}
+    nav {
+      background: #0f172a;
+      padding: 20px;
+    }
 
-main{
-  max-width:900px;
-  margin:auto;
-  padding:25px 20px;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+    }
 
-.hidden{
-  display:none;
-}
+    header {
+      padding: 60px 20px;
+      background: #1e293b;
+    }
 
-.intro{
-  text-align:center;
-  font-size:22px;
-  line-height:1.5;
-  color:#b8c9df;
-}
+    header h1 {
+      font-size: 40px;
+      margin: 0 0 10px;
+    }
 
-.search-box{
-  margin:25px 0;
-}
+    main {
+      padding: 50px 20px;
+    }
 
-input{
-  width:100%;
-  padding:16px;
-  border-radius:12px;
-  border:2px solid #285783;
-  background:#153653;
-  color:white;
-  font-size:17px;
-}
+    .box {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      background: #1e293b;
+      border-radius: 15px;
+    }
 
-.search-btn{
-  width:100%;
-  margin-top:10px;
-  padding:16px;
-  border:0;
-  border-radius:12px;
-  background:#20df70;
-  color:#000;
-  font-size:18px;
-  font-weight:bold;
-}
-
-h2{
-  font-size:30px;
-}
-
-.topics{
-  display:grid;
-  gap:20px;
-}
-
-.topic{
-  background:#153653;
-  border:3px solid #20df70;
-  border-radius:25px;
-  padding:25px;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.topic:hover{
-  transform:scale(1.02);
-  background:#1b4265;
-}
-
-.topic h3{
-  margin:0 0 15px;
-  color:#20df70;
-  font-size:27px;
-}
-
-.topic p{
-  font-size:19px;
-  line-height:1.5;
-  margin:0;
-}
-
-.back{
-  background:#20df70;
-  color:#000;
-  border:0;
-  padding:14px 22px;
-  border-radius:12px;
-  font-size:17px;
-  font-weight:bold;
-  margin-bottom:20px;
-}
-
-.notes{
-  background:#102b48;
-  border-radius:20px;
-  padding:25px;
-  border:2px solid #20df70;
-}
-
-.notes h2{
-  color:#20df70;
-}
-
-.notes h3{
-  color:#20df70;
-  margin-top:25px;
-}
-
-.notes p,
-.notes li{
-  font-size:18px;
-  line-height:1.7;
-}
-
-footer{
-  margin-top:40px;
-  padding:30px;
-  text-align:center;
-  border-top:2px solid #234b75;
-  color:#b8c9df;
-}
-</style>
+    footer {
+      padding: 25px;
+      background: #0f172a;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>📚 <span style="color:#20df70">Mr-dev</span> Learning Hub</h1>
-
   <nav>
-    <button onclick="showHome()">🏠 Home</button>
-    <button onclick="showHome()">📚 Books</button>
-    <button onclick="showSearch()">🔎 Search</button>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
-</header>
 
+  <header>
+    <h1>Mr-dev</h1>
+    <p>Web Developer</p>
+  </header>
 
-<main>
-
-<!-- HOME PAGE -->
-<section id="homePage">
-
-  <p class="intro">
-    Learn Senior 1, Senior 2 and Senior 3 Mathematics,
-    Chemistry, Physics and English.
-    Read notes, study topics and practise with quizzes.
-  </p>
-
-  <div class="search-box">
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="Search subject or topic..."
-    >
-
-    <button class="search-btn" onclick="searchTopics()">
-      🔎 Search
-    </button>
-  </div>
-
-  <h2>🎓 Choose Your Topic</h2>
-
-  <div class="topics" id="topicList">
-
-    <div class="topic" data-name="Algebra"
-         onclick="openNotes('Algebra')">
-      <h3>Topic 1: Algebra</h3>
-      <p>📘 Study Algebra and practise questions related to this topic.</p>
+  <main>
+    <div class="box" id="about">
+      <h2>Welcome to Mr-dev</h2>
+      <p>This is my personal website.</p>
+      <p>I am learning and building websites.</p>
     </div>
-
-    <div class="topic" data-name="Fractions"
-         onclick="openNotes('Fractions')">
-      <h3>Topic 2: Fractions</h3>
-      <p>📘 Study Fractions and practise questions related to this topic.</p>
-    </div>
-
-    <div class="topic" data-name="Linear equations"
-         onclick="openNotes('Linear equations')">
-      <h3>Topic 3: Linear equations</h3>
-      <p>📘 Study Linear equations and practise questions.</p>
-    </div>
-
-    <div class="topic" data-name="Geometry"
-         onclick="openNotes('Geometry')">
-      <h3>Topic 4: Geometry</h3>
-      <p>📘 Study Geometry and practise questions related to this topic.</p>
-    </div>
-
-    <div class="topic" data-name="Statistics"
-         onclick="openNotes('Statistics')">
-      <h3>Topic 5: Statistics</h3>
-      <p>📘 Study Statistics and practise questions related to this topic.</p>
-    </div>
-
-    <div class="topic" data-name="Measurement"
-         onclick="openNotes('Measurement')">
-      <h3>Topic 6: Measurement</h3>
-      <p>📘 Study Measurement and practise questions.</p>
-    </div>
-
-    <div class="topic" data-name="Motion"
-         onclick="openNotes('Motion')">
-      <h3>Topic 7: Motion</h3>
-      <p>📘 Study Motion and practise questions.</p>
-    </div>
-
-    <div class="topic" data-name="Force"
-         onclick="openNotes('Force')">
-      <h3>Topic 8: Force</h3>
-      <p>📘 Study Force and practise questions.</p>
-    </div>
-
-    <div class="topic" data-name="Energy"
-         onclick="openNotes('Energy')">
-      <h3>Topic 9: Energy</h3>
-      <p>📘 Study Energy and practise questions.</p>
-    </div>
-
-    <div class="topic" data-name="Heat"
-         onclick="openNotes('Heat')">
-      <h3>Topic 10: Heat</h3>
-      <p>📘 Study Heat and practise questions.</p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- NOTES PAGE -->
-<section id="notesPage" class="hidden">
-
-  <button class="back" onclick="showHome()">
-    ← Back to Topics
-  </button>
-
-  <div class="notes">
-
-    <h2 id="notesTitle">📘 Notes</h2>
-
-    <div id="notesContent"></div>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<footer>
-  📚 Mr-dev Learning Hub
-  <br><br>
-  Senior 1 • Senior 2 • Senior 3
-  <br><br>
-  Learn • Practise • Succeed
-</footer>
-
-
-<script>
-
-const notes = {
-
-  "Algebra": `
-    <h3>📖 Introduction to Algebra</h3>
-    <p>
-      Algebra uses letters and numbers to represent unknown values.
-    </p>
-
-    <h3>Example</h3>
-    <p>
-      If x + 5 = 10, then:
-    </p>
-
-    <p>
-      x = 10 - 5
-      <br>
-      <b>x = 5</b>
-    </p>
-
-    <h3>Practice</h3>
-    <p>Solve: x + 7 = 15</p>
-  `,
-
-  "Fractions": `
-    <h3>📖 Fractions</h3>
-    <p>
-      A fraction represents part of a whole.
-    </p>
-
-    <h3>Example</h3>
-    <p>
-      1/2 means one part out of two equal parts.
-    </p>
-
-    <h3>Practice</h3>
-    <p>Add: 1/2 + 1/2</p>
-  `,
-
-  "Linear equations": `
-    <h3>📖 Linear Equations</h3>
-    <p>
-      A linear equation is an equation where the highest power
-      of the variable is 1.
-    </p>
-
-    <h3>Example</h3>
-    <p>
-      2x + 4 = 10
-      <br>
-      2x = 6
-      <br>
-      <b>x = 3</b>
-    </p>
-  `,
-
-  "Geometry": `
-    <h3>📖 Geometry</h3>
-    <p>
-      Geometry studies shapes, sizes, angles and positions.
-    </p>
-
-    <h3>Example</h3>
-    <p>
-      Area of a rectangle = length × width.
-    </p>
-  `,
-
-  "Statistics": `
-    <h3>📖 Statistics</h3>
-    <p>
-      Statistics is the study of collecting, organising and
-      interpreting data.
-    </p>
-
-    <h3>Example</h3>
-    <p>
-      Mean = Sum of values ÷ Number of values.
-    </p>
-  `,
-
-  "Measurement": `
-    <h3>📖 Measurement</h3>
-    <p>
-      Measurement is finding the size or amount of something.
-    </p>
-
-    <h3>Common Units</h3>
-    <ul>
-      <li>Length → metre (m)</li>
-      <li>Mass → kilogram (kg)</li>
-      <li>Time → second (s)</li>
-    </ul>
-  `,
-
-  "Motion": `
-    <h3>📖 Motion</h3>
-    <p>
-      Motion is the change in position of an object with time.
-    </p>
-
-    <h3>Formula</h3>
-    <p>
-      Speed = Distance ÷ Time
-    </p>
-  `,
-
-  "Force": `
-    <h3>📖 Force</h3>
-    <p>
-      Force is a push or pull acting on an object.
-    </p>
-
-    <h3>Formula</h3>
-    <p>
-      Force = Mass × Acceleration
-      <br>
-      F = ma
-    </p>
-  `,
-
-  "Energy": `
-    <h3>📖 Energy</h3>
-    <p>
-      Energy is the ability to do work.
-    </p>
-
-    <h3>Types of Energy</h3>
-    <ul>
-      <li>Kinetic energy</li>
-      <li>Potential energy</li>
-      <li>Thermal energy</li>
-      <li>Electrical energy</li>
-    </ul>
-  `,
-
-  "Heat": `
-    <h3>📖 Heat</h3>
-    <p>
-      Heat is energy transferred from a hotter object to a colder object.
-    </p>
-
-    <h3>Examples</h3>
-    <ul>
-      <li>Conduction</li>
-      <li>Convection</li>
-      <li>Radiation</li>
-    </ul>
-  `
-
-};
-
-
-function openNotes(topic){
-
-  document.getElementById("homePage").classList.add("hidden");
-
-  document.getElementById("notesPage").classList.remove("hidden");
-
-  document.getElementById("notesTitle").innerHTML =
-    "📘 " + topic + " Notes";
-
-  document.getElementById("notesContent").innerHTML =
-    notes[topic] || "<p>No notes available yet.</p>";
-
-  window.scrollTo(0,0);
-
-}
-
-
-function showHome(){
-
-  document.getElementById("notesPage").classList.add("hidden");
-
-  document.getElementById("homePage").classList.remove("hidden");
-
-  window.scrollTo(0,0);
-
-}
-
-
-function showSearch(){
-
-  showHome();
-
-  document.getElementById("searchInput").focus();
-
-  window.scrollTo(0,200);
-
-}
-
-
-function searchTopics(){
-
-  const search =
-    document.getElementById("searchInput")
-    .value
-    .toLowerCase()
-    .trim();
-
-  const topics =
-    document.querySelectorAll(".topic");
-
-  topics.forEach(topic => {
-
-    const name =
-      topic.dataset.name.toLowerCase();
-
-    if(name.includes(search)){
-      topic.style.display = "block";
-    }else{
-      topic.style.display = "none";
-    }
-
-  });
-
-}
-
-</script>
+  </main>
+
+  <footer id="contact">
+    <p>© 2026 Mr-dev</p>
+  </footer>
 
 </body>
 </html>
