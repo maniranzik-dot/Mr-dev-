@@ -3,287 +3,409 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr-dev | Science & Mathematics Notes</title>
+<title>Mr-dev | Science & Mathematics</title>
 
 <style>
 *{
   box-sizing:border-box;
-  scroll-behavior:smooth;
+  margin:0;
+  padding:0;
 }
 
 body{
-  margin:0;
   font-family:Arial,sans-serif;
   background:#071426;
   color:white;
 }
 
-header{
-  background:#0d1b32;
-  padding:20px;
-  text-align:center;
+nav{
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:1000;
+  background:#0d1b32;
+  border-bottom:3px solid #20e879;
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  padding:20px 10px;
 }
 
-header h1{
-  margin:5px;
+nav button{
+  background:none;
+  border:0;
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+nav button:hover{
   color:#20e879;
 }
 
+header{
+  text-align:center;
+  padding:55px 20px;
+  background:#1d2b42;
+}
+
+header h1{
+  font-size:50px;
+  color:#20e879;
+  margin-bottom:15px;
+}
+
 header p{
-  margin:5px;
-  color:#ddd;
+  font-size:22px;
 }
 
-.search{
-  padding:20px;
-  max-width:700px;
+.container{
+  width:92%;
+  max-width:900px;
   margin:auto;
+  padding:30px 0;
 }
 
-.search input{
-  width:100%;
-  padding:17px;
+.search-box{
+  display:flex;
+  gap:10px;
+  margin-bottom:35px;
+}
+
+.search-box input{
+  flex:1;
+  padding:18px;
   border-radius:12px;
   border:2px solid #20e879;
+  background:#102943;
+  color:white;
   font-size:17px;
   outline:none;
 }
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:20px;
+.search-box button,
+.green-btn{
+  background:#20e879;
+  color:#001b0d;
+  border:0;
+  border-radius:12px;
+  padding:15px 25px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.title{
+.page-title{
   text-align:center;
+  font-size:35px;
   margin:25px 0;
-  font-size:32px;
-}
-
-.classes{
-  display:grid;
-  gap:20px;
 }
 
 .class-card{
   background:#173451;
-  border:3px solid #20e879;
+  border:3px solid #285b82;
   border-radius:20px;
   padding:25px;
+  margin:20px 0;
   cursor:pointer;
   transition:.2s;
 }
 
 .class-card:hover{
-  transform:scale(1.02);
-  background:#1c4161;
+  border-color:#20e879;
+  transform:scale(1.01);
 }
 
 .class-card h2{
   color:#20e879;
-  margin-top:0;
+  font-size:32px;
+  margin-bottom:15px;
 }
 
-.subjects{
-  color:#eee;
+.class-card p{
   font-size:18px;
+  line-height:1.6;
 }
 
-.hidden{
-  display:none;
-}
-
-.back{
-  background:#20e879;
-  border:0;
-  padding:13px 20px;
-  border-radius:10px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-  margin-bottom:20px;
-}
-
-.subject-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
-}
-
-.subject{
-  background:#173451;
-  border-radius:18px;
-  padding:22px;
-  border:2px solid #285b82;
-  cursor:pointer;
-}
-
-.subject h3{
-  color:#20e879;
-  font-size:23px;
-}
-
-.topic{
+.subject-card{
   background:#102943;
-  padding:15px;
-  margin:10px 0;
-  border-radius:12px;
-  border-left:4px solid #20e879;
+  border:2px solid #285b82;
+  border-radius:18px;
+  padding:25px;
+  margin:18px 0;
   cursor:pointer;
 }
 
-.topic:hover{
-  background:#183d5b;
+.subject-card:hover{
+  border-color:#20e879;
+  background:#153653;
+}
+
+.subject-card h2{
+  color:#20e879;
+  margin-bottom:10px;
+}
+
+.topic-card{
+  background:#173451;
+  border-left:5px solid #20e879;
+  border-radius:12px;
+  padding:20px;
+  margin:15px 0;
+  cursor:pointer;
+}
+
+.topic-card:hover{
+  background:#204564;
+}
+
+.topic-card h3{
+  color:#20e879;
+  margin-bottom:8px;
 }
 
 .note{
-  background:#f4f7fa;
+  background:white;
   color:#111;
-  padding:20px;
-  border-radius:15px;
-  margin-top:20px;
+  border-radius:18px;
+  padding:25px;
+  margin-top:25px;
   line-height:1.7;
 }
 
 .note h2{
   color:#087b43;
+  margin-bottom:15px;
+}
+
+.back-btn{
+  background:#20e879;
+  color:#001b0d;
+  border:0;
+  padding:13px 20px;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+  margin-bottom:20px;
 }
 
 .whatsapp{
+  margin-top:45px;
+  padding:30px 20px;
   background:#075e35;
-  margin:40px auto 20px;
-  max-width:700px;
-  padding:30px;
   border-radius:20px;
   text-align:center;
 }
 
 .whatsapp h2{
   color:#20e879;
+  font-size:28px;
+  margin-bottom:15px;
 }
 
 .whatsapp-number{
   font-size:28px;
   font-weight:bold;
-  margin:15px;
+  margin:18px 0;
 }
 
 .whatsapp a{
   display:inline-block;
   background:#20e879;
-  color:#001b0c;
-  padding:15px 25px;
-  border-radius:30px;
+  color:#001b0d;
   text-decoration:none;
-  font-weight:bold;
+  padding:16px 25px;
+  border-radius:30px;
   font-size:18px;
+  font-weight:bold;
+}
+
+.result{
+  background:#173451;
+  border:2px solid #20e879;
+  border-radius:15px;
+  padding:18px;
+  margin:12px 0;
+  cursor:pointer;
+}
+
+.result strong{
+  color:#20e879;
+}
+
+.hidden{
+  display:none !important;
 }
 
 footer{
-  background:#0d1b32;
   text-align:center;
+  background:#0d1b32;
   padding:30px;
-  margin-top:40px;
+  margin-top:50px;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:40px;
+  }
+
+  nav{
+    gap:20px;
+  }
+
+  nav button{
+    font-size:17px;
+  }
+
+  .search-box{
+    flex-direction:column;
+  }
+
+  .search-box button{
+    width:100%;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <button onclick="showHome()">Home</button>
+  <button onclick="showClasses()">Classes</button>
+  <button onclick="showContact()">Contact</button>
+</nav>
+
 <header>
-  <h1>🎓 Mr-dev</h1>
+  <h1>Mr-dev</h1>
   <p>Science & Mathematics Learning Website</p>
 </header>
 
-<div id="home">
 
-  <div class="search">
-    <input
-      type="text"
-      id="searchBox"
-      placeholder="🔎 Search subject or topic..."
-      oninput="searchNotes()">
-  </div>
+<!-- HOME -->
+<section id="homePage">
 
   <div class="container">
 
-    <h1 class="title">🎓 Select Senior</h1>
+    <div class="search-box">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search subject or topic..."
+        oninput="searchSite()">
 
-    <div class="classes">
-
-      <div class="class-card" onclick="openClass(1)">
-        <h2>🎓 Senior 1</h2>
-        <p class="subjects">
-          Mathematics • Physics • Chemistry • Biology
-        </p>
-      </div>
-
-      <div class="class-card" onclick="openClass(2)">
-        <h2>🎓 Senior 2</h2>
-        <p class="subjects">
-          Mathematics • Physics • Chemistry • Biology
-        </p>
-      </div>
-
-      <div class="class-card" onclick="openClass(3)">
-        <h2>🎓 Senior 3</h2>
-        <p class="subjects">
-          Mathematics • Physics • Chemistry • Biology
-        </p>
-      </div>
-
+      <button onclick="searchSite()">🔎 Search</button>
     </div>
 
     <div id="searchResults"></div>
 
+    <h1 class="page-title">🎓 Select Your Senior</h1>
+
+    <div class="class-card" onclick="openClass(1)">
+      <h2>🎓 Senior 1</h2>
+      <p>Mathematics • Physics • Chemistry • Biology</p>
+      <p>👉 Click to open Senior 1</p>
+    </div>
+
+    <div class="class-card" onclick="openClass(2)">
+      <h2>🎓 Senior 2</h2>
+      <p>Mathematics • Physics • Chemistry • Biology</p>
+      <p>👉 Click to open Senior 2</p>
+    </div>
+
+    <div class="class-card" onclick="openClass(3)">
+      <h2>🎓 Senior 3</h2>
+      <p>Mathematics • Physics • Chemistry • Biology</p>
+      <p>👉 Click to open Senior 3</p>
+    </div>
+
     <div class="whatsapp">
       <h2>💬 Contact Mr-dev</h2>
       <p>You can contact me on WhatsApp:</p>
-      <div class="whatsapp-number">📱 0738 939 769</div>
 
-      <a href="https://wa.me/250738939769" target="_blank">
+      <div class="whatsapp-number">
+        📱 0738 939 769
+      </div>
+
+      <a
+        href="https://wa.me/250738939769"
+        target="_blank">
         💬 Chat on WhatsApp
       </a>
     </div>
 
   </div>
-</div>
+
+</section>
 
 
-<div id="classPage" class="hidden">
-
-  <div class="container">
-
-    <button class="back" onclick="goHome()">← Back</button>
-
-    <h1 id="classTitle" class="title"></h1>
-
-    <div id="subjects" class="subject-grid"></div>
-
-  </div>
-
-</div>
-
-
-<div id="topicPage" class="hidden">
+<!-- CLASS PAGE -->
+<section id="classPage" class="hidden">
 
   <div class="container">
 
-    <button class="back" onclick="backToClass()">← Subjects</button>
+    <button class="back-btn" onclick="showClasses()">
+      ← Back to Classes
+    </button>
 
-    <h1 id="topicTitle" class="title"></h1>
+    <h1 id="classTitle" class="page-title"></h1>
 
-    <div id="topics"></div>
-
-    <div id="note"></div>
+    <div id="subjectList"></div>
 
   </div>
 
-</div>
+</section>
+
+
+<!-- SUBJECT PAGE -->
+<section id="subjectPage" class="hidden">
+
+  <div class="container">
+
+    <button class="back-btn" onclick="backToClass()">
+      ← Back
+    </button>
+
+    <h1 id="subjectTitle" class="page-title"></h1>
+
+    <div id="topicList"></div>
+
+    <div id="noteArea"></div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contactPage" class="hidden">
+
+  <div class="container">
+
+    <h1 class="page-title">📞 Contact Mr-dev</h1>
+
+    <div class="whatsapp">
+
+      <h2>💬 WhatsApp</h2>
+
+      <p>Contact me for questions and lessons.</p>
+
+      <div class="whatsapp-number">
+        0738 939 769
+      </div>
+
+      <a
+        href="https://wa.me/250738939769"
+        target="_blank">
+        💬 Chat on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 <footer>
@@ -293,24 +415,408 @@ footer{
 
 <script>
 
-const data = {
+const lessons = {
 
-1:{
- Mathematics:[
-  ["Numbers","Introduction to numbers, integers, fractions and decimals."],
-  ["Algebra","Basic algebraic expressions and equations."],
-  ["Geometry","Lines, angles, triangles and basic shapes."],
-  ["Statistics","Collecting, organizing and presenting data."]
- ],
+1: {
+  Mathematics: [
+    ["Numbers","Introduction to numbers, integers, fractions and decimals."],
+    ["Algebra","Basic algebraic expressions and equations."],
+    ["Geometry","Lines, angles, triangles and basic shapes."],
+    ["Statistics","Collecting and presenting data."]
+  ],
 
- Physics:[
-  ["Introduction to Physics","Meaning of physics, measurements and SI units."],
-  ["Measurement","Length, mass, time and measuring instruments."],
-  ["Force","Introduction to force and its effects."],
-  ["Energy","Forms of energy and energy transformation."]
- ],
+  Physics: [
+    ["Introduction to Physics","Meaning of physics, measurements and SI units."],
+    ["Measurement","Length, mass, time and measuring instruments."],
+    ["Force","Introduction to force and its effects."],
+    ["Energy","Forms of energy and energy transformation."]
+  ],
 
- Chemistry:[
-  ["Introduction to Chemistry","Matter, substances and chemistry in everyday life."],
-  ["States of Matter","Solids, liquids and gases."],
-  ["Elements","Introduction to
+  Chemistry: [
+    ["Introduction to Chemistry","Meaning of chemistry and matter."],
+    ["States of Matter","Solids, liquids and gases."],
+    ["Elements","Elements and their symbols."],
+    ["Mixtures","Mixtures and separation methods."]
+  ],
+
+  Biology: [
+    ["Introduction to Biology","The study of living organisms."],
+    ["Cells","Introduction to cells and their structures."],
+    ["Nutrition","Nutrients and balanced diet."],
+    ["Classification","Classification of living organisms."]
+  ]
+},
+
+2: {
+  Mathematics: [
+    ["Algebra","Expressions and algebraic equations."],
+    ["Functions","Introduction to mathematical functions."],
+    ["Geometry","Properties of shapes and angles."],
+    ["Statistics","Averages and data interpretation."]
+  ],
+
+  Physics: [
+    ["Motion","Distance, displacement, speed and velocity."],
+    ["Force","Forces and their effects."],
+    ["Work and Energy","Work, energy and power."],
+    ["Pressure","Pressure in solids and fluids."]
+  ],
+
+  Chemistry: [
+    ["Atomic Structure","Protons, neutrons and electrons."],
+    ["Chemical Bonding","Ionic and covalent bonding."],
+    ["Chemical Reactions","Reactants, products and equations."],
+    ["Acids and Bases","Acids, bases and indicators."]
+  ],
+
+  Biology: [
+    ["Cell Structure","Cell organelles and their functions."],
+    ["Transport","Transport of substances in organisms."],
+    ["Respiration","Aerobic and anaerobic respiration."],
+    ["Reproduction","Reproduction in plants and animals."]
+  ]
+},
+
+3: {
+  Mathematics: [
+    ["Quadratic Equations","Solving quadratic equations."],
+    ["Trigonometry","Basic trigonometric ratios."],
+    ["Probability","Basic probability calculations."],
+    ["Graphs","Drawing and interpreting graphs."]
+  ],
+
+  Physics: [
+    ["Electricity","Current, voltage and resistance."],
+    ["Light","Reflection and refraction."],
+    ["Waves","Properties and behaviour of waves."],
+    ["Heat","Heat transfer and temperature."]
+  ],
+
+  Chemistry: [
+    ["Periodic Table","Organization of the periodic table."],
+    ["Moles","Introduction to mole calculations."],
+    ["Organic Chemistry","Introduction to carbon compounds."],
+    ["Electrochemistry","Chemical reactions and electricity."]
+  ],
+
+  Biology: [
+    ["Genetics","Genes, inheritance and variation."],
+    ["Ecology","Ecosystems and food chains."],
+    ["Human Biology","Major human body systems."],
+    ["Evolution","Variation, adaptation and natural selection."]
+  ]
+}
+
+};
+
+
+let selectedClass = 1;
+let selectedSubject = "";
+
+
+function hideAll(){
+
+  document.getElementById("homePage")
+    .classList.add("hidden");
+
+  document.getElementById("classPage")
+    .classList.add("hidden");
+
+  document.getElementById("subjectPage")
+    .classList.add("hidden");
+
+  document.getElementById("contactPage")
+    .classList.add("hidden");
+
+}
+
+
+function showHome(){
+
+  hideAll();
+
+  document.getElementById("homePage")
+    .classList.remove("hidden");
+
+}
+
+
+function showClasses(){
+
+  hideAll();
+
+  document.getElementById("homePage")
+    .classList.remove("hidden");
+
+  document.getElementById("searchInput").value = "";
+
+  document.getElementById("searchResults").innerHTML = "";
+
+  window.scrollTo(0,0);
+
+}
+
+
+function showContact(){
+
+  hideAll();
+
+  document.getElementById("contactPage")
+    .classList.remove("hidden");
+
+  window.scrollTo(0,0);
+
+}
+
+
+function openClass(level){
+
+  selectedClass = level;
+
+  hideAll();
+
+  document.getElementById("classPage")
+    .classList.remove("hidden");
+
+  document.getElementById("classTitle")
+    .textContent = "🎓 Senior " + level;
+
+  const list =
+    document.getElementById("subjectList");
+
+  list.innerHTML = "";
+
+  Object.keys(lessons[level]).forEach(function(subject){
+
+    const card =
+      document.createElement("div");
+
+    card.className = "subject-card";
+
+    card.innerHTML = `
+      <h2>${getIcon(subject)} ${subject}</h2>
+      <p>${lessons[level][subject].length} topics available</p>
+      <p>👉 Click to open lessons</p>
+    `;
+
+    card.onclick = function(){
+      openSubject(subject);
+    };
+
+    list.appendChild(card);
+
+  });
+
+  window.scrollTo(0,0);
+}
+
+
+function openSubject(subject){
+
+  selectedSubject = subject;
+
+  hideAll();
+
+  document.getElementById("subjectPage")
+    .classList.remove("hidden");
+
+  document.getElementById("subjectTitle")
+    .textContent =
+    "Senior " + selectedClass +
+    " • " + subject;
+
+  const list =
+    document.getElementById("topicList");
+
+  const note =
+    document.getElementById("noteArea");
+
+  list.innerHTML = "";
+  note.innerHTML = "";
+
+  lessons[selectedClass][subject]
+    .forEach(function(item,index){
+
+      const card =
+        document.createElement("div");
+
+      card.className = "topic-card";
+
+      card.innerHTML = `
+        <h3>📖 ${index+1}. ${item[0]}</h3>
+        <p>${item[1]}</p>
+      `;
+
+      card.onclick = function(){
+        showNote(item[0],item[1]);
+      };
+
+      list.appendChild(card);
+
+    });
+
+  window.scrollTo(0,0);
+}
+
+
+function showNote(title,description){
+
+  document.getElementById("noteArea").innerHTML = `
+
+    <div class="note">
+
+      <h2>📖 ${title}</h2>
+
+      <p>
+        ${description}
+      </p>
+
+      <h3>📝 Lesson</h3>
+
+      <p>
+        This lesson is part of Senior
+        ${selectedClass} ${selectedSubject}.
+        Study the main ideas carefully and
+        write important points in your notebook.
+      </p>
+
+      <h3>❓ Practice Questions</h3>
+
+      <p>
+        1. What is ${title}?<br>
+        2. Explain the main ideas of this topic.<br>
+        3. Give examples related to this topic.
+      </p>
+
+    </div>
+
+  `;
+
+  document.getElementById("noteArea")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+function backToClass(){
+
+  openClass(selectedClass);
+
+}
+
+
+function getIcon(subject){
+
+  if(subject === "Mathematics")
+    return "➗";
+
+  if(subject === "Physics")
+    return "⚡";
+
+  if(subject === "Chemistry")
+    return "🧪";
+
+  if(subject === "Biology")
+    return "🧬";
+
+  return "📚";
+}
+
+
+function searchSite(){
+
+  const query =
+    document.getElementById("searchInput")
+      .value
+      .trim()
+      .toLowerCase();
+
+  const results =
+    document.getElementById("searchResults");
+
+  results.innerHTML = "";
+
+  if(query === ""){
+    return;
+  }
+
+  let found = 0;
+
+  for(const level in lessons){
+
+    for(const subject in lessons[level]){
+
+      lessons[level][subject]
+        .forEach(function(item,index){
+
+          const topic = item[0];
+          const description = item[1];
+
+          const text =
+            (
+              "senior " +
+              level +
+              " " +
+              subject +
+              " " +
+              topic +
+              " " +
+              description
+            ).toLowerCase();
+
+          if(text.includes(query)){
+
+            found++;
+
+            const result =
+              document.createElement("div");
+
+            result.className = "result";
+
+            result.innerHTML = `
+              <strong>
+                Senior ${level} •
+                ${getIcon(subject)}
+                ${subject}
+              </strong>
+
+              <p>📖 ${topic}</p>
+            `;
+
+            result.onclick = function(){
+
+              openClass(Number(level));
+
+              setTimeout(function(){
+                openSubject(subject);
+              },50);
+
+            };
+
+            results.appendChild(result);
+          }
+
+        });
+
+    }
+
+  }
+
+  if(found === 0){
+
+    results.innerHTML = `
+      <div class="result">
+        ❌ No subject or topic found.
+      </div>
+    `;
+
+  }
+
+}
+
+</script>
+
+</body>
+  </html>
