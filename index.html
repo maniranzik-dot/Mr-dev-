@@ -4,161 +4,281 @@
 <title>Mr-dev AI Learning</title>
 
 <style>
+*{
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#06172f;
-    color:white;
+margin:0;
+background:#061225;
+color:white;
 }
 
-header{
-    text-align:center;
-    padding:40px 10px;
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+background:#07182d;
+padding:25px;
 }
 
-h1{
-    color:#20e060;
+.logo{
+color:#20e060;
+font-size:22px;
+font-weight:bold;
 }
 
-.container{
-    width:90%;
-    margin:auto;
+.menu a{
+display:block;
+color:white;
+text-decoration:none;
+padding:15px;
+margin:8px 0;
+border-radius:10px;
 }
 
-.card{
-    background:#1d2a42;
-    padding:25px;
-    margin:18px 0;
-    border-radius:20px;
-    text-align:center;
+.menu a:hover{
+background:#20e060;
 }
 
-.card h2{
-    color:white;
+.main{
+margin-left:250px;
+padding:30px;
+}
+
+.hero{
+background:linear-gradient(120deg,#101f55,#351c72);
+padding:35px;
+border-radius:25px;
+}
+
+.hero h1{
+font-size:35px;
 }
 
 button{
-    background:#20e060;
-    border:none;
-    padding:12px 30px;
-    border-radius:25px;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+background:#20e060;
+color:white;
+border:0;
+padding:12px 25px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.cards{
+display:flex;
+gap:20px;
+margin-top:25px;
+}
+
+.card{
+background:#16243b;
+padding:25px;
+border-radius:20px;
+flex:1;
+}
+
+.subjects{
+display:flex;
+gap:15px;
 }
 
 .subject{
-    background:#e8f5ff;
-    color:#222;
-    padding:10px;
-    margin:8px;
-    border-radius:10px;
-    text-align:left;
+background:#132038;
+padding:20px;
+border-radius:15px;
+flex:1;
+}
+
+.ai{
+background:#16243b;
+padding:25px;
+margin-top:25px;
+border-radius:20px;
 }
 
 input{
-    width:80%;
-    padding:15px;
-    border-radius:20px;
-    border:none;
+width:80%;
+padding:15px;
+border-radius:20px;
+border:0;
 }
 
 .whatsapp{
-    background:#25D366;
-    padding:15px;
-    display:inline-block;
-    border-radius:25px;
-    color:white;
-    text-decoration:none;
+background:#25D366;
+padding:15px;
+display:inline-block;
+border-radius:25px;
+color:white;
+text-decoration:none;
 }
-</style>
 
+@media(max-width:800px){
+.sidebar{
+position:relative;
+width:100%;
+height:auto;
+}
+
+.main{
+margin-left:0;
+}
+
+.cards,.subjects{
+flex-direction:column;
+}
+}
+
+</style>
 </head>
+
 
 <body>
 
-<header>
-<h1>📚 Mr-dev AI Learning</h1>
-<p>Learn Senior 1, Senior 2 and Senior 3 with AI Teacher</p>
-</header>
 
+<div class="sidebar">
 
-<div class="container">
+<div class="logo">
+🎓 Mr-dev<br>
+AI Learning
+</div>
 
+<div class="menu">
+<a href="#">🏠 Home</a>
+<a href="#">📚 Classes</a>
+<a href="#">📘 Senior One</a>
+<a href="#">📗 Senior Two</a>
+<a href="#">📕 Senior Three</a>
+<a href="#">🧪 Subjects</a>
+<a href="#">🤖 AI Teacher</a>
+<a href="#">📄 Notes</a>
+<a href="#">🔬 Lab</a>
+<a href="#">📢 Announcements</a>
+<a href="#">⬇ Downloads</a>
+<a href="#">📞 Contact</a>
+</div>
 
-<div class="card">
-<h2>📘 Senior 1</h2>
-<p>Mathematics, Science, English and more</p>
-
-<div class="subject">📘 Mathematics</div>
-<div class="subject">🧬 Biology</div>
-<div class="subject">⚗️ Chemistry</div>
-<div class="subject">⚡ Physics</div>
-
-<button>Start Learning</button>
 </div>
 
 
 
-<div class="card">
-<h2>📗 Senior 2</h2>
-<p>Improve your knowledge and prepare exams</p>
+<div class="main">
 
-<div class="subject">📘 Mathematics</div>
-<div class="subject">🧬 Biology</div>
-<div class="subject">⚗️ Chemistry</div>
-<div class="subject">⚡ Physics</div>
+<div class="hero">
 
-<button>Start Learning</button>
+<h1>
+Welcome to<br>
+<span style="color:#20e060">
+Mr-dev AI Learning
+</span>
+</h1>
+
+<p>
+Your smart way to learn Science and Mathematics with AI Teacher
+</p>
+
+<button>
+Start Learning
+</button>
+
+<button>
+Ask AI Teacher
+</button>
+
 </div>
 
 
 
+<h2>Explore Classes</h2>
+
+<div class="cards">
+
 <div class="card">
-<h2>📕 Senior 3</h2>
-<p>Advanced lessons and exam preparation</p>
+<h2>🟢 Senior One</h2>
+<p>Build a strong foundation</p>
+<button>Start</button>
+</div>
 
-<div class="subject">📘 Mathematics</div>
-<div class="subject">🧬 Biology</div>
-<div class="subject">⚗️ Chemistry</div>
-<div class="subject">⚡ Physics</div>
 
-<button>Start Learning</button>
+<div class="card">
+<h2>🔵 Senior Two</h2>
+<p>Improve your knowledge</p>
+<button>Start</button>
+</div>
+
+
+<div class="card">
+<h2>🟣 Senior Three</h2>
+<p>Advanced learning</p>
+<button>Start</button>
+</div>
+
 </div>
 
 
 
-<div class="card">
+<h2>Subjects</h2>
+
+<div class="subjects">
+
+<div class="subject">
+📐 Mathematics
+</div>
+
+<div class="subject">
+🧬 Biology
+</div>
+
+<div class="subject">
+⚗️ Chemistry
+</div>
+
+<div class="subject">
+⚡ Physics
+</div>
+
+</div>
+
+
+
+<div class="ai">
+
 <h2>🤖 AI Teacher</h2>
+
+<p>Ask any question and get instant help.</p>
 
 <input placeholder="Ask your question">
 
-<br><br>
-
-<button>Ask AI</button>
-
-<p>AI is ready to help you.</p>
+<button>
+Ask AI
+</button>
 
 </div>
 
 
 
 <div class="card">
+
 <h2>📞 Contact</h2>
 
-<p>Ask questions on WhatsApp:</p>
+<p>Chat with us on WhatsApp</p>
 
 <a class="whatsapp" 
 href="https://wa.me/250738939769">
-💬 WhatsApp Chat
+
+WhatsApp  
+0738 939 769
+
 </a>
 
-<p>Phone: 0738 939 769</p>
-
 </div>
 
 
 </div>
+
 
 </body>
 </html>
