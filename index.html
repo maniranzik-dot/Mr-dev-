@@ -4,166 +4,216 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mr-dev | Rwanda Science & Mathematics</title>
+<title>Mr-dev | Rwanda Learning</title>
 
 <style>
 *{box-sizing:border-box}
 
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#061426;
- color:white;
+margin:0;
+font-family:Arial,sans-serif;
+background:#061426;
+color:white;
+line-height:1.7;
 }
 
 nav{
- position:sticky;
- top:0;
- z-index:10;
- background:#0d1b32;
- padding:20px 10px;
- text-align:center;
- border-bottom:4px solid #20e875;
+position:sticky;
+top:0;
+z-index:99;
+background:#0b1930;
+padding:18px 8px;
+text-align:center;
+border-bottom:4px solid #20e875;
 }
 
 nav a{
- color:white;
- text-decoration:none;
- margin:0 15px;
- font-size:19px;
- font-weight:bold;
+color:white;
+text-decoration:none;
+font-weight:bold;
+margin:0 13px;
+font-size:18px;
 }
 
 .container{
- max-width:1000px;
- margin:auto;
- padding:20px;
+max-width:1000px;
+margin:auto;
+padding:20px;
 }
 
 .hero{
- text-align:center;
- padding:35px 10px;
+text-align:center;
+padding:35px 10px;
 }
 
 .hero h1{
- font-size:42px;
- color:#20e875;
+font-size:44px;
+color:#20e875;
+margin-bottom:5px;
 }
 
 .search{
- width:100%;
- padding:18px;
- border-radius:15px;
- border:2px solid #20e875;
- font-size:18px;
- margin-bottom:12px;
+width:100%;
+padding:17px;
+border-radius:15px;
+border:2px solid #20e875;
+font-size:17px;
+margin:10px 0;
 }
 
 button{
- border:0;
- border-radius:15px;
- padding:14px 20px;
- background:#20e875;
- color:#061426;
- font-weight:bold;
- font-size:17px;
- margin:5px;
- cursor:pointer;
+border:none;
+border-radius:14px;
+padding:13px 20px;
+margin:5px;
+font-weight:bold;
+font-size:16px;
+background:#20e875;
+color:#061426;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.02);
 }
 
 .classButtons{
- text-align:center;
- margin:20px 0;
+text-align:center;
+margin:20px 0;
 }
 
 .card{
- background:#153654;
- border-radius:22px;
- padding:25px;
- margin:20px 0;
- border-left:7px solid #20e875;
- box-shadow:0 5px 20px #0005;
+background:#153653;
+border-radius:22px;
+padding:25px;
+margin:20px 0;
+box-shadow:0 5px 20px #0005;
+}
+
+.subject{
+border:2px solid #2677b8;
+border-radius:18px;
+padding:20px;
+margin:20px 0;
+}
+
+.subject h2{
+color:#20e875;
 }
 
 .unit{
- background:#102b47;
- border:2px solid #2677b8;
- border-radius:18px;
- padding:20px;
- margin:18px 0;
- cursor:pointer;
-}
-
-.unit:hover{
- border-color:#20e875;
+background:#102b47;
+border-left:7px solid #20e875;
+border-radius:15px;
+padding:20px;
+margin:15px 0;
+cursor:pointer;
 }
 
 .unit h3{
- color:#20e875;
- font-size:24px;
+color:#20e875;
+margin-top:0;
 }
 
-.notes{
- background:#edf8ff;
- color:#111;
- padding:22px;
- border-radius:15px;
- margin-top:15px;
- line-height:1.7;
+.lesson{
+background:#f5fbff;
+color:#111;
+border-radius:20px;
+padding:25px;
+margin-top:20px;
+}
+
+.lesson h2,
+.lesson h3{
+color:#087a45;
+}
+
+.note{
+background:#eaf6ff;
+border-left:6px solid #2581c4;
+padding:20px;
+border-radius:12px;
+margin:18px 0;
 }
 
 .example{
- background:#fff4b0;
- color:#111;
- padding:20px;
- border-radius:15px;
- margin-top:15px;
+background:#fff2ae;
+padding:20px;
+border-radius:12px;
+margin:18px 0;
 }
 
 .exercise{
- background:#eafff1;
- color:#111;
- padding:20px;
- border-radius:15px;
- margin-top:15px;
+background:#e9fff1;
+border-left:6px solid #20e875;
+padding:20px;
+border-radius:12px;
+margin:18px 0;
 }
 
 .answer{
- background:#fff4b0;
- color:#111;
- padding:18px;
- border-radius:12px;
- margin-top:10px;
- display:none;
+display:none;
+background:#fff2ae;
+padding:12px;
+border-radius:10px;
+margin:8px 0;
+}
+
+.ai{
+background:#101f38;
+border:2px solid #20e875;
+border-radius:22px;
+padding:25px;
+margin:30px 0;
+}
+
+.ai h2{
+color:#20e875;
+}
+
+.aiInput{
+width:100%;
+padding:15px;
+border-radius:12px;
+border:2px solid #2677b8;
+font-size:16px;
+}
+
+.aiResponse{
+background:#edf8ff;
+color:#111;
+padding:18px;
+border-radius:15px;
+margin-top:15px;
+min-height:70px;
 }
 
 .whatsapp{
- background:#075e54;
- border-radius:22px;
- padding:30px;
- text-align:center;
- margin:30px 0;
+background:#075e54;
+border-radius:22px;
+padding:30px;
+text-align:center;
+margin-top:35px;
 }
 
 .whatsapp h2{
- color:#20e875;
+color:#20e875;
 }
 
 footer{
- background:#0d1b32;
- padding:30px;
- text-align:center;
- margin-top:40px;
-}
-
-.hidden{
- display:none;
+background:#0b1930;
+padding:30px;
+text-align:center;
+margin-top:40px;
 }
 
 .small{
- color:#b9c8d8;
+color:#b8c8d8;
 }
 
+.hidden{
+display:none;
+}
 </style>
 </head>
 
@@ -172,33 +222,42 @@ footer{
 <nav>
 <a href="#" onclick="home()">Home</a>
 <a href="#classes">Classes</a>
+<a href="#ai">AI Teacher</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
 
-<section class="hero">
+<div class="hero">
 
 <h1>📚 Mr-dev</h1>
 
-<p>Science & Mathematics Learning Platform</p>
+<p>Rwanda Science & Mathematics Learning Platform</p>
 
 <input
- id="search"
- class="search"
- placeholder="🔎 Search unit, subject or topic..."
- oninput="searchUnits()">
+id="search"
+class="search"
+placeholder="🔎 Search unit, subject or topic..."
+oninput="searchSite()">
 
-<button onclick="searchUnits()">🔎 Search</button>
+<button onclick="searchSite()">🔎 Search</button>
 
-</section>
+</div>
 
 
 <div id="classes" class="classButtons">
 
-<button onclick="showClass('S1')">Senior 1</button>
-<button onclick="showClass('S2')">Senior 2</button>
-<button onclick="showClass('S3')">Senior 3</button>
+<button onclick="showClass('S1')">
+🎓 Senior 1
+</button>
+
+<button onclick="showClass('S2')">
+🎓 Senior 2
+</button>
+
+<button onclick="showClass('S3')">
+🎓 Senior 3
+</button>
 
 </div>
 
@@ -207,10 +266,15 @@ footer{
 
 <div class="card">
 
-<h2>🎓 Select your class</h2>
+<h2>👋 Welcome to Mr-dev</h2>
 
 <p>
-Choose Senior 1, Senior 2 or Senior 3 to see subjects and learning units.
+Choose your class above.
+</p>
+
+<p>
+You will find subjects, units, detailed notes, examples,
+exercises and answers.
 </p>
 
 </div>
@@ -218,23 +282,53 @@ Choose Senior 1, Senior 2 or Senior 3 to see subjects and learning units.
 </div>
 
 
-<div id="contact" class="whatsapp">
+<!-- AI TEACHER -->
+
+<section id="ai" class="ai">
+
+<h2>🤖 AI Teacher</h2>
+
+<p>
+Ask the teacher about Mathematics, Physics, Chemistry or Biology.
+</p>
+
+<input
+id="aiQuestion"
+class="aiInput"
+placeholder="Example: Explain photosynthesis...">
+
+<button onclick="askAI()">
+🤖 Ask AI Teacher
+</button>
+
+<div id="aiResponse" class="aiResponse">
+AI Teacher is ready. Ask a question.
+</div>
+
+</section>
+
+
+<!-- WHATSAPP -->
+
+<section id="contact" class="whatsapp">
 
 <h2>💬 Contact Mr-dev</h2>
 
-<p>Ask questions or request help through WhatsApp.</p>
+<p>WhatsApp:</p>
 
 <h1>📱 0738 939 769</h1>
 
 <a
- href="https://wa.me/250738939769"
- target="_blank">
+href="https://wa.me/250738939769"
+target="_blank">
 
-<button>💬 Chat on WhatsApp</button>
+<button>
+💬 Chat on WhatsApp
+</button>
 
 </a>
 
-</div>
+</section>
 
 </div>
 
@@ -246,963 +340,923 @@ Choose Senior 1, Senior 2 or Senior 3 to see subjects and learning units.
 
 <script>
 
-/* =========================
-   SENIOR 1
-========================= */
+/* =====================================================
+   REAL REB-ALIGNED CONTENT
+   ===================================================== */
 
-const S1 = [
+/*
+  IMPORTANT:
+  Continue adding verified units from the REB learner books
+  into this same structure.
+
+  Each unit contains:
+  - detailed notes
+  - explanation
+  - examples
+  - exercises
+  - answers
+*/
+
+
+const DATA={
+
+S1:[
 
 {
 subject:"Mathematics",
+
 units:[
 
 {
 name:"Unit 1: Sets of Numbers",
+
 notes:`
-<h4>📖 Notes</h4>
+
+<h3>📖 Detailed Notes</h3>
 
 <p>
-A set is a well-defined collection of objects. The objects in a set are
-called elements.
+A set is a well-defined collection of objects. The objects
+belonging to a set are called elements.
 </p>
 
 <p>
-Numbers can be classified into different sets such as natural numbers,
-whole numbers, integers and rational numbers.
+Sets are useful in mathematics because they allow us to group
+objects or numbers according to common properties.
 </p>
+
+<h3>Important ideas</h3>
 
 <ul>
-<li>Natural numbers: 1,2,3,4,...</li>
-<li>Whole numbers: 0,1,2,3,...</li>
-<li>Integers: ...,−3,−2,−1,0,1,2,3,...</li>
-<li>Rational numbers can be written as a/b where b ≠ 0.</li>
+<li>Element of a set</li>
+<li>Empty set</li>
+<li>Finite set</li>
+<li>Infinite set</li>
+<li>Subset</li>
+<li>Universal set</li>
 </ul>
+
+<p>
+Sets can be represented by listing their elements or by using
+set-builder notation.
+</p>
+
 `,
+
 example:`
-<h4>💡 Example</h4>
+
+<h3>💡 Worked Example</h3>
+
 <p>
 Let A = {2,4,6,8}.
-The elements of A are 2, 4, 6 and 8.
 </p>
+
+<p>
+4 belongs to A, therefore:
+<strong>4 ∈ A</strong>
+</p>
+
+<p>
+5 does not belong to A:
+<strong>5 ∉ A</strong>
+</p>
+
 `,
+
 exercises:[
+
 "Define a set.",
-"Write the first five natural numbers.",
-"Is 0 a whole number?",
-"Write three integers less than zero.",
-"Write the elements of A={1,3,5,7}."
+"List the elements of A={1,3,5,7}.",
+"Is 4 an element of {2,4,6}?",
+"What is an empty set?",
+"Give an example of an infinite set."
+
 ],
+
 answers:[
+
 "A well-defined collection of objects.",
-"1,2,3,4,5.",
+"{1,3,5,7}.",
 "Yes.",
-"-1,-2,-3.",
-"1,3,5,7."
+"A set containing no element.",
+"The set of natural numbers."
+
 ]
-},
 
-{
-name:"Unit 2: Linear Functions, Equations and Inequalities",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-A linear equation is an equation in which the highest power of the
-unknown is 1.
-</p>
-
-<p>
-A common form is:
-<strong>ax + b = 0</strong>
-where a ≠ 0.
-</p>
-
-<p>
-To solve an equation, perform the same operation on both sides.
-</p>
-
-<p>
-An inequality compares quantities using symbols such as
-&gt;, &lt;, ≥ and ≤.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-<p>
-Solve: 3x + 6 = 15
-</p>
-
-<p>
-3x = 15 − 6<br>
-3x = 9<br>
-<strong>x = 3</strong>
-</p>
-`,
-exercises:[
-"Solve: 2x+4=12.",
-"Solve: 5x−10=20.",
-"Solve: 4x=28.",
-"Solve: x+7=15.",
-"Solve: 2x+1>7."
-],
-answers:[
-"x=4.",
-"x=6.",
-"x=7.",
-"x=8.",
-"x>3."
-]
-},
-
-{
-name:"Unit 3: Percentage, Discount, Profit and Loss",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-Percentage means a quantity expressed out of 100.
-</p>
-
-<p>
-Percentage = (part / whole) × 100%.
-</p>
-
-<p>
-Profit occurs when selling price is greater than cost price.
-Loss occurs when cost price is greater than selling price.
-</p>
-
-<p>
-Discount is the amount reduced from the marked price.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-
-<p>
-A book costs 5,000 RWF and is sold for 6,000 RWF.
-</p>
-
-<p>
-Profit = 6,000 − 5,000 = <strong>1,000 RWF</strong>.
-</p>
-`,
-exercises:[
-"Find 20% of 500.",
-"A shirt costs 10,000 RWF and is sold for 12,000 RWF. Find the profit.",
-"Find 10% of 8,000 RWF.",
-"What is a discount?",
-"When is there a loss?"
-],
-answers:[
-"100.",
-"2,000 RWF.",
-"800 RWF.",
-"A reduction from the marked price.",
-"When selling price is less than cost price."
-]
-},
-
-{
-name:"Unit 4: Ratio and Proportions",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-A ratio compares two or more quantities of the same kind.
-</p>
-
-<p>
-For example, 2:3 means two parts compared with three parts.
-</p>
-
-<p>
-Two ratios are proportional when they represent the same relationship.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-
-<p>
-Simplify 10:15.
-</p>
-
-<p>
-Divide both terms by 5:
-<strong>2:3</strong>
-</p>
-`,
-exercises:[
-"Simplify 8:12.",
-"Simplify 15:20.",
-"Divide 100 in the ratio 2:3.",
-"Write an equivalent ratio to 3:5.",
-"What is a ratio?"
-],
-answers:[
-"2:3.",
-"3:4.",
-"40 and 60.",
-"6:10.",
-"A comparison of quantities."
-]
-},
-
-{
-name:"Unit 5: Points, Lines and Angles",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-A point represents an exact position.
-A line extends indefinitely in both directions.
-</p>
-
-<p>
-Angles are measured in degrees.
-</p>
-
-<ul>
-<li>Acute angle: less than 90°</li>
-<li>Right angle: 90°</li>
-<li>Obtuse angle: between 90° and 180°</li>
-<li>Straight angle: 180°</li>
-</ul>
-`,
-example:`
-<h4>💡 Example</h4>
-<p>
-An angle of 90° is a right angle.
-</p>
-`,
-exercises:[
-"What is a point?",
-"What is a right angle?",
-"Classify 45°.",
-"Classify 120°.",
-"What is a straight angle?"
-],
-answers:[
-"An exact position.",
-"An angle of 90°.",
-"Acute.",
-"Obtuse.",
-"180°."
-]
-},
-
-{
-name:"Unit 6: Solids",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-Solids are three-dimensional objects. They have length, width and
-height.
-</p>
-
-<p>
-Examples include cubes, cuboids, cylinders, cones and spheres.
-</p>
-
-<p>
-A cuboid has six rectangular faces.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-<p>
-A cube has 6 faces, 12 edges and 8 vertices.
-</p>
-`,
-exercises:[
-"Give two examples of solids.",
-"How many faces does a cube have?",
-"How many vertices does a cube have?",
-"Name a solid with a circular base.",
-"What are the three dimensions of a cuboid?"
-],
-answers:[
-"Cube and cuboid.",
-"6.",
-"8.",
-"Cylinder or cone.",
-"Length, width and height."
-]
-},
-
-{
-name:"Unit 7: Statistics",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-Statistics is the collection, organisation, presentation and
-interpretation of data.
-</p>
-
-<p>
-Data may be presented using tables, bar charts, pie charts and graphs.
-</p>
-
-<p>
-The mean is found by:
-<strong>sum of values ÷ number of values</strong>.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-
-<p>
-Find the mean of 2, 4 and 6.
-</p>
-
-<p>
-Mean = (2+4+6)/3 = <strong>4</strong>.
-</p>
-`,
-exercises:[
-"Find the mean of 2,4,6,8.",
-"Name two ways of presenting data.",
-"What is statistics?",
-"Find the mean of 5,10,15.",
-"What is a bar chart?"
-],
-answers:[
-"5.",
-"Tables and graphs.",
-"The study and analysis of data.",
-"10.",
-"A chart using rectangular bars."
-]
-},
-
-{
-name:"Unit 8: Probability",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-Probability measures how likely an event is to occur.
-</p>
-
-<p>
-Probability of an event =
-<strong>number of favourable outcomes ÷ total number of outcomes</strong>.
-</p>
-
-<p>
-A probability is between 0 and 1.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-<p>
-A fair coin has two possible outcomes: Head and Tail.
-</p>
-
-<p>
-P(Head) = 1/2.
-</p>
-`,
-exercises:[
-"What is probability?",
-"What is the probability of getting a head from a fair coin?",
-"What is the probability of an impossible event?",
-"What is the probability of a certain event?",
-"A die has 6 faces. What is P(6)?"
-],
-answers:[
-"A measure of the likelihood of an event.",
-"1/2.",
-"0.",
-"1.",
-"1/6."
-]
 }
 
 ]
-}
 
-];
-
-
-/* =========================
-   SENIOR 2
-========================= */
-
-const S2=[
-
-{
-subject:"Mathematics",
-units:[
-
-{
-name:"Unit 1: Sources of Errors in Measurement",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-Measurement is the process of finding the magnitude of a physical
-quantity using an appropriate unit and instrument.
-</p>
-
-<p>
-Accuracy describes how close a measurement is to the true value.
-Precision describes how close repeated measurements are to each other.
-</p>
-
-<p>
-Errors may be random or systematic.
-Significant figures are used to report measurements appropriately.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-<p>
-If a ruler has millimetre divisions, measurements should not be reported
-with unjustified extra decimal places.
-</p>
-`,
-exercises:[
-"Define measurement.",
-"Distinguish accuracy from precision.",
-"Name two types of measurement error.",
-"What are significant figures?",
-"Why should an appropriate instrument be selected?"
-],
-answers:[
-"Finding the magnitude of a quantity using a unit.",
-"Accuracy concerns closeness to true value; precision concerns repeatability.",
-"Random and systematic errors.",
-"Digits that meaningfully represent a measurement.",
-"To obtain reliable measurements."
-]
 },
 
-{
-name:"Unit 2: Algebraic Expressions",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-An algebraic expression contains numbers, variables and mathematical
-operations.
-</p>
-
-<p>
-Like terms contain the same variables raised to the same powers.
-Like terms can be added or subtracted.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-<p>
-3x + 5x = 8x
-</p>
-`,
-exercises:[
-"Simplify 4x+3x.",
-"Simplify 8a−2a.",
-"Expand 2(x+3).",
-"Identify the variable in 7y+2.",
-"Simplify 5m+2m−m."
-],
-answers:[
-"7x.",
-"6a.",
-"2x+6.",
-"y.",
-"6m."
-]
-}
-
-]
-},
 
 {
 subject:"Physics",
+
+units:[
+
+{
+name:"Unit 1: Introduction to Physics",
+
+notes:`
+
+<h3>📖 Detailed Notes</h3>
+
+<p>
+Physics is the branch of science concerned with matter, energy,
+motion, forces and interactions.
+</p>
+
+<p>
+Physics helps us understand natural phenomena and develop
+technologies used in everyday life.
+</p>
+
+<h3>Examples of Physics in daily life</h3>
+
+<ul>
+<li>Movement of vehicles</li>
+<li>Electricity</li>
+<li>Sound</li>
+<li>Light</li>
+<li>Heat</li>
+<li>Machines</li>
+</ul>
+
+`,
+
+example:`
+
+<h3>💡 Example</h3>
+
+<p>
+When a ball is kicked, physics can be used to study its speed,
+direction, force and motion.
+</p>
+
+`,
+
+exercises:[
+
+"What is physics?",
+"Give two examples of physics in daily life.",
+"What is motion?",
+"Name one area studied in physics.",
+"Why is physics important?"
+
+],
+
+answers:[
+
+"The study of matter, energy and their interactions.",
+"Electricity and motion.",
+"Change of position with time.",
+"Forces.",
+"It helps us understand nature and develop technology."
+
+]
+
+}
+
+]
+
+},
+
+
+{
+subject:"Chemistry",
+
+units:[
+
+{
+name:"Unit 1: Introduction to Chemistry",
+
+notes:`
+
+<h3>📖 Detailed Notes</h3>
+
+<p>
+Chemistry is the study of matter, its properties, composition,
+structure and the changes it undergoes.
+</p>
+
+<p>
+Chemistry is important in medicine, agriculture, industry,
+environmental protection and everyday life.
+</p>
+
+<h3>Examples</h3>
+
+<ul>
+<li>Making medicines</li>
+<li>Fertilizers</li>
+<li>Soap and detergents</li>
+<li>Food preservation</li>
+<li>Water treatment</li>
+</ul>
+
+`,
+
+example:`
+
+<h3>💡 Example</h3>
+
+<p>
+Cooking involves chemical changes because substances can change
+into new substances when heated.
+</p>
+
+`,
+
+exercises:[
+
+"What is chemistry?",
+"Give two applications of chemistry.",
+"What is matter?",
+"Name one chemical product used at home.",
+"Why is chemistry important?"
+
+],
+
+answers:[
+
+"The study of matter and its changes.",
+"Medicine and agriculture.",
+"Anything that has mass and occupies space.",
+"Soap.",
+"It helps us understand and use substances safely."
+
+]
+
+}
+
+]
+
+},
+
+
+{
+subject:"Biology",
+
+units:[
+
+{
+name:"Unit 1: Introduction to Biology",
+
+notes:`
+
+<h3>📖 Detailed Notes</h3>
+
+<p>
+Biology is the study of living organisms.
+</p>
+
+<p>
+Living organisms include plants, animals, microorganisms and humans.
+</p>
+
+<h3>Characteristics of living organisms</h3>
+
+<ul>
+<li>Movement</li>
+<li>Respiration</li>
+<li>Sensitivity</li>
+<li>Growth</li>
+<li>Reproduction</li>
+<li>Excretion</li>
+<li>Nutrition</li>
+</ul>
+
+`,
+
+example:`
+
+<h3>💡 Example</h3>
+
+<p>
+A plant grows, respires, reproduces and responds to light.
+These are characteristics of living organisms.
+</p>
+
+`,
+
+exercises:[
+
+"What is biology?",
+"Name three living organisms.",
+"Give four characteristics of living organisms.",
+"What is reproduction?",
+"What is respiration?"
+
+],
+
+answers:[
+
+"The study of living organisms.",
+"Human, plant and animal.",
+"Growth, respiration, reproduction and nutrition.",
+"The production of new organisms.",
+"The process of releasing energy from food."
+
+]
+
+}
+
+]
+
+}
+
+],
+
+
+/* =====================================================
+   SENIOR 2
+   ===================================================== */
+
+S2:[
+
+{
+subject:"Physics",
+
 units:[
 
 {
 name:"Unit 1: Sources of Errors in Measurement of Physical Quantities",
+
 notes:`
-<h4>📖 Notes</h4>
+
+<h3>📖 Detailed Notes</h3>
 
 <p>
-Physical quantities are measured using standard units.
-Examples include metre (m), kilogram (kg) and second (s).
+Measurement is the process of finding the magnitude of a physical
+quantity using a suitable measuring instrument and unit.
 </p>
 
 <p>
-Fundamental quantities are independent quantities such as length,
-mass and time.
-Derived quantities are obtained from fundamental quantities.
+Measurements can contain errors. Errors should be identified and
+reduced as much as possible.
 </p>
 
+<h3>Accuracy</h3>
+
 <p>
-Examples of derived quantities are speed, density, area and volume.
+Accuracy describes how close a measurement is to the true value.
 </p>
+
+<h3>Precision</h3>
+
+<p>
+Precision describes how close repeated measurements are to one
+another.
+</p>
+
+<h3>Random errors</h3>
+
+<p>
+Random errors vary from one measurement to another.
+Taking repeated measurements and finding an average can help
+reduce their effect.
+</p>
+
+<h3>Systematic errors</h3>
+
+<p>
+Systematic errors occur consistently in the same direction,
+for example because of an incorrectly calibrated instrument.
+</p>
+
+<h3>Significant figures</h3>
+
+<p>
+Significant figures communicate the meaningful precision of a
+measurement.
+</p>
+
+<h3>Dimensions</h3>
+
+<p>
+Dimensions show how a physical quantity is expressed using
+fundamental quantities such as mass, length and time.
+</p>
+
 `,
+
 example:`
-<h4>💡 Example</h4>
+
+<h3>💡 Worked Example</h3>
+
 <p>
-Density = mass / volume.
+Suppose a ruler is used to measure the length of a book.
+The ruler should have a suitable scale for the accuracy required.
 </p>
+
+<p>
+Using an instrument with an appropriate sensitivity improves
+the quality of the measurement.
+</p>
+
 `,
+
 exercises:[
-"Name the SI unit of length.",
-"Name the SI unit of mass.",
-"Name the SI unit of time.",
-"What is a derived quantity?",
-"Give two examples of derived quantities."
+
+"Define measurement.",
+"Distinguish accuracy from precision.",
+"Name two types of errors.",
+"What is a random error?",
+"What is a systematic error?",
+"Why are significant figures important?",
+"What is a derived physical quantity?",
+"Give two fundamental quantities."
+
 ],
+
 answers:[
-"metre (m).",
-"kilogram (kg).",
-"second (s).",
-"A quantity derived from fundamental quantities.",
-"Speed and density."
+
+"Finding the magnitude of a quantity using a unit.",
+"Accuracy is closeness to the true value; precision is repeatability.",
+"Random and systematic errors.",
+"An error that varies unpredictably between measurements.",
+"An error that occurs consistently in a particular direction.",
+"They communicate meaningful precision.",
+"A quantity obtained from fundamental quantities.",
+"Mass and length."
+
 ]
+
 }
 
 ]
+
 },
 
-{
-subject:"Chemistry",
-units:[
-
-{
-name:"Unit 1: Matter and its Properties",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-Matter is anything that has mass and occupies space.
-Matter exists mainly as solids, liquids and gases.
-</p>
-
-<p>
-A solid has a definite shape and volume.
-A liquid has a definite volume but takes the shape of its container.
-A gas has neither definite shape nor definite volume.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-<p>
-Water is a liquid. Ice is a solid. Water vapour is a gas.
-</p>
-`,
-exercises:[
-"Define matter.",
-"Name the three common states of matter.",
-"Give one property of a solid.",
-"Give one property of a liquid.",
-"Give one property of a gas."
-],
-answers:[
-"Anything having mass and occupying space.",
-"Solid, liquid and gas.",
-"It has a definite shape.",
-"It has a definite volume.",
-"It fills its container."
-]
-}
-
-]
-}
-
-];
-
-
-/* =========================
-   SENIOR 3
-========================= */
-
-const S3=[
 
 {
 subject:"Mathematics",
+
+units:[
+
+{
+name:"Unit 1: Algebraic Expressions",
+
+notes:`
+
+<h3>📖 Detailed Notes</h3>
+
+<p>
+An algebraic expression contains numbers, variables and
+mathematical operations.
+</p>
+
+<p>
+Terms with the same variables and powers are called like terms.
+Like terms can be collected together.
+</p>
+
+<h3>Expansion</h3>
+
+<p>
+The distributive property is used to expand brackets.
+</p>
+
+`,
+
+example:`
+
+<h3>💡 Worked Example</h3>
+
+<p>
+3x + 5x = 8x
+</p>
+
+<p>
+2(x + 4)
+= 2x + 8
+</p>
+
+`,
+
+exercises:[
+
+"Simplify 4x+6x.",
+"Simplify 8a−3a.",
+"Expand 3(x+2).",
+"Simplify 5m+2m−m.",
+"Expand 2(3x+4)."
+
+],
+
+answers:[
+
+"10x.",
+"5a.",
+"3x+6.",
+"6m.",
+"6x+8."
+
+]
+
+}
+
+]
+
+}
+
+],
+
+
+/* =====================================================
+   SENIOR 3
+   ===================================================== */
+
+S3:[
+
+{
+subject:"Mathematics",
+
 units:[
 
 {
 name:"Unit 1: Problems on Sets",
+
 notes:`
-<h4>📖 Notes</h4>
+
+<h3>📖 Detailed Notes</h3>
 
 <p>
-Sets can be combined using union and intersection.
+Sets can be combined using operations such as union and
+intersection.
 </p>
 
-<p>
-The union A ∪ B contains elements belonging to A or B.
-The intersection A ∩ B contains elements common to both A and B.
-</p>
+<h3>Union</h3>
 
 <p>
-Venn diagrams are useful for representing relationships between sets.
+The union A ∪ B contains elements belonging to A, B or both.
 </p>
+
+<h3>Intersection</h3>
+
+<p>
+The intersection A ∩ B contains elements common to A and B.
+</p>
+
+<h3>Venn diagrams</h3>
+
+<p>
+Venn diagrams provide a visual way of representing relationships
+between sets.
+</p>
+
 `,
+
 example:`
-<h4>💡 Example</h4>
+
+<h3>💡 Worked Example</h3>
 
 <p>
-A={1,2,3}, B={3,4,5}
+A={1,2,3}
 </p>
 
 <p>
-A∪B={1,2,3,4,5}
+B={3,4,5}
 </p>
 
 <p>
-A∩B={3}
+A ∪ B = {1,2,3,4,5}
 </p>
+
+<p>
+A ∩ B = {3}
+</p>
+
 `,
+
 exercises:[
-"Define union of sets.",
-"Define intersection of sets.",
-"Find A∪B if A={1,2}, B={2,3}.",
-"Find A∩B for the same sets.",
+
+"Define union.",
+"Define intersection.",
+"If A={1,2} and B={2,3}, find A∪B.",
+"Find A∩B.",
 "What is a Venn diagram?"
+
 ],
+
 answers:[
-"The set containing elements in A or B.",
-"The set containing common elements.",
+
+"A set containing elements in A or B.",
+"A set containing elements common to A and B.",
 "{1,2,3}.",
 "{2}.",
-"A diagram used to represent sets."
+"A diagram representing relationships between sets."
+
 ]
-},
 
-{
-name:"Unit 2: Number Bases",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-A number base determines how numbers are represented using digits.
-</p>
-
-<p>
-Decimal uses base 10.
-Binary uses base 2 and has only the digits 0 and 1.
-</p>
-
-<p>
-Place values in binary are powers of 2.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-
-<p>
-101₂ = 1×2² + 0×2¹ + 1×2⁰
-</p>
-
-<p>
-=4+0+1=<strong>5₁₀</strong>
-</p>
-`,
-exercises:[
-"What base does decimal use?",
-"What base does binary use?",
-"Which digits are used in binary?",
-"Convert 101₂ to decimal.",
-"Convert 10₂ to decimal."
-],
-answers:[
-"Base 10.",
-"Base 2.",
-"0 and 1.",
-"5.",
-"2."
-]
-},
-
-{
-name:"Unit 3: Algebraic Fractions",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-An algebraic fraction contains algebraic expressions in the numerator
-or denominator.
-</p>
-
-<p>
-To add or subtract algebraic fractions, first find a common denominator.
-</p>
-
-<p>
-A denominator must never be equal to zero.
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-
-<p>
-x/2 + x/2 = 2x/2 = <strong>x</strong>
-</p>
-`,
-exercises:[
-"Simplify x/2+x/2.",
-"Simplify 3x/4+x/4.",
-"What must a denominator never equal?",
-"Find a common denominator for 1/x and 1/2.",
-"Simplify 6x/3."
-],
-answers:[
-"x.",
-"x.",
-"Zero.",
-"2x.",
-"2x."
-]
-},
-
-{
-name:"Unit 4: Probability",
-notes:`
-<h4>📖 Notes</h4>
-
-<p>
-Probability is used to describe uncertainty.
-</p>
-
-<p>
-For equally likely outcomes:
-P(E)=favourable outcomes/total outcomes.
-</p>
-
-<p>
-The complement of an event E is written P(E').
-</p>
-`,
-example:`
-<h4>💡 Example</h4>
-
-<p>
-For a fair die:
-P(even number)=3/6=1/2.
-</p>
-`,
-exercises:[
-"What is the probability of an impossible event?",
-"What is the probability of a certain event?",
-"Find P(even) on a fair die.",
-"How many outcomes does a die have?",
-"What is the complement of an event?"
-],
-answers:[
-"0.",
-"1.",
-"1/2.",
-"6.",
-"An event meaning the event does not occur."
-]
 }
 
 ]
+
 },
+
 
 {
 subject:"Physics",
+
 units:[
 
 {
 name:"Unit 1: Measurement and Physical Quantities",
+
 notes:`
-<h4>📖 Notes</h4>
+
+<h3>📖 Detailed Notes</h3>
 
 <p>
-Physics uses measurements to describe physical quantities.
-A physical quantity has a numerical value and a unit.
+A physical quantity is a measurable property expressed using a
+number and a unit.
 </p>
 
 <p>
-Good measurements require suitable instruments, correct reading and
-proper recording of significant figures.
+Examples include length, mass, time, temperature, speed and
+force.
 </p>
+
+<p>
+The SI system provides internationally accepted units for
+physical measurements.
+</p>
+
+<h3>Fundamental quantities</h3>
+
+<ul>
+<li>Length — metre (m)</li>
+<li>Mass — kilogram (kg)</li>
+<li>Time — second (s)</li>
+<li>Electric current — ampere (A)</li>
+</ul>
+
+<h3>Derived quantities</h3>
+
+<p>
+Derived quantities are obtained from fundamental quantities.
+Examples include speed, area, volume and density.
+</p>
+
 `,
+
 example:`
-<h4>💡 Example</h4>
+
+<h3>💡 Example</h3>
+
 <p>
-Length = 2.50 m. The number 2.50 communicates the precision of the
-measurement.
+Speed is a derived quantity because:
 </p>
+
+<p>
+Speed = distance ÷ time
+</p>
+
 `,
+
 exercises:[
+
 "What is a physical quantity?",
 "Give two fundamental quantities.",
-"What is a unit?",
-"Why are significant figures important?",
-"Give one measuring instrument."
+"What is the SI unit of length?",
+"What is the SI unit of mass?",
+"Give two derived quantities.",
+"Define speed."
+
 ],
+
 answers:[
-"A measurable property of a physical system.",
+
+"A measurable property expressed with a value and unit.",
 "Length and mass.",
-"A standard used for measurement.",
-"They communicate meaningful precision.",
-"Ruler."
+"metre (m).",
+"kilogram (kg).",
+"Speed and density.",
+"Distance travelled per unit time."
+
 ]
+
 }
 
 ]
+
 },
+
 
 {
 subject:"Chemistry",
+
 units:[
 
 {
 name:"Unit 1: Carbon and its Inorganic Compounds",
+
 notes:`
-<h4>📖 Notes</h4>
+
+<h3>📖 Detailed Notes</h3>
 
 <p>
-Carbon is an important element that forms many compounds.
-It occurs in different allotropes, including diamond and graphite.
+Carbon is an important element because it forms a very large
+number of compounds.
 </p>
 
-<p>
-Carbon dioxide is an important carbon compound. It is involved in
-photosynthesis and the carbon cycle.
-</p>
+<h3>Allotropes of carbon</h3>
 
 <p>
-Carbonates react with acids to produce salt, water and carbon dioxide.
+Diamond and graphite are examples of allotropes of carbon.
+They have different structures and therefore different properties.
 </p>
+
+<h3>Carbon dioxide</h3>
+
+<p>
+Carbon dioxide is an important carbon compound. It is produced
+during respiration and combustion and is used by plants during
+photosynthesis.
+</p>
+
+<h3>Carbonates and acids</h3>
+
+<p>
+Many carbonates react with acids to produce a salt, water and
+carbon dioxide.
+</p>
+
 `,
+
 example:`
-<h4>💡 Example</h4>
+
+<h3>💡 Example</h3>
 
 <p>
-Carbon dioxide can be tested using limewater. Limewater turns milky
-when carbon dioxide is passed through it.
+Carbon dioxide can be tested using limewater.
+Limewater becomes milky when carbon dioxide is passed through it.
 </p>
+
 `,
+
 exercises:[
+
 "Name two allotropes of carbon.",
+"Give one property of diamond.",
 "Give one use of graphite.",
-"Give one use of diamond.",
 "How can carbon dioxide be tested?",
-"What happens when a carbonate reacts with an acid?"
+"What happens when a carbonate reacts with an acid?",
+"Where is carbon dioxide used by plants?"
+
 ],
+
 answers:[
+
 "Diamond and graphite.",
-"Making electrodes/pencils.",
-"Cutting and polishing.",
+"Diamond is very hard.",
+"Graphite can be used as an electrode.",
 "It turns limewater milky.",
-"Salt, water and carbon dioxide are produced."
+"A salt, water and carbon dioxide are produced.",
+"During photosynthesis."
+
 ]
+
 }
 
 ]
+
 },
+
 
 {
 subject:"Biology",
+
 units:[
 
 {
 name:"Unit 1: Genetics",
+
 notes:`
-<h4>📖 Notes</h4>
+
+<h3>📖 Detailed Notes</h3>
 
 <p>
 Genetics is the study of heredity and variation.
 </p>
 
+<h3>Gene</h3>
+
 <p>
-Genes are sections of DNA that carry information influencing inherited
-characteristics. Genes are located on chromosomes.
+A gene is a section of DNA that carries information associated
+with an inherited characteristic.
 </p>
+
+<h3>Chromosome</h3>
+
+<p>
+A chromosome is a DNA-containing structure carrying genes.
+</p>
+
+<h3>Heredity</h3>
 
 <p>
 Heredity is the transmission of characteristics from parents to
-offspring.
+their offspring.
 </p>
 
+<h3>Variation</h3>
+
 <p>
-Variation refers to differences between individuals of the same species.
+Variation refers to differences between individuals of the same
+species.
 </p>
+
 `,
+
 example:`
-<h4>💡 Example</h4>
+
+<h3>💡 Example</h3>
 
 <p>
-Eye colour and some blood-group characteristics can be inherited from
-parents.
+Blood group is an example of a characteristic influenced by
+genetic inheritance.
 </p>
+
 `,
+
 exercises:[
+
 "What is genetics?",
 "What is a gene?",
 "What is a chromosome?",
-"What is heredity?",
-"What is variation?"
+"Define heredity.",
+"What is variation?",
+"Where are genes found?"
+
 ],
+
 answers:[
+
 "The study of heredity and variation.",
 "A section of DNA carrying genetic information.",
 "A DNA-containing structure carrying genes.",
 "Transmission of characteristics from parents to offspring.",
-"Differences between individuals of the same species."
+"Differences between individuals of the same species.",
+"Genes are located on chromosomes."
+
 ]
+
 }
 
 ]
+
 }
 
-];
+]
 
-
-/* =========================
-   ALL DATA
-========================= */
-
-const allClasses={
-S1:S1,
-S2:S2,
-S3:S3
 };
 
 
-/* =========================
-   DISPLAY CLASS
-========================= */
+/* =====================================================
+   SHOW CLASS
+   ===================================================== */
 
 function showClass(cls){
 
-let html="";
+let html=`
 
-html+=`<div class="hero">
+<div class="card">
+
 <h2>🎓 ${cls}</h2>
-<p class="small">Choose a subject and study its units.</p>
-</div>`;
 
-allClasses[cls].forEach(subject=>{
+<p>
+Select a subject below.
+</p>
+
+</div>
+`;
+
+DATA[cls].forEach((subject,sIndex)=>{
 
 html+=`
-<div class="card">
+
+<div class="subject">
+
 <h2>📚 ${subject.subject}</h2>
 `;
 
-subject.units.forEach((unit,index)=>{
+subject.units.forEach((unit,uIndex)=>{
 
 html+=`
+
 <div class="unit"
-onclick="openUnit('${cls}',${allClasses[cls].indexOf(subject)},${index})">
+onclick="openUnit('${cls}',${sIndex},${uIndex})">
 
 <h3>📖 ${unit.name}</h3>
 
 <p>
-Tap to open notes, examples and exercises.
+Open full notes, examples and exercises →
 </p>
 
 </div>
+
 `;
 
 });
@@ -1221,47 +1275,55 @@ behavior:"smooth"
 }
 
 
-/* =========================
+/* =====================================================
    OPEN UNIT
-========================= */
+   ===================================================== */
 
-function openUnit(cls,subjectIndex,unitIndex){
+function openUnit(cls,sIndex,uIndex){
 
-const subject=allClasses[cls][subjectIndex];
-const unit=subject.units[unitIndex];
+const subject=DATA[cls][sIndex];
+const unit=subject.units[uIndex];
 
-let exercises="";
+let questions="";
 
 unit.exercises.forEach((q,i)=>{
 
-exercises+=`
+questions+=`
+
+<div>
+
 <p>
 <strong>${i+1}. ${q}</strong>
 </p>
 
-<div id="answer-${i}" class="answer">
+<div
+class="answer"
+id="ans${i}">
+
 <strong>✅ Answer:</strong>
 ${unit.answers[i]}
+
 </div>
+
+</div>
+
 `;
 
 });
 
-let html=`
+document.getElementById("content").innerHTML=`
 
-<div class="card">
+<div class="lesson">
 
 <button onclick="showClass('${cls}')">
-← Back to ${cls}
+← Back
 </button>
 
 <h2>📖 ${unit.name}</h2>
 
-<p class="small">
-Subject: ${subject.subject}
-</p>
+<h3>Subject: ${subject.subject}</h3>
 
-<div class="notes">
+<div class="note">
 
 ${unit.notes}
 
@@ -1275,11 +1337,11 @@ ${unit.example}
 
 <div class="exercise">
 
-<h3>❓ Exercises</h3>
+<h2>❓ Exercises</h2>
 
-${exercises}
+${questions}
 
-<button onclick="toggleAnswers()">
+<button onclick="showAnswers()">
 👁️ Show / Hide Answers
 </button>
 
@@ -1289,8 +1351,6 @@ ${exercises}
 
 `;
 
-document.getElementById("content").innerHTML=html;
-
 window.scrollTo({
 top:0,
 behavior:"smooth"
@@ -1299,13 +1359,15 @@ behavior:"smooth"
 }
 
 
-/* =========================
-   ANSWERS
-========================= */
+/* =====================================================
+   SHOW ANSWERS
+   ===================================================== */
 
-function toggleAnswers(){
+function showAnswers(){
 
-document.querySelectorAll(".answer").forEach(a=>{
+document
+.querySelectorAll(".answer")
+.forEach(a=>{
 
 if(a.style.display==="block"){
 a.style.display="none";
@@ -1318,44 +1380,43 @@ a.style.display="block";
 }
 
 
-/* =========================
+/* =====================================================
    SEARCH
-========================= */
+   ===================================================== */
 
-function searchUnits(){
+function searchSite(){
 
-const query=document
+const q=document
 .getElementById("search")
 .value
 .toLowerCase()
 .trim();
 
-if(!query){
+if(!q){
 return;
 }
 
 let results="";
 
-Object.keys(allClasses).forEach(cls=>{
+Object.keys(DATA).forEach(cls=>{
 
-allClasses[cls].forEach(subject=>{
+DATA[cls].forEach((subject,sIndex)=>{
 
-subject.units.forEach((unit,index)=>{
+subject.units.forEach((unit,uIndex)=>{
 
-if(
-unit.name.toLowerCase().includes(query) ||
-subject.subject.toLowerCase().includes(query) ||
-unit.notes.toLowerCase().includes(query)
-){
+const text=(
+unit.name+
+subject.subject+
+unit.notes
+).toLowerCase();
+
+if(text.includes(q)){
 
 results+=`
 
-<div class="unit"
-onclick="openUnit(
-'${cls}',
-${allClasses[cls].indexOf(subject)},
-${index}
-)">
+<div
+class="unit"
+onclick="openUnit('${cls}',${sIndex},${uIndex})">
 
 <h3>📖 ${cls} — ${subject.subject}</h3>
 
@@ -1376,10 +1437,18 @@ ${index}
 if(!results){
 
 results=`
+
 <div class="card">
-<h2>❌ No results</h2>
-<p>Try searching Mathematics, Physics, Chemistry, Biology or a unit name.</p>
+
+<h2>❌ No result</h2>
+
+<p>
+Try: Mathematics, Physics, Chemistry, Biology,
+Genetics, Sets, Measurement, Carbon...
+</p>
+
 </div>
+
 `;
 
 }
@@ -1388,7 +1457,7 @@ document.getElementById("content").innerHTML=`
 
 <div class="card">
 
-<h2>🔎 Search Results</h2>
+<h2>🔎 Search results</h2>
 
 ${results}
 
@@ -1399,9 +1468,9 @@ ${results}
 }
 
 
-/* =========================
+/* =====================================================
    HOME
-========================= */
+   ===================================================== */
 
 function home(){
 
@@ -1412,11 +1481,11 @@ document.getElementById("content").innerHTML=`
 <h2>📚 Welcome to Mr-dev</h2>
 
 <p>
-Learn Mathematics, Physics, Chemistry and Biology.
+Choose Senior 1, Senior 2 or Senior 3.
 </p>
 
 <p>
-Select Senior 1, Senior 2 or Senior 3 above.
+Study Mathematics, Physics, Chemistry and Biology.
 </p>
 
 </div>
@@ -1425,7 +1494,128 @@ Select Senior 1, Senior 2 or Senior 3 above.
 
 }
 
+
+/* =====================================================
+   BASIC AI TEACHER
+   ===================================================== */
+
+function askAI(){
+
+const q=document
+.getElementById("aiQuestion")
+.value
+.toLowerCase()
+.trim();
+
+const box=document
+.getElementById("aiResponse");
+
+if(!q){
+
+box.innerHTML="Please type your question.";
+
+return;
+
+}
+
+
+/*
+ This is a local demo teacher.
+ For a real AI teacher, connect this function
+ to a secure backend/API.
+*/
+
+if(q.includes("photosynthesis")){
+
+box.innerHTML=`
+
+<strong>🤖 AI Teacher:</strong>
+
+<p>
+Photosynthesis is the process by which green plants make food
+using light energy, carbon dioxide and water.
+</p>
+
+<p>
+The process mainly takes place in chloroplasts containing
+chlorophyll.
+</p>
+
+`;
+
+}
+
+else if(q.includes("genetics")){
+
+box.innerHTML=`
+
+<strong>🤖 AI Teacher:</strong>
+
+<p>
+Genetics is the study of heredity and variation.
+Genes are sections of DNA and are located on chromosomes.
+</p>
+
+`;
+
+}
+
+else if(q.includes("physics")){
+
+box.innerHTML=`
+
+<strong>🤖 AI Teacher:</strong>
+
+<p>
+Physics studies matter, energy, motion, forces and their
+interactions.
+</p>
+
+`;
+
+}
+
+else if(q.includes("percentage")){
+
+box.innerHTML=`
+
+<strong>🤖 AI Teacher:</strong>
+
+<p>
+Percentage means a quantity expressed per hundred.
+</p>
+
+<p>
+For example, 25% means 25 out of 100.
+</p>
+
+`;
+
+}
+
+else{
+
+box.innerHTML=`
+
+<strong>🤖 AI Teacher:</strong>
+
+<p>
+I understand your question, but this demo teacher does not yet
+have an answer for it.
+</p>
+
+<p>
+Try asking about a unit such as Genetics, Sets, Physics,
+Measurement or Percentage.
+</p>
+
+`;
+
+}
+
+}
+
 </script>
 
 </body>
-  </html>
+ </html>
