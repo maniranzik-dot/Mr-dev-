@@ -1,225 +1,54 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>AI Teacher Dashboard</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-*{
-box-sizing:border-box;
-font-family:Arial;
-}
-
-body{
-margin:0;
-background:#071426;
-color:white;
-}
-
-.sidebar{
-position:fixed;
-width:230px;
-height:100%;
-background:#101f3d;
-padding:25px;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#20e070;
-margin-bottom:40px;
-}
-
-.sidebar a{
-display:block;
-color:white;
-text-decoration:none;
-padding:15px 0;
-}
-
-.main{
-margin-left:230px;
-padding:25px;
-}
-
-.search{
-display:flex;
-gap:15px;
-}
-
-input{
-padding:15px;
-width:70%;
-border-radius:8px;
-border:none;
-}
-
-button{
-background:#20e070;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-cursor:pointer;
-}
-
-.welcome{
-background:#172b52;
-padding:25px;
-border-radius:20px;
-margin-top:25px;
-}
-
-.cards{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-margin-top:25px;
-}
-
-.card{
-background:#172b52;
-padding:25px;
-border-radius:20px;
-width:280px;
-}
-
-h1,h2{
-color:#20e070;
-}
-
-@media(max-width:700px){
-.sidebar{
-width:120px;
-}
-.main{
-margin-left:120px;
-}
-.card{
-width:100%;
-}
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="sidebar">
-
-<div class="logo">🎓 AI Teacher</div>
-
-<a href="index.html">🏠 Home</a>
-<a href="#notes">📚 Notes</a>
-<a href="senior-one.html">📘 Senior One</a>
-<a href="senior-two.html">📗 Senior Two</a>
-<a href="senior-three.html">📙 Senior Three</a>
-<a href="#ai">🤖 AI Teacher</a>
-<a href="#search">🔎 Search</a>
-<a href="#contact">☎ Contact</a>
-
-</div>
-
-
-<div class="main">
-
-<div class="search">
-<input placeholder="Search notes...">
-<button>WhatsApp</button>
-</div>
-
-
-<div class="welcome">
-
-<h1>Welcome to AI Teacher</h1>
-
-<p>
-Learn Mathematics and Science from Senior One to Senior Three
-</p>
-
-<button>Start Learning</button>
-
-</div>
-
-
-<h2>📚 Browse Notes</h2>
-
-
-<div class="cards" id="notes">
-
+<section id="notes">
+<h2>📚 Notes</h2>
 
 <div class="card">
-
-<h2>Senior One</h2>
-
-<p>
-Mathematics<br>
-Science
-</p>
-
-<a href="senior-one.html">
-<button>View Notes</button>
-</a>
-
+<h2>📘 Senior One Notes</h2>
+<a href="#senior-one">Open Senior One Notes</a>
 </div>
-
-
 
 <div class="card">
-
-<h2>Senior Two</h2>
-
-<p>
-Mathematics<br>
-Physics<br>
-Chemistry<br>
-Biology
-</p>
-
-<a href="senior-two.html">
-<button>View Notes</button>
-</a>
-
+<h2>📗 Senior Two Notes</h2>
+<a href="#senior-two">Open Senior Two Notes</a>
 </div>
-
-
 
 <div class="card">
-
-<h2>Senior Three</h2>
-
-<p>
-Mathematics<br>
-Physics<br>
-Chemistry<br>
-Biology
-</p>
-
-<a href="senior-three.html">
-<button>View Notes</button>
-</a>
-
+<h2>📙 Senior Three Notes</h2>
+<a href="#senior-three">Open Senior Three Notes</a>
 </div>
 
 
+<div id="senior-one">
+<h1>📘 Senior One</h1>
+<h3>Mathematics</h3>
+<p>Senior One Mathematics Notes</p>
+<h3>Science</h3>
+<p>Senior One Science Notes</p>
 </div>
 
 
-
-<div class="welcome">
-
-<h2>🤖 AI Teacher Assistant</h2>
-
-<input placeholder="Ask your question">
-
-<button>Ask</button>
-
+<div id="senior-two">
+<h1>📗 Senior Two</h1>
+<h3>Mathematics</h3>
+<p>Senior Two Mathematics Notes</p>
+<h3>Physics</h3>
+<p>Senior Two Physics Notes</p>
+<h3>Chemistry</h3>
+<p>Senior Two Chemistry Notes</p>
+<h3>Biology</h3>
+<p>Senior Two Biology Notes</p>
 </div>
 
 
+<div id="senior-three">
+<h1>📙 Senior Three</h1>
+<h3>Mathematics</h3>
+<p>Senior Three Mathematics Notes</p>
+<h3>Physics</h3>
+<p>Senior Three Physics Notes</p>
+<h3>Chemistry</h3>
+<p>Senior Three Chemistry Notes</p>
+<h3>Biology</h3>
+<p>Senior Three Biology Notes</p>
 </div>
 
-</body>
-</html>
+</section>
