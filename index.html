@@ -2,31 +2,78 @@
 <html>
 <head>
 <title>AI Teacher Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+font-family:Arial;
+background:#f2f5f9;
+padding:20px;
+}
+.card{
+background:white;
+padding:20px;
+margin:10px;
+border-radius:10px;
+}
+button{
+background:#003b7a;
+color:white;
+padding:10px;
+border:0;
+border-radius:5px;
+}
+</style>
 </head>
 
 <body>
 
+<div class="card">
 <h1>🎓 AI Teacher Learning Dashboard</h1>
+<p>Senior 1 - Senior 3 Mathematics & Science</p>
+</div>
 
-<p>Senior 1 - Senior 3 | Mathematics & Science</p>
-
+<div class="card">
+<h2>Senior One</h2>
 <button onclick="openNotes('Senior One Mathematics')">
-Senior One Mathematics
+Open Mathematics
 </button>
+</div>
 
+<div class="card">
+<h2>Senior Two</h2>
 <button onclick="openNotes('Senior Two Physics')">
-Senior Two Physics
+Open Physics
 </button>
+</div>
 
+<div class="card">
+<h2>Senior Three</h2>
 <button onclick="openNotes('Senior Three Biology')">
-Senior Three Biology
+Open Biology
 </button>
+</div>
 
 
 <script>
 function openNotes(subject){
 
-alert("Opening " + subject);
+const pages={
+
+"Senior One Mathematics":"senior1-mathematics.html",
+
+"Senior Two Physics":"senior2-physics.html",
+
+"Senior Three Biology":"senior3-biology.html"
+
+};
+
+
+if(pages[subject]){
+window.location.href=pages[subject];
+}
+else{
+alert("Notes not found");
+}
 
 }
 </script>
