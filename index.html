@@ -1,144 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>AI Teacher Dashboard</title>
-
-<style>
-body{
- margin:0;
- font-family:Arial, sans-serif;
- background:#f3f6ff;
-}
-
-.sidebar{
- position:fixed;
- width:170px;
- height:100vh;
- background:white;
- padding:20px;
- box-shadow:2px 0 10px #ddd;
-}
-
-.logo{
- color:#1769ff;
- font-weight:bold;
- font-size:20px;
-}
-
-.menu{
- margin-top:30px;
-}
-
-.menu p{
- margin:25px 0;
- cursor:pointer;
-}
-
-.main{
- margin-left:200px;
- padding:20px;
-}
-
-.top{
- display:flex;
- justify-content:space-between;
-}
-
-.search{
- width:280px;
- padding:12px;
- border-radius:8px;
- border:1px solid #ddd;
-}
-
-.whatsapp{
- background:#20c878;
- color:white;
- padding:12px 20px;
- border-radius:8px;
- text-decoration:none;
-}
-
-.welcome{
- margin-top:20px;
- background:#dfeaff;
- padding:30px;
- border-radius:20px;
-}
-
-.welcome h1{
- color:#1769ff;
- font-size:35px;
-}
-
-.cards{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:20px;
-}
-
-.card{
- background:white;
- padding:20px;
- border-radius:15px;
- box-shadow:0 5px 15px #ddd;
-}
-
-.card h3{
- color:#1769ff;
-}
-
-button{
- background:#1769ff;
- color:white;
- border:0;
- padding:10px;
- border-radius:8px;
-}
-
-.ai{
- margin-top:30px;
- background:#dfeaff;
- padding:25px;
- border-radius:20px;
-}
-
-.ai input{
- width:70%;
- padding:10px;
-}
-</style>
-
-</head>
-
-
-<body>
-
 <div class="sidebar">
 
-<div class="logo">🎓 AI TEACHER</div>
+<h2>🎓 AI TEACHER</h2>
 
-<div class="menu">
 <p>🏠 Home</p>
 <p>📚 All Notes</p>
-<p>➗ Mathematics</p>
-<p>🔬 Science</p>
+<p>📘 Senior One</p>
+<p>📗 Senior Two</p>
+<p>📙 Senior Three</p>
 <p>🤖 AI Teacher</p>
 <p>🔎 Search Notes</p>
 <p>☎ Contact</p>
-</div>
 
 </div>
-
 
 
 <div class="main">
 
 <div class="top">
 
-<input class="search" placeholder="Search notes...">
+<input type="text" placeholder="Search notes...">
 
-<a class="whatsapp" href="https://wa.me/250738939769">
+<a href="https://wa.me/250XXXXXXXXX" class="whatsapp">
 WhatsApp
 </a>
 
@@ -149,8 +31,11 @@ WhatsApp
 
 <h1>Welcome to AI Teacher</h1>
 
-<p>Your smart way to learn Mathematics & Science<br>
-Senior One to Senior Three</p>
+<p>
+Your smart way to learn Mathematics & Science
+<br>
+Senior One - Senior Three
+</p>
 
 <button>Start Learning</button>
 
@@ -163,59 +48,23 @@ Senior One to Senior Three</p>
 
 <div class="cards">
 
-
 <div class="card">
-<h3>Senior One Mathematics</h3>
-<p>Notes & Exercises</p>
+<h3>Senior One</h3>
+<p>Mathematics<br>Science<br>Notes & Exercises</p>
 <button>View Notes</button>
 </div>
 
 
 <div class="card">
-<h3>Senior One Science</h3>
-<p>Notes & Exercises</p>
+<h3>Senior Two</h3>
+<p>Mathematics<br>Physics<br>Chemistry<br>Biology</p>
 <button>View Notes</button>
 </div>
 
 
 <div class="card">
-<h3>Senior Two Physics</h3>
-<p>Notes & Exercises</p>
-<button>View Notes</button>
-</div>
-
-
-<div class="card">
-<h3>Senior Two Chemistry</h3>
-<p>Notes & Exercises</p>
-<button>View Notes</button>
-</div>
-
-
-<div class="card">
-<h3>Senior Two Biology</h3>
-<p>Notes & Exercises</p>
-<button>View Notes</button>
-</div>
-
-
-<div class="card">
-<h3>Senior Three Mathematics</h3>
-<p>Notes & Exercises</p>
-<button>View Notes</button>
-</div>
-
-
-<div class="card">
-<h3>Senior Three Physics</h3>
-<p>Notes & Exercises</p>
-<button>View Notes</button>
-</div>
-
-
-<div class="card">
-<h3>Senior Three Biology</h3>
-<p>Notes & Exercises</p>
+<h3>Senior Three</h3>
+<p>Mathematics<br>Physics<br>Chemistry<br>Biology</p>
 <button>View Notes</button>
 </div>
 
@@ -228,7 +77,7 @@ Senior One to Senior Three</p>
 
 <h2>🤖 AI Teacher Assistant</h2>
 
-<input placeholder="Ask your question...">
+<input placeholder="Ask AI Teacher...">
 
 <button>Ask</button>
 
@@ -236,7 +85,3 @@ Senior One to Senior Three</p>
 
 
 </div>
-
-
-</body>
-</html>
