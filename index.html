@@ -1,913 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S2 Chemistry - Mr-dev AI Learning</title>
-
+<title>Senior Two Biology Notes</title>
 <style>
-*{box-sizing:border-box}
-
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#071426;
+  font-family: Arial;
+  background:#07182f;
   color:white;
-}
-
-header{
-  background:#0d1d35;
-  padding:25px 15px;
-  text-align:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-header h1{
-  color:#25e878;
-  margin:0 0 8px;
-}
-
-header p{
-  color:#cbd5e1;
-}
-
-#search{
-  width:95%;
-  max-width:600px;
-  padding:13px;
-  border:0;
-  border-radius:25px;
-  margin-top:10px;
-  font-size:16px;
-}
-
-.container{
-  width:94%;
-  max-width:1000px;
-  margin:25px auto;
-}
-
-.unit{
-  background:#17253b;
-  border:1px solid #29415f;
-  border-radius:18px;
-  padding:22px;
-  margin-bottom:25px;
-  box-shadow:0 6px 20px #0006;
-}
-
-.unit h2{
-  color:#25e878;
-}
-
-.unit h3{
-  color:#55b8ff;
-}
-
-.unit h4{
-  color:#facc15;
-}
-
-p,li{
-  line-height:1.7;
-  color:#e2e8f0;
-}
-
-li{
-  margin:7px 0;
-}
-
-.formula{
-  background:#081426;
-  padding:16px;
-  margin:15px 0;
-  border-radius:12px;
-  text-align:center;
-  font-size:18px;
-  color:#25e878;
-}
-
-.example{
-  background:#102b3e;
-  border-left:5px solid #25e878;
-  padding:15px;
-  margin:15px 0;
-  border-radius:10px;
-}
-
-.diagram{
-  background:#091321;
   padding:20px;
+}
+.card{
+  background:#10243f;
+  padding:20px;
+  margin:15px 0;
   border-radius:15px;
-  text-align:center;
-  margin:15px 0;
-  line-height:2;
 }
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin:15px 0;
+h1,h2{
+ color:#20e070;
 }
-
-th,td{
-  border:1px solid #40536d;
-  padding:10px;
-}
-
-th{
-  background:#203858;
-  color:#25e878;
-}
-
-td{
-  background:#101e31;
-}
-
 button{
-  background:#25c968;
-  color:white;
-  border:0;
-  padding:11px 18px;
-  border-radius:25px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.exercise{
-  background:#0b192b;
-  padding:16px;
-  border-radius:12px;
-  margin-top:20px;
-}
-
-.answer{
-  display:none;
-  color:#25e878;
-  margin-top:10px;
-}
-
-.whatsapp{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  background:#25d366;
-  color:white;
-  padding:14px 18px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 15px #0008;
-}
-
-footer{
-  text-align:center;
-  padding:30px;
-  background:#0d1d35;
-  color:#94a3b8;
-}
-
-@media(max-width:600px){
-  .unit{padding:16px}
-  table{font-size:13px}
+ background:#20e070;
+ border:none;
+ padding:10px;
+ border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>🧪 Mr-dev AI Learning</h1>
-<p>Senior Two Chemistry • Units 1–10</p>
+<h1>🧬 Mr-dev AI Learning</h1>
+<h2>Senior Two Biology (Units 1-3)</h2>
 
-<input
- id="search"
- type="text"
- placeholder="🔍 Search Chemistry..."
- onkeyup="searchUnits()"
->
-</header>
+<div class="card">
+<h2>UNIT 1: Classification of Living Organisms</h2>
 
-
-<div class="container">
-
-
-<!-- UNIT 1 -->
-
-<div class="unit">
-
-<h2>Unit 1: Chemical Bonding</h2>
-
-<h3>Meaning of Chemical Bonding</h3>
-
+<h3>Meaning of Classification</h3>
 <p>
-Chemical bonding is the force of attraction that holds atoms or ions
-together to form molecules and compounds.
+Classification is the process of grouping living organisms according to their similarities and differences.
 </p>
 
-<h3>Why Atoms Form Bonds</h3>
-
+<h3>Importance of Classification</h3>
 <ul>
-<li>To become more stable.</li>
-<li>To obtain a stable outer electron arrangement.</li>
-<li>To lower their energy.</li>
+<li>Helps identification of organisms</li>
+<li>Shows relationships between organisms</li>
+<li>Makes study of organisms easier</li>
 </ul>
 
-<h3>Types of Chemical Bonds</h3>
-
-<h4>1. Ionic Bond</h4>
-
+<h3>Taxonomic Hierarchy</h3>
 <p>
-An ionic bond is formed through transfer of electrons, usually from a
-metal to a non-metal.
+Kingdom → Phylum → Class → Order → Family → Genus → Species
 </p>
 
-<div class="diagram">
-Na → Na⁺ + e⁻
-<br>
-Cl + e⁻ → Cl⁻
-<br><br>
-Na⁺ + Cl⁻ → NaCl
-</div>
-
-<h4>2. Covalent Bond</h4>
-
-<p>
-A covalent bond is formed when atoms share electrons.
-</p>
-
-<div class="formula">
-H + H → H₂
-</div>
-
-<h4>3. Metallic Bond</h4>
-
-<p>
-Metallic bonding is the attraction between positive metal ions and
-delocalised electrons.
-</p>
-
-<table>
-<tr>
-<th>Bond</th>
-<th>Formation</th>
-<th>Example</th>
-</tr>
-<tr>
-<td>Ionic</td>
-<td>Transfer of electrons</td>
-<td>NaCl</td>
-</tr>
-<tr>
-<td>Covalent</td>
-<td>Sharing of electrons</td>
-<td>H₂O</td>
-</tr>
-<tr>
-<td>Metallic</td>
-<td>Metal ions and free electrons</td>
-<td>Cu</td>
-</tr>
-</table>
-
-<div class="exercise">
-<b>Exercise:</b>
-<p>What is a chemical bond?</p>
-<button onclick="answer(this)">Show Answer</button>
-<div class="answer">
-A chemical bond is the force of attraction that holds atoms or ions together.
-</div>
-</div>
-
-</div>
-
-
-<!-- UNIT 2 -->
-
-<div class="unit">
-
-<h2>Unit 2: Trends in Properties of Elements in the Periodic Table</h2>
-
-<h3>Periodic Table</h3>
-
-<p>
-The periodic table arranges elements according to atomic number and
-their repeating chemical properties.
-</p>
-
-<h3>Groups and Periods</h3>
-
+<h3>Five Kingdoms</h3>
 <ul>
-<li>Groups are vertical columns.</li>
-<li>Periods are horizontal rows.</li>
-</ul>
-
-<table>
-<tr>
-<th>Property</th>
-<th>Across a Period</th>
-<th>Down a Group</th>
-</tr>
-
-<tr>
-<td>Atomic radius</td>
-<td>Generally decreases</td>
-<td>Generally increases</td>
-</tr>
-
-<tr>
-<td>Ionisation energy</td>
-<td>Generally increases</td>
-<td>Generally decreases</td>
-</tr>
-
-<tr>
-<td>Metallic character</td>
-<td>Generally decreases</td>
-<td>Generally increases</td>
-</tr>
-</table>
-
-<h3>Group 1</h3>
-
-<p>
-Group 1 elements are alkali metals. Examples include lithium,
-sodium and potassium.
-</p>
-
-<div class="formula">
-Li → Na → K
-</div>
-
-<h3>Group 17</h3>
-
-<p>
-Group 17 contains halogens such as fluorine, chlorine and bromine.
-</p>
-
-<div class="exercise">
-<b>Exercise:</b>
-<p>What is a period?</p>
-<button onclick="answer(this)">Show Answer</button>
-<div class="answer">
-A period is a horizontal row in the periodic table.
-</div>
-</div>
-
-</div>
-
-
-<!-- UNIT 3 -->
-
-<div class="unit">
-
-<h2>Unit 3: Water Pollution</h2>
-
-<h3>Meaning</h3>
-
-<p>
-Water pollution is the contamination of water by harmful substances.
-</p>
-
-<h3>Causes</h3>
-
-<ul>
-<li>Industrial waste.</li>
-<li>Sewage.</li>
-<li>Agricultural chemicals.</li>
-<li>Oil spills.</li>
-<li>Plastic waste.</li>
-<li>Domestic waste.</li>
-</ul>
-
-<div class="diagram">
-🏭 Factory
-<br>↓
-<br>🧪 Waste
-<br>↓
-<br>🌊 River
-<br>↓
-<br>🐟 Aquatic organisms affected
-</div>
-
-<h3>Effects</h3>
-
-<ul>
-<li>Death of aquatic organisms.</li>
-<li>Spread of diseases.</li>
-<li>Reduction of clean water.</li>
-<li>Damage to aquatic ecosystems.</li>
-</ul>
-
-<h3>Prevention</h3>
-
-<ul>
-<li>Treat sewage before discharge.</li>
-<li>Control industrial waste.</li>
-<li>Avoid dumping plastics in water.</li>
-<li>Protect water sources.</li>
+<li>Monera</li>
+<li>Protoctista</li>
+<li>Fungi</li>
+<li>Plantae</li>
+<li>Animalia</li>
 </ul>
 
 </div>
 
 
-<!-- UNIT 4 -->
+<div class="card">
+<h2>UNIT 2: Introduction to Environmental Biology</h2>
 
-<div class="unit">
-
-<h2>Unit 4: Effective Ways of Waste Management</h2>
-
-<h3>Meaning</h3>
-
+<h3>Environment</h3>
 <p>
-Waste management involves collecting, treating, reusing, recycling
-and safely disposing of waste.
+Environment is everything surrounding living organisms, including living and non-living factors.
 </p>
 
-<h3>Methods</h3>
-
-<h4>Reduce</h4>
-<p>Reduce the amount of waste produced.</p>
-
-<h4>Reuse</h4>
-<p>Use an item more than once.</p>
-
-<h4>Recycle</h4>
-<p>Convert waste materials into useful products.</p>
-
-<h4>Composting</h4>
-<p>Convert biodegradable waste into organic manure.</p>
-
-<h4>Incineration</h4>
-<p>Controlled burning of waste at high temperature.</p>
-
-<h4>Landfill</h4>
-<p>Controlled disposal of waste in prepared areas.</p>
-
-<div class="formula">
-Reduce → Reuse → Recycle
-</div>
-
-</div>
-
-
-<!-- UNIT 5 -->
-
-<div class="unit">
-
-<h2>Unit 5: Categories of Chemical Reactions</h2>
-
-<h3>Chemical Reaction</h3>
-
-<p>
-A chemical reaction is a process in which reactants are changed into
-new substances called products.
-</p>
-
-<h4>1. Combination</h4>
-
-<div class="formula">
-2H₂ + O₂ → 2H₂O
-</div>
-
-<h4>2. Decomposition</h4>
-
-<div class="formula">
-CaCO₃ → CaO + CO₂
-</div>
-
-<h4>3. Displacement</h4>
-
-<div class="formula">
-Zn + CuSO₄ → ZnSO₄ + Cu
-</div>
-
-<h4>4. Neutralisation</h4>
-
-<div class="formula">
-HCl + NaOH → NaCl + H₂O
-</div>
-
-<h3>Signs of a Reaction</h3>
+<h3>Components of Environment</h3>
 
 <ul>
-<li>Colour change.</li>
-<li>Gas formation.</li>
-<li>Precipitate formation.</li>
-<li>Temperature change.</li>
-<li>Light production.</li>
+<li>Biotic factors: plants, animals, microorganisms</li>
+<li>Abiotic factors: water, soil, temperature, light</li>
+</ul>
+
+<h3>Ecosystem</h3>
+<p>
+An ecosystem is a community of organisms interacting with their physical environment.
+</p>
+
+</div>
+
+
+<div class="card">
+<h2>UNIT 3: Passive Movement of Substances Across Cell Membrane</h2>
+
+<h3>Diffusion</h3>
+<p>
+Diffusion is movement of particles from a region of high concentration to low concentration.
+</p>
+
+<h3>Osmosis</h3>
+<p>
+Osmosis is movement of water molecules through a selectively permeable membrane.
+</p>
+
+<h3>Factors affecting diffusion</h3>
+<ul>
+<li>Temperature</li>
+<li>Concentration difference</li>
+<li>Surface area</li>
 </ul>
 
 </div>
 
 
-<!-- UNIT 6 -->
+<div class="card">
+<h2>Exercise</h2>
 
-<div class="unit">
+<p>1. Define classification.</p>
+<p>2. Mention five kingdoms.</p>
+<p>3. What is an ecosystem?</p>
+<p>4. Define diffusion.</p>
 
-<h2>Unit 6: Preparation and Identification of Salts</h2>
-
-<h3>Meaning of Salt</h3>
-
-<p>
-A salt is an ionic compound formed when hydrogen ions in an acid are
-replaced by metal ions or ammonium ions.
-</p>
-
-<h3>Preparation</h3>
-
-<h4>Acid + Metal</h4>
-
-<div class="formula">
-Mg + 2HCl → MgCl₂ + H₂
-</div>
-
-<h4>Acid + Base</h4>
-
-<div class="formula">
-HCl + NaOH → NaCl + H₂O
-</div>
-
-<h4>Acid + Carbonate</h4>
-
-<div class="formula">
-CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂
-</div>
-
-<h3>Identification</h3>
-
-<table>
-<tr>
-<th>Ion</th>
-<th>Test</th>
-<th>Observation</th>
-</tr>
-
-<tr>
-<td>Cl⁻</td>
-<td>Silver nitrate</td>
-<td>White precipitate</td>
-</tr>
-
-<tr>
-<td>SO₄²⁻</td>
-<td>Barium solution</td>
-<td>White precipitate</td>
-</tr>
-
-<tr>
-<td>CO₃²⁻</td>
-<td>Dilute acid</td>
-<td>Carbon dioxide gas</td>
-</tr>
-</table>
+<button>Show Answers</button>
 
 </div>
-
-
-<!-- UNIT 7 -->
-
-<div class="unit">
-
-<h2>Unit 7: Mole Concept</h2>
-
-<h3>Meaning of Mole</h3>
-
-<p>
-A mole is an amount of substance containing approximately
-6.02 × 10²³ particles.
-</p>
-
-<div class="formula">
-Nₐ = 6.02 × 10²³ mol⁻¹
-</div>
-
-<h3>Number of Moles</h3>
-
-<div class="formula">
-n = m / M
-</div>
-
-<p>
-n = number of moles<br>
-m = mass in grams<br>
-M = molar mass in g/mol
-</p>
-
-<div class="example">
-
-<b>Example:</b>
-
-<p>
-Find the number of moles in 18 g of H₂O.
-</p>
-
-<p>
-Molar mass of H₂O = 18 g/mol
-</p>
-
-<div class="formula">
-n = 18 / 18 = 1 mol
-</div>
-
-</div>
-
-<h3>Number of Particles</h3>
-
-<div class="formula">
-Particles = n × 6.02 × 10²³
-</div>
-
-</div>
-
-
-<!-- UNIT 8 -->
-
-<div class="unit">
-
-<h2>Unit 8: Oxides</h2>
-
-<h3>Meaning</h3>
-
-<p>
-An oxide is a compound formed when oxygen combines with another element.
-</p>
-
-<table>
-<tr>
-<th>Type</th>
-<th>Example</th>
-</tr>
-
-<tr>
-<td>Basic oxide</td>
-<td>MgO</td>
-</tr>
-
-<tr>
-<td>Acidic oxide</td>
-<td>CO₂</td>
-</tr>
-
-<tr>
-<td>Amphoteric oxide</td>
-<td>Al₂O₃</td>
-</tr>
-
-<tr>
-<td>Neutral oxide</td>
-<td>CO</td>
-</tr>
-</table>
-
-<h3>Formation</h3>
-
-<div class="formula">
-2Mg + O₂ → 2MgO
-</div>
-
-<div class="formula">
-CO₂ + H₂O → H₂CO₃
-</div>
-
-</div>
-
-
-<!-- UNIT 9 -->
-
-<div class="unit">
-
-<h2>Unit 9: Electrolysis and Non-electrolysis</h2>
-
-<h3>Electrolysis</h3>
-
-<p>
-Electrolysis is the decomposition of an ionic substance using electrical energy.
-</p>
-
-<h3>Main Parts</h3>
-
-<ul>
-<li>Electrolyte.</li>
-<li>Anode.</li>
-<li>Cathode.</li>
-<li>Power source.</li>
-<li>Connecting wires.</li>
-</ul>
-
-<div class="diagram">
-
-🔋 Battery
-<br><br>
-
-<strong>+</strong> → ANODE | ELECTROLYTE | CATHODE ← <strong>−</strong>
-
-<br><br>
-
-Anions → Anode
-<br>
-Cations → Cathode
-
-</div>
-
-<h3>Electrolysis of Water</h3>
-
-<div class="formula">
-2H₂O → 2H₂ + O₂
-</div>
-
-<h3>Electrolytes</h3>
-
-<p>
-Electrolytes conduct electricity in molten or aqueous form because they
-contain mobile ions.
-</p>
-
-<h3>Non-electrolytes</h3>
-
-<p>
-Non-electrolytes do not produce mobile ions and therefore do not conduct
-electricity in solution.
-</p>
-
-<h3>Applications</h3>
-
-<ul>
-<li>Electroplating.</li>
-<li>Extraction of metals.</li>
-<li>Purification of metals.</li>
-</ul>
-
-</div>
-
-
-<!-- UNIT 10 -->
-
-<div class="unit">
-
-<h2>Unit 10: Organic Chemistry</h2>
-
-<h3>Meaning</h3>
-
-<p>
-Organic chemistry is the study of carbon compounds.
-</p>
-
-<h3>Hydrocarbons</h3>
-
-<p>
-Hydrocarbons are compounds containing only carbon and hydrogen.
-</p>
-
-<table>
-<tr>
-<th>Family</th>
-<th>Main Bond</th>
-<th>Example</th>
-</tr>
-
-<tr>
-<td>Alkanes</td>
-<td>Single bond</td>
-<td>CH₄</td>
-</tr>
-
-<tr>
-<td>Alkenes</td>
-<td>Double bond</td>
-<td>C₂H₄</td>
-</tr>
-
-<tr>
-<td>Alkynes</td>
-<td>Triple bond</td>
-<td>C₂H₂</td>
-</tr>
-</table>
-
-<h3>Alkanes</h3>
-
-<p>
-Alkanes are saturated hydrocarbons.
-</p>
-
-<div class="formula">
-CₙH₂ₙ₊₂
-</div>
-
-<p>
-Examples: CH₄, C₂H₆, C₃H₈
-</p>
-
-<h3>Alkenes</h3>
-
-<p>
-Alkenes are unsaturated hydrocarbons containing a carbon-carbon double bond.
-</p>
-
-<div class="formula">
-CₙH₂ₙ
-</div>
-
-<p>
-Example: C₂H₄ (ethene)
-</p>
-
-<h3>Alkynes</h3>
-
-<p>
-Alkynes contain a carbon-carbon triple bond.
-</p>
-
-<div class="formula">
-CₙH₂ₙ₋₂
-</div>
-
-<p>
-Example: C₂H₂ (ethyne)
-</p>
-
-<h3>Uses</h3>
-
-<ul>
-<li>Fuels.</li>
-<li>Plastics.</li>
-<li>Medicines.</li>
-<li>Solvents.</li>
-<li>Manufacturing materials.</li>
-</ul>
-
-<div class="exercise">
-<b>Exercise:</b>
-<p>What is a hydrocarbon?</p>
-<button onclick="answer(this)">Show Answer</button>
-<div class="answer">
-A hydrocarbon is a compound containing only carbon and hydrogen.
-</div>
-</div>
-
-</div>
-
-
-</div>
-
-
-<a
-class="whatsapp"
-href="https://wa.me/250738939769"
-target="_blank">
-💬 WhatsApp
-</a>
-
-
-<footer>
-🧪 Mr-dev AI Learning<br>
-Senior Two Chemistry • Units 1–10
-</footer>
-
-
-<script>
-
-function answer(button){
-
-  const box = button.nextElementSibling;
-
-  if(box.style.display === "block"){
-    box.style.display = "none";
-    button.innerText = "Show Answer";
-  }else{
-    box.style.display = "block";
-    button.innerText = "Hide Answer";
-  }
-
-}
-
-
-function searchUnits(){
-
-  const value =
-  document.getElementById("search")
-  .value
-  .toLowerCase();
-
-  const units =
-  document.querySelectorAll(".unit");
-
-  units.forEach(function(unit){
-
-    const text =
-    unit.innerText.toLowerCase();
-
-    unit.style.display =
-    text.includes(value) ? "block" : "none";
-
-  });
-
-}
-
-</script>
 
 </body>
-    </html>
+</html>
