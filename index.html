@@ -1,317 +1,490 @@
-<!-- =================================
- DASHBOARD PART 3
- AI TEACHER + SEARCH + STUDENT AREA
-================================= -->
+<!-- =========================================
+     DASHBOARD PART 4
+     COMPLETE NOTES NAVIGATION
+     SENIOR 1 - SENIOR 3
+========================================= -->
 
+<section class="complete-dashboard">
 
-<section class="part3-dashboard">
+    <div class="dashboard-header">
+        <h1>🎓 AI Teacher Learning Dashboard</h1>
+        <p>Senior 1 – Senior 3 | Mathematics & Science</p>
+    </div>
 
+    <!-- STATISTICS -->
+    <div class="stats">
 
-<h1>🚀 Learning Dashboard</h1>
+        <div class="stat-card">
+            <span>🎓</span>
+            <h2>3</h2>
+            <p>Senior Classes</p>
+        </div>
 
+        <div class="stat-card">
+            <span>📚</span>
+            <h2>10+</h2>
+            <p>Subjects</p>
+        </div>
 
+        <div class="stat-card">
+            <span>📝</span>
+            <h2>Completed</h2>
+            <p>Notes</p>
+        </div>
 
-<!-- AI TEACHER -->
+        <div class="stat-card">
+            <span>🤖</span>
+            <h2>AI</h2>
+            <p>Teacher</p>
+        </div>
 
-<div class="box">
+    </div>
 
-<h2>🤖 AI Teacher</h2>
 
-<p>
-Ask any question about Mathematics and Science.
-</p>
+    <!-- SEARCH -->
+    <div class="search-area">
 
+        <h2>🔍 Search Notes</h2>
 
-<input 
-id="question"
-placeholder="Ask AI Teacher...">
+        <input
+            type="text"
+            id="noteSearch"
+            placeholder="Search Mathematics, Physics, Chemistry..."
+            onkeyup="searchDashboardNotes()"
+        >
 
+    </div>
 
-<button onclick="askAI()">
-Ask Question
-</button>
 
+    <!-- SENIOR 1 -->
+    <div class="class-section">
 
-<p id="answer"></p>
+        <h2>🎓 Senior One</h2>
 
+        <div class="subject-grid">
 
-</div>
+            <div class="subject-card searchable">
+                <h3>📐 Mathematics</h3>
+                <p>Senior One Mathematics Notes</p>
 
+                <button onclick="openNotes('Senior One Mathematics')">
+                    Open Notes
+                </button>
+            </div>
 
+            <div class="subject-card searchable">
+                <h3>🔬 Science</h3>
+                <p>Senior One Science Notes</p>
 
+                <button onclick="openNotes('Senior One Science')">
+                    Open Notes
+                </button>
+            </div>
 
-<!-- SEARCH NOTES -->
+        </div>
 
-<div class="box">
+    </div>
 
-<h2>🔍 Search Notes</h2>
 
+    <!-- SENIOR 2 -->
+    <div class="class-section">
 
-<input 
-id="search"
-placeholder="Search subject or unit..."
-onkeyup="searchNotes()">
+        <h2>🎓 Senior Two</h2>
 
+        <div class="subject-grid">
 
+            <div class="subject-card searchable">
+                <h3>📐 Mathematics</h3>
+                <p>Senior Two Mathematics Notes</p>
 
-<ul id="notes">
+                <button onclick="openNotes('Senior Two Mathematics')">
+                    Open Notes
+                </button>
+            </div>
 
+            <div class="subject-card searchable">
+                <h3>⚡ Physics</h3>
+                <p>Senior Two Physics Notes</p>
 
-<li>
-Senior One Mathematics Notes
-</li>
+                <button onclick="openNotes('Senior Two Physics')">
+                    Open Notes
+                </button>
+            </div>
 
+            <div class="subject-card searchable">
+                <h3>⚗️ Chemistry</h3>
+                <p>Senior Two Chemistry Notes</p>
 
-<li>
-Senior Two Physics Unit 1-13
-</li>
+                <button onclick="openNotes('Senior Two Chemistry')">
+                    Open Notes
+                </button>
+            </div>
 
+            <div class="subject-card searchable">
+                <h3>🧬 Biology</h3>
+                <p>Senior Two Biology Notes</p>
 
-<li>
-Senior Three Chemistry Notes
-</li>
+                <button onclick="openNotes('Senior Two Biology')">
+                    Open Notes
+                </button>
+            </div>
 
+        </div>
 
-<li>
-Senior Three Biology Notes
-</li>
+    </div>
 
 
-<li>
-Senior Three Mathematics Notes
-</li>
+    <!-- SENIOR 3 -->
+    <div class="class-section">
 
+        <h2>🎓 Senior Three</h2>
 
-</ul>
+        <div class="subject-grid">
 
+            <div class="subject-card searchable">
+                <h3>📐 Mathematics</h3>
+                <p>Senior Three Mathematics Notes</p>
 
-</div>
+                <button onclick="openNotes('Senior Three Mathematics')">
+                    Open Notes
+                </button>
+            </div>
 
+            <div class="subject-card searchable">
+                <h3>⚡ Physics</h3>
+                <p>Senior Three Physics Notes</p>
 
+                <button onclick="openNotes('Senior Three Physics')">
+                    Open Notes
+                </button>
+            </div>
 
+            <div class="subject-card searchable">
+                <h3>⚗️ Chemistry</h3>
+                <p>Senior Three Chemistry Notes</p>
 
+                <button onclick="openNotes('Senior Three Chemistry')">
+                    Open Notes
+                </button>
+            </div>
 
-<!-- DOWNLOAD -->
+            <div class="subject-card searchable">
+                <h3>🧬 Biology</h3>
+                <p>Senior Three Biology Notes</p>
 
-<div class="box">
+                <button onclick="openNotes('Senior Three Biology')">
+                    Open Notes
+                </button>
+            </div>
 
-<h2>📥 Download Notes</h2>
+        </div>
 
+    </div>
 
-<p>
-Choose notes and download for offline learning.
-</p>
 
+    <!-- AI TEACHER -->
+    <div class="ai-teacher">
 
-<button onclick="downloadNotes()">
-Download Notes
-</button>
+        <h2>🤖 AI Teacher</h2>
 
+        <p>
+            Ask questions about Mathematics, Physics, Chemistry or Biology.
+        </p>
 
-</div>
+        <button onclick="openAITeacher()">
+            Ask AI Teacher
+        </button>
 
+    </div>
 
 
+    <!-- WHATSAPP -->
+    <div class="whatsapp-box">
 
+        <h2>📱 Need Help?</h2>
 
-<!-- STUDENT ACCOUNT -->
+        <p>Contact us on WhatsApp</p>
 
-<div class="box">
+        <a
+            href="https://wa.me/250738939769"
+            target="_blank"
+        >
+            <button class="whatsapp-button">
+                Chat on WhatsApp
+            </button>
+        </a>
 
-<h2>👨‍🎓 Student Account</h2>
-
-
-<input placeholder="Student Name">
-
-
-<input placeholder="Class">
-
-
-<button onclick="registerStudent()">
-Create Account
-</button>
-
-
-<p id="studentMessage"></p>
-
-
-</div>
-
-
+    </div>
 
 </section>
 
 
-
-
-
 <style>
 
+/* MAIN DASHBOARD */
 
-.part3-dashboard{
-
-padding:25px;
-background:#f4f8ff;
-
+.complete-dashboard {
+    padding: 25px;
+    background: #f4f7fc;
+    font-family: Arial, sans-serif;
 }
 
 
+/* HEADER */
 
-.box{
+.dashboard-header {
+    background: linear-gradient(135deg, #004aad, #0077ff);
+    color: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-background:white;
-
-padding:20px;
-
-margin:20px 0;
-
-border-radius:15px;
-
-box-shadow:0 3px 10px #ccc;
-
+.dashboard-header h1 {
+    margin-bottom: 8px;
 }
 
 
+/* STATISTICS */
 
-.box h2{
+.stats {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
 
-color:#004aad;
+    gap: 18px;
+    margin-bottom: 30px;
+}
 
+.stat-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.stat-card span {
+    font-size: 30px;
+}
+
+.stat-card h2 {
+    color: #004aad;
+    margin: 10px 0;
 }
 
 
+/* SEARCH */
 
-.box input{
+.search-area {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
 
-width:90%;
-
-padding:14px;
-
-margin:8px;
-
-border-radius:10px;
-
-border:1px solid #aaa;
-
+.search-area input {
+    width: 90%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 
+/* CLASS */
 
-button{
+.class-section {
+    margin-bottom: 35px;
+}
 
-background:#004aad;
-
-color:white;
-
-padding:12px 20px;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
+.class-section > h2 {
+    color: #004aad;
 }
 
 
+/* SUBJECT GRID */
 
-li{
+.subject-grid {
+    display: grid;
 
-padding:10px;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
 
-background:#eef5ff;
-
-margin:5px;
-
-border-radius:8px;
-
+    gap: 18px;
 }
 
+
+/* SUBJECT CARD */
+
+.subject-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.subject-card h3 {
+    color: #004aad;
+}
+
+
+/* BUTTON */
+
+button {
+    background: #004aad;
+    color: white;
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00347a;
+}
+
+
+/* AI TEACHER */
+
+.ai-teacher {
+    margin-top: 30px;
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* WHATSAPP */
+
+.whatsapp-box {
+    margin-top: 20px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.whatsapp-button {
+    background: #128c7e;
+}
+
+.whatsapp-button:hover {
+    background: #075e54;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .complete-dashboard {
+        padding: 12px;
+    }
+
+    .dashboard-header {
+        padding: 22px 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+    .search-area input {
+        width: 85%;
+    }
+
+}
 
 </style>
 
 
-
-
-
 <script>
 
+/* ===============================
+   SEARCH NOTES
+================================ */
 
-function askAI(){
+function searchDashboardNotes() {
 
-let question =
-document.getElementById("question").value;
+    const search =
+        document
+        .getElementById("noteSearch")
+        .value
+        .toLowerCase();
 
+    const cards =
+        document.querySelectorAll(".searchable");
 
-document.getElementById("answer").innerHTML =
-"🤖 AI Teacher: I will help you with " + question;
+    cards.forEach(function(card) {
 
+        const text =
+            card.innerText.toLowerCase();
 
-}
+        if (text.includes(search)) {
 
+            card.style.display = "block";
 
+        } else {
 
-function searchNotes(){
+            card.style.display = "none";
 
+        }
 
-let input =
-document.getElementById("search")
-.value.toLowerCase();
-
-
-let notes =
-document.querySelectorAll("#notes li");
-
-
-
-notes.forEach(function(note){
-
-
-if(note.innerHTML.toLowerCase()
-.includes(input)){
-
-
-note.style.display="block";
-
-
-}
-
-else{
-
-
-note.style.display="none";
-
+    });
 
 }
 
 
-});
+/* ===============================
+   OPEN NOTES
+================================ */
 
+function openNotes(subject) {
 
-}
-
-
-
-
-
-function downloadNotes(){
-
-alert("Notes download system coming soon");
-
+    alert(
+        "Opening " +
+        subject +
+        " Notes..."
+    );
 
 }
 
 
+/* ===============================
+   AI TEACHER
+================================ */
 
+function openAITeacher() {
 
-function registerStudent(){
-
-document.getElementById("studentMessage")
-.innerHTML =
-"✅ Student account created successfully";
-
+    alert(
+        "AI Teacher will open here."
+    );
 
 }
 
-
-</script>
+             </script>
