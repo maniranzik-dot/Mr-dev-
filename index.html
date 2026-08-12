@@ -2,37 +2,135 @@
 <html>
 <head>
 <title>AI Teacher Dashboard</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#07101f;
+    color:white;
+}
+
+.sidebar{
+    position:fixed;
+    width:220px;
+    height:100%;
+    background:#101b33;
+    padding:20px;
+}
+
+.sidebar h2{
+    color:#22d36b;
+}
+
+.sidebar a{
+    display:block;
+    padding:15px;
+    color:white;
+    text-decoration:none;
+}
+
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+.top{
+    display:flex;
+    gap:20px;
+}
+
+input{
+    padding:15px;
+    width:60%;
+    border-radius:10px;
+    border:none;
+}
+
+.whatsapp{
+    background:#22d36b;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+.welcome{
+    background:#17294d;
+    padding:30px;
+    border-radius:20px;
+    margin-top:30px;
+}
+
+.welcome h1{
+    color:#22d36b;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#14213d;
+    padding:20px;
+    border-radius:15px;
+    width:220px;
+}
+
+button{
+    background:#22d36b;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+}
+
+.ai{
+    background:#17294d;
+    padding:25px;
+    margin-top:30px;
+    border-radius:20px;
+}
+</style>
+
 </head>
 
+
 <body>
+
 
 <div class="sidebar">
 
 <h2>🎓 AI Teacher</h2>
 
 <a>🏠 Home</a>
-<a>📚 Notes</a>
+<a>📚 All Notes</a>
 <a>📘 Senior One</a>
 <a>📗 Senior Two</a>
 <a>📙 Senior Three</a>
 <a>🤖 AI Teacher</a>
+<a>🔎 Search Notes</a>
 <a>☎ Contact</a>
 
 </div>
 
 
+
 <div class="main">
 
-<div class="topbar">
+
+<div class="top">
 
 <input placeholder="Search notes...">
 
-<a href="https://wa.me/250738939769">
+<a class="whatsapp" href="https://wa.me/250738939769">
 WhatsApp
 </a>
 
 </div>
+
 
 
 <div class="welcome">
@@ -42,8 +140,9 @@ Welcome to AI Teacher
 </h1>
 
 <p>
-Learn Mathematics and Science
-from Senior One to Senior Three
+Your smart way to learn Mathematics & Science
+<br>
+Senior One - Senior Three
 </p>
 
 <button>
@@ -54,64 +153,44 @@ Start Learning
 
 
 
-<h2>📚 Classes</h2>
+<h2>📚 Browse Notes</h2>
 
 
 <div class="cards">
 
 
 <div class="card">
-
-<h3>Senior One</h3>
-
+<h2>Senior One</h2>
 <p>
 Mathematics<br>
 Science
 </p>
-
-<button>
-Open
-</button>
-
+<button>View Notes</button>
 </div>
 
 
-
 <div class="card">
-
-<h3>Senior Two</h3>
-
+<h2>Senior Two</h2>
 <p>
 Mathematics<br>
 Physics<br>
 Chemistry<br>
 Biology
 </p>
-
-<button>
-Open
-</button>
-
+<button>View Notes</button>
 </div>
 
 
 
-
 <div class="card">
-
-<h3>Senior Three</h3>
-
+<h2>Senior Three</h2>
 <p>
 Mathematics<br>
 Physics<br>
 Chemistry<br>
 Biology
 </p>
-
-<button>
-Open
-</button>
-
+<button>View Notes</button>
 </div>
 
 
@@ -121,11 +200,9 @@ Open
 
 <div class="ai">
 
-<h2>
-🤖 AI Teacher Assistant
-</h2>
+<h2>🤖 AI Teacher Assistant</h2>
 
-<input placeholder="Ask your question...">
+<input placeholder="Ask your question">
 
 <button>
 Ask
