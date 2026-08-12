@@ -1,126 +1,170 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Senior Two Physics Part 1</title>
+<title>Senior Two Physics Part 2</title>
+
 <style>
 body{
-    font-family: Arial;
-    background:#0b1b33;
-    color:white;
-    margin:20px;
+font-family:Arial;
+background:#0b1b33;
+color:white;
+padding:20px;
 }
+
 h1{
-    color:#00ff88;
+color:#00ff88;
 }
+
 .card{
-    background:#162944;
-    padding:20px;
-    margin:15px 0;
-    border-radius:15px;
+background:#162944;
+padding:20px;
+margin:15px 0;
+border-radius:15px;
 }
+
 button{
-    background:#00cc66;
-    color:white;
-    border:0;
-    padding:10px;
-    border-radius:10px;
+background:#00cc66;
+color:white;
+padding:10px;
+border:none;
+border-radius:10px;
 }
 </style>
+
 </head>
 
 <body>
 
 <h1>⚛️ Senior Two Physics</h1>
-<h2>Part 1: Unit 1 - Unit 4</h2>
+<h2>Part 2: Unit 5 - Unit 8</h2>
+
 
 <div class="card">
-<h2>Unit 1: Measurement Errors</h2>
-<p>
-Measurement is comparing an unknown quantity with a standard unit.
-</p>
-<ul>
-<li>Instrumental errors</li>
-<li>Human errors</li>
-<li>Environmental errors</li>
-</ul>
-</div>
+<h2>Unit 5: Measuring Liquid Pressure Using Manometer</h2>
 
-<div class="card">
-<h2>Unit 2: Linear Motion</h2>
 <p>
-Linear motion is movement of an object along a straight line.
-</p>
-<p>
-Formula:<br>
-Speed = Distance ÷ Time
-</p>
-
-<pre>
-Distance
-|
-|
-|________ Time
-</pre>
-
-</div>
-
-<div class="card">
-<h2>Unit 3: Pressure</h2>
-<p>
-Pressure is force acting per unit area.
+A manometer is an instrument used to measure pressure of liquids and gases.
 </p>
 
 <p>
-Formula:
+Pressure formula:
 <br>
-P = F / A
+P = hρg
 </p>
 
 <ul>
 <li>P = Pressure</li>
-<li>F = Force</li>
-<li>A = Area</li>
+<li>h = Height of liquid column</li>
+<li>ρ = Density of liquid</li>
+<li>g = Gravitational acceleration</li>
 </ul>
 
 </div>
 
+
 <div class="card">
-<h2>Unit 4: Density and Pressure in Solids and Fluids</h2>
+<h2>Unit 6: Application of Pascal's Principle</h2>
 
 <p>
-Density is mass per unit volume.
+Pascal's principle states that pressure applied to a confined fluid is transmitted equally in all directions.
 </p>
 
 <p>
 Formula:
 <br>
-Density = Mass / Volume
+F₁/A₁ = F₂/A₂
 </p>
 
+<h3>Applications</h3>
+
 <ul>
-<li>Solids have fixed shape</li>
-<li>Liquids flow</li>
-<li>Gases fill containers</li>
+<li>Hydraulic brakes</li>
+<li>Hydraulic press</li>
+<li>Hydraulic lift</li>
 </ul>
 
 </div>
 
+
 <div class="card">
-<h2>Exercise</h2>
+<h2>Unit 7: Archimedes' Principle and Atmospheric Pressure</h2>
 
-<p>What is the formula of pressure?</p>
+<p>
+Archimedes' principle states that an object immersed in a fluid experiences an upward force equal to the weight of fluid displaced.
+</p>
 
-<button onclick="answer()">Show Answer</button>
+<p>
+Upthrust = Weight of displaced fluid
+</p>
 
-<p id="ans"></p>
+<h3>Applications</h3>
+
+<ul>
+<li>Ships floating</li>
+<li>Submarines</li>
+<li>Hydrometers</li>
+</ul>
 
 </div>
 
+
+<div class="card">
+
+<h2>Unit 8: Work, Power and Energy</h2>
+
+<p>
+Work is done when a force moves an object through a distance.
+</p>
+
+<p>
+Formula:
+<br>
+Work = Force × Distance
+<br>
+W = F × d
+</p>
+
+<p>
+Power is the rate of doing work.
+</p>
+
+<p>
+Power = Work / Time
+</p>
+
+<p>
+Energy is the ability to do work.
+</p>
+
+<h3>Types of energy</h3>
+
+<ul>
+<li>Kinetic energy</li>
+<li>Potential energy</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>Exercise</h2>
+
+<p>Write the formula for pressure in a liquid.</p>
+
+<button onclick="showAnswer()">Show Answer</button>
+
+<p id="answer"></p>
+
+</div>
+
+
 <script>
-function answer(){
-document.getElementById("ans").innerHTML="P = F / A";
+function showAnswer(){
+document.getElementById("answer").innerHTML="P = hρg";
 }
 </script>
+
 
 </body>
 </html>
