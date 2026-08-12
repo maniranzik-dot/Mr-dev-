@@ -1,154 +1,595 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Senior Two Physics Part 5</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S3 Mathematics - Part 1</title>
+
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
-font-family:Arial;
-background:#0b1b33;
-color:white;
-padding:20px;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#071426;
+  color:white;
 }
-h1,h2{color:#00ff88;}
-.card{
-background:#162944;
-padding:20px;
-margin:15px;
-border-radius:15px;
+
+header{
+  background:#0d203b;
+  padding:25px 15px;
+  text-align:center;
+  border-bottom:3px solid #20d66b;
 }
+
+header h1{
+  color:#20d66b;
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  color:#cbd5e1;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.search{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:30px;
+  font-size:17px;
+  margin-bottom:20px;
+}
+
+.unit{
+  background:#10243e;
+  margin-bottom:20px;
+  padding:20px;
+  border-radius:18px;
+  border:1px solid #294563;
+}
+
+.unit h2{
+  color:#20d66b;
+}
+
+.topic{
+  color:#62b5ff;
+}
+
 .formula{
-background:#081426;
-padding:15px;
-color:#00ff88;
+  background:#071426;
+  padding:15px;
+  border-left:5px solid #20d66b;
+  margin:15px 0;
+  font-size:18px;
 }
+
+.example{
+  background:#172f4d;
+  padding:15px;
+  border-radius:10px;
+  margin:15px 0;
+}
+
+button{
+  background:#20d66b;
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.answer{
+  display:none;
+  margin-top:10px;
+  color:#8ff0b5;
+}
+
 .diagram{
-background:#203858;
-padding:15px;
-text-align:center;
-border-radius:10px;
+  background:white;
+  color:#111;
+  padding:15px;
+  text-align:center;
+  border-radius:10px;
+  margin:15px 0;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
 }
 </style>
 </head>
 
 <body>
 
-<h1>⚛️ Senior Two Physics</h1>
-<h2>Part 5: Unit 14 - Unit 15</h2>
+<header>
+  <h1>📐 Mr-dev AI Learning</h1>
+  <p>Senior Three Mathematics • Part 1 • Units 1–4</p>
+</header>
 
-<div class="card">
+<div class="container">
 
-<h2>Unit 14: Reflection of Light in Lenses</h2>
+<input
+  class="search"
+  id="search"
+  type="text"
+  placeholder="🔎 Search Mathematics..."
+  onkeyup="searchNotes()"
+>
 
+<!-- UNIT 1 -->
+
+<section class="unit">
+<h2>UNIT 1: Problems on Sets</h2>
+
+<h3 class="topic">1. Meaning of a Set</h3>
 <p>
-Reflection is the bouncing back of light when it strikes a surface.
+A set is a well-defined collection of objects. The objects are called
+<strong>elements</strong> or <strong>members</strong>.
 </p>
 
-<h3>Laws of Reflection</h3>
-
-<ul>
-<li>Angle of incidence equals angle of reflection.</li>
-<li>The incident ray, reflected ray and normal lie in the same plane.</li>
-</ul>
-
-<div class="formula">
-Angle of incidence (i) = Angle of reflection (r)
+<div class="example">
+<strong>Example:</strong><br>
+A = {1, 2, 3, 4, 5}
+<br><br>
+The elements of A are 1, 2, 3, 4 and 5.
 </div>
 
-<h3>Lenses</h3>
-
-<p>
-A lens is a transparent material that refracts light to form images.
-</p>
-
+<h3 class="topic">2. Types of Sets</h3>
 <ul>
-<li>Convex lens: converges light rays.</li>
-<li>Concave lens: diverges light rays.</li>
+<li>Empty set: ∅</li>
+<li>Finite set</li>
+<li>Infinite set</li>
+<li>Equal sets</li>
+<li>Equivalent sets</li>
+<li>Subset</li>
+<li>Universal set</li>
 </ul>
+
+<h3 class="topic">3. Union of Sets</h3>
+
+<div class="formula">
+A ∪ B = elements that are in A or B or both.
+</div>
+
+<div class="example">
+A = {1,2,3}<br>
+B = {3,4,5}<br><br>
+
+A ∪ B = {1,2,3,4,5}
+</div>
+
+<h3 class="topic">4. Intersection of Sets</h3>
+
+<div class="formula">
+A ∩ B = elements common to A and B.
+</div>
+
+<div class="example">
+A = {1,2,3}<br>
+B = {3,4,5}<br><br>
+
+A ∩ B = {3}
+</div>
 
 <div class="diagram">
-Light rays → ) ( → Focus
+<svg width="300" height="150">
+<circle cx="120" cy="75" r="55"
+fill="none" stroke="blue" stroke-width="3"/>
+<circle cx="180" cy="75" r="55"
+fill="none" stroke="green" stroke-width="3"/>
+<text x="95" y="45">A</text>
+<text x="195" y="45">B</text>
+<text x="142" y="82">A ∩ B</text>
+</svg>
+<p>Venn diagram: Intersection of A and B</p>
+</div>
+
+<h3 class="topic">5. Number of Elements</h3>
+
+<div class="formula">
+n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+</div>
+
+<div class="example">
+If n(A)=20, n(B)=15 and n(A∩B)=5:<br><br>
+n(A∪B) = 20 + 15 − 5 = <strong>30</strong>
+</div>
+
+<button onclick="showAnswer('a1')">Exercise</button>
+<div id="a1" class="answer">
+If A={2,4,6} and B={4,6,8}, find A∪B and A∩B.<br>
+<strong>Answer:</strong> A∪B={2,4,6,8}, A∩B={4,6}.
+</div>
+
+</section>
+
+
+<!-- UNIT 2 -->
+
+<section class="unit">
+<h2>UNIT 2: Number Bases</h2>
+
+<h3 class="topic">1. What is a Number Base?</h3>
+
+<p>
+A number base tells us how many different digits are used to represent
+numbers.
+</p>
+
+<ul>
+<li>Base 2 → Binary</li>
+<li>Base 5 → digits 0–4</li>
+<li>Base 10 → Decimal</li>
+<li>Base 8 → Octal</li>
+<li>Base 16 → Hexadecimal</li>
+</ul>
+
+<h3 class="topic">2. Place Value</h3>
+
+<div class="formula">
+(1011)₂ =
+1×2³ + 0×2² + 1×2¹ + 1×2⁰
+</div>
+
+<div class="example">
+= 8 + 0 + 2 + 1<br>
+= <strong>11₁₀</strong>
+</div>
+
+<h3 class="topic">3. Converting Decimal to Binary</h3>
+
+<div class="example">
+Convert 13₁₀ to base 2.
+
+<br><br>
+
+13 ÷ 2 = 6 remainder 1<br>
+6 ÷ 2 = 3 remainder 0<br>
+3 ÷ 2 = 1 remainder 1<br>
+1 ÷ 2 = 0 remainder 1
+
+<br><br>
+
+Read the remainders from bottom to top:
+
+<div class="formula">
+13₁₀ = 1101₂
+</div>
+</div>
+
+<h3 class="topic">4. Addition in Binary</h3>
+
+<div class="formula">
+0 + 0 = 0<br>
+0 + 1 = 1<br>
+1 + 0 = 1<br>
+1 + 1 = 10
+</div>
+
+<div class="example">
+&nbsp;&nbsp;1011<br>
++ 0110<br>
+────────<br>
+&nbsp;10001
+</div>
+
+<button onclick="showAnswer('a2')">Exercise</button>
+<div id="a2" class="answer">
+Convert 10101₂ to decimal.<br>
+<strong>Answer:</strong> 21₁₀.
+</div>
+
+</section>
+
+
+<!-- UNIT 3 -->
+
+<section class="unit">
+<h2>UNIT 3: Algebraic Fractions</h2>
+
+<h3 class="topic">1. Meaning</h3>
+
+<p>
+An algebraic fraction contains algebraic expressions in the numerator,
+denominator, or both.
+</p>
+
+<div class="example">
+Examples:
+<br><br>
+x/3
 <br>
-Convex lens
-</div>
-
-<h3>Applications</h3>
-<ul>
-<li>Microscopes</li>
-<li>Telescopes</li>
-<li>Eye glasses</li>
-<li>Cameras</li>
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h2>Unit 15: Basic Electronic Laws and Applications</h2>
-
-<h3>Electric Current</h3>
-
-<p>
-Electric current is the flow of electric charges through a conductor.
-</p>
-
-<div class="formula">
-I = Q/t
-</div>
-
-<p>
-I = current<br>
-Q = charge<br>
-t = time
-</p>
-
-
-<h3>Ohm's Law</h3>
-
-<p>
-At constant temperature, current flowing through a conductor is directly proportional to voltage.
-</p>
-
-<div class="formula">
-V = IR
-</div>
-
-
-<h3>Electrical Power</h3>
-
-<div class="formula">
-P = VI
-</div>
-
-
-<h3>Electronic Components</h3>
-
-<ul>
-<li>Resistor</li>
-<li>Diode</li>
-<li>Transistor</li>
-<li>Capacitor</li>
-</ul>
-
-
-<div class="diagram">
-Battery → Resistor → Bulb
+(x+2)/5
 <br>
-Simple electronic circuit
+(x²−9)/(x+3)
 </div>
 
+<h3 class="topic">2. Simplifying Algebraic Fractions</h3>
 
-<h3>Applications</h3>
+<div class="example">
+Simplify:
+<br><br>
 
-<ul>
-<li>Radios</li>
-<li>Phones</li>
-<li>Computers</li>
-<li>Television</li>
-</ul>
+(x² − 9)/(x + 3)
+
+<br><br>
+
+Factorise the numerator:
+
+x² − 9 = (x−3)(x+3)
+
+<br><br>
+
+Therefore:
+
+<div class="formula">
+[(x−3)(x+3)]/(x+3) = x−3
+</div>
+
+<strong>Answer: x − 3</strong>
+</div>
+
+<h3 class="topic">3. Addition of Algebraic Fractions</h3>
+
+<div class="example">
+
+1/x + 2/x
+
+<div class="formula">
+= 3/x
+</div>
 
 </div>
 
+<p>When denominators are different, find the lowest common denominator.</p>
+
+<div class="example">
+
+1/x + 1/2
+
+<br><br>
+
+LCD = 2x
+
+<br><br>
+
+= 2/2x + x/2x
+
+<br><br>
+
+<div class="formula">
+= (x + 2)/(2x)
+</div>
+
+</div>
+
+<h3 class="topic">4. Multiplication</h3>
+
+<div class="formula">
+(a/b) × (c/d) = ac/bd
+</div>
+
+<div class="example">
+2/3 × 9/4
+
+<br><br>
+= 18/12
+
+<br><br>
+= <strong>3/2</strong>
+</div>
+
+<h3 class="topic">5. Division</h3>
+
+<div class="formula">
+(a/b) ÷ (c/d) = (a/b) × (d/c)
+</div>
+
+<button onclick="showAnswer('a3')">Exercise</button>
+<div id="a3" class="answer">
+Simplify: (x²−4)/(x+2).<br>
+<strong>Answer:</strong> x−2, where x ≠ −2.
+</div>
+
+</section>
+
+
+<!-- UNIT 4 -->
+
+<section class="unit">
+<h2>UNIT 4: Simultaneous Linear Equations and Inequalities</h2>
+
+<h3 class="topic">1. Simultaneous Equations</h3>
+
+<p>
+These are two or more equations solved together to find values that
+satisfy all equations.
+</p>
+
+<div class="example">
+Solve:
+
+<br><br>
+x + y = 7<br>
+x − y = 1
+
+<br><br>
+
+Add the equations:
+
+<br>
+2x = 8
+
+<br><br>
+
+x = 4
+
+<br><br>
+
+Substitute into x+y=7:
+
+<br>
+4+y=7
+
+<br>
+y=3
+
+<div class="formula">
+Answer: x = 4, y = 3
+</div>
+</div>
+
+<h3 class="topic">2. Elimination Method</h3>
+
+<p>
+We add or subtract equations so that one variable disappears.
+</p>
+
+<h3 class="topic">3. Substitution Method</h3>
+
+<p>
+First make one variable the subject, then substitute it into the other
+equation.
+</p>
+
+<div class="example">
+x + y = 10<br>
+x = 10 − y
+
+<br><br>
+
+If another equation is:
+
+2x + y = 15
+
+<br><br>
+
+Substitute x:
+
+2(10−y)+y=15
+
+<br>
+20−2y+y=15
+
+<br>
+−y=−5
+
+<br>
+y=5
+
+<br>
+x=5
+</div>
+
+<h3 class="topic">4. Linear Inequalities</h3>
+
+<p>
+Inequalities use signs such as:
+</p>
+
+<div class="formula">
+&lt; &nbsp;&nbsp; &gt; &nbsp;&nbsp; ≤ &nbsp;&nbsp; ≥
+</div>
+
+<div class="example">
+Solve:
+
+2x + 3 &gt; 9
+
+<br><br>
+
+2x &gt; 6
+
+<br><br>
+
+<div class="formula">
+x &gt; 3
+</div>
+</div>
+
+<h3 class="topic">Important Rule</h3>
+
+<p>
+When multiplying or dividing an inequality by a <strong>negative number</strong>,
+reverse the inequality sign.
+</p>
+
+<div class="example">
+−2x &gt; 6
+
+<br><br>
+
+Divide by −2 and reverse the sign:
+
+<div class="formula">
+x &lt; −3
+</div>
+</div>
+
+<button onclick="showAnswer('a4')">Exercise</button>
+<div id="a4" class="answer">
+Solve: x+y=9 and x−y=3.<br>
+<strong>Answer:</strong> x=6, y=3.
+</div>
+
+</section>
+
+</div>
+
+<footer>
+📚 Mr-dev AI Learning<br>
+Senior Three Mathematics • Part 1
+</footer>
+
+<script>
+
+function showAnswer(id){
+  const element = document.getElementById(id);
+
+  if(element.style.display === "block"){
+    element.style.display = "none";
+  }else{
+    element.style.display = "block";
+  }
+}
+
+function searchNotes(){
+
+  let input =
+    document.getElementById("search").value.toLowerCase();
+
+  let units =
+    document.querySelectorAll(".unit");
+
+  units.forEach(function(unit){
+
+    let text =
+      unit.innerText.toLowerCase();
+
+    if(text.includes(input)){
+      unit.style.display = "block";
+    }else{
+      unit.style.display = "none";
+    }
+
+  });
+}
+
+</script>
 
 </body>
 </html>
