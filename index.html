@@ -1,356 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>S3 Chemistry Part 2</title>
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;font-family:Arial,sans-serif;
-  background:#071426;color:#fff;
-}
-header{
-  background:#0d1f3a;padding:28px 18px;text-align:center;
-}
-h1{color:#20df72;margin:0;font-size:32px}
-header p{font-size:18px;color:#cbd5e1}
-.search{
-  width:90%;max-width:650px;padding:15px;
-  border-radius:30px;border:0;font-size:17px;
-}
-.container{max-width:900px;margin:auto;padding:20px}
-.unit{
-  background:#12243d;border:1px solid #284566;
-  border-radius:18px;margin:18px 0;padding:20px;
-}
-h2{color:#39e57c}
-h3{color:#5db8ff}
-li{margin:10px 0;line-height:1.5}
-.card{
-  background:#09182b;padding:18px;border-radius:14px;margin-top:15px;
-}
-button{
-  background:#20df72;color:#06121f;border:0;
-  padding:12px 20px;border-radius:25px;
-  font-size:16px;font-weight:bold;cursor:pointer;
-}
-.answer{
-  display:none;margin-top:12px;
-  background:#173653;padding:14px;border-radius:10px;
-}
-.formula{
-  background:#06101d;padding:14px;border-radius:10px;
-  color:#7ee7ff;font-size:18px;margin:10px 0;
-}
-footer{text-align:center;padding:30px;color:#9fb0c5}
-</style>
-</head>
+<!-- =========================
+     SENIOR THREE CHEMISTRY
+     PART 2 — UNITS 6–11
+========================= -->
 
-<body>
+<section class="part">
+  <h1>🧪 Senior Three Chemistry — Part 2</h1>
+  <p>Units 6–11</p>
 
-<header>
-<h1>🧪 Mr-dev AI Learning</h1>
-<p>Senior Three Chemistry • Part 2 • Units 6–10</p>
-<input class="search" id="search"
-placeholder="🔎 Search Chemistry..."
-onkeyup="searchUnits()">
-</header>
+  <!-- UNIT 6 -->
+  <div class="unit">
+    <h2>Unit 6: Chemical Properties of Acids and Bases</h2>
 
-<div class="container">
+    <h3>6.1 Preparation of Acids and Bases</h3>
+    <p>
+      Acids are substances that produce hydrogen ions (H⁺) when dissolved
+      in water. Bases produce hydroxide ions (OH⁻) in aqueous solution.
+    </p>
 
-<!-- UNIT 6 -->
-<section class="unit">
-<h2>Unit 6: Chemical Properties of Acids and Bases</h2>
+    <h3>6.2 Reaction of Acids with Water and Sodium Metal</h3>
+    <p>
+      Acids react with water to form hydronium ions. Reactive metals such
+      as sodium react with water to form an alkaline solution and hydrogen gas.
+    </p>
 
-<h3>6.1 Preparation of Acids and Bases</h3>
-<ul>
-<li>Acids produce hydrogen ions (H⁺) in aqueous solution.</li>
-<li>Bases produce hydroxide ions (OH⁻) in aqueous solution.</li>
-<li>Acids can react with metals, bases and carbonates.</li>
-<li>Bases can neutralise acids.</li>
-</ul>
+    <p><b>Example:</b></p>
+    <div class="formula">
+      2Na + 2H₂O → 2NaOH + H₂
+    </div>
 
-<h3>6.2 Preparation of Hydrogen and Sodium Metal</h3>
-<ul>
-<li>Hydrogen can be prepared by reacting an active metal with a dilute acid.</li>
-<li>Example: zinc reacts with dilute hydrochloric acid.</li>
-</ul>
+    <h3>6.3 Reactions of Acids and Bases</h3>
+    <p>
+      Acids react with bases in a neutralisation reaction to form salt and water.
+    </p>
 
-<div class="formula">
-Zn + 2HCl → ZnCl₂ + H₂
-</div>
+    <div class="formula">
+      Acid + Base → Salt + Water
+    </div>
 
-<h3>6.3 Reaction of Acids and Bases</h3>
-<div class="formula">
-Acid + Base → Salt + Water
-</div>
+    <h3>6.4 Uses and Dangers of Acids and Bases</h3>
+    <ul>
+      <li>Acids are used in batteries and industries.</li>
+      <li>Bases are used in soap and detergent production.</li>
+      <li>Strong acids and bases can cause burns.</li>
+      <li>They should be handled carefully in the laboratory.</li>
+    </ul>
 
-<h3>Uses and Dangers</h3>
-<ul>
-<li>Acids are used in batteries, industries and laboratories.</li>
-<li>Bases are used in cleaning products and industry.</li>
-<li>Strong acids and bases can cause burns and should be handled carefully.</li>
-</ul>
+    <div class="card">
+      <b>Exercise:</b>
+      <p>What is neutralisation?</p>
+      <button onclick="showAnswer('ans61')">Show Answer</button>
+      <p id="ans61" class="answer">
+        Neutralisation is the reaction between an acid and a base to form
+        salt and water.
+      </p>
+    </div>
+  </div>
 
-<div class="card">
-<b>Exercise:</b>
-<p>What is neutralisation?</p>
-<button onclick="show('a1')">Show Answer</button>
-<div id="a1" class="answer">
-Neutralisation is the reaction between an acid and a base to form salt and water.
-</div>
-</div>
-</section>
 
-<!-- UNIT 7 -->
-<section class="unit">
-<h2>Unit 7: Concentration of Solutions</h2>
+  <!-- UNIT 7 -->
+  <div class="unit">
+    <h2>Unit 7: Concentration of Solutions</h2>
 
-<h3>7.1 Concept of Concentration</h3>
-<p>
-Concentration describes the amount of solute dissolved in a given volume of solution.
-</p>
+    <h3>7.1 Concept of Concentration</h3>
+    <p>
+      Concentration describes the amount of solute dissolved in a given
+      volume of solution.
+    </p>
 
-<div class="formula">
-Concentration = Amount of solute ÷ Volume of solution
-</div>
+    <div class="formula">
+      Concentration = Amount of solute / Volume of solution
+    </div>
 
-<h3>7.2 Preparation of Solutions</h3>
-<ul>
-<li>Measure the required mass of solute.</li>
-<li>Dissolve it in a small amount of distilled water.</li>
-<li>Transfer the solution into a volumetric flask.</li>
-<li>Add water up to the required volume.</li>
-<li>Mix thoroughly.</li>
-</ul>
+    <h3>7.2 Preparation of Solutions</h3>
+    <p>
+      A solution can be prepared by dissolving a known amount of solute
+      in a known volume of solvent.
+    </p>
 
-<h3>7.3 Acids and Titrations</h3>
-<p>
-Titration is used to determine the concentration of an unknown solution
-using a solution of known concentration.
-</p>
+    <h3>7.3 Acids and Titrations</h3>
+    <p>
+      Titration is a laboratory method used to determine the concentration
+      of an unknown solution by reacting it with a solution of known
+      concentration.
+    </p>
 
-<div class="formula">
-C₁V₁ = C₂V₂
-</div>
+    <div class="formula">
+      M₁V₁ = M₂V₂
+    </div>
 
-<div class="card">
-<b>Exercise:</b>
-<p>What is a solution?</p>
-<button onclick="show('a2')">Show Answer</button>
-<div id="a2" class="answer">
-A solution is a homogeneous mixture of a solute and a solvent.
-</div>
-</div>
-</section>
+    <div class="card">
+      <b>Exercise:</b>
+      <p>What is a solution?</p>
+      <button onclick="showAnswer('ans71')">Show Answer</button>
+      <p id="ans71" class="answer">
+        A solution is a homogeneous mixture of a solute and a solvent.
+      </p>
+    </div>
+  </div>
 
-<!-- UNIT 8 -->
-<section class="unit">
-<h2>Unit 8: Electrolysis and Its Applications</h2>
 
-<h3>8.1 Introduction to Oxidation-Reduction Reactions</h3>
-<ul>
-<li>Oxidation is loss of electrons.</li>
-<li>Reduction is gain of electrons.</li>
-<li>Oxidation and reduction occur together in redox reactions.</li>
-</ul>
+  <!-- UNIT 8 -->
+  <div class="unit">
+    <h2>Unit 8: Electrolysis and Its Applications</h2>
 
-<div class="formula">
-OIL RIG: Oxidation Is Loss, Reduction Is Gain
-</div>
+    <h3>8.1 Introduction to Oxidation-Reduction Reactions</h3>
+    <p>
+      Oxidation is the loss of electrons, while reduction is the gain
+      of electrons.
+    </p>
 
-<h3>8.2 Electrolysis of Solutions</h3>
-<p>
-Electrolysis is the chemical decomposition of an ionic compound
-using electricity.
-</p>
+    <div class="formula">
+      OIL = Oxidation Is Loss<br>
+      RIG = Reduction Is Gain
+    </div>
 
-<ul>
-<li>Anode: positive electrode in an electrolytic cell.</li>
-<li>Cathode: negative electrode in an electrolytic cell.</li>
-<li>Cations move towards the cathode.</li>
-<li>Anions move towards the anode.</li>
-</ul>
+    <h3>8.2 Electrolysis of Solutions</h3>
+    <p>
+      Electrolysis is the chemical decomposition of an ionic compound
+      using electricity.
+    </p>
 
-<h3>8.3 Electrolysis of Molten Compounds</h3>
-<p>
-Molten ionic compounds contain freely moving ions and can conduct
-electricity.
-</p>
+    <h3>8.3 Electrolysis of Molten Compounds</h3>
+    <p>
+      Molten ionic compounds contain freely moving ions and can conduct
+      electricity. Positive ions move toward the cathode and negative
+      ions move toward the anode.
+    </p>
 
-<h3>8.4 Applications of Electrolysis</h3>
-<ul>
-<li>Electroplating</li>
-<li>Extraction of metals</li>
-<li>Purification of metals</li>
-<li>Manufacture of chemicals</li>
-</ul>
+    <h3>8.4 Applications of Electrolysis</h3>
+    <ul>
+      <li>Electroplating</li>
+      <li>Extraction of metals</li>
+      <li>Purification of metals</li>
+      <li>Manufacture of chemicals</li>
+    </ul>
 
-<div class="card">
-<b>Exercise:</b>
-<p>What happens at the cathode?</p>
-<button onclick="show('a3')">Show Answer</button>
-<div id="a3" class="answer">
-Reduction occurs at the cathode because positive ions gain electrons.
-</div>
-</div>
-</section>
+    <div class="card">
+      <b>Exercise:</b>
+      <p>What is electrolysis?</p>
+      <button onclick="showAnswer('ans81')">Show Answer</button>
+      <p id="ans81" class="answer">
+        Electrolysis is the decomposition of an ionic compound using
+        electrical energy.
+      </p>
+    </div>
+  </div>
 
-<!-- UNIT 9 -->
-<section class="unit">
-<h2>Unit 9: Structure and Properties of Alkenes and Alcohols</h2>
 
-<h3>9.1 Nomenclature of Alkenes</h3>
-<p>
-Alkenes are unsaturated hydrocarbons containing at least one carbon-carbon
-double bond.
-</p>
+  <!-- UNIT 9 -->
+  <div class="unit">
+    <h2>Unit 9: Structure and Properties of Alkenes and Alcohols</h2>
 
-<div class="formula">
-General formula of alkenes: CₙH₂ₙ
-</div>
+    <h3>9.1 Nomenclature of Alkenes and Their Structures</h3>
+    <p>
+      Alkenes are unsaturated hydrocarbons containing at least one
+      carbon-carbon double bond.
+    </p>
 
-<ul>
-<li>Ethene: C₂H₄</li>
-<li>Propene: C₃H₆</li>
-<li>Butene: C₄H₈</li>
-</ul>
+    <div class="formula">
+      General formula of alkenes: CₙH₂ₙ
+    </div>
 
-<h3>9.2 Sources of Alkenes</h3>
-<p>
-Alkenes can be obtained from petroleum and by cracking larger hydrocarbons.
-</p>
+    <h3>9.2 Sources of Alkenes</h3>
+    <p>
+      Alkenes can be obtained from the cracking of large hydrocarbon
+      molecules.
+    </p>
 
-<h3>9.3 Properties of Alkenes</h3>
-<ul>
-<li>They undergo addition reactions.</li>
-<li>They can decolourise bromine water.</li>
-<li>They are generally flammable.</li>
-</ul>
+    <h3>9.3 Properties of Alkenes</h3>
+    <ul>
+      <li>They contain a carbon-carbon double bond.</li>
+      <li>They are generally more reactive than alkanes.</li>
+      <li>They undergo addition reactions.</li>
+      <li>They can be used to manufacture polymers.</li>
+    </ul>
 
-<h3>9.4 Uses of Alkenes</h3>
-<ul>
-<li>Manufacture of plastics</li>
-<li>Production of alcohols</li>
-<li>Manufacture of chemicals</li>
-</ul>
+    <h3>9.4 Uses of Alkenes</h3>
+    <ul>
+      <li>Manufacture of plastics</li>
+      <li>Production of alcohols</li>
+      <li>Production of other chemicals</li>
+    </ul>
 
-<h3>9.5 Nomenclature and Structure of Alcohols</h3>
-<p>
-Alcohols contain the hydroxyl functional group (–OH).
-</p>
+    <h3>9.5 Structure of Alcohols</h3>
+    <p>
+      Alcohols are organic compounds containing a hydroxyl group (–OH).
+    </p>
 
-<ul>
-<li>Methanol: CH₃OH</li>
-<li>Ethanol: C₂H₅OH</li>
-<li>Propanol: C₃H₇OH</li>
-</ul>
+    <h3>9.6 Preparation of Alcohols</h3>
+    <p>
+      Alcohols can be prepared by fermentation of sugars or by hydration
+      of alkenes.
+    </p>
 
-<h3>9.6 Preparation of Alcohols</h3>
-<p>
-Ethanol can be prepared by fermentation of sugars.
-</p>
+    <h3>9.7 Properties of Alcohols</h3>
+    <ul>
+      <li>Many alcohols are soluble in water.</li>
+      <li>They are useful solvents.</li>
+      <li>They can burn to produce heat.</li>
+    </ul>
 
-<div class="formula">
-Glucose → Ethanol + Carbon dioxide
-</div>
+    <h3>9.8 Uses and Misuse of Alcohol</h3>
+    <ul>
+      <li>Used as solvents.</li>
+      <li>Used as fuels.</li>
+      <li>Used in some medicines and disinfectants.</li>
+      <li>Excessive consumption can cause health and social problems.</li>
+    </ul>
 
-<h3>9.7 Properties of Alcohols</h3>
-<ul>
-<li>Many alcohols are flammable.</li>
-<li>Lower alcohols are soluble in water.</li>
-<li>They can be oxidised to other compounds.</li>
-</ul>
+    <div class="card">
+      <b>Exercise:</b>
+      <p>What is an alkene?</p>
+      <button onclick="showAnswer('ans91')">Show Answer</button>
+      <p id="ans91" class="answer">
+        An alkene is an unsaturated hydrocarbon containing a carbon-carbon
+        double bond.
+      </p>
+    </div>
+  </div>
 
-<h3>9.8 Uses and Misuse of Alcohol</h3>
-<ul>
-<li>Used as solvents.</li>
-<li>Used as fuels.</li>
-<li>Used in manufacture of medicines and chemicals.</li>
-<li>Excessive alcohol consumption can cause serious health and social problems.</li>
-</ul>
 
-<div class="card">
-<b>Exercise:</b>
-<p>What is the functional group of alcohols?</p>
-<button onclick="show('a4')">Show Answer</button>
-<div id="a4" class="answer">
-The functional group of alcohols is the hydroxyl group, –OH.
-</div>
-</div>
-</section>
+  <!-- UNIT 10 -->
+  <div class="unit">
+    <h2>Unit 10: Carboxylic Acids</h2>
 
-<!-- UNIT 10 -->
-<section class="unit">
-<h2>Unit 10: Carboxylic Acids</h2>
+    <h3>10.1 General Formula and Nomenclature</h3>
+    <p>
+      Carboxylic acids are organic compounds containing the carboxyl
+      functional group, –COOH.
+    </p>
 
-<h3>10.1 General Formula and Nomenclature</h3>
-<p>
-Carboxylic acids contain the carboxyl functional group –COOH.
-</p>
+    <div class="formula">
+      General formula: R–COOH
+    </div>
 
-<div class="formula">
-General formula: R–COOH
-</div>
-
-<ul>
-<li>Methanoic acid: HCOOH</li>
-<li>Ethanoic acid: CH₃COOH</li>
-<li>Propanoic acid: C₂H₅COOH</li>
-</ul>
-
-<h3>10.2 Preparation of Carboxylic Acids</h3>
-<p>
-Carboxylic acids can be prepared by oxidation of suitable alcohols.
-</p>
-
-<div class="formula">
-Ethanol + Oxygen → Ethanoic acid + Water
-</div>
-
-<h3>10.3 Properties of Carboxylic Acids</h3>
-<ul>
-<li>They have acidic properties.</li>
-<li>They react with bases to form salts and water.</li>
-<li>They react with carbonates to produce carbon dioxide.</li>
-<li>Lower carboxylic acids are soluble in water.</li>
-</ul>
-
-<div class="card">
-<b>Exercise:</b>
-<p>What functional group is present in carboxylic acids?</p>
-<button onclick="show('a5')">Show Answer</button>
-<div id="a5" class="answer">
-The carboxyl group, –COOH.
-</div>
-</div>
-</section>
-
-</div>
-
-<footer>
-🧪 Mr-dev AI Learning<br>
-Senior Three Chemistry • Part 2 • Units 6–10
-</footer>
-
-<script>
-function show(id){
-  const x=document.getElementById(id);
-  x.style.display=x.style.display==="block"?"none":"block";
-}
-
-function searchUnits(){
-  let input=document.getElementById("search").value.toLowerCase();
-  let units=document.querySelectorAll(".unit");
-
-  units.forEach(unit=>{
-    unit.style.display=
-      unit.innerText.toLowerCase().includes(input)
-      ?"block":"none";
-  });
-}
-</script>
-
-</body>
-</html>
+    <h3>10.2 Preparation of Carboxylic Acids</h3>
+    <p>
+      Car
