@@ -1,224 +1,126 @@
-<section class="subject-card">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Senior Two Physics Part 1</title>
+<style>
+body{
+    font-family: Arial;
+    background:#0b1b33;
+    color:white;
+    margin:20px;
+}
+h1{
+    color:#00ff88;
+}
+.card{
+    background:#162944;
+    padding:20px;
+    margin:15px 0;
+    border-radius:15px;
+}
+button{
+    background:#00cc66;
+    color:white;
+    border:0;
+    padding:10px;
+    border-radius:10px;
+}
+</style>
+</head>
 
-<h1>🧬 Senior Two Biology</h1>
-<p>Part 4: Unit 11 - Unit 16</p>
+<body>
 
+<h1>⚛️ Senior Two Physics</h1>
+<h2>Part 1: Unit 1 - Unit 4</h2>
 
-<div class="unit">
-
-<h2>Unit 11: Joints and Movement</h2>
-
-<h3>Meaning of Joint</h3>
+<div class="card">
+<h2>Unit 1: Measurement Errors</h2>
 <p>
-A joint is the point where two or more bones meet.
+Measurement is comparing an unknown quantity with a standard unit.
+</p>
+<ul>
+<li>Instrumental errors</li>
+<li>Human errors</li>
+<li>Environmental errors</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Unit 2: Linear Motion</h2>
+<p>
+Linear motion is movement of an object along a straight line.
+</p>
+<p>
+Formula:<br>
+Speed = Distance ÷ Time
 </p>
 
-<h3>Types of Joints</h3>
+<pre>
+Distance
+|
+|
+|________ Time
+</pre>
 
-<ul>
-<li><b>Fixed joint:</b> Does not allow movement (example: skull).</li>
-<li><b>Hinge joint:</b> Allows movement in one direction (example: knee, elbow).</li>
-<li><b>Ball and socket joint:</b> Allows movement in many directions (example: shoulder).</li>
-</ul>
+</div>
 
-<h3>Movement</h3>
+<div class="card">
+<h2>Unit 3: Pressure</h2>
 <p>
-Movement occurs when muscles contract and relax to move bones at joints.
+Pressure is force acting per unit area.
 </p>
 
-<div class="diagram">
-Muscle contraction → Bone movement → Body movement
-</div>
-
-</div>
-
-
-
-<div class="unit">
-
-<h2>Unit 12: Infectious Diseases</h2>
-
-<h3>Meaning</h3>
 <p>
-Infectious diseases are diseases caused by microorganisms that can spread from one person to another.
+Formula:
+<br>
+P = F / A
 </p>
 
-<h3>Causes</h3>
-
 <ul>
-<li>Bacteria</li>
-<li>Viruses</li>
-<li>Fungi</li>
-<li>Protozoa</li>
-</ul>
-
-<h3>Examples</h3>
-
-<ul>
-<li>Malaria</li>
-<li>Tuberculosis</li>
-<li>Cholera</li>
-<li>HIV/AIDS</li>
-</ul>
-
-<h3>Prevention</h3>
-
-<ul>
-<li>Good hygiene</li>
-<li>Vaccination</li>
-<li>Clean water</li>
-<li>Control of disease vectors</li>
+<li>P = Pressure</li>
+<li>F = Force</li>
+<li>A = Area</li>
 </ul>
 
 </div>
 
-
-
-
-<div class="unit">
-
-<h2>Unit 13: Immunity and Vaccination</h2>
-
-<h3>Immunity</h3>
-<p>
-Immunity is the ability of the body to defend itself against diseases.
-</p>
-
-<h3>Types of Immunity</h3>
-
-<ul>
-<li>Natural immunity</li>
-<li>Artificial immunity</li>
-</ul>
-
-<h3>Vaccination</h3>
+<div class="card">
+<h2>Unit 4: Density and Pressure in Solids and Fluids</h2>
 
 <p>
-Vaccination introduces weakened or inactive microorganisms into the body to stimulate protection.
+Density is mass per unit volume.
 </p>
-
-<h3>Importance</h3>
-
-<ul>
-<li>Prevents diseases</li>
-<li>Reduces spread of infections</li>
-<li>Protects communities</li>
-</ul>
-
-</div>
-
-
-
-
-<div class="unit">
-
-<h2>Unit 14: Sexual Behaviour and Sexual Response</h2>
-
-<h3>Meaning</h3>
 
 <p>
-Sexual behaviour refers to decisions and actions related to sexual activities.
+Formula:
+<br>
+Density = Mass / Volume
 </p>
 
-<h3>Responsible Behaviour</h3>
-
 <ul>
-<li>Making informed decisions</li>
-<li>Avoiding risky behaviour</li>
-<li>Respecting yourself and others</li>
-</ul>
-
-<h3>Factors Affecting Behaviour</h3>
-
-<ul>
-<li>Peer pressure</li>
-<li>Culture</li>
-<li>Education</li>
+<li>Solids have fixed shape</li>
+<li>Liquids flow</li>
+<li>Gases fill containers</li>
 </ul>
 
 </div>
 
+<div class="card">
+<h2>Exercise</h2>
 
+<p>What is the formula of pressure?</p>
 
+<button onclick="answer()">Show Answer</button>
 
-<div class="unit">
-
-<h2>Unit 15: Pregnancy Prevention</h2>
-
-<h3>Contraception</h3>
-
-<p>
-Contraception is the prevention of pregnancy using different methods.
-</p>
-
-<h3>Methods</h3>
-
-<ul>
-<li>Condoms</li>
-<li>Pills</li>
-<li>Injectables</li>
-<li>Implants</li>
-<li>IUD</li>
-</ul>
-
-<h3>Importance</h3>
-
-<ul>
-<li>Prevents unwanted pregnancy</li>
-<li>Helps family planning</li>
-</ul>
+<p id="ans"></p>
 
 </div>
 
+<script>
+function answer(){
+document.getElementById("ans").innerHTML="P = F / A";
+}
+</script>
 
-
-
-<div class="unit">
-
-<h2>Unit 16: Reducing Risk of STIs and HIV/AIDS</h2>
-
-<h3>STIs</h3>
-
-<p>
-STIs are infections mainly transmitted through sexual contact.
-</p>
-
-<h3>Examples</h3>
-
-<ul>
-<li>HIV/AIDS</li>
-<li>Gonorrhoea</li>
-<li>Syphilis</li>
-</ul>
-
-<h3>Prevention</h3>
-
-<ul>
-<li>Abstinence</li>
-<li>Faithfulness</li>
-<li>Correct condom use</li>
-<li>Regular testing</li>
-<li>Avoid sharing sharp objects</li>
-</ul>
-
-<div class="diagram">
-Safe behaviour → Prevention → Reduced STI/HIV risk
-</div>
-
-</div>
-
-
-<div class="exercise">
-
-<h2>Exercises</h2>
-
-<p>1. What is a joint?</p>
-<p>2. Mention three infectious diseases.</p>
-<p>3. Explain vaccination.</p>
-<p>4. List three pregnancy prevention methods.</p>
-<p>5. Give ways of preventing HIV/AIDS.</p>
-
-</div>
-
-
-</section>
+</body>
+</html>
