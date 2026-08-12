@@ -1,87 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Teacher Dashboard</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7ff;
+    color:#222;
+}
+
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:165px;
+    height:100vh;
+    background:white;
+    padding:18px 14px;
+    border-right:1px solid #ddd;
+}
+
+.logo{
+    color:#1769e0;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:35px;
+}
+
+.menu{
+    display:block;
+    padding:11px 5px;
+    margin:4px 0;
+    color:#333;
+    text-decoration:none;
+    font-size:13px;
+    border-radius:6px;
+}
+
+.menu:hover{
+    background:#e8f0ff;
+    color:#1769e0;
+}
+
+/* MAIN */
+.main{
+    margin-left:165px;
+    padding:18px 28px;
+}
+
+/* TOP */
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.search{
+    width:55%;
+    padding:12px 14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+.search:focus{
+    border-color:#1769e0;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+/* WELCOME */
+.welcome{
+    margin-top:18px;
+    background:#e5efff;
+    border-radius:18px;
+    padding:38px 28px;
+}
+
+.welcome h1{
+    color:#1769e0;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.welcome p{
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.start{
+    background:#1769e0;
+    color:white;
+    border:0;
+    padding:11px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* NOTES */
+.notes-title{
+    margin:20px 0 15px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.card{
+    background:white;
+    border-radius:14px;
+    padding:20px;
+    min-height:170px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:#1769e0;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+.view{
+    background:#1769e0;
+    color:white;
+    border:0;
+    padding:9px 17px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* AI */
+.ai{
+    margin-top:22px;
+    background:#e2f1ff;
+    border-radius:16px;
+    padding:25px;
+}
+
+.ai h2{
+    margin-bottom:15px;
+}
+
+.ai-row{
+    display:flex;
+    gap:8px;
+}
+
+.ai-input{
+    flex:1;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:7px;
+}
+
+.ask{
+    background:#1769e0;
+    color:white;
+    border:0;
+    padding:10px 18px;
+    border-radius:7px;
+}
+
+.answer{
+    margin-top:15px;
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    display:none;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .sidebar{
+        width:120px;
+        padding:15px 8px;
+    }
+
+    .main{
+        margin-left:120px;
+        padding:12px;
+    }
+
+    .logo{
+        font-size:14px;
+    }
+
+    .menu{
+        font-size:11px;
+    }
+
+    .top{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .whatsapp{
+        text-align:center;
+    }
+
+    .welcome h1{
+        font-size:23px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- SIDEBAR -->
 <div class="sidebar">
 
-<h2>🎓 AI TEACHER</h2>
+    <div class="logo">🎓 AI TEACHER</div>
 
-<p>🏠 Home</p>
-<p>📚 All Notes</p>
-<p>📘 Senior One</p>
-<p>📗 Senior Two</p>
-<p>📙 Senior Three</p>
-<p>🤖 AI Teacher</p>
-<p>🔎 Search Notes</p>
-<p>☎ Contact</p>
+    <a class="menu" href="#home">🏠 Home</a>
+    <a class="menu" href="#notes">📚 All Notes</a>
+    <a class="menu" href="#senior1">📘 Senior One</a>
+    <a class="menu" href="#senior2">📗 Senior Two</a>
+    <a class="menu" href="#senior3">📙 Senior Three</a>
+    <a class="menu" href="#ai">🤖 AI Teacher</a>
+    <a class="menu" href="#search">🔎 Search Notes</a>
+    <a class="menu" href="https://wa.me/250738939769">
+        ☎ Contact
+    </a>
 
 </div>
 
 
+<!-- MAIN -->
 <div class="main">
 
-<div class="top">
+    <!-- TOP -->
+    <div class="top" id="search">
 
-<input type="text" placeholder="Search notes...">
+        <input
+            class="search"
+            id="searchInput"
+            type="text"
+            placeholder="Search notes..."
+            onkeyup="searchNotes()"
+        >
 
-<a href="https://wa.me/250XXXXXXXXX" class="whatsapp">
-WhatsApp
-</a>
+        <a
+            class="whatsapp"
+            href="https://wa.me/250738939769"
+            target="_blank"
+        >
+            WhatsApp
+        </a>
+
+    </div>
+
+
+    <!-- WELCOME -->
+    <section class="welcome" id="home">
+
+        <h1>Welcome to AI Teacher</h1>
+
+        <p>
+            Your smart way to learn Mathematics & Science
+            <br>
+            Senior One - Senior Three
+        </p>
+
+        <button class="start" onclick="startLearning()">
+            Start Learning
+        </button>
+
+    </section>
+
+
+    <!-- NOTES -->
+    <h2 class="notes-title" id="notes">
+        📚 Browse Notes
+    </h2>
+
+
+    <div class="cards">
+
+        <!-- SENIOR ONE -->
+        <div class="card note" id="senior1">
+
+            <h3>Senior One</h3>
+
+            <p>
+                Mathematics<br>
+                Science<br>
+                Notes & Exercises
+            </p>
+
+            <button
+                class="view"
+                onclick="openNotes('Senior One')"
+            >
+                View Notes
+            </button>
+
+        </div>
+
+
+        <!-- SENIOR TWO -->
+        <div class="card note" id="senior2">
+
+            <h3>Senior Two</h3>
+
+            <p>
+                Mathematics<br>
+                Physics<br>
+                Chemistry<br>
+                Biology
+            </p>
+
+            <button
+                class="view"
+                onclick="openNotes('Senior Two')"
+            >
+                View Notes
+            </button>
+
+        </div>
+
+
+        <!-- SENIOR THREE -->
+        <div class="card note" id="senior3">
+
+            <h3>Senior Three</h3>
+
+            <p>
+                Mathematics<br>
+                Physics<br>
+                Chemistry<br>
+                Biology
+            </p>
+
+            <button
+                class="view"
+                onclick="openNotes('Senior Three')"
+            >
+                View Notes
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- AI TEACHER -->
+    <section class="ai" id="ai">
+
+        <h2>🤖 AI Teacher Assistant</h2>
+
+        <div class="ai-row">
+
+            <input
+                class="ai-input"
+                id="question"
+                placeholder="Ask your question..."
+            >
+
+            <button
+                class="ask"
+                onclick="askTeacher()"
+            >
+                Ask
+            </button>
+
+        </div>
+
+        <div
+            class="answer"
+            id="answer"
+        ></div>
+
+    </section>
 
 </div>
 
 
-<div class="welcome">
+<script>
 
-<h1>Welcome to AI Teacher</h1>
+/* SEARCH */
+function searchNotes(){
 
-<p>
-Your smart way to learn Mathematics & Science
-<br>
-Senior One - Senior Three
-</p>
+    let input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
 
-<button>Start Learning</button>
+    let cards =
+        document.querySelectorAll(".note");
 
-</div>
+    cards.forEach(function(card){
 
+        let text =
+            card.innerText.toLowerCase();
 
+        if(text.includes(input)){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+        }
 
-<h2>📚 Browse Notes</h2>
-
-
-<div class="cards">
-
-<div class="card">
-<h3>Senior One</h3>
-<p>Mathematics<br>Science<br>Notes & Exercises</p>
-<button>View Notes</button>
-</div>
-
-
-<div class="card">
-<h3>Senior Two</h3>
-<p>Mathematics<br>Physics<br>Chemistry<br>Biology</p>
-<button>View Notes</button>
-</div>
+    });
+}
 
 
-<div class="card">
-<h3>Senior Three</h3>
-<p>Mathematics<br>Physics<br>Chemistry<br>Biology</p>
-<button>View Notes</button>
-</div>
+/* START LEARNING */
+function startLearning(){
+
+    document
+        .getElementById("notes")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
 
 
-</div>
+/* NOTES */
+function openNotes(level){
+
+    alert(
+        "Opening " +
+        level +
+        " notes..."
+    );
+
+}
 
 
+/* AI TEACHER */
+function askTeacher(){
 
-<div class="ai">
+    let question =
+        document
+        .getElementById("question")
+        .value
+        .trim();
 
-<h2>🤖 AI Teacher Assistant</h2>
+    let answer =
+        document.getElementById("answer");
 
-<input placeholder="Ask AI Teacher...">
+    if(question === ""){
 
-<button>Ask</button>
+        answer.style.display = "block";
 
-</div>
+        answer.innerHTML =
+        "Please write your question first.";
 
+        return;
+    }
 
-</div>
+    answer.style.display = "block";
+
+    answer.innerHTML =
+    "<b>AI Teacher:</b><br>" +
+    "I received your question: " +
+    question +
+    "<br><br>" +
+    "AI Teacher is ready to help you learn Mathematics and Science.";
+
+}
+
+</script>
+
+</body>
+</html>
