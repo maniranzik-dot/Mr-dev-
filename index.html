@@ -1,82 +1,110 @@
-<!-- ==========================
- DASHBOARD PART 2
- ADMIN PANEL
-========================== -->
-
-<section class="admin-dashboard">
-
-<h1>⚙️ Admin Dashboard</h1>
+<!-- =================================
+ DASHBOARD PART 3
+ AI TEACHER + SEARCH + STUDENT AREA
+================================= -->
 
 
-<div class="admin-cards">
+<section class="part3-dashboard">
 
 
-<div class="admin-card">
-
-<h2>📊 Statistics</h2>
-
-<p>Total Seniors: <b>3</b></p>
-<p>Total Subjects: <b>12+</b></p>
-<p>Total Notes: <b>Completed</b></p>
-
-</div>
+<h1>🚀 Learning Dashboard</h1>
 
 
 
-<div class="admin-card">
+<!-- AI TEACHER -->
 
-<h2>➕ Add Notes</h2>
+<div class="box">
 
-<input type="text" placeholder="Note title">
+<h2>🤖 AI Teacher</h2>
 
-<select>
-
-<option>Select Senior</option>
-<option>Senior One</option>
-<option>Senior Two</option>
-<option>Senior Three</option>
-
-</select>
+<p>
+Ask any question about Mathematics and Science.
+</p>
 
 
-<select>
-
-<option>Select Subject</option>
-<option>Mathematics</option>
-<option>Physics</option>
-<option>Chemistry</option>
-<option>Biology</option>
-<option>Science</option>
-
-</select>
+<input 
+id="question"
+placeholder="Ask AI Teacher...">
 
 
-<button onclick="addNote()">
-Save Note
+<button onclick="askAI()">
+Ask Question
 </button>
 
 
+<p id="answer"></p>
+
+
 </div>
 
 
 
-<div class="admin-card">
 
-<h2>📚 Manage Subjects</h2>
+<!-- SEARCH NOTES -->
 
-<ul>
+<div class="box">
 
-<li>Mathematics</li>
-<li>Physics</li>
-<li>Chemistry</li>
-<li>Biology</li>
-<li>Science</li>
+<h2>🔍 Search Notes</h2>
+
+
+<input 
+id="search"
+placeholder="Search subject or unit..."
+onkeyup="searchNotes()">
+
+
+
+<ul id="notes">
+
+
+<li>
+Senior One Mathematics Notes
+</li>
+
+
+<li>
+Senior Two Physics Unit 1-13
+</li>
+
+
+<li>
+Senior Three Chemistry Notes
+</li>
+
+
+<li>
+Senior Three Biology Notes
+</li>
+
+
+<li>
+Senior Three Mathematics Notes
+</li>
+
 
 </ul>
 
 
-<button>
-Edit Subjects
+</div>
+
+
+
+
+
+<!-- DOWNLOAD -->
+
+<div class="box">
+
+<h2>📥 Download Notes</h2>
+
+
+<p>
+Choose notes and download for offline learning.
+</p>
+
+
+<button onclick="downloadNotes()">
+Download Notes
 </button>
 
 
@@ -85,106 +113,94 @@ Edit Subjects
 
 
 
-<div class="admin-card">
 
-<h2>👨‍🎓 Students</h2>
+<!-- STUDENT ACCOUNT -->
 
-<p>Active Students</p>
+<div class="box">
 
-<h1 id="students">
-0
-</h1>
+<h2>👨‍🎓 Student Account</h2>
 
 
-<button onclick="increaseStudents()">
-Add Student
+<input placeholder="Student Name">
+
+
+<input placeholder="Class">
+
+
+<button onclick="registerStudent()">
+Create Account
 </button>
 
 
-</div>
-
-
-
-<div class="admin-card">
-
-<h2>👁️ Views</h2>
-
-<p>Website Visitors</p>
-
-<h1 id="views">
-0
-</h1>
-
-
-<button onclick="increaseViews()">
-Update Views
-</button>
+<p id="studentMessage"></p>
 
 
 </div>
 
 
-
-</div>
 
 </section>
 
 
 
+
+
 <style>
 
-.admin-dashboard{
 
-padding:30px;
-background:#eef5ff;
+.part3-dashboard{
 
-}
-
-
-.admin-cards{
-
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
+padding:25px;
+background:#f4f8ff;
 
 }
 
 
-.admin-card{
+
+.box{
 
 background:white;
+
 padding:20px;
+
+margin:20px 0;
+
 border-radius:15px;
-box-shadow:0 4px 12px #ccc;
+
+box-shadow:0 3px 10px #ccc;
 
 }
 
 
-.admin-card h2{
+
+.box h2{
 
 color:#004aad;
 
 }
 
 
-.admin-card input,
-.admin-card select{
+
+.box input{
 
 width:90%;
-padding:12px;
+
+padding:14px;
+
 margin:8px;
 
-border-radius:8px;
+border-radius:10px;
+
 border:1px solid #aaa;
 
 }
 
 
-.admin-card button{
+
+button{
 
 background:#004aad;
+
 color:white;
 
 padding:12px 20px;
@@ -198,44 +214,102 @@ cursor:pointer;
 }
 
 
+
+li{
+
+padding:10px;
+
+background:#eef5ff;
+
+margin:5px;
+
+border-radius:8px;
+
+}
+
+
 </style>
+
+
 
 
 
 <script>
 
 
-let students = 0;
+function askAI(){
 
-let views = 0;
+let question =
+document.getElementById("question").value;
 
 
+document.getElementById("answer").innerHTML =
+"🤖 AI Teacher: I will help you with " + question;
 
-function increaseStudents(){
-
-students++;
-
-document.getElementById("students")
-.innerHTML = students;
 
 }
 
 
 
-function increaseViews(){
+function searchNotes(){
 
-views++;
 
-document.getElementById("views")
-.innerHTML = views;
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+
+let notes =
+document.querySelectorAll("#notes li");
+
+
+
+notes.forEach(function(note){
+
+
+if(note.innerHTML.toLowerCase()
+.includes(input)){
+
+
+note.style.display="block";
+
+
+}
+
+else{
+
+
+note.style.display="none";
+
+
+}
+
+
+});
+
 
 }
 
 
 
-function addNote(){
 
-alert("Note saved successfully!");
+
+function downloadNotes(){
+
+alert("Notes download system coming soon");
+
+
+}
+
+
+
+
+function registerStudent(){
+
+document.getElementById("studentMessage")
+.innerHTML =
+"✅ Student account created successfully";
+
 
 }
 
