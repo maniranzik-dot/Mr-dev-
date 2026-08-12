@@ -1,239 +1,487 @@
-<!-- =========================
-     SENIOR THREE CHEMISTRY
-     PART 2 — UNITS 6–11
-========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<section class="part">
-  <h1>🧪 Senior Three Chemistry — Part 2</h1>
-  <p>Units 6–11</p>
+  <title>Mr-dev AI Learning - Senior Three Biology Part 1</title>
 
-  <!-- UNIT 6 -->
-  <div class="unit">
-    <h2>Unit 6: Chemical Properties of Acids and Bases</h2>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <h3>6.1 Preparation of Acids and Bases</h3>
+    body {
+      font-family: Arial, sans-serif;
+      background: #071a33;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b2345;
+      text-align: center;
+      padding: 30px 15px;
+      border-bottom: 2px solid #20d86a;
+    }
+
+    header h1 {
+      color: #20e56d;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #d9e5f5;
+      font-size: 18px;
+    }
+
+    .search {
+      width: 90%;
+      max-width: 650px;
+      margin: 25px auto;
+      display: block;
+      padding: 16px 20px;
+      border-radius: 30px;
+      border: none;
+      font-size: 17px;
+      outline: none;
+    }
+
+    .container {
+      width: 94%;
+      max-width: 900px;
+      margin: 25px auto;
+    }
+
+    .unit {
+      background: #102b4e;
+      margin-bottom: 25px;
+      padding: 25px;
+      border-radius: 18px;
+      border-left: 5px solid #20d86a;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    }
+
+    .unit h2 {
+      color: #20e56d;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .unit h3 {
+      color: #65b8ff;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .definition {
+      background: #081b34;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+
+    .exercise {
+      background: #081b34;
+      padding: 18px;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 12px;
+      color: #b9ffd3;
+      background: #123d2a;
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    button {
+      background: #20d86a;
+      color: #062016;
+      border: none;
+      padding: 11px 18px;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #45ef89;
+    }
+
+    .formula {
+      background: #0b2140;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      color: #ffe58a;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 30px;
+      background: #0b2345;
+      color: #b9c9dc;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🧬 Mr-dev AI Learning</h1>
+  <p>Senior Three Biology • Part 1 • Units 1–5</p>
+
+  <input
+    type="text"
+    id="search"
+    class="search"
+    placeholder="🔎 Search Biology..."
+    onkeyup="searchUnits()"
+  >
+</header>
+
+<div class="container">
+
+  <!-- UNIT 1 -->
+  <section class="unit">
+    <h2>Unit 1: Interdependence Among Organisms in an Ecosystem</h2>
+
+    <h3>1.1 Meaning of an Ecosystem</h3>
     <p>
-      Acids are substances that produce hydrogen ions (H⁺) when dissolved
-      in water. Bases produce hydroxide ions (OH⁻) in aqueous solution.
+      An ecosystem is a community of living organisms interacting with
+      one another and with the non-living components of their environment.
     </p>
 
-    <h3>6.2 Reaction of Acids with Water and Sodium Metal</h3>
-    <p>
-      Acids react with water to form hydronium ions. Reactive metals such
-      as sodium react with water to form an alkaline solution and hydrogen gas.
-    </p>
-
-    <p><b>Example:</b></p>
-    <div class="formula">
-      2Na + 2H₂O → 2NaOH + H₂
+    <div class="definition">
+      <b>Biotic factors:</b> Living components such as plants, animals,
+      bacteria and fungi.
     </div>
 
-    <h3>6.3 Reactions of Acids and Bases</h3>
+    <div class="definition">
+      <b>Abiotic factors:</b> Non-living components such as light,
+      temperature, water, soil, air and minerals.
+    </div>
+
+    <h3>1.2 Interdependence</h3>
     <p>
-      Acids react with bases in a neutralisation reaction to form salt and water.
+      Interdependence means that organisms depend on one another
+      for food, shelter, reproduction, protection and other resources.
+    </p>
+
+    <h3>1.3 Food Chains</h3>
+    <p>
+      A food chain shows the transfer of food energy from one organism
+      to another.
     </p>
 
     <div class="formula">
-      Acid + Base → Salt + Water
+      Example: Grass → Grasshopper → Frog → Snake → Hawk
     </div>
 
-    <h3>6.4 Uses and Dangers of Acids and Bases</h3>
+    <h3>1.4 Food Webs</h3>
+    <p>
+      A food web consists of several interconnected food chains in an ecosystem.
+    </p>
+
+    <h3>1.5 Ecological Relationships</h3>
     <ul>
-      <li>Acids are used in batteries and industries.</li>
-      <li>Bases are used in soap and detergent production.</li>
-      <li>Strong acids and bases can cause burns.</li>
-      <li>They should be handled carefully in the laboratory.</li>
+      <li>Predation</li>
+      <li>Competition</li>
+      <li>Mutualism</li>
+      <li>Parasitism</li>
+      <li>Commensalism</li>
     </ul>
 
-    <div class="card">
+    <div class="exercise">
       <b>Exercise:</b>
-      <p>What is neutralisation?</p>
-      <button onclick="showAnswer('ans61')">Show Answer</button>
-      <p id="ans61" class="answer">
-        Neutralisation is the reaction between an acid and a base to form
-        salt and water.
-      </p>
+      <p>What is meant by interdependence among organisms?</p>
+      <button onclick="showAnswer('a1')">Show Answer</button>
+      <div id="a1" class="answer">
+        Interdependence is the dependence of organisms on one another
+        for resources and survival.
+      </div>
     </div>
-  </div>
+  </section>
 
 
-  <!-- UNIT 7 -->
-  <div class="unit">
-    <h2>Unit 7: Concentration of Solutions</h2>
+  <!-- UNIT 2 -->
+  <section class="unit">
+    <h2>Unit 2: Population Size</h2>
 
-    <h3>7.1 Concept of Concentration</h3>
+    <h3>2.1 Population</h3>
     <p>
-      Concentration describes the amount of solute dissolved in a given
-      volume of solution.
+      A population is a group of organisms of the same species living
+      in the same area at a particular time.
     </p>
 
-    <div class="formula">
-      Concentration = Amount of solute / Volume of solution
-    </div>
-
-    <h3>7.2 Preparation of Solutions</h3>
+    <h3>2.2 Population Size</h3>
     <p>
-      A solution can be prepared by dissolving a known amount of solute
-      in a known volume of solvent.
+      Population size is the number of individuals of a particular species
+      in a given area.
     </p>
 
-    <h3>7.3 Acids and Titrations</h3>
+    <h3>2.3 Factors Affecting Population Size</h3>
+    <ul>
+      <li>Birth rate</li>
+      <li>Death rate</li>
+      <li>Immigration</li>
+      <li>Emigration</li>
+      <li>Availability of food</li>
+      <li>Availability of water</li>
+      <li>Predation</li>
+      <li>Diseases</li>
+      <li>Competition</li>
+      <li>Environmental conditions</li>
+    </ul>
+
+    <h3>2.4 Population Sampling</h3>
     <p>
-      Titration is a laboratory method used to determine the concentration
-      of an unknown solution by reacting it with a solution of known
-      concentration.
+      Scientists estimate population size using sampling methods.
+      Common methods include quadrats and transects.
     </p>
 
-    <div class="formula">
-      M₁V₁ = M₂V₂
+    <div class="definition">
+      <b>Quadrat:</b> A frame used to sample organisms, especially plants,
+      in a particular area.
     </div>
 
-    <div class="card">
+    <div class="definition">
+      <b>Transect:</b> A line or belt used to study how organisms are
+      distributed across an area.
+    </div>
+
+    <div class="exercise">
       <b>Exercise:</b>
-      <p>What is a solution?</p>
-      <button onclick="showAnswer('ans71')">Show Answer</button>
-      <p id="ans71" class="answer">
-        A solution is a homogeneous mixture of a solute and a solvent.
-      </p>
+      <p>Name four factors that can affect population size.</p>
+      <button onclick="showAnswer('a2')">Show Answer</button>
+      <div id="a2" class="answer">
+        Birth rate, death rate, immigration and emigration.
+      </div>
     </div>
-  </div>
+  </section>
 
 
-  <!-- UNIT 8 -->
-  <div class="unit">
-    <h2>Unit 8: Electrolysis and Its Applications</h2>
+  <!-- UNIT 3 -->
+  <section class="unit">
+    <h2>Unit 3: Nutrient Cycles</h2>
 
-    <h3>8.1 Introduction to Oxidation-Reduction Reactions</h3>
+    <h3>3.1 Meaning of Nutrient Cycles</h3>
     <p>
-      Oxidation is the loss of electrons, while reduction is the gain
-      of electrons.
+      Nutrient cycles describe the movement and recycling of chemical
+      elements between living organisms and the environment.
     </p>
 
-    <div class="formula">
-      OIL = Oxidation Is Loss<br>
-      RIG = Reduction Is Gain
-    </div>
-
-    <h3>8.2 Electrolysis of Solutions</h3>
+    <h3>3.2 Carbon Cycle</h3>
     <p>
-      Electrolysis is the chemical decomposition of an ionic compound
-      using electricity.
+      Carbon moves between the atmosphere, plants, animals, soil and
+      other parts of the environment.
     </p>
 
-    <h3>8.3 Electrolysis of Molten Compounds</h3>
-    <p>
-      Molten ionic compounds contain freely moving ions and can conduct
-      electricity. Positive ions move toward the cathode and negative
-      ions move toward the anode.
-    </p>
-
-    <h3>8.4 Applications of Electrolysis</h3>
     <ul>
-      <li>Electroplating</li>
-      <li>Extraction of metals</li>
-      <li>Purification of metals</li>
-      <li>Manufacture of chemicals</li>
+      <li>Photosynthesis removes carbon dioxide from the atmosphere.</li>
+      <li>Respiration releases carbon dioxide.</li>
+      <li>Decomposition releases carbon dioxide.</li>
+      <li>Combustion releases carbon dioxide.</li>
     </ul>
 
-    <div class="card">
+    <h3>3.3 Nitrogen Cycle</h3>
+    <p>
+      Nitrogen is essential for making proteins and nucleic acids.
+      Nitrogen is recycled through processes involving bacteria.
+    </p>
+
+    <ul>
+      <li>Nitrogen fixation</li>
+      <li>Nitrification</li>
+      <li>Assimilation</li>
+      <li>Ammonification</li>
+      <li>Denitrification</li>
+    </ul>
+
+    <h3>3.4 Importance of Nutrient Cycles</h3>
+    <ul>
+      <li>They recycle essential nutrients.</li>
+      <li>They maintain soil fertility.</li>
+      <li>They support plant growth.</li>
+      <li>They maintain ecosystem balance.</li>
+    </ul>
+
+    <div class="exercise">
       <b>Exercise:</b>
-      <p>What is electrolysis?</p>
-      <button onclick="showAnswer('ans81')">Show Answer</button>
-      <p id="ans81" class="answer">
-        Electrolysis is the decomposition of an ionic compound using
-        electrical energy.
-      </p>
+      <p>Why are nutrient cycles important in an ecosystem?</p>
+      <button onclick="showAnswer('a3')">Show Answer</button>
+      <div id="a3" class="answer">
+        They recycle essential nutrients so that organisms can continue
+        to obtain the materials needed for growth and survival.
+      </div>
     </div>
-  </div>
+  </section>
 
 
-  <!-- UNIT 9 -->
-  <div class="unit">
-    <h2>Unit 9: Structure and Properties of Alkenes and Alcohols</h2>
+  <!-- UNIT 4 -->
+  <section class="unit">
+    <h2>Unit 4: Effects of Human Activities on Ecosystems</h2>
 
-    <h3>9.1 Nomenclature of Alkenes and Their Structures</h3>
-    <p>
-      Alkenes are unsaturated hydrocarbons containing at least one
-      carbon-carbon double bond.
-    </p>
-
-    <div class="formula">
-      General formula of alkenes: CₙH₂ₙ
-    </div>
-
-    <h3>9.2 Sources of Alkenes</h3>
-    <p>
-      Alkenes can be obtained from the cracking of large hydrocarbon
-      molecules.
-    </p>
-
-    <h3>9.3 Properties of Alkenes</h3>
+    <h3>4.1 Human Activities</h3>
     <ul>
-      <li>They contain a carbon-carbon double bond.</li>
-      <li>They are generally more reactive than alkanes.</li>
-      <li>They undergo addition reactions.</li>
-      <li>They can be used to manufacture polymers.</li>
+      <li>Deforestation</li>
+      <li>Agriculture</li>
+      <li>Mining</li>
+      <li>Industrialisation</li>
+      <li>Urbanisation</li>
+      <li>Fishing</li>
+      <li>Hunting</li>
+      <li>Burning of fuels</li>
     </ul>
 
-    <h3>9.4 Uses of Alkenes</h3>
-    <ul>
-      <li>Manufacture of plastics</li>
-      <li>Production of alcohols</li>
-      <li>Production of other chemicals</li>
-    </ul>
-
-    <h3>9.5 Structure of Alcohols</h3>
+    <h3>4.2 Deforestation</h3>
     <p>
-      Alcohols are organic compounds containing a hydroxyl group (–OH).
+      Deforestation is the removal of trees from forests.
+      It can lead to soil erosion, loss of habitats and reduced biodiversity.
     </p>
 
-    <h3>9.6 Preparation of Alcohols</h3>
+    <h3>4.3 Pollution</h3>
     <p>
-      Alcohols can be prepared by fermentation of sugars or by hydration
-      of alkenes.
+      Pollution is the introduction of harmful substances into the environment.
     </p>
 
-    <h3>9.7 Properties of Alcohols</h3>
     <ul>
-      <li>Many alcohols are soluble in water.</li>
-      <li>They are useful solvents.</li>
-      <li>They can burn to produce heat.</li>
+      <li>Air pollution</li>
+      <li>Water pollution</li>
+      <li>Soil pollution</li>
+      <li>Noise pollution</li>
     </ul>
 
-    <h3>9.8 Uses and Misuse of Alcohol</h3>
+    <h3>4.4 Effects on Ecosystems</h3>
     <ul>
-      <li>Used as solvents.</li>
-      <li>Used as fuels.</li>
-      <li>Used in some medicines and disinfectants.</li>
-      <li>Excessive consumption can cause health and social problems.</li>
+      <li>Loss of biodiversity</li>
+      <li>Destruction of habitats</li>
+      <li>Soil erosion</li>
+      <li>Climate change</li>
+      <li>Water pollution</li>
+      <li>Reduced soil fertility</li>
     </ul>
 
-    <div class="card">
+    <div class="exercise">
       <b>Exercise:</b>
-      <p>What is an alkene?</p>
-      <button onclick="showAnswer('ans91')">Show Answer</button>
-      <p id="ans91" class="answer">
-        An alkene is an unsaturated hydrocarbon containing a carbon-carbon
-        double bond.
-      </p>
+      <p>Give three effects of deforestation.</p>
+      <button onclick="showAnswer('a4')">Show Answer</button>
+      <div id="a4" class="answer">
+        Habitat destruction, soil erosion and loss of biodiversity.
+      </div>
     </div>
-  </div>
+  </section>
 
 
-  <!-- UNIT 10 -->
-  <div class="unit">
-    <h2>Unit 10: Carboxylic Acids</h2>
+  <!-- UNIT 5 -->
+  <section class="unit">
+    <h2>Unit 5: Effects of Human Activities on Ecosystems — Conservation and Sustainability</h2>
 
-    <h3>10.1 General Formula and Nomenclature</h3>
+    <h3>5.1 Conservation</h3>
     <p>
-      Carboxylic acids are organic compounds containing the carboxyl
-      functional group, –COOH.
+      Conservation is the protection, management and wise use of natural
+      resources and living organisms.
     </p>
 
-    <div class="formula">
-      General formula: R–COOH
-    </div>
-
-    <h3>10.2 Preparation of Carboxylic Acids</h3>
+    <h3>5.2 Sustainable Use of Resources</h3>
     <p>
-      Car
+      Sustainability means using resources in a way that meets present
+      needs without preventing future generations from meeting their needs.
+    </p>
+
+    <h3>5.3 Methods of Conservation</h3>
+    <ul>
+      <li>Afforestation and reforestation</li>
+      <li>Creation of national parks</li>
+      <li>Protection of endangered species</li>
+      <li>Controlled hunting and fishing</li>
+      <li>Recycling and reuse of materials</li>
+      <li>Proper waste management</li>
+      <li>Use of renewable energy</li>
+      <li>Environmental education</li>
+    </ul>
+
+    <h3>5.4 Importance of Conservation</h3>
+    <ul>
+      <li>Protects biodiversity.</li>
+      <li>Protects natural habitats.</li>
+      <li>Prevents extinction.</li>
+      <li>Maintains ecosystem balance.</li>
+      <li>Protects natural resources for future generations.</li>
+    </ul>
+
+    <div class="exercise">
+      <b>Exercise:</b>
+      <p>What is conservation?</p>
+      <button onclick="showAnswer('a5')">Show Answer</button>
+      <div id="a5" class="answer">
+        Conservation is the protection, management and wise use of
+        natural resources and living organisms.
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<footer>
+  🧬 Mr-dev AI Learning<br>
+  Senior Three Biology • Part 1 • Units 1–5
+</footer>
+
+
+<script>
+
+  function showAnswer(id) {
+    const answer = document.getElementById(id);
+
+    if (answer.style.display === "block") {
+      answer.style.display = "none";
+    } else {
+      answer.style.display = "block";
+    }
+  }
+
+  function searchUnits() {
+    const input = document.getElementById("search");
+    const searchText = input.value.toLowerCase();
+
+    const units = document.querySelectorAll(".unit");
+
+    units.forEach(function(unit) {
+      const text = unit.innerText.toLowerCase();
+
+      if (text.includes(searchText)) {
+        unit.classList.remove("hidden");
+      } else {
+        unit.classList.add("hidden");
+      }
+    });
+  }
+
+</script>
+
+</body>
+</html>
