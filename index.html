@@ -1,26 +1,33 @@
 <script>
 function openNotes(subject){
 
-    const pages = {
-        "Senior One Mathematics": "senior1mathematics.html",
-        "Senior One Science": "senior1science.html",
+const pages = {
 
-        "Senior Two Mathematics": "senior2mathematics.html",
-        "Senior Two Physics": "senior2physics.html",
-        "Senior Two Chemistry": "senior2chemistry.html",
-        "Senior Two Biology": "senior2biology.html",
+"Senior One Mathematics":"senior1-mathematics.html",
+"Senior One Science":"senior1-science.html",
 
-        "Senior Three Mathematics": "senior3mathematics.html",
-        "Senior Three Physics": "senior3physics.html",
-        "Senior Three Chemistry": "senior3chemistry.html",
-        "Senior Three Biology": "senior3biology.html"
-    };
+"Senior Two Mathematics":"senior2-mathematics.html",
+"Senior Two Physics":"senior2-physics.html",
+"Senior Two Chemistry":"senior2-chemistry.html",
+"Senior Two Biology":"senior2-biology.html",
 
-    if (pages[subject]) {
-        window.location.href = pages[subject];
-    } else {
-        alert("Notes page not found");
-    }
+"Senior Three Mathematics":"senior3-mathematics.html",
+"Senior Three Physics":"senior3-physics.html",
+"Senior Three Chemistry":"senior3-chemistry.html",
+"Senior Three Biology":"senior3-biology.html"
+
+};
+
+
+if(pages[subject]){
+
+window.open(pages[subject], "_self");
+
+}else{
+
+alert("Notes page not found");
+
+}
 
 }
 </script>
