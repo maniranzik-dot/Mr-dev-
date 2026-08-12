@@ -3,76 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AI Teacher Dashboard</title>
+<title>AI Teacher</title>
 
 <style>
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f4f7ff;
-    color:#222;
+    background:#f5f8ff;
+    color:#172033;
+}
+
+/* HEADER */
+.header{
+    height:65px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    color:#1769e0;
+    font-size:21px;
+    font-weight:bold;
+}
+
+.menuBtn{
+    display:none;
+    border:0;
+    background:#1769e0;
+    color:white;
+    font-size:22px;
+    padding:8px 12px;
+    border-radius:8px;
 }
 
 /* SIDEBAR */
 .sidebar{
     position:fixed;
+    top:65px;
     left:0;
-    top:0;
-    width:165px;
-    height:100vh;
+    width:220px;
+    height:calc(100vh - 65px);
     background:white;
-    padding:18px 14px;
-    border-right:1px solid #ddd;
+    border-right:1px solid #e5e7eb;
+    padding:20px 15px;
 }
 
-.logo{
-    color:#1769e0;
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:35px;
-}
-
-.menu{
+.sidebar a{
     display:block;
-    padding:11px 5px;
-    margin:4px 0;
-    color:#333;
     text-decoration:none;
-    font-size:13px;
-    border-radius:6px;
+    color:#374151;
+    padding:13px 14px;
+    margin:5px 0;
+    border-radius:9px;
+    font-size:15px;
 }
 
-.menu:hover{
-    background:#e8f0ff;
+.sidebar a:hover{
+    background:#eaf2ff;
     color:#1769e0;
 }
 
 /* MAIN */
 .main{
-    margin-left:165px;
-    padding:18px 28px;
+    margin-left:220px;
+    padding:25px;
+    max-width:1250px;
 }
 
-/* TOP */
+/* SEARCH */
 .top{
     display:flex;
-    justify-content:space-between;
-    align-items:center;
     gap:15px;
+    margin-bottom:20px;
 }
 
 .search{
-    width:55%;
-    padding:12px 14px;
-    border:1px solid #ddd;
-    border-radius:8px;
+    flex:1;
+    padding:15px 18px;
+    border:1px solid #d8dee9;
+    border-radius:12px;
+    font-size:15px;
     outline:none;
+    background:white;
 }
 
 .search:focus{
@@ -80,145 +104,159 @@ body{
 }
 
 .whatsapp{
-    background:#25D366;
+    background:#20c967;
     color:white;
     text-decoration:none;
-    padding:12px 20px;
-    border-radius:8px;
-    font-size:14px;
+    padding:15px 25px;
+    border-radius:12px;
+    font-weight:bold;
 }
 
 /* WELCOME */
 .welcome{
-    margin-top:18px;
-    background:#e5efff;
-    border-radius:18px;
-    padding:38px 28px;
+    background:linear-gradient(135deg,#e4efff,#d9e9ff);
+    padding:45px;
+    border-radius:22px;
+    margin-bottom:30px;
 }
 
 .welcome h1{
     color:#1769e0;
-    font-size:30px;
+    font-size:38px;
     margin-bottom:15px;
 }
 
 .welcome p{
-    line-height:1.6;
-    margin-bottom:18px;
+    font-size:17px;
+    line-height:1.7;
+    color:#374151;
 }
 
 .start{
+    margin-top:20px;
+    padding:13px 25px;
+    border:0;
+    border-radius:9px;
     background:#1769e0;
     color:white;
-    border:0;
-    padding:11px 20px;
-    border-radius:6px;
+    font-size:15px;
     cursor:pointer;
 }
 
 /* NOTES */
-.notes-title{
-    margin:20px 0 15px;
+.title{
+    font-size:27px;
+    margin-bottom:18px;
 }
 
 .cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+    gap:20px;
 }
 
 .card{
     background:white;
-    border-radius:14px;
-    padding:20px;
-    min-height:170px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    padding:24px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
 }
 
 .card h3{
     color:#1769e0;
-    margin-bottom:12px;
+    font-size:21px;
+    margin-bottom:14px;
 }
 
 .card p{
-    color:#555;
-    line-height:1.6;
-    margin-bottom:15px;
+    color:#5b6472;
+    line-height:1.7;
+    margin-bottom:18px;
 }
 
 .view{
     background:#1769e0;
     color:white;
     border:0;
-    padding:9px 17px;
-    border-radius:6px;
+    padding:11px 20px;
+    border-radius:8px;
     cursor:pointer;
 }
 
 /* AI */
 .ai{
-    margin-top:22px;
-    background:#e2f1ff;
-    border-radius:16px;
-    padding:25px;
+    margin-top:30px;
+    padding:28px;
+    background:#e4f3ff;
+    border-radius:18px;
 }
 
 .ai h2{
     margin-bottom:15px;
 }
 
-.ai-row{
+.aiBox{
     display:flex;
-    gap:8px;
+    gap:10px;
 }
 
-.ai-input{
+.aiInput{
     flex:1;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:7px;
+    padding:13px;
+    border:1px solid #d2d8e0;
+    border-radius:8px;
 }
 
 .ask{
     background:#1769e0;
     color:white;
     border:0;
-    padding:10px 18px;
-    border-radius:7px;
+    padding:12px 22px;
+    border-radius:8px;
 }
 
 .answer{
-    margin-top:15px;
-    background:white;
-    padding:15px;
-    border-radius:8px;
     display:none;
+    background:white;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
 }
 
 /* MOBILE */
-@media(max-width:700px){
+@media(max-width:750px){
+
+    .header{
+        padding:0 15px;
+    }
+
+    .menuBtn{
+        display:block;
+    }
 
     .sidebar{
-        width:120px;
-        padding:15px 8px;
+        display:none;
+        width:250px;
+        z-index:200;
+        box-shadow:5px 0 20px rgba(0,0,0,.15);
+    }
+
+    .sidebar.open{
+        display:block;
     }
 
     .main{
-        margin-left:120px;
-        padding:12px;
-    }
-
-    .logo{
-        font-size:14px;
-    }
-
-    .menu{
-        font-size:11px;
+        margin-left:0;
+        padding:15px;
     }
 
     .top{
         flex-direction:column;
-        align-items:stretch;
     }
 
     .search{
@@ -227,52 +265,73 @@ body{
 
     .whatsapp{
         text-align:center;
+        width:100%;
+    }
+
+    .welcome{
+        padding:28px 22px;
     }
 
     .welcome h1{
-        font-size:23px;
+        font-size:30px;
     }
 
     .cards{
         grid-template-columns:1fr;
     }
+
+    .aiBox{
+        flex-direction:column;
+    }
+
+    .ask{
+        width:100%;
+    }
 }
 </style>
 </head>
 
-
 <body>
 
+<header class="header">
+
+    <div class="logo">
+        🎓 AI TEACHER
+    </div>
+
+    <button class="menuBtn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+</header>
+
+
 <!-- SIDEBAR -->
-<div class="sidebar">
+<nav class="sidebar" id="sidebar">
 
-    <div class="logo">🎓 AI TEACHER</div>
-
-    <a class="menu" href="#home">🏠 Home</a>
-    <a class="menu" href="#notes">📚 All Notes</a>
-    <a class="menu" href="#senior1">📘 Senior One</a>
-    <a class="menu" href="#senior2">📗 Senior Two</a>
-    <a class="menu" href="#senior3">📙 Senior Three</a>
-    <a class="menu" href="#ai">🤖 AI Teacher</a>
-    <a class="menu" href="#search">🔎 Search Notes</a>
-    <a class="menu" href="https://wa.me/250738939769">
+    <a href="#home">🏠 Home</a>
+    <a href="#notes">📚 All Notes</a>
+    <a href="#senior1">📘 Senior One</a>
+    <a href="#senior2">📗 Senior Two</a>
+    <a href="#senior3">📙 Senior Three</a>
+    <a href="#ai">🤖 AI Teacher</a>
+    <a href="#search">🔎 Search Notes</a>
+    <a href="https://wa.me/250738939769">
         ☎ Contact
     </a>
 
-</div>
+</nav>
 
 
-<!-- MAIN -->
-<div class="main">
+<main class="main">
 
-    <!-- TOP -->
+    <!-- SEARCH -->
     <div class="top" id="search">
 
         <input
             class="search"
             id="searchInput"
-            type="text"
-            placeholder="Search notes..."
+            placeholder="🔎 Search notes..."
             onkeyup="searchNotes()"
         >
 
@@ -281,7 +340,7 @@ body{
             href="https://wa.me/250738939769"
             target="_blank"
         >
-            WhatsApp
+            🟢 WhatsApp
         </a>
 
     </div>
@@ -293,88 +352,60 @@ body{
         <h1>Welcome to AI Teacher</h1>
 
         <p>
-            Your smart way to learn Mathematics & Science
+            Your smart way to learn
+            <b>Mathematics & Science</b>.
             <br>
-            Senior One - Senior Three
+            Learn from Senior One to Senior Three.
         </p>
 
-        <button class="start" onclick="startLearning()">
-            Start Learning
+        <button class="start"
+                onclick="document.getElementById('notes').scrollIntoView({behavior:'smooth'})">
+            🚀 Start Learning
         </button>
 
     </section>
 
 
     <!-- NOTES -->
-    <h2 class="notes-title" id="notes">
+    <h2 class="title" id="notes">
         📚 Browse Notes
     </h2>
 
 
     <div class="cards">
 
-        <!-- SENIOR ONE -->
         <div class="card note" id="senior1">
-
-            <h3>Senior One</h3>
-
+            <h3>📘 Senior One</h3>
             <p>
                 Mathematics<br>
                 Science<br>
                 Notes & Exercises
             </p>
-
-            <button
-                class="view"
-                onclick="openNotes('Senior One')"
-            >
-                View Notes
-            </button>
-
+            <button class="view">View Notes</button>
         </div>
 
 
-        <!-- SENIOR TWO -->
         <div class="card note" id="senior2">
-
-            <h3>Senior Two</h3>
-
+            <h3>📗 Senior Two</h3>
             <p>
                 Mathematics<br>
                 Physics<br>
                 Chemistry<br>
                 Biology
             </p>
-
-            <button
-                class="view"
-                onclick="openNotes('Senior Two')"
-            >
-                View Notes
-            </button>
-
+            <button class="view">View Notes</button>
         </div>
 
 
-        <!-- SENIOR THREE -->
         <div class="card note" id="senior3">
-
-            <h3>Senior Three</h3>
-
+            <h3>📙 Senior Three</h3>
             <p>
                 Mathematics<br>
                 Physics<br>
                 Chemistry<br>
                 Biology
             </p>
-
-            <button
-                class="view"
-                onclick="openNotes('Senior Three')"
-            >
-                View Notes
-            </button>
-
+            <button class="view">View Notes</button>
         </div>
 
     </div>
@@ -385,115 +416,93 @@ body{
 
         <h2>🤖 AI Teacher Assistant</h2>
 
-        <div class="ai-row">
+        <div class="aiBox">
 
             <input
-                class="ai-input"
+                class="aiInput"
                 id="question"
                 placeholder="Ask your question..."
             >
 
-            <button
-                class="ask"
-                onclick="askTeacher()"
-            >
+            <button class="ask" onclick="askAI()">
                 Ask
             </button>
 
         </div>
 
-        <div
-            class="answer"
-            id="answer"
-        ></div>
+        <div class="answer" id="answer"></div>
 
     </section>
 
-</div>
+</main>
 
 
 <script>
 
-/* SEARCH */
-function searchNotes(){
-
-    let input =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase();
-
-    let cards =
-        document.querySelectorAll(".note");
-
-    cards.forEach(function(card){
-
-        let text =
-            card.innerText.toLowerCase();
-
-        if(text.includes(input)){
-            card.style.display = "";
-        }else{
-            card.style.display = "none";
-        }
-
-    });
-}
-
-
-/* START LEARNING */
-function startLearning(){
+function toggleMenu(){
 
     document
-        .getElementById("notes")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    .getElementById("sidebar")
+    .classList.toggle("open");
 
 }
 
 
-/* NOTES */
-function openNotes(level){
+function searchNotes(){
 
-    alert(
-        "Opening " +
-        level +
-        " notes..."
-    );
+    let value =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    let cards =
+    document.querySelectorAll(".note");
+
+    cards.forEach(card => {
+
+        let text =
+        card.innerText.toLowerCase();
+
+        card.style.display =
+        text.includes(value)
+        ? "block"
+        : "none";
+
+    });
 
 }
 
 
-/* AI TEACHER */
-function askTeacher(){
+function askAI(){
 
     let question =
-        document
-        .getElementById("question")
-        .value
-        .trim();
+    document
+    .getElementById("question")
+    .value
+    .trim();
 
     let answer =
-        document.getElementById("answer");
+    document.getElementById("answer");
 
-    if(question === ""){
+    if(!question){
 
-        answer.style.display = "block";
+        answer.style.display="block";
 
         answer.innerHTML =
-        "Please write your question first.";
+        "✍️ Please type your question.";
 
         return;
     }
 
-    answer.style.display = "block";
+    answer.style.display="block";
 
     answer.innerHTML =
-    "<b>AI Teacher:</b><br>" +
-    "I received your question: " +
+    "<b>🤖 AI Teacher:</b><br><br>" +
+    "Your question is: " +
     question +
     "<br><br>" +
-    "AI Teacher is ready to help you learn Mathematics and Science.";
+    "I can help you with Mathematics and Science.";
 
 }
 
