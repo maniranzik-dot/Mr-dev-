@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Teacher Dashboard</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 *{
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial;
 }
 
 body{
@@ -19,15 +20,15 @@ color:white;
 .sidebar{
 position:fixed;
 width:230px;
-height:100vh;
+height:100%;
 background:#101f3d;
-padding:20px;
+padding:25px;
 }
 
 .logo{
 font-size:28px;
 font-weight:bold;
-color:#20d86b;
+color:#20e070;
 margin-bottom:40px;
 }
 
@@ -35,85 +36,70 @@ margin-bottom:40px;
 display:block;
 color:white;
 text-decoration:none;
-padding:15px 5px;
-font-size:18px;
+padding:15px 0;
 }
 
 .main{
 margin-left:230px;
-padding:20px;
+padding:25px;
 }
 
-.top{
+.search{
 display:flex;
 gap:15px;
 }
 
-.search{
-flex:1;
+input{
 padding:15px;
-border-radius:10px;
+width:70%;
+border-radius:8px;
 border:none;
 }
 
-.whatsapp{
-background:#20d86b;
+button{
+background:#20e070;
 color:white;
-border:0;
-border-radius:10px;
-padding:15px;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
 }
 
-.card{
-background:#142952;
+.welcome{
+background:#172b52;
 padding:25px;
 border-radius:20px;
 margin-top:25px;
 }
 
-h1,h2{
-color:#20d86b;
-}
-
-button{
-background:#20d86b;
-border:0;
-padding:12px 25px;
-border-radius:10px;
-color:white;
-}
-
-.classes{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.cards{
+display:flex;
 gap:20px;
+flex-wrap:wrap;
+margin-top:25px;
 }
 
-.assistant input{
-padding:15px;
-width:80%;
-border-radius:10px;
-border:0;
+.card{
+background:#172b52;
+padding:25px;
+border-radius:20px;
+width:280px;
+}
+
+h1,h2{
+color:#20e070;
 }
 
 @media(max-width:700px){
-
 .sidebar{
-width:90px;
+width:120px;
 }
-
-.logo{
-font-size:18px;
-}
-
-.sidebar a{
-font-size:14px;
-}
-
 .main{
-margin-left:90px;
+margin-left:120px;
 }
-
+.card{
+width:100%;
+}
 }
 </style>
 
@@ -123,48 +109,37 @@ margin-left:90px;
 
 <div class="sidebar">
 
-<div class="logo">
-🎓 AI Teacher
-</div>
+<div class="logo">🎓 AI Teacher</div>
 
-<a href="#">🏠 Home</a>
-<a href="#">📚 Notes</a>
+<a href="index.html">🏠 Home</a>
+<a href="#notes">📚 Notes</a>
 <a href="senior-one.html">📘 Senior One</a>
 <a href="senior-two.html">📗 Senior Two</a>
 <a href="senior-three.html">📙 Senior Three</a>
-<a href="#">🤖 AI Teacher</a>
-<a href="#">🔎 Search</a>
-<a href="#">☎ Contact</a>
+<a href="#ai">🤖 AI Teacher</a>
+<a href="#search">🔎 Search</a>
+<a href="#contact">☎ Contact</a>
 
 </div>
 
 
 <div class="main">
 
-<div class="top">
-
-<input class="search" placeholder="Search notes...">
-
-<button class="whatsapp">
-WhatsApp
-</button>
-
+<div class="search">
+<input placeholder="Search notes...">
+<button>WhatsApp</button>
 </div>
 
 
-<div class="card">
+<div class="welcome">
 
 <h1>Welcome to AI Teacher</h1>
 
 <p>
-Your smart way to learn Mathematics and Science
-<br>
-Senior One - Senior Three
+Learn Mathematics and Science from Senior One to Senior Three
 </p>
 
-<button>
-Start Learning
-</button>
+<button>Start Learning</button>
 
 </div>
 
@@ -172,7 +147,7 @@ Start Learning
 <h2>📚 Browse Notes</h2>
 
 
-<div class="classes">
+<div class="cards" id="notes">
 
 
 <div class="card">
@@ -233,15 +208,13 @@ Biology
 
 
 
-<div class="card assistant">
+<div class="welcome">
 
 <h2>🤖 AI Teacher Assistant</h2>
 
 <input placeholder="Ask your question">
 
-<button>
-Ask
-</button>
+<button>Ask</button>
 
 </div>
 
