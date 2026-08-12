@@ -2,53 +2,208 @@
 <html>
 <head>
 <title>AI Teacher Learning Dashboard</title>
+
 <style>
 body{
 font-family:Arial;
 padding:20px;
+background:#ffffff;
 }
+
+h1{
+color:#222;
+}
+
 button{
-margin:5px;
 padding:10px;
+margin:5px;
+border-radius:5px;
 cursor:pointer;
 }
+
+#search{
+width:90%;
+padding:10px;
+}
+
+.box{
+margin-top:20px;
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.ai{
+background:#f1f1f1;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <h1>🎓 AI Teacher Learning Dashboard</h1>
-<p>Senior 1 - Senior 3 | Mathematics & Science</p>
 
-<button onclick="openNotes('Senior One Mathematics')">
+<p>
+Senior 1 - Senior 3 | Mathematics & Science
+</p>
+
+
+<a href="https://wa.me/250738939769">
+<button>📱 WhatsApp Teacher</button>
+</a>
+
+
+<div class="box">
+
+<h3>🔎 Search Notes</h3>
+
+<input id="search" 
+placeholder="Search notes..."
+onkeyup="searchNotes()">
+
+
+</div>
+
+
+<div class="box" id="notes">
+
+
+<h3>📚 Notes</h3>
+
+
+<button onclick="openNotes('senior1-mathematics.html')">
 Senior One Mathematics
 </button>
 
-<button onclick="openNotes('Senior Two Physics')">
+
+<button onclick="openNotes('senior1-science.html')">
+Senior One Science
+</button>
+
+
+<button onclick="openNotes('senior2-mathematics.html')">
+Senior Two Mathematics
+</button>
+
+
+<button onclick="openNotes('senior2-physics.html')">
 Senior Two Physics
 </button>
 
-<button onclick="openNotes('Senior Three Biology')">
+
+<button onclick="openNotes('senior2-chemistry.html')">
+Senior Two Chemistry
+</button>
+
+
+<button onclick="openNotes('senior2-biology.html')">
+Senior Two Biology
+</button>
+
+
+<button onclick="openNotes('senior3-mathematics.html')">
+Senior Three Mathematics
+</button>
+
+
+<button onclick="openNotes('senior3-physics.html')">
+Senior Three Physics
+</button>
+
+
+<button onclick="openNotes('senior3-chemistry.html')">
+Senior Three Chemistry
+</button>
+
+
+<button onclick="openNotes('senior3-biology.html')">
 Senior Three Biology
 </button>
 
+
+</div>
+
+
+
+<div class="box ai">
+
+<h2>🤖 AI Teacher</h2>
+
+<input id="question" 
+placeholder="Ask AI Teacher">
+
+<button onclick="askAI()">
+Ask
+</button>
+
+<p id="answer"></p>
+
+
+</div>
+
+
+
 <script>
-function openNotes(subject){
 
-let pages={
-"Senior One Mathematics":"senior1-mathematics.html",
-"Senior Two Physics":"senior2-physics.html",
-"Senior Three Biology":"senior3-biology.html"
-};
 
-if(pages[subject]){
-window.location.href=pages[subject];
+function openNotes(page){
+
+window.location.href=page;
+
+}
+
+
+
+function searchNotes(){
+
+let text=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+let buttons=document
+.querySelectorAll("#notes button");
+
+
+buttons.forEach(function(btn){
+
+if(btn.innerText.toLowerCase()
+.includes(text)){
+
+btn.style.display="inline-block";
+
 }else{
-alert("Page not found");
-}
+
+btn.style.display="none";
 
 }
+
+});
+
+}
+
+
+
+function askAI(){
+
+let q=document
+.getElementById("question")
+.value;
+
+
+document
+.getElementById("answer")
+.innerHTML=
+"AI Teacher: "+q+" - I will help you learn Mathematics and Science.";
+
+}
+
+
 </script>
+
 
 </body>
 </html>
