@@ -1,157 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mr-dev AI Learning - Senior Three Biology Part 1</title>
+<title>Mr-dev AI Learning - Senior Three Biology Part 2</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #071a33;
-      color: white;
-      line-height: 1.6;
-    }
+body{
+  font-family:Arial,sans-serif;
+  background:#071a33;
+  color:white;
+  line-height:1.6;
+}
 
-    header {
-      background: #0b2345;
-      text-align: center;
-      padding: 30px 15px;
-      border-bottom: 2px solid #20d86a;
-    }
+header{
+  background:#0b2345;
+  text-align:center;
+  padding:30px 15px;
+  border-bottom:2px solid #20d86a;
+}
 
-    header h1 {
-      color: #20e56d;
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
+header h1{
+  color:#20e56d;
+  font-size:32px;
+}
 
-    header p {
-      color: #d9e5f5;
-      font-size: 18px;
-    }
+header p{
+  color:#d9e5f5;
+  font-size:18px;
+  margin-top:8px;
+}
 
-    .search {
-      width: 90%;
-      max-width: 650px;
-      margin: 25px auto;
-      display: block;
-      padding: 16px 20px;
-      border-radius: 30px;
-      border: none;
-      font-size: 17px;
-      outline: none;
-    }
+.search{
+  width:90%;
+  max-width:650px;
+  margin:25px auto;
+  display:block;
+  padding:16px 20px;
+  border-radius:30px;
+  border:none;
+  font-size:17px;
+  outline:none;
+}
 
-    .container {
-      width: 94%;
-      max-width: 900px;
-      margin: 25px auto;
-    }
+.container{
+  width:94%;
+  max-width:900px;
+  margin:25px auto;
+}
 
-    .unit {
-      background: #102b4e;
-      margin-bottom: 25px;
-      padding: 25px;
-      border-radius: 18px;
-      border-left: 5px solid #20d86a;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-    }
+.unit{
+  background:#102b4e;
+  margin-bottom:25px;
+  padding:25px;
+  border-radius:18px;
+  border-left:5px solid #20d86a;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
 
-    .unit h2 {
-      color: #20e56d;
-      margin-bottom: 15px;
-      font-size: 24px;
-    }
+.unit h2{
+  color:#20e56d;
+  margin-bottom:15px;
+  font-size:24px;
+}
 
-    .unit h3 {
-      color: #65b8ff;
-      margin-top: 20px;
-      margin-bottom: 8px;
-    }
+.unit h3{
+  color:#65b8ff;
+  margin-top:20px;
+  margin-bottom:8px;
+}
 
-    ul {
-      padding-left: 25px;
-    }
+ul{
+  padding-left:25px;
+}
 
-    li {
-      margin: 7px 0;
-    }
+li{
+  margin:7px 0;
+}
 
-    .definition {
-      background: #081b34;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-    }
+.definition{
+  background:#081b34;
+  padding:15px;
+  margin:15px 0;
+  border-radius:10px;
+}
 
-    .exercise {
-      background: #081b34;
-      padding: 18px;
-      margin-top: 20px;
-      border-radius: 12px;
-    }
+.exercise{
+  background:#081b34;
+  padding:18px;
+  margin-top:20px;
+  border-radius:12px;
+}
 
-    .answer {
-      display: none;
-      margin-top: 12px;
-      color: #b9ffd3;
-      background: #123d2a;
-      padding: 12px;
-      border-radius: 8px;
-    }
+.answer{
+  display:none;
+  margin-top:12px;
+  color:#b9ffd3;
+  background:#123d2a;
+  padding:12px;
+  border-radius:8px;
+}
 
-    button {
-      background: #20d86a;
-      color: #062016;
-      border: none;
-      padding: 11px 18px;
-      border-radius: 25px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+button{
+  background:#20d86a;
+  color:#062016;
+  border:none;
+  padding:11px 18px;
+  border-radius:25px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:10px;
+}
 
-    button:hover {
-      background: #45ef89;
-    }
+.formula{
+  background:#0b2140;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  color:#ffe58a;
+  font-weight:bold;
+}
 
-    .formula {
-      background: #0b2140;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      color: #ffe58a;
-      font-weight: bold;
-    }
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:30px;
+  background:#0b2345;
+  color:#b9c9dc;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      margin-top: 30px;
-      background: #0b2345;
-      color: #b9c9dc;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
+.hidden{
+  display:none;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>🧬 Mr-dev AI Learning</h1>
-  <p>Senior Three Biology • Part 1 • Units 1–5</p>
+  <p>Senior Three Biology • Part 2 • Units 6–10</p>
 
   <input
     type="text"
@@ -164,322 +160,436 @@
 
 <div class="container">
 
-  <!-- UNIT 1 -->
-  <section class="unit">
-    <h2>Unit 1: Interdependence Among Organisms in an Ecosystem</h2>
+<!-- UNIT 6 -->
+<section class="unit">
 
-    <h3>1.1 Meaning of an Ecosystem</h3>
-    <p>
-      An ecosystem is a community of living organisms interacting with
-      one another and with the non-living components of their environment.
-    </p>
+<h2>Unit 6: Mitosis and Meiosis</h2>
 
-    <div class="definition">
-      <b>Biotic factors:</b> Living components such as plants, animals,
-      bacteria and fungi.
-    </div>
+<h3>6.1 Cell Division</h3>
+<p>
+Cell division is the process by which a parent cell divides to produce
+new cells. The two important types of cell division are mitosis and meiosis.
+</p>
 
-    <div class="definition">
-      <b>Abiotic factors:</b> Non-living components such as light,
-      temperature, water, soil, air and minerals.
-    </div>
+<h3>6.2 Mitosis</h3>
+<p>
+Mitosis is a type of cell division that produces two genetically identical
+daughter cells with the same chromosome number as the parent cell.
+</p>
 
-    <h3>1.2 Interdependence</h3>
-    <p>
-      Interdependence means that organisms depend on one another
-      for food, shelter, reproduction, protection and other resources.
-    </p>
+<h3>6.3 Stages of Mitosis</h3>
 
-    <h3>1.3 Food Chains</h3>
-    <p>
-      A food chain shows the transfer of food energy from one organism
-      to another.
-    </p>
+<ul>
+<li><b>Prophase:</b> Chromosomes become visible and the nuclear membrane breaks down.</li>
+<li><b>Metaphase:</b> Chromosomes arrange themselves at the equator of the cell.</li>
+<li><b>Anaphase:</b> Sister chromatids separate and move to opposite poles.</li>
+<li><b>Telophase:</b> New nuclei form around the chromosomes.</li>
+<li><b>Cytokinesis:</b> The cytoplasm divides to form two daughter cells.</li>
+</ul>
 
-    <div class="formula">
-      Example: Grass → Grasshopper → Frog → Snake → Hawk
-    </div>
+<h3>6.4 Importance of Mitosis</h3>
 
-    <h3>1.4 Food Webs</h3>
-    <p>
-      A food web consists of several interconnected food chains in an ecosystem.
-    </p>
+<ul>
+<li>Growth of organisms</li>
+<li>Replacement of damaged cells</li>
+<li>Repair of tissues</li>
+<li>Asexual reproduction in some organisms</li>
+</ul>
 
-    <h3>1.5 Ecological Relationships</h3>
-    <ul>
-      <li>Predation</li>
-      <li>Competition</li>
-      <li>Mutualism</li>
-      <li>Parasitism</li>
-      <li>Commensalism</li>
-    </ul>
+<h3>6.5 Meiosis</h3>
+<p>
+Meiosis is a type of cell division that produces four genetically different
+haploid cells from one diploid cell.
+</p>
 
-    <div class="exercise">
-      <b>Exercise:</b>
-      <p>What is meant by interdependence among organisms?</p>
-      <button onclick="showAnswer('a1')">Show Answer</button>
-      <div id="a1" class="answer">
-        Interdependence is the dependence of organisms on one another
-        for resources and survival.
-      </div>
-    </div>
-  </section>
+<h3>6.6 Importance of Meiosis</h3>
 
+<ul>
+<li>Formation of gametes</li>
+<li>Maintains chromosome number between generations</li>
+<li>Creates genetic variation</li>
+</ul>
 
-  <!-- UNIT 2 -->
-  <section class="unit">
-    <h2>Unit 2: Population Size</h2>
+<div class="definition">
+<b>Key difference:</b> Mitosis produces 2 genetically similar cells,
+while meiosis produces 4 genetically different haploid cells.
+</div>
 
-    <h3>2.1 Population</h3>
-    <p>
-      A population is a group of organisms of the same species living
-      in the same area at a particular time.
-    </p>
+<div class="exercise">
+<b>Exercise:</b>
+<p>Give two differences between mitosis and meiosis.</p>
 
-    <h3>2.2 Population Size</h3>
-    <p>
-      Population size is the number of individuals of a particular species
-      in a given area.
-    </p>
+<button onclick="showAnswer('a6')">Show Answer</button>
 
-    <h3>2.3 Factors Affecting Population Size</h3>
-    <ul>
-      <li>Birth rate</li>
-      <li>Death rate</li>
-      <li>Immigration</li>
-      <li>Emigration</li>
-      <li>Availability of food</li>
-      <li>Availability of water</li>
-      <li>Predation</li>
-      <li>Diseases</li>
-      <li>Competition</li>
-      <li>Environmental conditions</li>
-    </ul>
+<div id="a6" class="answer">
+Mitosis produces two genetically similar cells, while meiosis produces
+four genetically different cells. Mitosis maintains the chromosome number,
+while meiosis reduces it by half.
+</div>
+</div>
 
-    <h3>2.4 Population Sampling</h3>
-    <p>
-      Scientists estimate population size using sampling methods.
-      Common methods include quadrats and transects.
-    </p>
-
-    <div class="definition">
-      <b>Quadrat:</b> A frame used to sample organisms, especially plants,
-      in a particular area.
-    </div>
-
-    <div class="definition">
-      <b>Transect:</b> A line or belt used to study how organisms are
-      distributed across an area.
-    </div>
-
-    <div class="exercise">
-      <b>Exercise:</b>
-      <p>Name four factors that can affect population size.</p>
-      <button onclick="showAnswer('a2')">Show Answer</button>
-      <div id="a2" class="answer">
-        Birth rate, death rate, immigration and emigration.
-      </div>
-    </div>
-  </section>
+</section>
 
 
-  <!-- UNIT 3 -->
-  <section class="unit">
-    <h2>Unit 3: Nutrient Cycles</h2>
+<!-- UNIT 7 -->
+<section class="unit">
 
-    <h3>3.1 Meaning of Nutrient Cycles</h3>
-    <p>
-      Nutrient cycles describe the movement and recycling of chemical
-      elements between living organisms and the environment.
-    </p>
+<h2>Unit 7: Heterotrophic Nutrition</h2>
 
-    <h3>3.2 Carbon Cycle</h3>
-    <p>
-      Carbon moves between the atmosphere, plants, animals, soil and
-      other parts of the environment.
-    </p>
+<h3>7.1 Meaning of Heterotrophic Nutrition</h3>
 
-    <ul>
-      <li>Photosynthesis removes carbon dioxide from the atmosphere.</li>
-      <li>Respiration releases carbon dioxide.</li>
-      <li>Decomposition releases carbon dioxide.</li>
-      <li>Combustion releases carbon dioxide.</li>
-    </ul>
+<p>
+Heterotrophic nutrition is a mode of nutrition in which organisms obtain
+organic food from other organisms because they cannot manufacture their
+own food.
+</p>
 
-    <h3>3.3 Nitrogen Cycle</h3>
-    <p>
-      Nitrogen is essential for making proteins and nucleic acids.
-      Nitrogen is recycled through processes involving bacteria.
-    </p>
+<h3>7.2 Types of Heterotrophic Nutrition</h3>
 
-    <ul>
-      <li>Nitrogen fixation</li>
-      <li>Nitrification</li>
-      <li>Assimilation</li>
-      <li>Ammonification</li>
-      <li>Denitrification</li>
-    </ul>
+<ul>
+<li>Holozoic nutrition</li>
+<li>Saprophytic nutrition</li>
+<li>Parasitic nutrition</li>
+<li>Symbiotic nutrition</li>
+</ul>
 
-    <h3>3.4 Importance of Nutrient Cycles</h3>
-    <ul>
-      <li>They recycle essential nutrients.</li>
-      <li>They maintain soil fertility.</li>
-      <li>They support plant growth.</li>
-      <li>They maintain ecosystem balance.</li>
-    </ul>
+<h3>7.3 Holozoic Nutrition</h3>
 
-    <div class="exercise">
-      <b>Exercise:</b>
-      <p>Why are nutrient cycles important in an ecosystem?</p>
-      <button onclick="showAnswer('a3')">Show Answer</button>
-      <div id="a3" class="answer">
-        They recycle essential nutrients so that organisms can continue
-        to obtain the materials needed for growth and survival.
-      </div>
-    </div>
-  </section>
+<p>
+Holozoic nutrition involves taking in solid or liquid food and digesting
+it internally.
+</p>
 
+<div class="formula">
+Ingestion → Digestion → Absorption → Assimilation → Egestion
+</div>
 
-  <!-- UNIT 4 -->
-  <section class="unit">
-    <h2>Unit 4: Effects of Human Activities on Ecosystems</h2>
+<h3>7.4 Human Digestive System</h3>
 
-    <h3>4.1 Human Activities</h3>
-    <ul>
-      <li>Deforestation</li>
-      <li>Agriculture</li>
-      <li>Mining</li>
-      <li>Industrialisation</li>
-      <li>Urbanisation</li>
-      <li>Fishing</li>
-      <li>Hunting</li>
-      <li>Burning of fuels</li>
-    </ul>
+<ul>
+<li>Mouth</li>
+<li>Oesophagus</li>
+<li>Stomach</li>
+<li>Small intestine</li>
+<li>Large intestine</li>
+<li>Rectum</li>
+<li>Anus</li>
+</ul>
 
-    <h3>4.2 Deforestation</h3>
-    <p>
-      Deforestation is the removal of trees from forests.
-      It can lead to soil erosion, loss of habitats and reduced biodiversity.
-    </p>
+<h3>7.5 Functions of the Digestive Organs</h3>
 
-    <h3>4.3 Pollution</h3>
-    <p>
-      Pollution is the introduction of harmful substances into the environment.
-    </p>
+<div class="definition">
+<b>Mouth:</b> Food is chewed and mixed with saliva.
+</div>
 
-    <ul>
-      <li>Air pollution</li>
-      <li>Water pollution</li>
-      <li>Soil pollution</li>
-      <li>Noise pollution</li>
-    </ul>
+<div class="definition">
+<b>Stomach:</b> Food is mixed with gastric juice and partially digested.
+</div>
 
-    <h3>4.4 Effects on Ecosystems</h3>
-    <ul>
-      <li>Loss of biodiversity</li>
-      <li>Destruction of habitats</li>
-      <li>Soil erosion</li>
-      <li>Climate change</li>
-      <li>Water pollution</li>
-      <li>Reduced soil fertility</li>
-    </ul>
+<div class="definition">
+<b>Small intestine:</b> Digestion is completed and nutrients are absorbed.
+</div>
 
-    <div class="exercise">
-      <b>Exercise:</b>
-      <p>Give three effects of deforestation.</p>
-      <button onclick="showAnswer('a4')">Show Answer</button>
-      <div id="a4" class="answer">
-        Habitat destruction, soil erosion and loss of biodiversity.
-      </div>
-    </div>
-  </section>
+<div class="definition">
+<b>Large intestine:</b> Water is absorbed and faeces are formed.
+</div>
+
+<h3>7.6 Digestive Enzymes</h3>
+
+<ul>
+<li>Amylase breaks down starch.</li>
+<li>Protease breaks down proteins.</li>
+<li>Lipase breaks down fats.</li>
+</ul>
+
+<div class="exercise">
+<b>Exercise:</b>
+<p>What is heterotrophic nutrition?</p>
+
+<button onclick="showAnswer('a7')">Show Answer</button>
+
+<div id="a7" class="answer">
+Heterotrophic nutrition is a mode of nutrition in which organisms obtain
+food from other organisms.
+</div>
+</div>
+
+</section>
 
 
-  <!-- UNIT 5 -->
-  <section class="unit">
-    <h2>Unit 5: Effects of Human Activities on Ecosystems — Conservation and Sustainability</h2>
+<!-- UNIT 8 -->
+<section class="unit">
 
-    <h3>5.1 Conservation</h3>
-    <p>
-      Conservation is the protection, management and wise use of natural
-      resources and living organisms.
-    </p>
+<h2>Unit 8: Circulatory Systems in Humans</h2>
 
-    <h3>5.2 Sustainable Use of Resources</h3>
-    <p>
-      Sustainability means using resources in a way that meets present
-      needs without preventing future generations from meeting their needs.
-    </p>
+<h3>8.1 Meaning of Circulation</h3>
 
-    <h3>5.3 Methods of Conservation</h3>
-    <ul>
-      <li>Afforestation and reforestation</li>
-      <li>Creation of national parks</li>
-      <li>Protection of endangered species</li>
-      <li>Controlled hunting and fishing</li>
-      <li>Recycling and reuse of materials</li>
-      <li>Proper waste management</li>
-      <li>Use of renewable energy</li>
-      <li>Environmental education</li>
-    </ul>
+<p>
+Circulation is the movement of substances such as oxygen, nutrients,
+hormones and waste products around the body.
+</p>
 
-    <h3>5.4 Importance of Conservation</h3>
-    <ul>
-      <li>Protects biodiversity.</li>
-      <li>Protects natural habitats.</li>
-      <li>Prevents extinction.</li>
-      <li>Maintains ecosystem balance.</li>
-      <li>Protects natural resources for future generations.</li>
-    </ul>
+<h3>8.2 Components of the Circulatory System</h3>
 
-    <div class="exercise">
-      <b>Exercise:</b>
-      <p>What is conservation?</p>
-      <button onclick="showAnswer('a5')">Show Answer</button>
-      <div id="a5" class="answer">
-        Conservation is the protection, management and wise use of
-        natural resources and living organisms.
-      </div>
-    </div>
-  </section>
+<ul>
+<li>Heart</li>
+<li>Blood</li>
+<li>Blood vessels</li>
+</ul>
+
+<h3>8.3 The Human Heart</h3>
+
+<p>
+The heart is a muscular organ that pumps blood around the body.
+</p>
+
+<h3>8.4 Chambers of the Heart</h3>
+
+<ul>
+<li>Right atrium</li>
+<li>Right ventricle</li>
+<li>Left atrium</li>
+<li>Left ventricle</li>
+</ul>
+
+<h3>8.5 Blood Vessels</h3>
+
+<div class="definition">
+<b>Arteries:</b> Carry blood away from the heart.
+</div>
+
+<div class="definition">
+<b>Veins:</b> Carry blood towards the heart.
+</div>
+
+<div class="definition">
+<b>Capillaries:</b> Very small blood vessels where exchange of substances occurs.
+</div>
+
+<h3>8.6 Components of Blood</h3>
+
+<ul>
+<li>Red blood cells</li>
+<li>White blood cells</li>
+<li>Platelets</li>
+<li>Plasma</li>
+</ul>
+
+<h3>8.7 Functions of Blood</h3>
+
+<ul>
+<li>Transport of oxygen</li>
+<li>Transport of nutrients</li>
+<li>Removal of waste products</li>
+<li>Protection against diseases</li>
+<li>Blood clotting</li>
+<li>Distribution of heat</li>
+</ul>
+
+<div class="exercise">
+<b>Exercise:</b>
+<p>What is the main function of red blood cells?</p>
+
+<button onclick="showAnswer('a8')">Show Answer</button>
+
+<div id="a8" class="answer">
+Red blood cells transport oxygen from the lungs to body tissues
+using haemoglobin.
+</div>
+</div>
+
+</section>
+
+
+<!-- UNIT 9 -->
+<section class="unit">
+
+<h2>Unit 9: Cellular Respiration</h2>
+
+<h3>9.1 Meaning of Cellular Respiration</h3>
+
+<p>
+Cellular respiration is the process by which cells release energy from
+food, especially glucose, to produce ATP.
+</p>
+
+<h3>9.2 Aerobic Respiration</h3>
+
+<p>
+Aerobic respiration occurs in the presence of oxygen and releases
+a large amount of energy.
+</p>
+
+<div class="formula">
+Glucose + Oxygen → Carbon dioxide + Water + Energy
+</div>
+
+<h3>9.3 Anaerobic Respiration</h3>
+
+<p>
+Anaerobic respiration occurs without oxygen and releases less energy
+than aerobic respiration.
+</p>
+
+<h3>9.4 Anaerobic Respiration in Yeast</h3>
+
+<div class="formula">
+Glucose → Ethanol + Carbon dioxide + Energy
+</div>
+
+<h3>9.5 Anaerobic Respiration in Muscles</h3>
+
+<div class="formula">
+Glucose → Lactic acid + Energy
+</div>
+
+<h3>9.6 Importance of Respiration</h3>
+
+<ul>
+<li>Provides energy for movement.</li>
+<li>Provides energy for active transport.</li>
+<li>Provides energy for growth.</li>
+<li>Provides energy for reproduction.</li>
+<li>Provides energy for synthesis of substances.</li>
+</ul>
+
+<div class="exercise">
+<b>Exercise:</b>
+<p>What is the difference between aerobic and anaerobic respiration?</p>
+
+<button onclick="showAnswer('a9')">Show Answer</button>
+
+<div id="a9" class="answer">
+Aerobic respiration requires oxygen and releases more energy,
+while anaerobic respiration occurs without oxygen and releases less energy.
+</div>
+</div>
+
+</section>
+
+
+<!-- UNIT 10 -->
+<section class="unit">
+
+<h2>Unit 10: Skin and Homeostatic Mechanisms</h2>
+
+<h3>10.1 The Skin</h3>
+
+<p>
+The skin is the largest organ of the human body. It protects the body
+and helps regulate body temperature.
+</p>
+
+<h3>10.2 Functions of the Skin</h3>
+
+<ul>
+<li>Protection</li>
+<li>Temperature regulation</li>
+<li>Sensation</li>
+<li>Excretion of sweat</li>
+<li>Prevention of excessive water loss</li>
+</ul>
+
+<h3>10.3 Temperature Regulation</h3>
+
+<p>
+The human body maintains its internal temperature within a narrow range.
+This is an example of homeostasis.
+</p>
+
+<h3>10.4 When Body Temperature Increases</h3>
+
+<ul>
+<li>Sweat glands produce more sweat.</li>
+<li>Blood vessels near the skin widen (vasodilation).</li>
+<li>More heat is lost from the skin.</li>
+</ul>
+
+<h3>10.5 When Body Temperature Decreases</h3>
+
+<ul>
+<li>Sweating decreases.</li>
+<li>Blood vessels near the skin narrow (vasoconstriction).</li>
+<li>Muscles contract rapidly, causing shivering.</li>
+<li>Metabolic activity can increase to produce heat.</li>
+</ul>
+
+<h3>10.6 Homeostasis</h3>
+
+<p>
+Homeostasis is the maintenance of a relatively constant internal
+environment despite changes in the external environment.
+</p>
+
+<div class="definition">
+<b>Examples of homeostasis:</b> Regulation of body temperature,
+blood glucose concentration and water balance.
+</div>
+
+<h3>10.7 Negative Feedback</h3>
+
+<p>
+Negative feedback is a control mechanism in which a change in a condition
+causes responses that return the condition towards its normal level.
+</p>
+
+<div class="exercise">
+<b>Exercise:</b>
+<p>What is homeostasis?</p>
+
+<button onclick="showAnswer('a10')">Show Answer</button>
+
+<div id="a10" class="answer">
+Homeostasis is the maintenance of a relatively constant internal
+environment in the body despite changes in the external environment.
+</div>
+</div>
+
+</section>
 
 </div>
 
 
 <footer>
-  🧬 Mr-dev AI Learning<br>
-  Senior Three Biology • Part 1 • Units 1–5
+🧬 Mr-dev AI Learning<br>
+Senior Three Biology • Part 2 • Units 6–10
 </footer>
 
 
 <script>
 
-  function showAnswer(id) {
-    const answer = document.getElementById(id);
+function showAnswer(id){
 
-    if (answer.style.display === "block") {
-      answer.style.display = "none";
-    } else {
-      answer.style.display = "block";
+  const answer = document.getElementById(id);
+
+  if(answer.style.display === "block"){
+    answer.style.display = "none";
+  }else{
+    answer.style.display = "block";
+  }
+
+}
+
+function searchUnits(){
+
+  const input = document.getElementById("search");
+  const searchText = input.value.toLowerCase();
+
+  const units = document.querySelectorAll(".unit");
+
+  units.forEach(function(unit){
+
+    const text = unit.innerText.toLowerCase();
+
+    if(text.includes(searchText)){
+      unit.classList.remove("hidden");
+    }else{
+      unit.classList.add("hidden");
     }
-  }
 
-  function searchUnits() {
-    const input = document.getElementById("search");
-    const searchText = input.value.toLowerCase();
+  });
 
-    const units = document.querySelectorAll(".unit");
-
-    units.forEach(function(unit) {
-      const text = unit.innerText.toLowerCase();
-
-      if (text.includes(searchText)) {
-        unit.classList.remove("hidden");
-      } else {
-        unit.classList.add("hidden");
-      }
-    });
-  }
+}
 
 </script>
 
