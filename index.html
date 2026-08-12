@@ -3,238 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mr-dev AI Learning - Senior Two Chemistry</title>
+<title>S2 Chemistry - Mr-dev AI Learning</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#071426;
-    color:#fff;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#071426;
+  color:white;
 }
 
 header{
-    background:#0d1d35;
-    padding:18px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:10;
-    border-bottom:1px solid #243957;
+  background:#0d1d35;
+  padding:25px 15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 header h1{
-    margin:0;
-    color:#25e878;
+  color:#25e878;
+  margin:0 0 8px;
 }
 
 header p{
-    color:#cbd5e1;
+  color:#cbd5e1;
 }
 
-.search{
-    width:90%;
-    max-width:650px;
-    padding:13px;
-    margin-top:12px;
-    border:none;
-    border-radius:25px;
-    outline:none;
-    font-size:16px;
+#search{
+  width:95%;
+  max-width:600px;
+  padding:13px;
+  border:0;
+  border-radius:25px;
+  margin-top:10px;
+  font-size:16px;
 }
 
 .container{
-    width:94%;
-    max-width:1000px;
-    margin:25px auto;
+  width:94%;
+  max-width:1000px;
+  margin:25px auto;
 }
 
 .unit{
-    background:#17253b;
-    border-radius:18px;
-    padding:22px;
-    margin-bottom:22px;
-    box-shadow:0 5px 20px #0005;
-    border:1px solid #263b5a;
+  background:#17253b;
+  border:1px solid #29415f;
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:25px;
+  box-shadow:0 6px 20px #0006;
 }
 
 .unit h2{
-    color:#25e878;
-    margin-top:0;
+  color:#25e878;
 }
 
-h3{
-    color:#55b8ff;
+.unit h3{
+  color:#55b8ff;
 }
 
-h4{
-    color:#facc15;
+.unit h4{
+  color:#facc15;
 }
 
 p,li{
-    line-height:1.7;
-    color:#e2e8f0;
+  line-height:1.7;
+  color:#e2e8f0;
 }
 
 li{
-    margin-bottom:6px;
+  margin:7px 0;
 }
 
 .formula{
-    background:#081426;
-    padding:15px;
-    border-radius:12px;
-    color:#fff;
-    text-align:center;
-    font-size:18px;
-    margin:15px 0;
+  background:#081426;
+  padding:16px;
+  margin:15px 0;
+  border-radius:12px;
+  text-align:center;
+  font-size:18px;
+  color:#25e878;
 }
 
 .example{
-    background:#102b3e;
-    border-left:5px solid #25e878;
-    padding:15px;
-    border-radius:10px;
-    margin:15px 0;
+  background:#102b3e;
+  border-left:5px solid #25e878;
+  padding:15px;
+  margin:15px 0;
+  border-radius:10px;
 }
 
 .diagram{
-    background:#0b1728;
-    border-radius:14px;
-    padding:20px;
-    margin:15px 0;
-    text-align:center;
-    overflow-x:auto;
-}
-
-.atom{
-    display:inline-flex;
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    background:#243d65;
-    align-items:center;
-    justify-content:center;
-    border:4px solid #55b8ff;
-    color:white;
-    font-weight:bold;
-}
-
-.arrow{
-    font-size:30px;
-    color:#25e878;
-    margin:0 15px;
+  background:#091321;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  margin:15px 0;
+  line-height:2;
 }
 
 table{
-    width:100%;
-    border-collapse:collapse;
-    margin:15px 0;
+  width:100%;
+  border-collapse:collapse;
+  margin:15px 0;
 }
 
 th,td{
-    border:1px solid #40536d;
-    padding:10px;
-    text-align:left;
+  border:1px solid #40536d;
+  padding:10px;
 }
 
 th{
-    background:#203858;
-    color:#25e878;
+  background:#203858;
+  color:#25e878;
 }
 
 td{
-    background:#101e31;
-}
-
-.exercise{
-    background:#0c1d31;
-    border-radius:12px;
-    padding:15px;
-    margin-top:20px;
+  background:#101e31;
 }
 
 button{
-    background:#25c968;
-    color:white;
-    border:none;
-    padding:11px 18px;
-    border-radius:25px;
-    cursor:pointer;
-    font-weight:bold;
+  background:#25c968;
+  color:white;
+  border:0;
+  padding:11px 18px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-button:hover{
-    background:#18a957;
+.exercise{
+  background:#0b192b;
+  padding:16px;
+  border-radius:12px;
+  margin-top:20px;
 }
 
 .answer{
-    display:none;
-    margin-top:10px;
-    color:#25e878;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#0d1d35;
-    margin-top:30px;
-    color:#94a3b8;
+  display:none;
+  color:#25e878;
+  margin-top:10px;
 }
 
 .whatsapp{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    background:#25d366;
-    color:white;
-    text-decoration:none;
-    padding:14px 18px;
-    border-radius:30px;
-    font-weight:bold;
-    box-shadow:0 5px 15px #0007;
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25d366;
+  color:white;
+  padding:14px 18px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 5px 15px #0008;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#0d1d35;
+  color:#94a3b8;
 }
 
 @media(max-width:600px){
-    .unit{
-        padding:16px;
-    }
-
-    h1{
-        font-size:24px;
-    }
-
-    table{
-        font-size:14px;
-    }
+  .unit{padding:16px}
+  table{font-size:13px}
 }
 </style>
 </head>
 
-
 <body>
 
 <header>
-
 <h1>🧪 Mr-dev AI Learning</h1>
-
-<p>Senior Two Chemistry</p>
-
-<p>Complete Units 1 - 10</p>
+<p>Senior Two Chemistry • Units 1–10</p>
 
 <input
-class="search"
-id="search"
-type="text"
-placeholder="🔍 Search Chemistry notes..."
-onkeyup="searchUnits()"
+ id="search"
+ type="text"
+ placeholder="🔍 Search Chemistry..."
+ onkeyup="searchUnits()"
 >
-
 </header>
 
 
@@ -247,45 +200,39 @@ onkeyup="searchUnits()"
 
 <h2>Unit 1: Chemical Bonding</h2>
 
-<h3>1. Meaning of Chemical Bonding</h3>
+<h3>Meaning of Chemical Bonding</h3>
 
 <p>
-Chemical bonding is the force of attraction that holds atoms or ions together
-to form molecules and compounds.
+Chemical bonding is the force of attraction that holds atoms or ions
+together to form molecules and compounds.
 </p>
 
-<h3>2. Why Atoms Form Bonds</h3>
+<h3>Why Atoms Form Bonds</h3>
 
 <ul>
-<li>Atoms form bonds to become more stable.</li>
-<li>They tend to achieve a stable outer electron arrangement.</li>
-<li>Bond formation can lower the energy of the atoms.</li>
+<li>To become more stable.</li>
+<li>To obtain a stable outer electron arrangement.</li>
+<li>To lower their energy.</li>
 </ul>
 
-<h3>3. Types of Chemical Bonds</h3>
+<h3>Types of Chemical Bonds</h3>
 
-<h4>Ionic Bond</h4>
+<h4>1. Ionic Bond</h4>
 
 <p>
-An ionic bond is formed when electrons are transferred from one atom to another,
-usually from a metal to a non-metal.
+An ionic bond is formed through transfer of electrons, usually from a
+metal to a non-metal.
 </p>
 
 <div class="diagram">
-
-<div class="atom">Na<br>11</div>
-
-<span class="arrow">→ e⁻ →</span>
-
-<div class="atom">Cl<br>17</div>
-
+Na → Na⁺ + e⁻
+<br>
+Cl + e⁻ → Cl⁻
 <br><br>
-
-<strong>Na⁺ + Cl⁻ → NaCl</strong>
-
+Na⁺ + Cl⁻ → NaCl
 </div>
 
-<h4>Covalent Bond</h4>
+<h4>2. Covalent Bond</h4>
 
 <p>
 A covalent bond is formed when atoms share electrons.
@@ -295,14 +242,12 @@ A covalent bond is formed when atoms share electrons.
 H + H → H₂
 </div>
 
-<h4>Metallic Bond</h4>
+<h4>3. Metallic Bond</h4>
 
 <p>
 Metallic bonding is the attraction between positive metal ions and
 delocalised electrons.
 </p>
-
-<h3>Properties</h3>
 
 <table>
 <tr>
@@ -310,22 +255,19 @@ delocalised electrons.
 <th>Formation</th>
 <th>Example</th>
 </tr>
-
 <tr>
 <td>Ionic</td>
 <td>Transfer of electrons</td>
 <td>NaCl</td>
 </tr>
-
 <tr>
 <td>Covalent</td>
 <td>Sharing of electrons</td>
 <td>H₂O</td>
 </tr>
-
 <tr>
 <td>Metallic</td>
-<td>Metal ions + free electrons</td>
+<td>Metal ions and free electrons</td>
 <td>Cu</td>
 </tr>
 </table>
@@ -333,14 +275,13 @@ delocalised electrons.
 <div class="exercise">
 <b>Exercise:</b>
 <p>What is a chemical bond?</p>
-<button onclick="showAnswer(this)">Show Answer</button>
+<button onclick="answer(this)">Show Answer</button>
 <div class="answer">
-A chemical bond is the force of attraction holding atoms or ions together.
+A chemical bond is the force of attraction that holds atoms or ions together.
 </div>
 </div>
 
 </div>
-
 
 
 <!-- UNIT 2 -->
@@ -352,21 +293,18 @@ A chemical bond is the force of attraction holding atoms or ions together.
 <h3>Periodic Table</h3>
 
 <p>
-The periodic table arranges elements according to increasing atomic number
-and recurring chemical properties.
+The periodic table arranges elements according to atomic number and
+their repeating chemical properties.
 </p>
 
 <h3>Groups and Periods</h3>
 
 <ul>
-<li>A group is a vertical column.</li>
-<li>A period is a horizontal row.</li>
+<li>Groups are vertical columns.</li>
+<li>Periods are horizontal rows.</li>
 </ul>
 
-<h3>Important Trends</h3>
-
 <table>
-
 <tr>
 <th>Property</th>
 <th>Across a Period</th>
@@ -387,41 +325,38 @@ and recurring chemical properties.
 
 <tr>
 <td>Metallic character</td>
-<td>Decreases</td>
-<td>Increases</td>
+<td>Generally decreases</td>
+<td>Generally increases</td>
 </tr>
-
 </table>
 
 <h3>Group 1</h3>
 
 <p>
-Group 1 contains alkali metals such as lithium, sodium and potassium.
-They are generally very reactive.
+Group 1 elements are alkali metals. Examples include lithium,
+sodium and potassium.
 </p>
 
 <div class="formula">
-Li → Na → K → Rb → Cs
+Li → Na → K
 </div>
 
 <h3>Group 17</h3>
 
 <p>
 Group 17 contains halogens such as fluorine, chlorine and bromine.
-They are reactive non-metals.
 </p>
 
 <div class="exercise">
 <b>Exercise:</b>
-<p>What is a period in the periodic table?</p>
-<button onclick="showAnswer(this)">Show Answer</button>
+<p>What is a period?</p>
+<button onclick="answer(this)">Show Answer</button>
 <div class="answer">
-A period is a horizontal row of elements in the periodic table.
+A period is a horizontal row in the periodic table.
 </div>
 </div>
 
 </div>
-
 
 
 <!-- UNIT 3 -->
@@ -433,11 +368,10 @@ A period is a horizontal row of elements in the periodic table.
 <h3>Meaning</h3>
 
 <p>
-Water pollution is the contamination of water by substances that make it
-harmful to humans, animals or the environment.
+Water pollution is the contamination of water by harmful substances.
 </p>
 
-<h3>Sources of Water Pollution</h3>
+<h3>Causes</h3>
 
 <ul>
 <li>Industrial waste.</li>
@@ -448,24 +382,14 @@ harmful to humans, animals or the environment.
 <li>Domestic waste.</li>
 </ul>
 
-<h3>Water Pollution Diagram</h3>
-
 <div class="diagram">
-
 🏭 Factory
-<br>
-↓
-<br>
-🧪 Waste
-<br>
-↓
-<br>
-🌊 River
-<br>
-↓
-<br>
-🐟 Aquatic organisms affected
-
+<br>↓
+<br>🧪 Waste
+<br>↓
+<br>🌊 River
+<br>↓
+<br>🐟 Aquatic organisms affected
 </div>
 
 <h3>Effects</h3>
@@ -474,7 +398,7 @@ harmful to humans, animals or the environment.
 <li>Death of aquatic organisms.</li>
 <li>Spread of diseases.</li>
 <li>Reduction of clean water.</li>
-<li>Destruction of aquatic ecosystems.</li>
+<li>Damage to aquatic ecosystems.</li>
 </ul>
 
 <h3>Prevention</h3>
@@ -483,12 +407,10 @@ harmful to humans, animals or the environment.
 <li>Treat sewage before discharge.</li>
 <li>Control industrial waste.</li>
 <li>Avoid dumping plastics in water.</li>
-<li>Use agricultural chemicals responsibly.</li>
 <li>Protect water sources.</li>
 </ul>
 
 </div>
-
 
 
 <!-- UNIT 4 -->
@@ -500,46 +422,35 @@ harmful to humans, animals or the environment.
 <h3>Meaning</h3>
 
 <p>
-Waste management is the proper collection, treatment, reuse, recycling
-and disposal of waste.
+Waste management involves collecting, treating, reusing, recycling
+and safely disposing of waste.
 </p>
-
-<h3>Types of Waste</h3>
-
-<ul>
-<li>Solid waste.</li>
-<li>Liquid waste.</li>
-<li>Gaseous waste.</li>
-<li>Hazardous waste.</li>
-<li>Organic waste.</li>
-</ul>
 
 <h3>Methods</h3>
 
-<h4>1. Reduce</h4>
+<h4>Reduce</h4>
 <p>Reduce the amount of waste produced.</p>
 
-<h4>2. Reuse</h4>
-<p>Use an item again instead of throwing it away.</p>
+<h4>Reuse</h4>
+<p>Use an item more than once.</p>
 
-<h4>3. Recycling</h4>
-<p>Convert waste into useful materials.</p>
+<h4>Recycle</h4>
+<p>Convert waste materials into useful products.</p>
 
-<h4>4. Composting</h4>
-<p>Convert biodegradable waste into useful organic manure.</p>
+<h4>Composting</h4>
+<p>Convert biodegradable waste into organic manure.</p>
 
-<h4>5. Incineration</h4>
+<h4>Incineration</h4>
 <p>Controlled burning of waste at high temperature.</p>
 
-<h4>6. Landfill</h4>
+<h4>Landfill</h4>
 <p>Controlled disposal of waste in prepared areas.</p>
 
 <div class="formula">
-Reduce → Reuse → Recycle → Recover
+Reduce → Reuse → Recycle
 </div>
 
 </div>
-
 
 
 <!-- UNIT 5 -->
@@ -548,59 +459,43 @@ Reduce → Reuse → Recycle → Recover
 
 <h2>Unit 5: Categories of Chemical Reactions</h2>
 
-<h3>Meaning</h3>
+<h3>Chemical Reaction</h3>
 
 <p>
-A chemical reaction is a process in which reactants are changed into new
-substances called products.
+A chemical reaction is a process in which reactants are changed into
+new substances called products.
 </p>
 
-<h3>1. Combination Reaction</h3>
-
-<p>
-Two or more substances combine to form one product.
-</p>
+<h4>1. Combination</h4>
 
 <div class="formula">
 2H₂ + O₂ → 2H₂O
 </div>
 
-<h3>2. Decomposition Reaction</h3>
-
-<p>
-One compound breaks down into two or more simpler substances.
-</p>
+<h4>2. Decomposition</h4>
 
 <div class="formula">
 CaCO₃ → CaO + CO₂
 </div>
 
-<h3>3. Displacement Reaction</h3>
-
-<p>
-A more reactive element replaces a less reactive element in a compound.
-</p>
+<h4>3. Displacement</h4>
 
 <div class="formula">
 Zn + CuSO₄ → ZnSO₄ + Cu
 </div>
 
-<h3>4. Neutralisation</h3>
-
-<p>
-An acid reacts with a base to form salt and water.
-</p>
+<h4>4. Neutralisation</h4>
 
 <div class="formula">
 HCl + NaOH → NaCl + H₂O
 </div>
 
-<h3>Signs of Chemical Reaction</h3>
+<h3>Signs of a Reaction</h3>
 
 <ul>
 <li>Colour change.</li>
-<li>Gas production.</li>
-<li>Formation of a precipitate.</li>
+<li>Gas formation.</li>
+<li>Precipitate formation.</li>
 <li>Temperature change.</li>
 <li>Light production.</li>
 </ul>
@@ -608,21 +503,20 @@ HCl + NaOH → NaCl + H₂O
 </div>
 
 
-
 <!-- UNIT 6 -->
 
 <div class="unit">
 
-<h2>Unit 6: Preparation of Salts and Identification of Salts</h2>
+<h2>Unit 6: Preparation and Identification of Salts</h2>
 
 <h3>Meaning of Salt</h3>
 
 <p>
-A salt is an ionic compound formed when the hydrogen ions of an acid
-are replaced by metal ions or ammonium ions.
+A salt is an ionic compound formed when hydrogen ions in an acid are
+replaced by metal ions or ammonium ions.
 </p>
 
-<h3>Preparation Methods</h3>
+<h3>Preparation</h3>
 
 <h4>Acid + Metal</h4>
 
@@ -642,10 +536,9 @@ HCl + NaOH → NaCl + H₂O
 CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂
 </div>
 
-<h3>Identification of Ions</h3>
+<h3>Identification</h3>
 
 <table>
-
 <tr>
 <th>Ion</th>
 <th>Test</th>
@@ -666,14 +559,12 @@ CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂
 
 <tr>
 <td>CO₃²⁻</td>
-<td>Add dilute acid</td>
+<td>Dilute acid</td>
 <td>Carbon dioxide gas</td>
 </tr>
-
 </table>
 
 </div>
-
 
 
 <!-- UNIT 7 -->
@@ -685,12 +576,12 @@ CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂
 <h3>Meaning of Mole</h3>
 
 <p>
-A mole is the amount of substance containing approximately
+A mole is an amount of substance containing approximately
 6.02 × 10²³ particles.
 </p>
 
 <div class="formula">
-Avogadro constant = 6.02 × 10²³ mol⁻¹
+Nₐ = 6.02 × 10²³ mol⁻¹
 </div>
 
 <h3>Number of Moles</h3>
@@ -700,43 +591,36 @@ n = m / M
 </div>
 
 <p>
-Where:
-<br>
-n = number of moles
-<br>
-m = mass in grams
-<br>
+n = number of moles<br>
+m = mass in grams<br>
 M = molar mass in g/mol
 </p>
 
-<h3>Example</h3>
-
 <div class="example">
 
+<b>Example:</b>
+
+<p>
 Find the number of moles in 18 g of H₂O.
+</p>
 
-<br><br>
-
+<p>
 Molar mass of H₂O = 18 g/mol
-
-<br><br>
-
-n = 18 / 18
-
-<br><br>
-
-<b>n = 1 mol</b>
-
-</div>
-
-<h3>Particles</h3>
+</p>
 
 <div class="formula">
-Number of particles = n × 6.02 × 10²³
+n = 18 / 18 = 1 mol
 </div>
 
 </div>
 
+<h3>Number of Particles</h3>
+
+<div class="formula">
+Particles = n × 6.02 × 10²³
+</div>
+
+</div>
 
 
 <!-- UNIT 8 -->
@@ -751,10 +635,7 @@ Number of particles = n × 6.02 × 10²³
 An oxide is a compound formed when oxygen combines with another element.
 </p>
 
-<h3>Types of Oxides</h3>
-
 <table>
-
 <tr>
 <th>Type</th>
 <th>Example</th>
@@ -779,31 +660,19 @@ An oxide is a compound formed when oxygen combines with another element.
 <td>Neutral oxide</td>
 <td>CO</td>
 </tr>
-
 </table>
 
 <h3>Formation</h3>
 
 <div class="formula">
-Metal + Oxygen → Metal Oxide
-</div>
-
-<div class="formula">
 2Mg + O₂ → 2MgO
 </div>
-
-<h3>Acidic Oxides</h3>
-
-<p>
-Many non-metal oxides react with water to form acids.
-</p>
 
 <div class="formula">
 CO₂ + H₂O → H₂CO₃
 </div>
 
 </div>
-
 
 
 <!-- UNIT 9 -->
@@ -818,7 +687,7 @@ CO₂ + H₂O → H₂CO₃
 Electrolysis is the decomposition of an ionic substance using electrical energy.
 </p>
 
-<h3>Main Components</h3>
+<h3>Main Parts</h3>
 
 <ul>
 <li>Electrolyte.</li>
@@ -833,7 +702,7 @@ Electrolysis is the decomposition of an ionic substance using electrical energy.
 🔋 Battery
 <br><br>
 
-<strong>+</strong> → 🟥 Anode | Electrolyte | Cathode 🟦 ← <strong>−</strong>
+<strong>+</strong> → ANODE | ELECTROLYTE | CATHODE ← <strong>−</strong>
 
 <br><br>
 
@@ -849,23 +718,18 @@ Cations → Cathode
 2H₂O → 2H₂ + O₂
 </div>
 
-<p>
-Hydrogen is produced at the cathode and oxygen is produced at the anode
-under appropriate electrolysis conditions.
-</p>
-
 <h3>Electrolytes</h3>
 
 <p>
-Electrolytes are substances that conduct electricity when molten or dissolved
-in water because they contain mobile ions.
+Electrolytes conduct electricity in molten or aqueous form because they
+contain mobile ions.
 </p>
 
 <h3>Non-electrolytes</h3>
 
 <p>
-Non-electrolytes do not conduct electricity because they do not provide
-mobile ions in solution.
+Non-electrolytes do not produce mobile ions and therefore do not conduct
+electricity in solution.
 </p>
 
 <h3>Applications</h3>
@@ -874,11 +738,9 @@ mobile ions in solution.
 <li>Electroplating.</li>
 <li>Extraction of metals.</li>
 <li>Purification of metals.</li>
-<li>Manufacture of chemicals.</li>
 </ul>
 
 </div>
-
 
 
 <!-- UNIT 10 -->
@@ -890,8 +752,7 @@ mobile ions in solution.
 <h3>Meaning</h3>
 
 <p>
-Organic chemistry is the branch of chemistry concerned mainly with
-carbon compounds.
+Organic chemistry is the study of carbon compounds.
 </p>
 
 <h3>Hydrocarbons</h3>
@@ -900,86 +761,75 @@ carbon compounds.
 Hydrocarbons are compounds containing only carbon and hydrogen.
 </p>
 
-<h3>Main Hydrocarbon Families</h3>
-
 <table>
-
 <tr>
 <th>Family</th>
-<th>Bond</th>
+<th>Main Bond</th>
 <th>Example</th>
 </tr>
 
 <tr>
 <td>Alkanes</td>
-<td>Single</td>
-<td>Methane CH₄</td>
+<td>Single bond</td>
+<td>CH₄</td>
 </tr>
 
 <tr>
 <td>Alkenes</td>
-<td>Double</td>
-<td>Ethene C₂H₄</td>
+<td>Double bond</td>
+<td>C₂H₄</td>
 </tr>
 
 <tr>
 <td>Alkynes</td>
-<td>Triple</td>
-<td>Ethyne C₂H₂</td>
+<td>Triple bond</td>
+<td>C₂H₂</td>
 </tr>
-
 </table>
 
 <h3>Alkanes</h3>
 
 <p>
-Alkanes are saturated hydrocarbons containing only single carbon-carbon bonds.
+Alkanes are saturated hydrocarbons.
 </p>
 
 <div class="formula">
-General formula: CₙH₂ₙ₊₂
+CₙH₂ₙ₊₂
 </div>
 
 <p>
-Examples:
-<br>
-CH₄ = Methane
-<br>
-C₂H₆ = Ethane
-<br>
-C₃H₈ = Propane
+Examples: CH₄, C₂H₆, C₃H₈
 </p>
 
 <h3>Alkenes</h3>
 
 <p>
-Alkenes are unsaturated hydrocarbons containing at least one carbon-carbon
-double bond.
+Alkenes are unsaturated hydrocarbons containing a carbon-carbon double bond.
 </p>
 
 <div class="formula">
-General formula: CₙH₂ₙ
+CₙH₂ₙ
 </div>
 
-<div class="formula">
-C₂H₄ = Ethene
-</div>
+<p>
+Example: C₂H₄ (ethene)
+</p>
 
 <h3>Alkynes</h3>
 
 <p>
-Alkynes contain at least one carbon-carbon triple bond.
+Alkynes contain a carbon-carbon triple bond.
 </p>
 
 <div class="formula">
-General formula: CₙH₂ₙ₋₂
+CₙH₂ₙ₋₂
 </div>
 
-<div class="formula">
-C₂H₂ = Ethyne
-</div>
+<p>
+Example: C₂H₂ (ethyne)
+</p>
 
-<h3>Uses of Organic Compounds</h3>
+<h3>Uses</h3>
 
 <ul>
 <li>Fuels.</li>
@@ -992,7 +842,7 @@ C₂H₂ = Ethyne
 <div class="exercise">
 <b>Exercise:</b>
 <p>What is a hydrocarbon?</p>
-<button onclick="showAnswer(this)">Show Answer</button>
+<button onclick="answer(this)">Show Answer</button>
 <div class="answer">
 A hydrocarbon is a compound containing only carbon and hydrogen.
 </div>
@@ -1004,73 +854,60 @@ A hydrocarbon is a compound containing only carbon and hydrogen.
 </div>
 
 
-<a class="whatsapp"
+<a
+class="whatsapp"
 href="https://wa.me/250738939769"
 target="_blank">
-💬 WhatsApp 0738 939 769
+💬 WhatsApp
 </a>
 
 
 <footer>
-
-<p>🧪 Mr-dev AI Learning Platform</p>
-
-<p>Senior Two Chemistry • Units 1–10</p>
-
-<p>Learn • Practice • Understand</p>
-
+🧪 Mr-dev AI Learning<br>
+Senior Two Chemistry • Units 1–10
 </footer>
 
 
 <script>
 
-function showAnswer(button){
+function answer(button){
 
-    let answer = button.nextElementSibling;
+  const box = button.nextElementSibling;
 
-    if(answer.style.display === "block"){
-
-        answer.style.display = "none";
-        button.innerText = "Show Answer";
-
-    }else{
-
-        answer.style.display = "block";
-        button.innerText = "Hide Answer";
-
-    }
+  if(box.style.display === "block"){
+    box.style.display = "none";
+    button.innerText = "Show Answer";
+  }else{
+    box.style.display = "block";
+    button.innerText = "Hide Answer";
+  }
 
 }
 
 
 function searchUnits(){
 
-    let input =
-    document.getElementById("search").value.toLowerCase();
+  const value =
+  document.getElementById("search")
+  .value
+  .toLowerCase();
 
-    let units =
-    document.querySelectorAll(".unit");
+  const units =
+  document.querySelectorAll(".unit");
 
-    units.forEach(function(unit){
+  units.forEach(function(unit){
 
-        let text =
-        unit.innerText.toLowerCase();
+    const text =
+    unit.innerText.toLowerCase();
 
-        if(text.includes(input)){
+    unit.style.display =
+    text.includes(value) ? "block" : "none";
 
-            unit.style.display = "block";
-
-        }else{
-
-            unit.style.display = "none";
-
-        }
-
-    });
+  });
 
 }
 
 </script>
 
 </body>
-  </html>
+    </html>
