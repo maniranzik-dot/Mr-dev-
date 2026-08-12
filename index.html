@@ -1,512 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Teacher</title>
-
+<title>AI Teacher Dashboard</title>
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
-}
-
 body{
-    background:#f5f8ff;
-    color:#172033;
+margin:0;
+font-family:Arial;
+background:#050b18;
+color:white;
 }
 
-/* HEADER */
-.header{
-    height:65px;
-    background:white;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 25px;
-    border-bottom:1px solid #e5e7eb;
-    position:sticky;
-    top:0;
-    z-index:100;
+.sidebar{
+position:fixed;
+width:220px;
+height:100vh;
+background:#071426;
+padding:20px;
 }
 
 .logo{
-    color:#1769e0;
-    font-size:21px;
-    font-weight:bold;
+font-size:22px;
+font-weight:bold;
+color:#38d16b;
 }
 
-.menuBtn{
-    display:none;
-    border:0;
-    background:#1769e0;
-    color:white;
-    font-size:22px;
-    padding:8px 12px;
-    border-radius:8px;
+.menu{
+margin-top:30px;
 }
 
-/* SIDEBAR */
-.sidebar{
-    position:fixed;
-    top:65px;
-    left:0;
-    width:220px;
-    height:calc(100vh - 65px);
-    background:white;
-    border-right:1px solid #e5e7eb;
-    padding:20px 15px;
+.menu p{
+padding:12px;
+color:white;
 }
 
-.sidebar a{
-    display:block;
-    text-decoration:none;
-    color:#374151;
-    padding:13px 14px;
-    margin:5px 0;
-    border-radius:9px;
-    font-size:15px;
+.menu p:hover{
+background:#22c55e;
+border-radius:8px;
 }
 
-.sidebar a:hover{
-    background:#eaf2ff;
-    color:#1769e0;
-}
-
-/* MAIN */
 .main{
-    margin-left:220px;
-    padding:25px;
-    max-width:1250px;
-}
-
-/* SEARCH */
-.top{
-    display:flex;
-    gap:15px;
-    margin-bottom:20px;
+margin-left:260px;
+padding:25px;
 }
 
 .search{
-    flex:1;
-    padding:15px 18px;
-    border:1px solid #d8dee9;
-    border-radius:12px;
-    font-size:15px;
-    outline:none;
-    background:white;
-}
-
-.search:focus{
-    border-color:#1769e0;
+width:60%;
+padding:15px;
+border-radius:10px;
+border:none;
 }
 
 .whatsapp{
-    background:#20c967;
-    color:white;
-    text-decoration:none;
-    padding:15px 25px;
-    border-radius:12px;
-    font-weight:bold;
+background:#22c55e;
+padding:15px;
+border-radius:10px;
+float:right;
 }
 
-/* WELCOME */
-.welcome{
-    background:linear-gradient(135deg,#e4efff,#d9e9ff);
-    padding:45px;
-    border-radius:22px;
-    margin-bottom:30px;
+.hero{
+margin-top:30px;
+background:#111c3a;
+padding:30px;
+border-radius:20px;
 }
 
-.welcome h1{
-    color:#1769e0;
-    font-size:38px;
-    margin-bottom:15px;
+.hero h1{
+color:#3b82f6;
+font-size:40px;
 }
 
-.welcome p{
-    font-size:17px;
-    line-height:1.7;
-    color:#374151;
-}
-
-.start{
-    margin-top:20px;
-    padding:13px 25px;
-    border:0;
-    border-radius:9px;
-    background:#1769e0;
-    color:white;
-    font-size:15px;
-    cursor:pointer;
-}
-
-/* NOTES */
-.title{
-    font-size:27px;
-    margin-bottom:18px;
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px;
+border-radius:8px;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .card{
-    background:white;
-    padding:24px;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,.07);
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
+background:#111827;
+padding:20px;
+border-radius:15px;
+width:200px;
 }
 
 .card h3{
-    color:#1769e0;
-    font-size:21px;
-    margin-bottom:14px;
+color:#38d16b;
 }
 
-.card p{
-    color:#5b6472;
-    line-height:1.7;
-    margin-bottom:18px;
-}
-
-.view{
-    background:#1769e0;
-    color:white;
-    border:0;
-    padding:11px 20px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-/* AI */
 .ai{
-    margin-top:30px;
-    padding:28px;
-    background:#e4f3ff;
-    border-radius:18px;
+margin-top:30px;
+background:#111c3a;
+padding:25px;
+border-radius:20px;
 }
 
-.ai h2{
-    margin-bottom:15px;
+input{
+padding:12px;
+width:70%;
+border-radius:8px;
+border:none;
 }
 
-.aiBox{
-    display:flex;
-    gap:10px;
-}
-
-.aiInput{
-    flex:1;
-    padding:13px;
-    border:1px solid #d2d8e0;
-    border-radius:8px;
-}
-
-.ask{
-    background:#1769e0;
-    color:white;
-    border:0;
-    padding:12px 22px;
-    border-radius:8px;
-}
-
-.answer{
-    display:none;
-    background:white;
-    margin-top:15px;
-    padding:15px;
-    border-radius:10px;
-}
-
-/* MOBILE */
-@media(max-width:750px){
-
-    .header{
-        padding:0 15px;
-    }
-
-    .menuBtn{
-        display:block;
-    }
-
-    .sidebar{
-        display:none;
-        width:250px;
-        z-index:200;
-        box-shadow:5px 0 20px rgba(0,0,0,.15);
-    }
-
-    .sidebar.open{
-        display:block;
-    }
-
-    .main{
-        margin-left:0;
-        padding:15px;
-    }
-
-    .top{
-        flex-direction:column;
-    }
-
-    .search{
-        width:100%;
-    }
-
-    .whatsapp{
-        text-align:center;
-        width:100%;
-    }
-
-    .welcome{
-        padding:28px 22px;
-    }
-
-    .welcome h1{
-        font-size:30px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .aiBox{
-        flex-direction:column;
-    }
-
-    .ask{
-        width:100%;
-    }
-}
 </style>
 </head>
 
+
 <body>
 
-<header class="header">
+<div class="sidebar">
 
-    <div class="logo">
-        🎓 AI TEACHER
-    </div>
+<div class="logo">
+🎓 AI TEACHER
+</div>
 
-    <button class="menuBtn" onclick="toggleMenu()">
-        ☰
-    </button>
+<div class="menu">
 
-</header>
+<p>🏠 Home</p>
+<p>📚 Classes</p>
+<p>📘 Senior One</p>
+<p>📗 Senior Two</p>
+<p>📙 Senior Three</p>
+<p>📖 Subjects</p>
+<p>🤖 AI Teacher</p>
+<p>🔎 Search Notes</p>
+<p>☎ Contact</p>
 
+</div>
 
-<!-- SIDEBAR -->
-<nav class="sidebar" id="sidebar">
+</div>
 
-    <a href="#home">🏠 Home</a>
-    <a href="#notes">📚 All Notes</a>
-    <a href="#senior1">📘 Senior One</a>
-    <a href="#senior2">📗 Senior Two</a>
-    <a href="#senior3">📙 Senior Three</a>
-    <a href="#ai">🤖 AI Teacher</a>
-    <a href="#search">🔎 Search Notes</a>
-    <a href="https://wa.me/250738939769">
-        ☎ Contact
-    </a>
 
-</nav>
+<div class="main">
 
+<input class="search" placeholder="Search notes, subjects...">
 
-<main class="main">
+<a href="https://wa.me/250738939769">
+<button class="whatsapp">
+WhatsApp
+</button>
+</a>
 
-    <!-- SEARCH -->
-    <div class="top" id="search">
 
-        <input
-            class="search"
-            id="searchInput"
-            placeholder="🔎 Search notes..."
-            onkeyup="searchNotes()"
-        >
+<div class="hero">
 
-        <a
-            class="whatsapp"
-            href="https://wa.me/250738939769"
-            target="_blank"
-        >
-            🟢 WhatsApp
-        </a>
+<h1>
+Welcome to AI Teacher
+</h1>
 
-    </div>
+<p>
+Your smart way to learn Mathematics & Science
+<br>
+Senior One to Senior Three
+</p>
 
+<button>
+Start Learning
+</button>
 
-    <!-- WELCOME -->
-    <section class="welcome" id="home">
+</div>
 
-        <h1>Welcome to AI Teacher</h1>
 
-        <p>
-            Your smart way to learn
-            <b>Mathematics & Science</b>.
-            <br>
-            Learn from Senior One to Senior Three.
-        </p>
 
-        <button class="start"
-                onclick="document.getElementById('notes').scrollIntoView({behavior:'smooth'})">
-            🚀 Start Learning
-        </button>
+<h2>📚 Explore Classes</h2>
 
-    </section>
+<div class="cards">
 
 
-    <!-- NOTES -->
-    <h2 class="title" id="notes">
-        📚 Browse Notes
-    </h2>
+<div class="card">
+<h3>Senior One</h3>
+<p>Mathematics<br>
+Science</p>
+<button>View Notes</button>
+</div>
 
 
-    <div class="cards">
+<div class="card">
+<h3>Senior Two</h3>
+<p>Mathematics<br>
+Physics<br>
+Chemistry</p>
+<button>View Notes</button>
+</div>
 
-        <div class="card note" id="senior1">
-            <h3>📘 Senior One</h3>
-            <p>
-                Mathematics<br>
-                Science<br>
-                Notes & Exercises
-            </p>
-            <button class="view">View Notes</button>
-        </div>
 
 
-        <div class="card note" id="senior2">
-            <h3>📗 Senior Two</h3>
-            <p>
-                Mathematics<br>
-                Physics<br>
-                Chemistry<br>
-                Biology
-            </p>
-            <button class="view">View Notes</button>
-        </div>
+<div class="card">
+<h3>Senior Three</h3>
+<p>Mathematics<br>
+Biology<br>
+Physics</p>
+<button>View Notes</button>
+</div>
 
 
-        <div class="card note" id="senior3">
-            <h3>📙 Senior Three</h3>
-            <p>
-                Mathematics<br>
-                Physics<br>
-                Chemistry<br>
-                Biology
-            </p>
-            <button class="view">View Notes</button>
-        </div>
 
-    </div>
+</div>
 
 
-    <!-- AI TEACHER -->
-    <section class="ai" id="ai">
+<h2>Subjects</h2>
 
-        <h2>🤖 AI Teacher Assistant</h2>
+<div class="cards">
 
-        <div class="aiBox">
+<div class="card">
+<h3>√ Mathematics</h3>
+<p>Notes<br>Exercises</p>
+</div>
 
-            <input
-                class="aiInput"
-                id="question"
-                placeholder="Ask your question..."
-            >
 
-            <button class="ask" onclick="askAI()">
-                Ask
-            </button>
+<div class="card">
+<h3>🌿 Biology</h3>
+<p>Notes<br>Diagrams</p>
+</div>
 
-        </div>
 
-        <div class="answer" id="answer"></div>
+<div class="card">
+<h3>⚗ Chemistry</h3>
+<p>Notes<br>Reactions</p>
+</div>
 
-    </section>
 
-</main>
+<div class="card">
+<h3>⚛ Physics</h3>
+<p>Formulas<br>Past Papers</p>
+</div>
 
+</div>
 
-<script>
 
-function toggleMenu(){
 
-    document
-    .getElementById("sidebar")
-    .classList.toggle("open");
+<div class="ai">
 
-}
+<h2>🤖 AI Teacher Assistant</h2>
 
+<input placeholder="Ask your question...">
 
-function searchNotes(){
+<button>
+Ask AI
+</button>
 
-    let value =
-    document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
+</div>
 
-    let cards =
-    document.querySelectorAll(".note");
 
-    cards.forEach(card => {
+</div>
 
-        let text =
-        card.innerText.toLowerCase();
-
-        card.style.display =
-        text.includes(value)
-        ? "block"
-        : "none";
-
-    });
-
-}
-
-
-function askAI(){
-
-    let question =
-    document
-    .getElementById("question")
-    .value
-    .trim();
-
-    let answer =
-    document.getElementById("answer");
-
-    if(!question){
-
-        answer.style.display="block";
-
-        answer.innerHTML =
-        "✍️ Please type your question.";
-
-        return;
-    }
-
-    answer.style.display="block";
-
-    answer.innerHTML =
-    "<b>🤖 AI Teacher:</b><br><br>" +
-    "Your question is: " +
-    question +
-    "<br><br>" +
-    "I can help you with Mathematics and Science.";
-
-}
-
-</script>
 
 </body>
 </html>
