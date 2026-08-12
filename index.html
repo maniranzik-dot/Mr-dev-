@@ -3,99 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr-dev AI Learning - S3 Mathematics Part 2</title>
+
+<title>Senior Three Mathematics - Part 3</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
+
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#07152b;
-  color:white;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#07152b;
+    color:white;
 }
+
 header{
-  background:#0d2342;
-  padding:25px 15px;
-  text-align:center;
+    background:#0d2342;
+    padding:25px 15px;
+    text-align:center;
+    border-bottom:3px solid #20df70;
 }
+
 header h1{
-  color:#25df70;
-  margin:0;
-  font-size:30px;
+    margin:0;
+    color:#20df70;
 }
-header p{color:#b9c8da}
+
+header p{
+    color:#cbd5e1;
+}
 
 .container{
-  max-width:900px;
-  margin:auto;
-  padding:20px;
+    max-width:950px;
+    margin:auto;
+    padding:20px;
 }
 
 .search{
-  width:100%;
-  padding:16px;
-  border-radius:30px;
-  border:0;
-  font-size:17px;
-  margin-bottom:20px;
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:30px;
+    font-size:16px;
+    margin-bottom:20px;
 }
 
 .unit{
-  background:#102743;
-  margin:18px 0;
-  padding:20px;
-  border-radius:18px;
-  border:1px solid #234466;
+    background:#102743;
+    padding:22px;
+    margin:20px 0;
+    border-radius:18px;
+    border:1px solid #294764;
 }
 
 .unit h2{
-  color:#35e27a;
+    color:#20df70;
 }
 
 .topic{
-  background:#0a1b32;
-  padding:15px;
-  margin:12px 0;
-  border-radius:12px;
-}
-
-button{
-  background:#20d66b;
-  border:0;
-  padding:12px 18px;
-  border-radius:25px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.answer{
-  display:none;
-  margin-top:12px;
-  padding:15px;
-  background:#172f4b;
-  border-radius:10px;
+    background:#0b1c34;
+    padding:16px;
+    margin:15px 0;
+    border-radius:12px;
 }
 
 .formula{
-  background:#06152a;
-  padding:12px;
-  margin:10px 0;
-  border-left:4px solid #25df70;
-  font-size:18px;
+    background:#061426;
+    border-left:4px solid #20df70;
+    padding:15px;
+    margin:12px 0;
+    font-size:18px;
+}
+
+.example{
+    background:#172f4b;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
 }
 
 .diagram{
-  text-align:center;
-  padding:20px;
-  margin:15px 0;
-  background:#091a30;
-  border-radius:12px;
+    background:white;
+    color:#111;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+button{
+    background:#20df70;
+    color:white;
+    border:0;
+    padding:11px 18px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.answer{
+    display:none;
+    background:#173b2b;
+    padding:15px;
+    margin-top:12px;
+    border-radius:10px;
 }
 
 footer{
-  text-align:center;
-  padding:30px;
-  color:#9eb0c5;
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
 }
 </style>
 </head>
@@ -103,388 +121,856 @@ footer{
 <body>
 
 <header>
-  <h1>📐 Mr-dev AI Learning</h1>
-  <p>Senior Three Mathematics • Part 2 • Units 5–8</p>
+<h1>📐 Mr-dev AI Learning</h1>
+<p>Senior Three Mathematics • Part 3 • Unit 9–13</p>
 </header>
 
 <div class="container">
 
-<input class="search" id="search"
-placeholder="🔎 Search Mathematics..."
-onkeyup="searchTopics()">
+<input
+class="search"
+id="search"
+type="text"
+placeholder="🔎 Search Unit or Topic..."
+onkeyup="searchNotes()"
+>
 
-<!-- UNIT 5 -->
+
+<!-- UNIT 9 -->
+
 <section class="unit">
-<h2>UNIT 5: Quadratic Equations</h2>
+
+<h2>UNIT 9: CIRCLE THEOREMS</h2>
 
 <div class="topic">
-<h3>5.1 Meaning of a Quadratic Equation</h3>
 
-<p>A quadratic equation is an equation of the form:</p>
-
-<div class="formula">
-ax² + bx + c = 0, &nbsp; a ≠ 0
-</div>
-
-<p>Example:</p>
-<p>x² + 5x + 6 = 0</p>
-
-<button onclick="show('a1')">Show Example</button>
-
-<div class="answer" id="a1">
-Factorise:<br>
-x² + 5x + 6 = 0<br><br>
-
-(x + 2)(x + 3) = 0<br><br>
-
-Therefore:<br>
-x = -2 or x = -3.
-</div>
-</div>
-
-<div class="topic">
-<h3>5.2 Quadratic Formula</h3>
-
-<div class="formula">
-x = (-b ± √(b² - 4ac)) / 2a
-</div>
-
-<p>For ax² + bx + c = 0.</p>
-
-<button onclick="show('a2')">Show Example</button>
-
-<div class="answer" id="a2">
-Solve: x² - 5x + 6 = 0<br><br>
-
-a = 1, b = -5, c = 6<br><br>
-
-x = [5 ± √(25 - 24)] / 2<br>
-x = [5 ± 1] / 2<br><br>
-
-Therefore:<br>
-x = 3 or x = 2.
-</div>
-</div>
-
-<div class="topic">
-<h3>5.3 Discriminant</h3>
-
-<div class="formula">
-D = b² - 4ac
-</div>
+<h3>9.1 Angle at the Centre</h3>
 
 <p>
-D &gt; 0 → two real roots<br>
-D = 0 → equal roots<br>
-D &lt; 0 → no real roots
+The angle subtended by an arc at the centre of a circle
+is twice the angle subtended by the same arc at the circumference.
 </p>
+
+<div class="formula">
+Angle at centre = 2 × angle at circumference
 </div>
 
+<div class="diagram">
+
+        A
+       / \
+      /   \
+     /  O  \
+    /       \
+   B---------C
+
+∠BOC = 2∠BAC
+
+</div>
+
+</div>
+
+
 <div class="topic">
+
+<h3>9.2 Angle in a Semicircle</h3>
+
+<p>
+The angle formed in a semicircle is always a right angle.
+</p>
+
+<div class="formula">
+Angle in a semicircle = 90°
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>9.3 Angles in the Same Segment</h3>
+
+<p>
+Angles subtended by the same chord in the same segment
+are equal.
+</p>
+
+<div class="formula">
+∠ACB = ∠ADB
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>9.4 Cyclic Quadrilateral</h3>
+
+<p>
+Opposite angles of a cyclic quadrilateral are supplementary.
+</p>
+
+<div class="formula">
+A + C = 180°
+<br>
+B + D = 180°
+</div>
+
+<button onclick="showAnswer('u9a')">
+Show Example
+</button>
+
+<div class="answer" id="u9a">
+
+If one opposite angle is 115°:
+
+<br><br>
+
+Other angle = 180° − 115°
+
+<br><br>
+
+<strong>= 65°</strong>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
 <h3>Exercise</h3>
-<p>Solve: x² - 7x + 12 = 0</p>
-<button onclick="show('a3')">Show Answer</button>
-<div class="answer" id="a3">
-(x - 3)(x - 4) = 0<br><br>
-x = 3 or x = 4.
+
+<p>
+An angle at the circumference is 40°.
+Find the angle at the centre subtended by the same arc.
+</p>
+
+<button onclick="showAnswer('u9b')">
+Show Answer
+</button>
+
+<div class="answer" id="u9b">
+
+Angle at centre = 2 × 40°
+
+<br><br>
+
+<strong>= 80°</strong>
+
 </div>
+
 </div>
+
 </section>
 
 
-<!-- UNIT 6 -->
+
+<!-- UNIT 10 -->
+
 <section class="unit">
-<h2>UNIT 6: Linear and Quadratic Functions</h2>
+
+<h2>UNIT 10: COLLINEAR POINTS AND ORTHOGONAL VECTORS</h2>
 
 <div class="topic">
-<h3>6.1 Linear Functions</h3>
+
+<h3>10.1 Collinear Points</h3>
+
+<p>
+Points are said to be <strong>collinear</strong> when they lie
+on the same straight line.
+</p>
+
+<div class="diagram">
+
+A •────────• B────────• C
+
+A, B and C are collinear.
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>10.2 Gradient Method</h3>
+
+<p>
+Three points are collinear if the gradient between the first
+and second points is equal to the gradient between the second
+and third points.
+</p>
+
+<div class="formula">
+Gradient =
+(y₂ − y₁) / (x₂ − x₁)
+</div>
+
+<button onclick="showAnswer('u10a')">
+Show Example
+</button>
+
+<div class="answer" id="u10a">
+
+Check whether A(1,2), B(3,6), C(5,10) are collinear.
+
+<br><br>
+
+Gradient AB:
+
+(6−2)/(3−1) = 4/2 = 2
+
+<br><br>
+
+Gradient BC:
+
+(10−6)/(5−3) = 4/2 = 2
+
+<br><br>
+
+Both gradients are equal.
+
+<br><br>
+
+<strong>Therefore A, B and C are collinear.</strong>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>10.3 Vectors</h3>
+
+<p>
+A vector has both magnitude and direction.
+</p>
+
+<div class="formula">
+AB = (x₂−x₁, y₂−y₁)
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>10.4 Orthogonal Vectors</h3>
+
+<p>
+Two vectors are orthogonal when they are perpendicular
+to each other.
+</p>
+
+<div class="formula">
+a · b = 0
+</div>
+
+<p>
+For:
+
+a = (a₁,a₂)
+
+and
+
+b = (b₁,b₂)
+
+</p>
+
+<div class="formula">
+a · b = a₁b₁ + a₂b₂
+</div>
+
+<button onclick="showAnswer('u10b')">
+Show Example
+</button>
+
+<div class="answer" id="u10b">
+
+Let:
+
+a = (2,3)
+
+b = (3,-2)
+
+<br><br>
+
+a · b = (2×3) + (3×−2)
+
+<br>
+= 6 − 6
+
+<br>
+= 0
+
+<br><br>
+
+<strong>Therefore the vectors are orthogonal.</strong>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Exercise</h3>
+
+<p>
+Are vectors (4,2) and (1,-2) orthogonal?
+</p>
+
+<button onclick="showAnswer('u10c')">
+Show Answer
+</button>
+
+<div class="answer" id="u10c">
+
+(4×1) + (2×−2)
+
+<br>
+= 4 − 4
+
+<br>
+= 0
+
+<br><br>
+
+<strong>Yes, they are orthogonal.</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- UNIT 11 -->
+
+<section class="unit">
+
+<h2>UNIT 11: ENLARGEMENT AND SIMILARITY 2D</h2>
+
+<div class="topic">
+
+<h3>11.1 Enlargement</h3>
+
+<p>
+Enlargement is a transformation that changes the size of a shape
+while keeping its shape the same.
+</p>
+
+<div class="formula">
+Scale factor = Image length / Object length
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>11.2 Scale Factor</h3>
+
+<button onclick="showAnswer('u11a')">
+Show Example
+</button>
+
+<div class="answer" id="u11a">
+
+An original side is 4 cm and its image is 12 cm.
+
+<br><br>
+
+Scale factor = 12 / 4
+
+<br><br>
+
+<strong>= 3</strong>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>11.3 Centre of Enlargement</h3>
+
+<p>
+The centre of enlargement is the fixed point from which
+the object and image are related.
+</p>
+
+<div class="diagram">
+
+        A'
+       / \
+      /   \
+     /     \
+    O-------A
+
+O = Centre of enlargement
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>11.4 Similar 2D Shapes</h3>
+
+<p>
+Similar shapes have:
+</p>
+
+<ul>
+<li>Equal corresponding angles.</li>
+<li>Proportional corresponding sides.</li>
+<li>The same shape but not necessarily the same size.</li>
+</ul>
+
+<div class="formula">
+Corresponding sides have a constant ratio.
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>11.5 Area Scale Factor</h3>
+
+<p>
+If the linear scale factor is k:
+</p>
+
+<div class="formula">
+Area scale factor = k²
+</div>
+
+<button onclick="showAnswer('u11b')">
+Show Example
+</button>
+
+<div class="answer" id="u11b">
+
+If scale factor = 3:
+
+<br><br>
+
+Area scale factor = 3²
+
+<br>
+
+<strong>= 9</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- UNIT 12 -->
+
+<section class="unit">
+
+<h2>UNIT 12: INVERSE AND COMPOSITE TRANSFORMATIONS</h2>
+
+<div class="topic">
+
+<h3>12.1 Inverse Transformation</h3>
+
+<p>
+An inverse transformation reverses a transformation and returns
+the image back to its original position.
+</p>
+
+<div class="formula">
+T⁻¹(T(P)) = P
+</div>
+
+<p>
+Examples include:
+</p>
+
+<ul>
+<li>Inverse translation</li>
+<li>Inverse rotation</li>
+<li>Inverse reflection</li>
+<li>Inverse enlargement</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>12.2 Inverse Translation</h3>
+
+<p>
+If a point is translated by (a,b), its inverse translation is
+(-a,-b).
+</p>
+
+<div class="formula">
+(a,b) → (-a,-b)
+</div>
+
+<button onclick="showAnswer('u12a')">
+Show Example
+</button>
+
+<div class="answer" id="u12a">
+
+Translation:
+
+(x,y) → (x+4,y+3)
+
+<br><br>
+
+Inverse:
+
+(x,y) → (x−4,y−3)
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>12.3 Composite Transformation</h3>
+
+<p>
+A composite transformation is when two or more transformations
+are performed one after another.
+</p>
+
+<div class="diagram">
+
+Object
+  ↓
+Transformation 1
+  ↓
+Image 1
+  ↓
+Transformation 2
+  ↓
+Final Image
+
+</div>
+
+<p>
+The order of transformations is important.
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>12.4 Example of Composite Transformation</h3>
+
+<p>
+First reflect a point in the x-axis, then translate it.
+</p>
+
+<div class="formula">
+Reflection in x-axis:
+(x,y) → (x,-y)
+</div>
+
+<div class="formula">
+Translation by (2,3):
+(x,y) → (x+2,y+3)
+</div>
+
+<button onclick="showAnswer('u12b')">
+Show Example
+</button>
+
+<div class="answer" id="u12b">
+
+Starting point:
+
+P(1,2)
+
+<br><br>
+
+After reflection:
+
+P'(1,-2)
+
+<br><br>
+
+After translation by (2,3):
+
+P''(3,1)
+
+<br><br>
+
+<strong>Final image = (3,1)</strong>
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Exercise</h3>
+
+<p>
+A point P(2,5) is translated by (-3,4).
+Find its image.
+</p>
+
+<button onclick="showAnswer('u12c')">
+Show Answer
+</button>
+
+<div class="answer" id="u12c">
+
+(2−3, 5+4)
+
+<br><br>
+
+<strong>P' = (-1,9)</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- UNIT 13 -->
+
+<section class="unit">
+
+<h2>UNIT 13: STATISTICS — BIVARIATE DATA</h2>
+
+<div class="topic">
+
+<h3>13.1 Bivariate Data</h3>
+
+<p>
+Bivariate data contains two variables for each observation.
+</p>
+
+<p>Examples:</p>
+
+<ul>
+<li>Height and weight</li>
+<li>Study time and examination marks</li>
+<li>Age and income</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>13.2 Scatter Diagram</h3>
+
+<p>
+A scatter diagram is used to display the relationship between
+two variables.
+</p>
+
+<div class="diagram">
+
+Y
+↑
+|           •
+|        •
+|      •
+|   •
+| •
+|________________→ X
+
+Positive correlation
+
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>13.3 Types of Correlation</h3>
+
+<ul>
+<li><strong>Positive:</strong> both variables tend to increase.</li>
+<li><strong>Negative:</strong> one increases as the other decreases.</li>
+<li><strong>No correlation:</strong> no clear relationship.</li>
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>13.4 Line of Best Fit</h3>
+
+<p>
+A line of best fit represents the general trend of a scatter
+diagram.
+</p>
 
 <div class="formula">
 y = mx + c
 </div>
 
+</div>
+
+
+<div class="topic">
+
+<h3>13.5 Interpolation and Extrapolation</h3>
+
 <p>
-m = gradient/slope<br>
-c = y-intercept
+<strong>Interpolation</strong> estimates a value within the range
+of known data.
 </p>
 
-<div class="diagram">
-      y<br>
-      ↑<br>
-      |       /<br>
-      |     /<br>
-      |   /<br>
-      | /<br>
-------+--------------→ x
+<p>
+<strong>Extrapolation</strong> estimates a value outside the range
+of known data.
+</p>
+
 </div>
-</div>
+
 
 <div class="topic">
-<h3>6.2 Gradient</h3>
 
-<div class="formula">
-m = (y₂ - y₁) / (x₂ - x₁)
-</div>
-
-<button onclick="show('b1')">Show Example</button>
-
-<div class="answer" id="b1">
-Points: (2,3) and (4,7)<br><br>
-
-m = (7 - 3)/(4 - 2)<br>
-m = 4/2<br>
-m = 2.
-</div>
-</div>
-
-<div class="topic">
-<h3>6.3 Quadratic Functions</h3>
-
-<div class="formula">
-y = ax² + bx + c
-</div>
-
-<p>The graph of a quadratic function is called a parabola.</p>
-
-<div class="diagram">
-        y
-        ↑
-        |    \   /
-        |     \_/
-        |      |
---------+--------------→ x
-</div>
-</div>
-
-<div class="topic">
 <h3>Exercise</h3>
-<p>Find the gradient of the line through (1,2) and (3,8).</p>
-<button onclick="show('b2')">Show Answer</button>
-<div class="answer" id="b2">
-m = (8 - 2)/(3 - 1)<br>
-m = 6/2<br>
-<strong>m = 3</strong>
-</div>
-</div>
-</section>
-
-
-<!-- UNIT 7 -->
-<section class="unit">
-<h2>UNIT 7: Compound Interest, Reverse Percentage and Proportional Change</h2>
-
-<div class="topic">
-<h3>7.1 Compound Interest</h3>
-
-<div class="formula">
-A = P(1 + r/100)ⁿ
-</div>
 
 <p>
-P = Principal<br>
-r = interest rate<br>
-n = number of periods<br>
-A = final amount
+If students who study longer generally obtain higher marks,
+what type of correlation is shown?
 </p>
 
-<button onclick="show('c1')">Show Example</button>
+<button onclick="showAnswer('u13a')">
+Show Answer
+</button>
 
-<div class="answer" id="c1">
-Find the amount of 100,000 at 10% compound interest for 2 years.<br><br>
+<div class="answer" id="u13a">
 
-A = 100000(1 + 10/100)²<br>
-A = 100000(1.1)²<br>
-A = 100000 × 1.21<br><br>
+<strong>Positive correlation.</strong>
 
-<strong>A = 121,000</strong>
-</div>
 </div>
 
-<div class="topic">
-<h3>7.2 Reverse Percentage</h3>
-
-<p>
-Reverse percentage is used when the final value is known
-and the original value must be found.
-</p>
-
-<div class="formula">
-Original = Final ÷ multiplier
-</div>
-
-<button onclick="show('c2')">Show Example</button>
-
-<div class="answer" id="c2">
-A price after a 20% increase is 60,000.<br><br>
-
-Multiplier = 1.20<br>
-Original = 60,000 ÷ 1.20<br><br>
-
-<strong>Original = 50,000</strong>
-</div>
-</div>
-
-<div class="topic">
-<h3>7.3 Proportional Change</h3>
-
-<p>
-Direct proportion:
-</p>
-
-<div class="formula">
-y ∝ x
-</div>
-
-<p>
-Therefore:
-</p>
-
-<div class="formula">
-y = kx
-</div>
-
-<p>where k is the constant of proportionality.</p>
-</div>
-</section>
-
-
-<!-- UNIT 8 -->
-<section class="unit">
-<h2>UNIT 8: Right-Angled Triangles</h2>
-
-<div class="topic">
-<h3>8.1 Pythagoras' Theorem</h3>
-
-<div class="formula">
-a² + b² = c²
-</div>
-
-<p>
-c is the hypotenuse — the longest side opposite the right angle.
-</p>
-
-<div class="diagram">
-       /|
-      / |
-   c /  | b
-    /   |
-   /____|
-      a
-   90°
-</div>
-
-<button onclick="show('d1')">Show Example</button>
-
-<div class="answer" id="d1">
-If a = 3 cm and b = 4 cm:<br><br>
-
-c² = 3² + 4²<br>
-c² = 9 + 16<br>
-c² = 25<br><br>
-
-<strong>c = 5 cm</strong>
-</div>
-</div>
-
-<div class="topic">
-<h3>8.2 Trigonometric Ratios</h3>
-
-<div class="formula">
-sin θ = Opposite / Hypotenuse
-</div>
-
-<div class="formula">
-cos θ = Adjacent / Hypotenuse
-</div>
-
-<div class="formula">
-tan θ = Opposite / Adjacent
-</div>
-
-<p><strong>Remember: SOH CAH TOA</strong></p>
-</div>
-
-<div class="topic">
-<h3>8.3 Finding an Angle</h3>
-
-<button onclick="show('d2')">Show Example</button>
-
-<div class="answer" id="d2">
-If opposite = 3 and hypotenuse = 5:<br><br>
-
-sin θ = 3/5<br>
-sin θ = 0.6<br><br>
-
-θ = sin⁻¹(0.6)<br>
-<strong>θ ≈ 36.9°</strong>
-</div>
-</div>
-
-<div class="topic">
-<h3>Exercise</h3>
-<p>A right-angled triangle has sides 6 cm and 8 cm. Find the hypotenuse.</p>
-
-<button onclick="show('d3')">Show Answer</button>
-
-<div class="answer" id="d3">
-c² = 6² + 8²<br>
-c² = 36 + 64<br>
-c² = 100<br>
-<strong>c = 10 cm</strong>
-</div>
 </div>
 
 </section>
 
 
+
+<!-- REVISION -->
+
 <section class="unit">
-<h2>📝 Revision Exercise</h2>
+
+<h2>📝 PART 3 REVISION</h2>
 
 <div class="topic">
-<p>1. Solve x² - 9x + 20 = 0.</p>
-<p>2. Find the gradient through (2,4) and (5,10).</p>
-<p>3. Find the compound amount of 50,000 at 10% for 2 years.</p>
-<p>4. Find the hypotenuse when the other sides are 5 cm and 12 cm.</p>
 
-<button onclick="show('finalAnswers')">
+<p>
+1. An angle at the circumference is 30°. Find the angle at the centre.
+</p>
+
+<p>
+2. Are (2,3), (4,7), and (6,11) collinear?
+</p>
+
+<p>
+3. Find the area scale factor when the linear scale factor is 4.
+</p>
+
+<p>
+4. Find the inverse of translation (5,-2).
+</p>
+
+<p>
+5. What type of correlation occurs when two variables increase together?
+</p>
+
+<button onclick="showAnswer('revision')">
 Show Answers
 </button>
 
-<div class="answer" id="finalAnswers">
-1. x = 4 or x = 5.<br><br>
-2. Gradient = 2.<br><br>
-3. Amount = 60,500.<br><br>
-4. Hypotenuse = 13 cm.
+<div class="answer" id="revision">
+
+<strong>1.</strong> 60°<br><br>
+
+<strong>2.</strong> Yes, they are collinear.<br><br>
+
+<strong>3.</strong> 4² = 16<br><br>
+
+<strong>4.</strong> (-5,2)<br><br>
+
+<strong>5.</strong> Positive correlation.
+
 </div>
+
 </div>
 
 </section>
 
 </div>
 
+
 <footer>
-📐 Mr-dev AI Learning<br>
-Senior Three Mathematics • Part 2
+📚 Mr-dev AI Learning<br>
+Senior Three Mathematics • Part 3
 </footer>
 
+
 <script>
-function show(id){
-  const box=document.getElementById(id);
-  box.style.display =
-    box.style.display === "block" ? "none" : "block";
+
+function showAnswer(id){
+
+let box=document.getElementById(id);
+
+if(box.style.display==="block"){
+box.style.display="none";
+}else{
+box.style.display="block";
 }
 
-function searchTopics(){
-  let input=document.getElementById("search").value.toLowerCase();
-  let topics=document.querySelectorAll(".topic");
-
-  topics.forEach(topic=>{
-    topic.style.display =
-      topic.innerText.toLowerCase().includes(input)
-      ? "block"
-      : "none";
-  });
 }
+
+
+function searchNotes(){
+
+let input=
+document.getElementById("search").value.toLowerCase();
+
+let units=
+document.querySelectorAll(".unit");
+
+units.forEach(function(unit){
+
+let text=
+unit.innerText.toLowerCase();
+
+if(text.includes(input)){
+unit.style.display="block";
+}else{
+unit.style.display="none";
+}
+
+});
+
+}
+
 </script>
 
 </body>
