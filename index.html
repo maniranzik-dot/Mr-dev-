@@ -1,360 +1,682 @@
-<!-- LOGIN SYSTEM -->
-<div id="loginPage" style="
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#050b18;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:9999;
-">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Teacher</title>
 
-<div style="
-background:#111827;
-padding:30px;
-border-radius:15px;
-width:300px;
-text-align:center;
-color:white;
-">
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+}
 
-<h2 style="color:#38d16b;">
-🎓 AI Teacher Login
-</h2>
+body{
+  background:#050b18;
+  color:white;
+}
 
-<input id="username"
-placeholder="Username"
-style="
-width:90%;
-padding:12px;
-margin:10px;
-border-radius:8px;
-border:none;
-">
+/* LOGIN */
+#loginPage{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#050b18;
+}
 
-<input id="password"
-type="password"
-placeholder="Password"
-style="
-width:90%;
-padding:12px;
-margin:10px;
-border-radius:8px;
-border:none;
-">
+.login-box{
+  width:350px;
+  background:#111a2b;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 0 30px rgba(0,0,0,.5);
+  text-align:center;
+}
 
-<button onclick="login()"
-style="
-background:#22c55e;
-color:white;
-border:0;
-padding:12px 30px;
-border-radius:8px;
-cursor:pointer;
-">
-Login
-</button>
+.login-box h1{
+  color:#25d366;
+  margin-bottom:25px;
+}
 
-<p id="error" style="color:red;"></p>
+.login-box input{
+  width:100%;
+  padding:14px;
+  margin:9px 0;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.login-box button{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:none;
+  border-radius:8px;
+  background:#25d366;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.login-box button:hover{
+  background:#1ebe5d;
+}
+
+#error{
+  color:#ff4444;
+  margin-top:15px;
+  display:none;
+}
+
+/* DASHBOARD */
+#dashboard{
+  display:none;
+  min-height:100vh;
+}
+
+.sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  width:230px;
+  height:100vh;
+  background:#0b1425;
+  padding:25px 15px;
+  border-right:1px solid #1d2b43;
+}
+
+.logo{
+  color:#25d366;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:35px;
+}
+
+.menu a{
+  display:block;
+  color:#ddd;
+  text-decoration:none;
+  padding:14px 10px;
+  margin:5px 0;
+  border-radius:8px;
+}
+
+.menu a:hover{
+  background:#16243b;
+  color:#25d366;
+}
+
+.whatsapp{
+  position:absolute;
+  bottom:25px;
+  left:15px;
+  right:15px;
+  background:#25d366;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.whatsapp a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.main{
+  margin-left:230px;
+  padding:25px;
+}
+
+.top{
+  display:flex;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.search{
+  flex:1;
+  padding:15px;
+  border-radius:10px;
+  border:none;
+  font-size:16px;
+}
+
+.wa-button{
+  background:#25d366;
+  color:white;
+  padding:15px 25px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero{
+  background:linear-gradient(135deg,#132a70,#111b55);
+  padding:40px;
+  border-radius:18px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  color:#3b82f6;
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#ddd;
+  font-size:17px;
+  line-height:1.6;
+}
+
+.start{
+  display:inline-block;
+  margin-top:20px;
+  background:#25d366;
+  color:white;
+  padding:13px 25px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+.section-title{
+  font-size:25px;
+  margin:25px 0 15px;
+}
+
+.classes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.class-card{
+  background:#111a2b;
+  padding:25px;
+  border-radius:15px;
+  border:1px solid #1d2b43;
+}
+
+.class-card h2{
+  margin-bottom:12px;
+}
+
+.class-card p{
+  color:#aaa;
+  margin-bottom:18px;
+}
+
+.blue{
+  color:#3b82f6;
+}
+
+.green{
+  color:#25d366;
+}
+
+.purple{
+  color:#a855f7;
+}
+
+.view{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:11px 18px;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+.subjects{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.subject{
+  background:#111a2b;
+  padding:22px;
+  border-radius:14px;
+  border:1px solid #1d2b43;
+}
+
+.subject h3{
+  margin-bottom:8px;
+}
+
+.subject p{
+  color:#aaa;
+}
+
+.ai{
+  margin-top:25px;
+  background:#111a2b;
+  padding:25px;
+  border-radius:15px;
+  border:1px solid #1d2b43;
+}
+
+.ai input{
+  width:75%;
+  padding:13px;
+  border-radius:7px;
+  border:none;
+}
+
+.ai button{
+  padding:13px 20px;
+  background:#25d366;
+  color:white;
+  border:none;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+.logout{
+  position:fixed;
+  top:15px;
+  right:15px;
+  background:#ef4444;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  .sidebar{
+    width:180px;
+  }
+
+  .main{
+    margin-left:180px;
+    padding:15px;
+  }
+
+  .classes{
+    grid-template-columns:1fr;
+  }
+
+  .subjects{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+}
+
+@media(max-width:600px){
+
+  .sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+  }
+
+  .menu{
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .menu a{
+    margin:2px;
+    padding:8px;
+  }
+
+  .whatsapp{
+    position:relative;
+    bottom:auto;
+    left:auto;
+    right:auto;
+    margin-top:15px;
+  }
+
+  .main{
+    margin-left:0;
+  }
+
+  .top{
+    flex-direction:column;
+  }
+
+  .subjects{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage">
+
+  <div class="login-box">
+
+    <h1>🎓 AI Teacher Login</h1>
+
+    <input
+      type="text"
+      id="username"
+      placeholder="Username"
+    >
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+    >
+
+    <button onclick="login()">Login</button>
+
+    <p id="error">Wrong username or password</p>
+
+  </div>
 
 </div>
+
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+
+<button class="logout" onclick="logout()">Logout</button>
+
+<aside class="sidebar">
+
+  <div class="logo">
+    🎓 AI TEACHER
+  </div>
+
+  <div class="menu">
+
+    <a href="#">🏠 Home</a>
+    <a href="#">📚 All Notes</a>
+    <a href="#senior1">📘 Senior One</a>
+    <a href="#senior2">📗 Senior Two</a>
+    <a href="#senior3">📙 Senior Three</a>
+    <a href="#ai">🤖 AI Teacher</a>
+    <a href="#search">🔎 Search Notes</a>
+    <a href="#contact">☎ Contact</a>
+
+  </div>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/250738939769" target="_blank">
+      💬 WhatsApp<br>
+      0738 939 769
+    </a>
+  </div>
+
+</aside>
+
+
+<main class="main">
+
+  <!-- SEARCH -->
+  <div class="top" id="search">
+
+    <input
+      class="search"
+      id="searchBox"
+      type="text"
+      placeholder="Search notes, subjects..."
+      onkeyup="searchNotes()"
+    >
+
+    <a
+      class="wa-button"
+      href="https://wa.me/250738939769"
+      target="_blank"
+    >
+      WhatsApp
+    </a>
+
+  </div>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <h1>Welcome to AI Teacher</h1>
+
+    <p>
+      Your smart way to learn Mathematics & Science
+      from Senior One to Senior Three.
+    </p>
+
+    <a class="start" href="#senior1">
+      Start Learning
+    </a>
+
+  </section>
+
+
+  <!-- CLASSES -->
+  <h2 class="section-title">
+    📚 Explore Classes
+  </h2>
+
+  <div class="classes">
+
+    <div class="class-card" id="senior1">
+      <h2 class="green">Senior One</h2>
+
+      <p>
+        Mathematics<br>
+        Science<br>
+        Notes & Exercises
+      </p>
+
+      <button class="view">
+        View Notes
+      </button>
+    </div>
+
+
+    <div class="class-card" id="senior2">
+      <h2 class="blue">Senior Two</h2>
+
+      <p>
+        Mathematics<br>
+        Physics<br>
+        Chemistry<br>
+        Biology
+      </p>
+
+      <button class="view">
+        View Notes
+      </button>
+    </div>
+
+
+    <div class="class-card" id="senior3">
+      <h2 class="purple">Senior Three</h2>
+
+      <p>
+        Mathematics<br>
+        Physics<br>
+        Chemistry<br>
+        Biology
+      </p>
+
+      <button class="view">
+        View Notes
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- SUBJECTS -->
+  <h2 class="section-title">
+    📚 Subjects
+  </h2>
+
+  <div class="subjects">
+
+    <div class="subject">
+      <h3 class="blue">√ Mathematics</h3>
+      <p>Notes, Exercises, Past Papers</p>
+    </div>
+
+    <div class="subject">
+      <h3 class="green">🌿 Biology</h3>
+      <p>Notes, Diagrams, Past Papers</p>
+    </div>
+
+    <div class="subject">
+      <h3 class="purple">⚗ Chemistry</h3>
+      <p>Notes, Reactions, Past Papers</p>
+    </div>
+
+    <div class="subject">
+      <h3>⚛ Physics</h3>
+      <p>Notes, Formulas, Past Papers</p>
+    </div>
+
+  </div>
+
+
+  <!-- AI TEACHER -->
+  <div class="ai" id="ai">
+
+    <h2>🤖 AI Teacher</h2>
+
+    <p style="color:#aaa;margin:10px 0 15px;">
+      Ask any question and get instant help from your AI Teacher.
+    </p>
+
+    <input
+      id="aiQuestion"
+      placeholder="Ask your question..."
+    >
+
+    <button onclick="askAI()">
+      Ask AI
+    </button>
+
+    <p id="aiAnswer" style="margin-top:15px;color:#25d366;"></p>
+
+  </div>
+
+</main>
+
 </div>
 
 
 <script>
 
+/* LOGIN */
+
 function login(){
 
-let user =
-document.getElementById("username").value;
+  const username =
+    document.getElementById("username").value.trim();
 
-let pass =
-document.getElementById("password").value;
+  const password =
+    document.getElementById("password").value;
+
+  /*
+    LOGIN DETAILS
+    Username: Kevin
+    Password: 1234
+  */
+
+  if(username === "Kevin" && password === "1234"){
+
+    localStorage.setItem("aiTeacherLogin","true");
+
+    document.getElementById("loginPage").style.display="none";
+
+    document.getElementById("dashboard").style.display="block";
+
+  }else{
+
+    document.getElementById("error").style.display="block";
+
+  }
+}
 
 
-/* Hindura username na password hano */
+/* CHECK LOGIN */
 
-if(user=="student" && pass=="12345"){
+if(localStorage.getItem("aiTeacherLogin") === "true"){
 
-document.getElementById("loginPage").style.display="none";
+  document.getElementById("loginPage").style.display="none";
 
-localStorage.setItem("logged","yes");
+  document.getElementById("dashboard").style.display="block";
 
 }
 
-else{
 
-document.getElementById("error").innerHTML=
-"Wrong username or password";
+/* LOGOUT */
 
-}
+function logout(){
 
-}
+  localStorage.removeItem("aiTeacherLogin");
 
-
-// Niba yarinjiye mbere ntazongere kubona login
-
-if(localStorage.getItem("logged")=="yes"){
-
-document.getElementById("loginPage").style.display="none";
+  location.reload();
 
 }
 
-</script><!DOCTYPE html>
-<html>
-<head>
-<title>AI Teacher Dashboard</title>
-<style>
-body{
-margin:0;
-font-family:Arial;
-background:#050b18;
-color:white;
+
+/* SEARCH */
+
+function searchNotes(){
+
+  const text =
+    document.getElementById("searchBox").value.toLowerCase();
+
+  const cards =
+    document.querySelectorAll(".class-card,.subject");
+
+  cards.forEach(card => {
+
+    if(card.innerText.toLowerCase().includes(text)){
+
+      card.style.display="block";
+
+    }else{
+
+      card.style.display="none";
+
+    }
+
+  });
+
 }
 
-.sidebar{
-position:fixed;
-width:220px;
-height:100vh;
-background:#071426;
-padding:20px;
+
+/* AI */
+
+function askAI(){
+
+  const question =
+    document.getElementById("aiQuestion").value;
+
+  if(question.trim()===""){
+
+    document.getElementById("aiAnswer").innerText =
+      "Please type your question.";
+
+    return;
+  }
+
+  document.getElementById("aiAnswer").innerText =
+    "AI Teacher: Your question has been received. Connect your AI API here to get a real AI answer.";
+
 }
 
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#38d16b;
-}
-
-.menu{
-margin-top:30px;
-}
-
-.menu p{
-padding:12px;
-color:white;
-}
-
-.menu p:hover{
-background:#22c55e;
-border-radius:8px;
-}
-
-.main{
-margin-left:260px;
-padding:25px;
-}
-
-.search{
-width:60%;
-padding:15px;
-border-radius:10px;
-border:none;
-}
-
-.whatsapp{
-background:#22c55e;
-padding:15px;
-border-radius:10px;
-float:right;
-}
-
-.hero{
-margin-top:30px;
-background:#111c3a;
-padding:30px;
-border-radius:20px;
-}
-
-.hero h1{
-color:#3b82f6;
-font-size:40px;
-}
-
-button{
-background:#2563eb;
-color:white;
-border:none;
-padding:12px;
-border-radius:8px;
-}
-
-.cards{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.card{
-background:#111827;
-padding:20px;
-border-radius:15px;
-width:200px;
-}
-
-.card h3{
-color:#38d16b;
-}
-
-.ai{
-margin-top:30px;
-background:#111c3a;
-padding:25px;
-border-radius:20px;
-}
-
-input{
-padding:12px;
-width:70%;
-border-radius:8px;
-border:none;
-}
-
-</style>
-</head>
-
-
-<body>
-
-<div class="sidebar">
-
-<div class="logo">
-🎓 AI TEACHER
-</div>
-
-<div class="menu">
-
-<p>🏠 Home</p>
-<p>📚 Classes</p>
-<p>📘 Senior One</p>
-<p>📗 Senior Two</p>
-<p>📙 Senior Three</p>
-<p>📖 Subjects</p>
-<p>🤖 AI Teacher</p>
-<p>🔎 Search Notes</p>
-<p>☎ Contact</p>
-
-</div>
-
-</div>
-
-
-<div class="main">
-
-<input class="search" placeholder="Search notes, subjects...">
-
-<a href="https://wa.me/250738939769">
-<button class="whatsapp">
-WhatsApp
-</button>
-</a>
-
-
-<div class="hero">
-
-<h1>
-Welcome to AI Teacher
-</h1>
-
-<p>
-Your smart way to learn Mathematics & Science
-<br>
-Senior One to Senior Three
-</p>
-
-<button>
-Start Learning
-</button>
-
-</div>
-
-
-
-<h2>📚 Explore Classes</h2>
-
-<div class="cards">
-
-
-<div class="card">
-<h3>Senior One</h3>
-<p>Mathematics<br>
-Science</p>
-<button>View Notes</button>
-</div>
-
-
-<div class="card">
-<h3>Senior Two</h3>
-<p>Mathematics<br>
-Physics<br>
-Chemistry</p>
-<button>View Notes</button>
-</div>
-
-
-
-<div class="card">
-<h3>Senior Three</h3>
-<p>Mathematics<br>
-Biology<br>
-Physics</p>
-<button>View Notes</button>
-</div>
-
-
-
-</div>
-
-
-<h2>Subjects</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>√ Mathematics</h3>
-<p>Notes<br>Exercises</p>
-</div>
-
-
-<div class="card">
-<h3>🌿 Biology</h3>
-<p>Notes<br>Diagrams</p>
-</div>
-
-
-<div class="card">
-<h3>⚗ Chemistry</h3>
-<p>Notes<br>Reactions</p>
-</div>
-
-
-<div class="card">
-<h3>⚛ Physics</h3>
-<p>Formulas<br>Past Papers</p>
-</div>
-
-</div>
-
-
-
-<div class="ai">
-
-<h2>🤖 AI Teacher Assistant</h2>
-
-<input placeholder="Ask your question...">
-
-<button>
-Ask AI
-</button>
-
-</div>
-
-
-</div>
-
+</script>
 
 </body>
 </html>
