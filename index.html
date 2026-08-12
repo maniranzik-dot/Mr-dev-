@@ -16,11 +16,10 @@ const pages = {
 "Senior Three Biology":"senior3-biology.html"
 };
 
-if(pages[subject]){
-window.location.href = pages[subject];
-}
-else{
-alert("Notes page not found");
+if(subject in pages){
+    window.location.href = pages[subject];
+}else{
+    alert("Notes not found");
 }
 
 }
