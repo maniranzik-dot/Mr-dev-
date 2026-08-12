@@ -4,148 +4,109 @@
 <title>AI Teacher Dashboard</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
 body{
-margin:0;
-background:#f4f7ff;
-color:#222;
+ margin:0;
+ font-family:Arial, sans-serif;
+ background:#f3f6ff;
 }
-
-
-/* Sidebar */
 
 .sidebar{
-position:fixed;
-width:230px;
-height:100vh;
-background:white;
-padding:20px;
-box-shadow:2px 0 10px #ddd;
+ position:fixed;
+ width:170px;
+ height:100vh;
+ background:white;
+ padding:20px;
+ box-shadow:2px 0 10px #ddd;
 }
 
 .logo{
-font-size:22px;
-font-weight:bold;
-color:#1565ff;
+ color:#1769ff;
+ font-weight:bold;
+ font-size:20px;
 }
 
-.menu button{
-width:100%;
-margin-top:15px;
-padding:12px;
-border:0;
-background:white;
-text-align:left;
-border-radius:10px;
-cursor:pointer;
+.menu{
+ margin-top:30px;
 }
 
-.menu button:hover{
-background:#1565ff;
-color:white;
+.menu p{
+ margin:25px 0;
+ cursor:pointer;
 }
-
-
-/* Main */
 
 .main{
-margin-left:250px;
-padding:25px;
+ margin-left:200px;
+ padding:20px;
 }
 
-
 .top{
-display:flex;
-justify-content:space-between;
+ display:flex;
+ justify-content:space-between;
 }
 
 .search{
-width:400px;
-padding:14px;
-border-radius:10px;
-border:1px solid #ddd;
+ width:280px;
+ padding:12px;
+ border-radius:8px;
+ border:1px solid #ddd;
 }
-
 
 .whatsapp{
-background:#25d366;
-color:white;
-padding:12px 25px;
-border-radius:10px;
-text-decoration:none;
+ background:#20c878;
+ color:white;
+ padding:12px 20px;
+ border-radius:8px;
+ text-decoration:none;
 }
 
-
-/* Welcome */
-
-.banner{
-margin-top:25px;
-background:#e8f0ff;
-padding:35px;
-border-radius:20px;
+.welcome{
+ margin-top:20px;
+ background:#dfeaff;
+ padding:30px;
+ border-radius:20px;
 }
 
-.banner h1{
-font-size:40px;
-color:#1565ff;
+.welcome h1{
+ color:#1769ff;
+ font-size:35px;
 }
 
-
-/* Cards */
-
-.notes{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
+.cards{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:20px;
 }
-
 
 .card{
-background:white;
-padding:20px;
-border-radius:18px;
-box-shadow:0 5px 15px #ddd;
+ background:white;
+ padding:20px;
+ border-radius:15px;
+ box-shadow:0 5px 15px #ddd;
 }
-
 
 .card h3{
-color:#1565ff;
+ color:#1769ff;
 }
 
-
-.card button{
-background:#1565ff;
-color:white;
-border:0;
-padding:10px 20px;
-border-radius:8px;
+button{
+ background:#1769ff;
+ color:white;
+ border:0;
+ padding:10px;
+ border-radius:8px;
 }
-
-
-
-/* AI */
 
 .ai{
-margin-top:30px;
-background:#e3f2fd;
-padding:25px;
-border-radius:20px;
+ margin-top:30px;
+ background:#dfeaff;
+ padding:25px;
+ border-radius:20px;
 }
-
 
 .ai input{
-padding:12px;
-width:70%;
-border-radius:10px;
-border:1px solid #ccc;
+ width:70%;
+ padding:10px;
 }
-
-
 </style>
 
 </head>
@@ -153,33 +114,19 @@ border:1px solid #ccc;
 
 <body>
 
-
 <div class="sidebar">
 
-<div class="logo">
-🎓 AI TEACHER
-</div>
-
-<hr>
+<div class="logo">🎓 AI TEACHER</div>
 
 <div class="menu">
-
-<button>🏠 Home</button>
-
-<button>📚 All Notes</button>
-
-<button>➗ Mathematics</button>
-
-<button>🔬 Science</button>
-
-<button>🤖 AI Teacher</button>
-
-<button>🔎 Search Notes</button>
-
-<button>☎ Contact</button>
-
+<p>🏠 Home</p>
+<p>📚 All Notes</p>
+<p>➗ Mathematics</p>
+<p>🔬 Science</p>
+<p>🤖 AI Teacher</p>
+<p>🔎 Search Notes</p>
+<p>☎ Contact</p>
 </div>
-
 
 </div>
 
@@ -187,36 +134,25 @@ border:1px solid #ccc;
 
 <div class="main">
 
-
 <div class="top">
 
 <input class="search" placeholder="Search notes...">
 
-
-<a class="whatsapp"
-href="https://wa.me/250738939769">
+<a class="whatsapp" href="https://wa.me/250738939769">
 WhatsApp
 </a>
 
 </div>
 
 
+<div class="welcome">
 
-<div class="banner">
+<h1>Welcome to AI Teacher</h1>
 
-<h1>
-Welcome to AI Teacher
-</h1>
+<p>Your smart way to learn Mathematics & Science<br>
+Senior One to Senior Three</p>
 
-<p>
-Your smart way to learn Mathematics & Science
-<br>
-Senior One to Senior Three
-</p>
-
-<button>
-Start Learning
-</button>
+<button>Start Learning</button>
 
 </div>
 
@@ -225,7 +161,7 @@ Start Learning
 <h2>📚 Browse Notes</h2>
 
 
-<div class="notes">
+<div class="cards">
 
 
 <div class="card">
@@ -294,13 +230,9 @@ Start Learning
 
 <input placeholder="Ask your question...">
 
-<button>
-Ask
-</button>
-
+<button>Ask</button>
 
 </div>
-
 
 
 </div>
