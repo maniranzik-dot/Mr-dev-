@@ -3,36 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S3 Mathematics - Part 1</title>
+<title>Mr-dev AI Learning - S3 Mathematics Part 2</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#071426;
+  background:#07152b;
   color:white;
 }
-
 header{
-  background:#0d203b;
+  background:#0d2342;
   padding:25px 15px;
   text-align:center;
-  border-bottom:3px solid #20d66b;
 }
-
 header h1{
-  color:#20d66b;
+  color:#25df70;
   margin:0;
   font-size:30px;
 }
-
-header p{
-  color:#cbd5e1;
-}
+header p{color:#b9c8da}
 
 .container{
   max-width:900px;
@@ -43,72 +34,68 @@ header p{
 .search{
   width:100%;
   padding:16px;
-  border:none;
   border-radius:30px;
+  border:0;
   font-size:17px;
   margin-bottom:20px;
 }
 
 .unit{
-  background:#10243e;
-  margin-bottom:20px;
+  background:#102743;
+  margin:18px 0;
   padding:20px;
   border-radius:18px;
-  border:1px solid #294563;
+  border:1px solid #234466;
 }
 
 .unit h2{
-  color:#20d66b;
+  color:#35e27a;
 }
 
 .topic{
-  color:#62b5ff;
-}
-
-.formula{
-  background:#071426;
+  background:#0a1b32;
   padding:15px;
-  border-left:5px solid #20d66b;
-  margin:15px 0;
-  font-size:18px;
-}
-
-.example{
-  background:#172f4d;
-  padding:15px;
-  border-radius:10px;
-  margin:15px 0;
+  margin:12px 0;
+  border-radius:12px;
 }
 
 button{
   background:#20d66b;
-  color:white;
-  border:none;
+  border:0;
   padding:12px 18px;
   border-radius:25px;
-  cursor:pointer;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .answer{
   display:none;
-  margin-top:10px;
-  color:#8ff0b5;
+  margin-top:12px;
+  padding:15px;
+  background:#172f4b;
+  border-radius:10px;
+}
+
+.formula{
+  background:#06152a;
+  padding:12px;
+  margin:10px 0;
+  border-left:4px solid #25df70;
+  font-size:18px;
 }
 
 .diagram{
-  background:white;
-  color:#111;
-  padding:15px;
   text-align:center;
-  border-radius:10px;
+  padding:20px;
   margin:15px 0;
+  background:#091a30;
+  border-radius:12px;
 }
 
 footer{
   text-align:center;
   padding:30px;
-  color:#94a3b8;
+  color:#9eb0c5;
 }
 </style>
 </head>
@@ -117,433 +104,358 @@ footer{
 
 <header>
   <h1>📐 Mr-dev AI Learning</h1>
-  <p>Senior Three Mathematics • Part 1 • Units 1–4</p>
+  <p>Senior Three Mathematics • Part 2 • Units 5–8</p>
 </header>
 
 <div class="container">
 
-<input
-  class="search"
-  id="search"
-  type="text"
-  placeholder="🔎 Search Mathematics..."
-  onkeyup="searchNotes()"
->
+<input class="search" id="search"
+placeholder="🔎 Search Mathematics..."
+onkeyup="searchTopics()">
 
-<!-- UNIT 1 -->
-
+<!-- UNIT 5 -->
 <section class="unit">
-<h2>UNIT 1: Problems on Sets</h2>
+<h2>UNIT 5: Quadratic Equations</h2>
 
-<h3 class="topic">1. Meaning of a Set</h3>
+<div class="topic">
+<h3>5.1 Meaning of a Quadratic Equation</h3>
+
+<p>A quadratic equation is an equation of the form:</p>
+
+<div class="formula">
+ax² + bx + c = 0, &nbsp; a ≠ 0
+</div>
+
+<p>Example:</p>
+<p>x² + 5x + 6 = 0</p>
+
+<button onclick="show('a1')">Show Example</button>
+
+<div class="answer" id="a1">
+Factorise:<br>
+x² + 5x + 6 = 0<br><br>
+
+(x + 2)(x + 3) = 0<br><br>
+
+Therefore:<br>
+x = -2 or x = -3.
+</div>
+</div>
+
+<div class="topic">
+<h3>5.2 Quadratic Formula</h3>
+
+<div class="formula">
+x = (-b ± √(b² - 4ac)) / 2a
+</div>
+
+<p>For ax² + bx + c = 0.</p>
+
+<button onclick="show('a2')">Show Example</button>
+
+<div class="answer" id="a2">
+Solve: x² - 5x + 6 = 0<br><br>
+
+a = 1, b = -5, c = 6<br><br>
+
+x = [5 ± √(25 - 24)] / 2<br>
+x = [5 ± 1] / 2<br><br>
+
+Therefore:<br>
+x = 3 or x = 2.
+</div>
+</div>
+
+<div class="topic">
+<h3>5.3 Discriminant</h3>
+
+<div class="formula">
+D = b² - 4ac
+</div>
+
 <p>
-A set is a well-defined collection of objects. The objects are called
-<strong>elements</strong> or <strong>members</strong>.
+D &gt; 0 → two real roots<br>
+D = 0 → equal roots<br>
+D &lt; 0 → no real roots
 </p>
-
-<div class="example">
-<strong>Example:</strong><br>
-A = {1, 2, 3, 4, 5}
-<br><br>
-The elements of A are 1, 2, 3, 4 and 5.
 </div>
 
-<h3 class="topic">2. Types of Sets</h3>
-<ul>
-<li>Empty set: ∅</li>
-<li>Finite set</li>
-<li>Infinite set</li>
-<li>Equal sets</li>
-<li>Equivalent sets</li>
-<li>Subset</li>
-<li>Universal set</li>
-</ul>
+<div class="topic">
+<h3>Exercise</h3>
+<p>Solve: x² - 7x + 12 = 0</p>
+<button onclick="show('a3')">Show Answer</button>
+<div class="answer" id="a3">
+(x - 3)(x - 4) = 0<br><br>
+x = 3 or x = 4.
+</div>
+</div>
+</section>
 
-<h3 class="topic">3. Union of Sets</h3>
+
+<!-- UNIT 6 -->
+<section class="unit">
+<h2>UNIT 6: Linear and Quadratic Functions</h2>
+
+<div class="topic">
+<h3>6.1 Linear Functions</h3>
 
 <div class="formula">
-A ∪ B = elements that are in A or B or both.
+y = mx + c
 </div>
 
-<div class="example">
-A = {1,2,3}<br>
-B = {3,4,5}<br><br>
-
-A ∪ B = {1,2,3,4,5}
-</div>
-
-<h3 class="topic">4. Intersection of Sets</h3>
-
-<div class="formula">
-A ∩ B = elements common to A and B.
-</div>
-
-<div class="example">
-A = {1,2,3}<br>
-B = {3,4,5}<br><br>
-
-A ∩ B = {3}
-</div>
+<p>
+m = gradient/slope<br>
+c = y-intercept
+</p>
 
 <div class="diagram">
-<svg width="300" height="150">
-<circle cx="120" cy="75" r="55"
-fill="none" stroke="blue" stroke-width="3"/>
-<circle cx="180" cy="75" r="55"
-fill="none" stroke="green" stroke-width="3"/>
-<text x="95" y="45">A</text>
-<text x="195" y="45">B</text>
-<text x="142" y="82">A ∩ B</text>
-</svg>
-<p>Venn diagram: Intersection of A and B</p>
+      y<br>
+      ↑<br>
+      |       /<br>
+      |     /<br>
+      |   /<br>
+      | /<br>
+------+--------------→ x
+</div>
 </div>
 
-<h3 class="topic">5. Number of Elements</h3>
+<div class="topic">
+<h3>6.2 Gradient</h3>
 
 <div class="formula">
-n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+m = (y₂ - y₁) / (x₂ - x₁)
 </div>
 
-<div class="example">
-If n(A)=20, n(B)=15 and n(A∩B)=5:<br><br>
-n(A∪B) = 20 + 15 − 5 = <strong>30</strong>
+<button onclick="show('b1')">Show Example</button>
+
+<div class="answer" id="b1">
+Points: (2,3) and (4,7)<br><br>
+
+m = (7 - 3)/(4 - 2)<br>
+m = 4/2<br>
+m = 2.
+</div>
 </div>
 
-<button onclick="showAnswer('a1')">Exercise</button>
-<div id="a1" class="answer">
-If A={2,4,6} and B={4,6,8}, find A∪B and A∩B.<br>
-<strong>Answer:</strong> A∪B={2,4,6,8}, A∩B={4,6}.
+<div class="topic">
+<h3>6.3 Quadratic Functions</h3>
+
+<div class="formula">
+y = ax² + bx + c
 </div>
 
+<p>The graph of a quadratic function is called a parabola.</p>
+
+<div class="diagram">
+        y
+        ↑
+        |    \   /
+        |     \_/
+        |      |
+--------+--------------→ x
+</div>
+</div>
+
+<div class="topic">
+<h3>Exercise</h3>
+<p>Find the gradient of the line through (1,2) and (3,8).</p>
+<button onclick="show('b2')">Show Answer</button>
+<div class="answer" id="b2">
+m = (8 - 2)/(3 - 1)<br>
+m = 6/2<br>
+<strong>m = 3</strong>
+</div>
+</div>
 </section>
 
 
-<!-- UNIT 2 -->
-
+<!-- UNIT 7 -->
 <section class="unit">
-<h2>UNIT 2: Number Bases</h2>
+<h2>UNIT 7: Compound Interest, Reverse Percentage and Proportional Change</h2>
 
-<h3 class="topic">1. What is a Number Base?</h3>
+<div class="topic">
+<h3>7.1 Compound Interest</h3>
+
+<div class="formula">
+A = P(1 + r/100)ⁿ
+</div>
 
 <p>
-A number base tells us how many different digits are used to represent
-numbers.
+P = Principal<br>
+r = interest rate<br>
+n = number of periods<br>
+A = final amount
 </p>
 
-<ul>
-<li>Base 2 → Binary</li>
-<li>Base 5 → digits 0–4</li>
-<li>Base 10 → Decimal</li>
-<li>Base 8 → Octal</li>
-<li>Base 16 → Hexadecimal</li>
-</ul>
+<button onclick="show('c1')">Show Example</button>
 
-<h3 class="topic">2. Place Value</h3>
+<div class="answer" id="c1">
+Find the amount of 100,000 at 10% compound interest for 2 years.<br><br>
 
-<div class="formula">
-(1011)₂ =
-1×2³ + 0×2² + 1×2¹ + 1×2⁰
-</div>
+A = 100000(1 + 10/100)²<br>
+A = 100000(1.1)²<br>
+A = 100000 × 1.21<br><br>
 
-<div class="example">
-= 8 + 0 + 2 + 1<br>
-= <strong>11₁₀</strong>
-</div>
-
-<h3 class="topic">3. Converting Decimal to Binary</h3>
-
-<div class="example">
-Convert 13₁₀ to base 2.
-
-<br><br>
-
-13 ÷ 2 = 6 remainder 1<br>
-6 ÷ 2 = 3 remainder 0<br>
-3 ÷ 2 = 1 remainder 1<br>
-1 ÷ 2 = 0 remainder 1
-
-<br><br>
-
-Read the remainders from bottom to top:
-
-<div class="formula">
-13₁₀ = 1101₂
+<strong>A = 121,000</strong>
 </div>
 </div>
 
-<h3 class="topic">4. Addition in Binary</h3>
-
-<div class="formula">
-0 + 0 = 0<br>
-0 + 1 = 1<br>
-1 + 0 = 1<br>
-1 + 1 = 10
-</div>
-
-<div class="example">
-&nbsp;&nbsp;1011<br>
-+ 0110<br>
-────────<br>
-&nbsp;10001
-</div>
-
-<button onclick="showAnswer('a2')">Exercise</button>
-<div id="a2" class="answer">
-Convert 10101₂ to decimal.<br>
-<strong>Answer:</strong> 21₁₀.
-</div>
-
-</section>
-
-
-<!-- UNIT 3 -->
-
-<section class="unit">
-<h2>UNIT 3: Algebraic Fractions</h2>
-
-<h3 class="topic">1. Meaning</h3>
+<div class="topic">
+<h3>7.2 Reverse Percentage</h3>
 
 <p>
-An algebraic fraction contains algebraic expressions in the numerator,
-denominator, or both.
+Reverse percentage is used when the final value is known
+and the original value must be found.
 </p>
 
-<div class="example">
-Examples:
-<br><br>
-x/3
-<br>
-(x+2)/5
-<br>
-(x²−9)/(x+3)
+<div class="formula">
+Original = Final ÷ multiplier
 </div>
 
-<h3 class="topic">2. Simplifying Algebraic Fractions</h3>
+<button onclick="show('c2')">Show Example</button>
 
-<div class="example">
-Simplify:
-<br><br>
+<div class="answer" id="c2">
+A price after a 20% increase is 60,000.<br><br>
 
-(x² − 9)/(x + 3)
+Multiplier = 1.20<br>
+Original = 60,000 ÷ 1.20<br><br>
 
-<br><br>
+<strong>Original = 50,000</strong>
+</div>
+</div>
 
-Factorise the numerator:
+<div class="topic">
+<h3>7.3 Proportional Change</h3>
 
-x² − 9 = (x−3)(x+3)
+<p>
+Direct proportion:
+</p>
 
-<br><br>
+<div class="formula">
+y ∝ x
+</div>
 
+<p>
 Therefore:
+</p>
 
 <div class="formula">
-[(x−3)(x+3)]/(x+3) = x−3
+y = kx
 </div>
 
-<strong>Answer: x − 3</strong>
+<p>where k is the constant of proportionality.</p>
 </div>
+</section>
 
-<h3 class="topic">3. Addition of Algebraic Fractions</h3>
 
-<div class="example">
+<!-- UNIT 8 -->
+<section class="unit">
+<h2>UNIT 8: Right-Angled Triangles</h2>
 
-1/x + 2/x
+<div class="topic">
+<h3>8.1 Pythagoras' Theorem</h3>
 
 <div class="formula">
-= 3/x
+a² + b² = c²
 </div>
 
+<p>
+c is the hypotenuse — the longest side opposite the right angle.
+</p>
+
+<div class="diagram">
+       /|
+      / |
+   c /  | b
+    /   |
+   /____|
+      a
+   90°
 </div>
 
-<p>When denominators are different, find the lowest common denominator.</p>
+<button onclick="show('d1')">Show Example</button>
 
-<div class="example">
+<div class="answer" id="d1">
+If a = 3 cm and b = 4 cm:<br><br>
 
-1/x + 1/2
+c² = 3² + 4²<br>
+c² = 9 + 16<br>
+c² = 25<br><br>
 
-<br><br>
+<strong>c = 5 cm</strong>
+</div>
+</div>
 
-LCD = 2x
-
-<br><br>
-
-= 2/2x + x/2x
-
-<br><br>
+<div class="topic">
+<h3>8.2 Trigonometric Ratios</h3>
 
 <div class="formula">
-= (x + 2)/(2x)
+sin θ = Opposite / Hypotenuse
 </div>
-
-</div>
-
-<h3 class="topic">4. Multiplication</h3>
 
 <div class="formula">
-(a/b) × (c/d) = ac/bd
+cos θ = Adjacent / Hypotenuse
 </div>
-
-<div class="example">
-2/3 × 9/4
-
-<br><br>
-= 18/12
-
-<br><br>
-= <strong>3/2</strong>
-</div>
-
-<h3 class="topic">5. Division</h3>
 
 <div class="formula">
-(a/b) ÷ (c/d) = (a/b) × (d/c)
+tan θ = Opposite / Adjacent
 </div>
 
-<button onclick="showAnswer('a3')">Exercise</button>
-<div id="a3" class="answer">
-Simplify: (x²−4)/(x+2).<br>
-<strong>Answer:</strong> x−2, where x ≠ −2.
+<p><strong>Remember: SOH CAH TOA</strong></p>
+</div>
+
+<div class="topic">
+<h3>8.3 Finding an Angle</h3>
+
+<button onclick="show('d2')">Show Example</button>
+
+<div class="answer" id="d2">
+If opposite = 3 and hypotenuse = 5:<br><br>
+
+sin θ = 3/5<br>
+sin θ = 0.6<br><br>
+
+θ = sin⁻¹(0.6)<br>
+<strong>θ ≈ 36.9°</strong>
+</div>
+</div>
+
+<div class="topic">
+<h3>Exercise</h3>
+<p>A right-angled triangle has sides 6 cm and 8 cm. Find the hypotenuse.</p>
+
+<button onclick="show('d3')">Show Answer</button>
+
+<div class="answer" id="d3">
+c² = 6² + 8²<br>
+c² = 36 + 64<br>
+c² = 100<br>
+<strong>c = 10 cm</strong>
+</div>
 </div>
 
 </section>
 
 
-<!-- UNIT 4 -->
-
 <section class="unit">
-<h2>UNIT 4: Simultaneous Linear Equations and Inequalities</h2>
+<h2>📝 Revision Exercise</h2>
 
-<h3 class="topic">1. Simultaneous Equations</h3>
+<div class="topic">
+<p>1. Solve x² - 9x + 20 = 0.</p>
+<p>2. Find the gradient through (2,4) and (5,10).</p>
+<p>3. Find the compound amount of 50,000 at 10% for 2 years.</p>
+<p>4. Find the hypotenuse when the other sides are 5 cm and 12 cm.</p>
 
-<p>
-These are two or more equations solved together to find values that
-satisfy all equations.
-</p>
+<button onclick="show('finalAnswers')">
+Show Answers
+</button>
 
-<div class="example">
-Solve:
-
-<br><br>
-x + y = 7<br>
-x − y = 1
-
-<br><br>
-
-Add the equations:
-
-<br>
-2x = 8
-
-<br><br>
-
-x = 4
-
-<br><br>
-
-Substitute into x+y=7:
-
-<br>
-4+y=7
-
-<br>
-y=3
-
-<div class="formula">
-Answer: x = 4, y = 3
+<div class="answer" id="finalAnswers">
+1. x = 4 or x = 5.<br><br>
+2. Gradient = 2.<br><br>
+3. Amount = 60,500.<br><br>
+4. Hypotenuse = 13 cm.
 </div>
-</div>
-
-<h3 class="topic">2. Elimination Method</h3>
-
-<p>
-We add or subtract equations so that one variable disappears.
-</p>
-
-<h3 class="topic">3. Substitution Method</h3>
-
-<p>
-First make one variable the subject, then substitute it into the other
-equation.
-</p>
-
-<div class="example">
-x + y = 10<br>
-x = 10 − y
-
-<br><br>
-
-If another equation is:
-
-2x + y = 15
-
-<br><br>
-
-Substitute x:
-
-2(10−y)+y=15
-
-<br>
-20−2y+y=15
-
-<br>
-−y=−5
-
-<br>
-y=5
-
-<br>
-x=5
-</div>
-
-<h3 class="topic">4. Linear Inequalities</h3>
-
-<p>
-Inequalities use signs such as:
-</p>
-
-<div class="formula">
-&lt; &nbsp;&nbsp; &gt; &nbsp;&nbsp; ≤ &nbsp;&nbsp; ≥
-</div>
-
-<div class="example">
-Solve:
-
-2x + 3 &gt; 9
-
-<br><br>
-
-2x &gt; 6
-
-<br><br>
-
-<div class="formula">
-x &gt; 3
-</div>
-</div>
-
-<h3 class="topic">Important Rule</h3>
-
-<p>
-When multiplying or dividing an inequality by a <strong>negative number</strong>,
-reverse the inequality sign.
-</p>
-
-<div class="example">
-−2x &gt; 6
-
-<br><br>
-
-Divide by −2 and reverse the sign:
-
-<div class="formula">
-x &lt; −3
-</div>
-</div>
-
-<button onclick="showAnswer('a4')">Exercise</button>
-<div id="a4" class="answer">
-Solve: x+y=9 and x−y=3.<br>
-<strong>Answer:</strong> x=6, y=3.
 </div>
 
 </section>
@@ -551,44 +463,28 @@ Solve: x+y=9 and x−y=3.<br>
 </div>
 
 <footer>
-📚 Mr-dev AI Learning<br>
-Senior Three Mathematics • Part 1
+📐 Mr-dev AI Learning<br>
+Senior Three Mathematics • Part 2
 </footer>
 
 <script>
-
-function showAnswer(id){
-  const element = document.getElementById(id);
-
-  if(element.style.display === "block"){
-    element.style.display = "none";
-  }else{
-    element.style.display = "block";
-  }
+function show(id){
+  const box=document.getElementById(id);
+  box.style.display =
+    box.style.display === "block" ? "none" : "block";
 }
 
-function searchNotes(){
+function searchTopics(){
+  let input=document.getElementById("search").value.toLowerCase();
+  let topics=document.querySelectorAll(".topic");
 
-  let input =
-    document.getElementById("search").value.toLowerCase();
-
-  let units =
-    document.querySelectorAll(".unit");
-
-  units.forEach(function(unit){
-
-    let text =
-      unit.innerText.toLowerCase();
-
-    if(text.includes(input)){
-      unit.style.display = "block";
-    }else{
-      unit.style.display = "none";
-    }
-
+  topics.forEach(topic=>{
+    topic.style.display =
+      topic.innerText.toLowerCase().includes(input)
+      ? "block"
+      : "none";
   });
 }
-
 </script>
 
 </body>
