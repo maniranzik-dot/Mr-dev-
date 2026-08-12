@@ -3,607 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Senior Three Mathematics - Part 3</title>
+<title>Mr-dev AI Learning - S3 Chemistry</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#07152b;
-    color:white;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#071a33;
+  color:#eef6ff;
 }
 
 header{
-    background:#0d2342;
-    padding:25px 15px;
-    text-align:center;
-    border-bottom:3px solid #20df70;
+  background:#0d2342;
+  padding:28px 18px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:5;
 }
 
-header h1{
-    margin:0;
-    color:#20df70;
+h1{
+  margin:0;
+  color:#20e06b;
+  font-size:30px;
 }
 
 header p{
-    color:#cbd5e1;
-}
-
-.container{
-    max-width:950px;
-    margin:auto;
-    padding:20px;
+  margin:8px 0 0;
+  color:#b9cbe0;
 }
 
 .search{
-    width:100%;
-    padding:15px;
-    border:0;
-    border-radius:30px;
-    font-size:16px;
-    margin-bottom:20px;
+  display:block;
+  width:min(650px,92%);
+  margin:20px auto 0;
+  padding:15px 18px;
+  border:0;
+  border-radius:30px;
+  font-size:17px;
+}
+
+.container{
+  width:min(1000px,94%);
+  margin:25px auto;
 }
 
 .unit{
-    background:#102743;
-    padding:22px;
-    margin:20px 0;
-    border-radius:18px;
-    border:1px solid #294764;
+  background:#102944;
+  border-radius:18px;
+  margin:18px 0;
+  padding:22px;
+  border:1px solid #24466d;
 }
 
 .unit h2{
-    color:#20df70;
+  color:#55b6ff;
+  margin-top:0;
 }
 
 .topic{
-    background:#0b1c34;
-    padding:16px;
-    margin:15px 0;
-    border-radius:12px;
+  background:#0a1d34;
+  padding:16px;
+  border-radius:14px;
+  margin:13px 0;
+}
+
+.topic h3{
+  margin-top:0;
+  color:#20e06b;
+}
+
+ul{
+  line-height:1.7;
 }
 
 .formula{
-    background:#061426;
-    border-left:4px solid #20df70;
-    padding:15px;
-    margin:12px 0;
-    font-size:18px;
+  background:#152f4d;
+  padding:12px;
+  border-left:4px solid #20e06b;
+  border-radius:8px;
+  margin:10px 0;
 }
 
-.example{
-    background:#172f4b;
-    padding:15px;
-    border-radius:10px;
-    margin:12px 0;
-}
-
-.diagram{
-    background:white;
-    color:#111;
-    padding:20px;
-    text-align:center;
-    border-radius:12px;
-    margin:15px 0;
+.exercise{
+  background:#0b1728;
+  padding:17px;
+  border-radius:13px;
+  margin-top:15px;
 }
 
 button{
-    background:#20df70;
-    color:white;
-    border:0;
-    padding:11px 18px;
-    border-radius:25px;
-    font-weight:bold;
-    cursor:pointer;
+  background:#20d96a;
+  border:0;
+  padding:11px 18px;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .answer{
-    display:none;
-    background:#173b2b;
-    padding:15px;
-    margin-top:12px;
-    border-radius:10px;
+  display:none;
+  margin-top:12px;
+  color:#d8ffe7;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#94a3b8;
+  text-align:center;
+  padding:30px;
+  color:#a8bdd4;
 }
 </style>
+
+<script>
+function showAnswer(id){
+  const x=document.getElementById(id);
+
+  if(x.style.display==="block"){
+    x.style.display="none";
+  }else{
+    x.style.display="block";
+  }
+}
+
+function searchUnits(){
+  const q=document.getElementById("search").value.toLowerCase();
+
+  document.querySelectorAll(".unit").forEach(u=>{
+    u.style.display=
+      u.innerText.toLowerCase().includes(q)
+      ?"block"
+      :"none";
+  });
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-<h1>📐 Mr-dev AI Learning</h1>
-<p>Senior Three Mathematics • Part 3 • Unit 9–13</p>
+
+<h1>🧪 Mr-dev AI Learning</h1>
+
+<p>Senior Three Chemistry • Part 1 • Units 1–5</p>
+
+<input
+ id="search"
+ class="search"
+ oninput="searchUnits()"
+ placeholder="🔎 Search Chemistry..."
+>
+
 </header>
+
 
 <div class="container">
 
-<input
-class="search"
-id="search"
-type="text"
-placeholder="🔎 Search Unit or Topic..."
-onkeyup="searchNotes()"
->
 
-
-<!-- UNIT 9 -->
+<!-- UNIT 1 -->
 
 <section class="unit">
 
-<h2>UNIT 9: CIRCLE THEOREMS</h2>
+<h2>Unit 1: Carbon and its Inorganic Compounds</h2>
 
 <div class="topic">
 
-<h3>9.1 Angle at the Centre</h3>
+<h3>1.1 Carbon and Allotropy</h3>
 
 <p>
-The angle subtended by an arc at the centre of a circle
-is twice the angle subtended by the same arc at the circumference.
+Carbon is a chemical element with symbol <b>C</b>
+and atomic number <b>6</b>.
+It has four valence electrons and can form many compounds.
 </p>
 
-<div class="formula">
-Angle at centre = 2 × angle at circumference
-</div>
-
-<div class="diagram">
-
-        A
-       / \
-      /   \
-     /  O  \
-    /       \
-   B---------C
-
-∠BOC = 2∠BAC
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>9.2 Angle in a Semicircle</h3>
-
 <p>
-The angle formed in a semicircle is always a right angle.
-</p>
-
-<div class="formula">
-Angle in a semicircle = 90°
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>9.3 Angles in the Same Segment</h3>
-
-<p>
-Angles subtended by the same chord in the same segment
-are equal.
-</p>
-
-<div class="formula">
-∠ACB = ∠ADB
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>9.4 Cyclic Quadrilateral</h3>
-
-<p>
-Opposite angles of a cyclic quadrilateral are supplementary.
-</p>
-
-<div class="formula">
-A + C = 180°
-<br>
-B + D = 180°
-</div>
-
-<button onclick="showAnswer('u9a')">
-Show Example
-</button>
-
-<div class="answer" id="u9a">
-
-If one opposite angle is 115°:
-
-<br><br>
-
-Other angle = 180° − 115°
-
-<br><br>
-
-<strong>= 65°</strong>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Exercise</h3>
-
-<p>
-An angle at the circumference is 40°.
-Find the angle at the centre subtended by the same arc.
-</p>
-
-<button onclick="showAnswer('u9b')">
-Show Answer
-</button>
-
-<div class="answer" id="u9b">
-
-Angle at centre = 2 × 40°
-
-<br><br>
-
-<strong>= 80°</strong>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- UNIT 10 -->
-
-<section class="unit">
-
-<h2>UNIT 10: COLLINEAR POINTS AND ORTHOGONAL VECTORS</h2>
-
-<div class="topic">
-
-<h3>10.1 Collinear Points</h3>
-
-<p>
-Points are said to be <strong>collinear</strong> when they lie
-on the same straight line.
-</p>
-
-<div class="diagram">
-
-A •────────• B────────• C
-
-A, B and C are collinear.
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>10.2 Gradient Method</h3>
-
-<p>
-Three points are collinear if the gradient between the first
-and second points is equal to the gradient between the second
-and third points.
-</p>
-
-<div class="formula">
-Gradient =
-(y₂ − y₁) / (x₂ − x₁)
-</div>
-
-<button onclick="showAnswer('u10a')">
-Show Example
-</button>
-
-<div class="answer" id="u10a">
-
-Check whether A(1,2), B(3,6), C(5,10) are collinear.
-
-<br><br>
-
-Gradient AB:
-
-(6−2)/(3−1) = 4/2 = 2
-
-<br><br>
-
-Gradient BC:
-
-(10−6)/(5−3) = 4/2 = 2
-
-<br><br>
-
-Both gradients are equal.
-
-<br><br>
-
-<strong>Therefore A, B and C are collinear.</strong>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>10.3 Vectors</h3>
-
-<p>
-A vector has both magnitude and direction.
-</p>
-
-<div class="formula">
-AB = (x₂−x₁, y₂−y₁)
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>10.4 Orthogonal Vectors</h3>
-
-<p>
-Two vectors are orthogonal when they are perpendicular
-to each other.
-</p>
-
-<div class="formula">
-a · b = 0
-</div>
-
-<p>
-For:
-
-a = (a₁,a₂)
-
-and
-
-b = (b₁,b₂)
-
-</p>
-
-<div class="formula">
-a · b = a₁b₁ + a₂b₂
-</div>
-
-<button onclick="showAnswer('u10b')">
-Show Example
-</button>
-
-<div class="answer" id="u10b">
-
-Let:
-
-a = (2,3)
-
-b = (3,-2)
-
-<br><br>
-
-a · b = (2×3) + (3×−2)
-
-<br>
-= 6 − 6
-
-<br>
-= 0
-
-<br><br>
-
-<strong>Therefore the vectors are orthogonal.</strong>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Exercise</h3>
-
-<p>
-Are vectors (4,2) and (1,-2) orthogonal?
-</p>
-
-<button onclick="showAnswer('u10c')">
-Show Answer
-</button>
-
-<div class="answer" id="u10c">
-
-(4×1) + (2×−2)
-
-<br>
-= 4 − 4
-
-<br>
-= 0
-
-<br><br>
-
-<strong>Yes, they are orthogonal.</strong>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- UNIT 11 -->
-
-<section class="unit">
-
-<h2>UNIT 11: ENLARGEMENT AND SIMILARITY 2D</h2>
-
-<div class="topic">
-
-<h3>11.1 Enlargement</h3>
-
-<p>
-Enlargement is a transformation that changes the size of a shape
-while keeping its shape the same.
-</p>
-
-<div class="formula">
-Scale factor = Image length / Object length
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>11.2 Scale Factor</h3>
-
-<button onclick="showAnswer('u11a')">
-Show Example
-</button>
-
-<div class="answer" id="u11a">
-
-An original side is 4 cm and its image is 12 cm.
-
-<br><br>
-
-Scale factor = 12 / 4
-
-<br><br>
-
-<strong>= 3</strong>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>11.3 Centre of Enlargement</h3>
-
-<p>
-The centre of enlargement is the fixed point from which
-the object and image are related.
-</p>
-
-<div class="diagram">
-
-        A'
-       / \
-      /   \
-     /     \
-    O-------A
-
-O = Centre of enlargement
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>11.4 Similar 2D Shapes</h3>
-
-<p>
-Similar shapes have:
+<b>Allotropy</b> is the existence of an element in
+two or more different structural forms in the same physical state.
 </p>
 
 <ul>
-<li>Equal corresponding angles.</li>
-<li>Proportional corresponding sides.</li>
-<li>The same shape but not necessarily the same size.</li>
-</ul>
-
-<div class="formula">
-Corresponding sides have a constant ratio.
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>11.5 Area Scale Factor</h3>
-
-<p>
-If the linear scale factor is k:
-</p>
-
-<div class="formula">
-Area scale factor = k²
-</div>
-
-<button onclick="showAnswer('u11b')">
-Show Example
-</button>
-
-<div class="answer" id="u11b">
-
-If scale factor = 3:
-
-<br><br>
-
-Area scale factor = 3²
-
-<br>
-
-<strong>= 9</strong>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- UNIT 12 -->
-
-<section class="unit">
-
-<h2>UNIT 12: INVERSE AND COMPOSITE TRANSFORMATIONS</h2>
-
-<div class="topic">
-
-<h3>12.1 Inverse Transformation</h3>
-
-<p>
-An inverse transformation reverses a transformation and returns
-the image back to its original position.
-</p>
-
-<div class="formula">
-T⁻¹(T(P)) = P
-</div>
-
-<p>
-Examples include:
-</p>
-
-<ul>
-<li>Inverse translation</li>
-<li>Inverse rotation</li>
-<li>Inverse reflection</li>
-<li>Inverse enlargement</li>
+<li>Diamond – very hard and does not conduct electricity.</li>
+<li>Graphite – soft and conducts electricity.</li>
+<li>Fullerene – carbon atoms arranged in cage-like structures.</li>
 </ul>
 
 </div>
@@ -611,63 +194,61 @@ Examples include:
 
 <div class="topic">
 
-<h3>12.2 Inverse Translation</h3>
+<h3>1.2 Chemical Properties of Carbon</h3>
 
-<p>
-If a point is translated by (a,b), its inverse translation is
-(-a,-b).
-</p>
+<ul>
 
-<div class="formula">
-(a,b) → (-a,-b)
-</div>
+<li>
+Carbon burns in oxygen to form carbon dioxide:
+C + O₂ → CO₂
+</li>
 
-<button onclick="showAnswer('u12a')">
-Show Example
-</button>
+<li>
+With limited oxygen, carbon monoxide can form:
+2C + O₂ → 2CO
+</li>
 
-<div class="answer" id="u12a">
+<li>
+Carbon can act as a reducing agent in some metal oxide reactions.
+</li>
 
-Translation:
-
-(x,y) → (x+4,y+3)
-
-<br><br>
-
-Inverse:
-
-(x,y) → (x−4,y−3)
-
-</div>
+</ul>
 
 </div>
 
 
 <div class="topic">
 
-<h3>12.3 Composite Transformation</h3>
+<h3>1.3 Inorganic Compounds of Carbon</h3>
 
-<p>
-A composite transformation is when two or more transformations
-are performed one after another.
-</p>
+<ul>
 
-<div class="diagram">
+<li>Carbon dioxide (CO₂)</li>
+<li>Carbon monoxide (CO)</li>
+<li>Carbonates such as CaCO₃</li>
+<li>Hydrogen carbonates such as NaHCO₃</li>
 
-Object
-  ↓
-Transformation 1
-  ↓
-Image 1
-  ↓
-Transformation 2
-  ↓
-Final Image
+</ul>
 
 </div>
 
+
+<div class="topic">
+
+<h3>1.4 Preparation and Testing of Carbonates</h3>
+
 <p>
-The order of transformations is important.
+Carbonates react with dilute acids to produce
+salt, water and carbon dioxide.
+</p>
+
+<div class="formula">
+Carbonate + acid → salt + water + carbon dioxide
+</div>
+
+<p>
+Carbon dioxide is tested by passing it through limewater.
+The limewater turns milky.
 </p>
 
 </div>
@@ -675,73 +256,42 @@ The order of transformations is important.
 
 <div class="topic">
 
-<h3>12.4 Example of Composite Transformation</h3>
+<h3>1.5–1.8 Environmental Issues and Carbon Cycle</h3>
 
-<p>
-First reflect a point in the x-axis, then translate it.
-</p>
+<ul>
 
-<div class="formula">
-Reflection in x-axis:
-(x,y) → (x,-y)
+<li>Carbon dioxide is a greenhouse gas.</li>
+
+<li>
+Excess CO₂ contributes to global warming
+and climate change.
+</li>
+
+<li>
+The carbon cycle moves carbon between the atmosphere,
+living organisms, soil, oceans and rocks.
+</li>
+
+</ul>
+
 </div>
 
-<div class="formula">
-Translation by (2,3):
-(x,y) → (x+2,y+3)
-</div>
 
-<button onclick="showAnswer('u12b')">
-Show Example
-</button>
+<div class="exercise">
 
-<div class="answer" id="u12b">
-
-Starting point:
-
-P(1,2)
+<b>Exercise:</b>
+What is an allotrope?
 
 <br><br>
 
-After reflection:
-
-P'(1,-2)
-
-<br><br>
-
-After translation by (2,3):
-
-P''(3,1)
-
-<br><br>
-
-<strong>Final image = (3,1)</strong>
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>Exercise</h3>
-
-<p>
-A point P(2,5) is translated by (-3,4).
-Find its image.
-</p>
-
-<button onclick="showAnswer('u12c')">
+<button onclick="showAnswer('a1')">
 Show Answer
 </button>
 
-<div class="answer" id="u12c">
+<div id="a1" class="answer">
 
-(2−3, 5+4)
-
-<br><br>
-
-<strong>P' = (-1,9)</strong>
+An allotrope is one of two or more different
+structural forms of the same element in the same physical state.
 
 </div>
 
@@ -751,26 +301,57 @@ Show Answer
 
 
 
-<!-- UNIT 13 -->
+<!-- UNIT 2 -->
 
 <section class="unit">
 
-<h2>UNIT 13: STATISTICS — BIVARIATE DATA</h2>
+<h2>Unit 2: Nitrogen and its Inorganic Compounds</h2>
+
 
 <div class="topic">
 
-<h3>13.1 Bivariate Data</h3>
+<h3>2.1 Industrial Isolation of Nitrogen</h3>
 
 <p>
-Bivariate data contains two variables for each observation.
+Nitrogen is obtained industrially mainly from air.
+Air is cooled and liquefied, then its components
+are separated by fractional distillation of liquid air.
 </p>
 
-<p>Examples:</p>
+</div>
+
+
+<div class="topic">
+
+<h3>2.2 Laboratory Preparation of Nitrogen</h3>
+
+<p>
+Nitrogen can be prepared in the laboratory using
+reactions that remove oxygen from air or produce
+nitrogen from suitable compounds.
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>2.3 Properties and Uses of Nitrogen</h3>
 
 <ul>
-<li>Height and weight</li>
-<li>Study time and examination marks</li>
-<li>Age and income</li>
+
+<li>Nitrogen is a colourless, odourless gas.</li>
+
+<li>It is relatively unreactive at room temperature.</li>
+
+<li>
+It is used in food packaging and production of ammonia.
+</li>
+
+<li>
+It is used in some industrial processes.
+</li>
+
 </ul>
 
 </div>
@@ -778,93 +359,32 @@ Bivariate data contains two variables for each observation.
 
 <div class="topic">
 
-<h3>13.2 Scatter Diagram</h3>
+<h3>2.4 Environmental Issues</h3>
 
 <p>
-A scatter diagram is used to display the relationship between
-two variables.
-</p>
-
-<div class="diagram">
-
-Y
-↑
-|           •
-|        •
-|      •
-|   •
-| •
-|________________→ X
-
-Positive correlation
-
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>13.3 Types of Correlation</h3>
-
-<ul>
-<li><strong>Positive:</strong> both variables tend to increase.</li>
-<li><strong>Negative:</strong> one increases as the other decreases.</li>
-<li><strong>No correlation:</strong> no clear relationship.</li>
-</ul>
-
-</div>
-
-
-<div class="topic">
-
-<h3>13.4 Line of Best Fit</h3>
-
-<p>
-A line of best fit represents the general trend of a scatter
-diagram.
-</p>
-
-<div class="formula">
-y = mx + c
-</div>
-
-</div>
-
-
-<div class="topic">
-
-<h3>13.5 Interpolation and Extrapolation</h3>
-
-<p>
-<strong>Interpolation</strong> estimates a value within the range
-of known data.
-</p>
-
-<p>
-<strong>Extrapolation</strong> estimates a value outside the range
-of known data.
+Nitrogen compounds can contribute to air pollution,
+acid rain and eutrophication when released excessively
+into the environment.
 </p>
 
 </div>
 
 
-<div class="topic">
+<div class="exercise">
 
-<h3>Exercise</h3>
+<b>Exercise:</b>
+Why is nitrogen separated from air industrially?
 
-<p>
-If students who study longer generally obtain higher marks,
-what type of correlation is shown?
-</p>
+<br><br>
 
-<button onclick="showAnswer('u13a')">
+<button onclick="showAnswer('a2')">
 Show Answer
 </button>
 
-<div class="answer" id="u13a">
+<div id="a2" class="answer">
 
-<strong>Positive correlation.</strong>
+Nitrogen is needed for many industrial applications,
+especially ammonia manufacture and food preservation.
 
 </div>
 
@@ -874,49 +394,330 @@ Show Answer
 
 
 
-<!-- REVISION -->
+<!-- UNIT 3 -->
 
 <section class="unit">
 
-<h2>📝 PART 3 REVISION</h2>
+<h2>Unit 3: Sulphur and its Inorganic Compounds</h2>
+
 
 <div class="topic">
 
-<p>
-1. An angle at the circumference is 30°. Find the angle at the centre.
-</p>
+<h3>3.1 Occurrence, Extraction, Properties and Uses of Sulphur</h3>
 
 <p>
-2. Are (2,3), (4,7), and (6,11) collinear?
+Sulphur occurs naturally in minerals and underground deposits.
+It is a yellow non-metal and has several important industrial uses.
 </p>
+
+<ul>
+
+<li>Manufacture of sulphuric acid</li>
+
+<li>Fungicides and pesticides</li>
+
+<li>Production of some chemicals</li>
+
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>3.2 Inorganic Compounds of Sulphur</h3>
+
+<ul>
+
+<li>Hydrogen sulphide (H₂S)</li>
+
+<li>Sulphur dioxide (SO₂)</li>
+
+<li>Sulphur trioxide (SO₃)</li>
+
+<li>Sulphuric acid (H₂SO₄)</li>
+
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>3.3 Industrial Preparation of Sulphuric Acid</h3>
 
 <p>
-3. Find the area scale factor when the linear scale factor is 4.
+The Contact Process is used industrially.
+Sulphur is converted to sulphur dioxide,
+then to sulphur trioxide, which is used
+to produce sulphuric acid.
 </p>
+
+<div class="formula">
+S + O₂ → SO₂
+</div>
+
+<div class="formula">
+2SO₂ + O₂ ⇌ 2SO₃
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>3.4 Tests for Sulphates and Sulphites</h3>
 
 <p>
-4. Find the inverse of translation (5,-2).
+Sulphate ions can be tested using a suitable
+barium salt solution in acidic conditions.
+A white precipitate of barium sulphate
+indicates sulphate.
 </p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>3.5 Environmental Issues</h3>
 
 <p>
-5. What type of correlation occurs when two variables increase together?
+Sulphur dioxide released from burning
+sulphur-containing fuels can contribute
+to air pollution and acid rain.
 </p>
 
-<button onclick="showAnswer('revision')">
-Show Answers
+</div>
+
+
+<div class="exercise">
+
+<b>Exercise:</b>
+Name the industrial process used to manufacture sulphuric acid.
+
+<br><br>
+
+<button onclick="showAnswer('a3')">
+Show Answer
 </button>
 
-<div class="answer" id="revision">
+<div id="a3" class="answer">
+The Contact Process.
+</div>
 
-<strong>1.</strong> 60°<br><br>
+</div>
 
-<strong>2.</strong> Yes, they are collinear.<br><br>
+</section>
 
-<strong>3.</strong> 4² = 16<br><br>
 
-<strong>4.</strong> (-5,2)<br><br>
 
-<strong>5.</strong> Positive correlation.
+<!-- UNIT 4 -->
+
+<section class="unit">
+
+<h2>Unit 4: Chlorine and its Inorganic Compounds</h2>
+
+
+<div class="topic">
+
+<h3>4.1 Preparation and Test for Chlorine</h3>
+
+<p>
+Chlorine is a greenish-yellow gas with a characteristic smell.
+In the laboratory it can be prepared by oxidising chloride ions
+using a suitable oxidising agent.
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>4.2 Chemical Properties of Chlorine</h3>
+
+<ul>
+
+<li>
+Chlorine reacts with metals to form chlorides.
+</li>
+
+<li>
+It reacts with hydrogen to form hydrogen chloride.
+</li>
+
+<li>
+It reacts with water and can have bleaching
+and disinfecting effects.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>4.3 Uses of Chlorine</h3>
+
+<ul>
+
+<li>Water disinfection</li>
+
+<li>Manufacture of chemicals</li>
+
+<li>Bleaching</li>
+
+<li>
+Production of some plastics and solvents
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>4.4 Compounds and Halides of Chlorine</h3>
+
+<p>
+Chlorine forms compounds such as hydrogen chloride (HCl),
+sodium chloride (NaCl), hypochlorites and other chlorides.
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>4.5 Environmental Issues</h3>
+
+<p>
+Chlorine-containing chemicals must be handled carefully
+because some can be harmful to living organisms
+and the environment.
+</p>
+
+</div>
+
+
+<div class="exercise">
+
+<b>Exercise:</b>
+Give one use of chlorine.
+
+<br><br>
+
+<button onclick="showAnswer('a4')">
+Show Answer
+</button>
+
+<div id="a4" class="answer">
+One use is disinfecting drinking water.
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- UNIT 5 -->
+
+<section class="unit">
+
+<h2>Unit 5: Rate of Reactions</h2>
+
+
+<div class="topic">
+
+<h3>5.1 Definition of Reaction Rate</h3>
+
+<p>
+The rate of a chemical reaction describes
+how quickly reactants are converted into products.
+</p>
+
+<div class="formula">
+Rate = change in amount or concentration ÷ time
+</div>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Factors Affecting the Rate of Reaction</h3>
+
+<ul>
+
+<li>
+<b>Temperature:</b>
+Increasing temperature usually increases reaction rate.
+</li>
+
+<li>
+<b>Concentration:</b>
+Increasing concentration can increase collision frequency.
+</li>
+
+<li>
+<b>Surface area:</b>
+Smaller particles generally react faster because
+more surface is exposed.
+</li>
+
+<li>
+<b>Pressure:</b>
+For gases, increasing pressure can increase collision frequency.
+</li>
+
+<li>
+<b>Catalyst:</b>
+A catalyst increases reaction rate by providing
+an alternative pathway with lower activation energy.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Collision Theory</h3>
+
+<p>
+Particles must collide with sufficient energy
+and suitable orientation for an effective reaction
+to occur.
+</p>
+
+<p>
+Increasing the number of successful collisions
+generally increases the reaction rate.
+</p>
+
+</div>
+
+
+<div class="exercise">
+
+<b>Exercise:</b>
+State two factors that affect the rate of a chemical reaction.
+
+<br><br>
+
+<button onclick="showAnswer('a5')">
+Show Answer
+</button>
+
+<div id="a5" class="answer">
+
+Examples include temperature, concentration,
+surface area, pressure for gases,
+and the presence of a catalyst.
 
 </div>
 
@@ -928,50 +729,12 @@ Show Answers
 
 
 <footer>
-📚 Mr-dev AI Learning<br>
-Senior Three Mathematics • Part 3
+
+🧪 Mr-dev AI Learning
+<br>
+Senior Three Chemistry • Part 1 • Units 1–5
+
 </footer>
-
-
-<script>
-
-function showAnswer(id){
-
-let box=document.getElementById(id);
-
-if(box.style.display==="block"){
-box.style.display="none";
-}else{
-box.style.display="block";
-}
-
-}
-
-
-function searchNotes(){
-
-let input=
-document.getElementById("search").value.toLowerCase();
-
-let units=
-document.querySelectorAll(".unit");
-
-units.forEach(function(unit){
-
-let text=
-unit.innerText.toLowerCase();
-
-if(text.includes(input)){
-unit.style.display="block";
-}else{
-unit.style.display="none";
-}
-
-});
-
-}
-
-</script>
 
 </body>
 </html>
