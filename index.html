@@ -1,27 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Teacher Learning Dashboard</title>
+<style>
+body{
+font-family:Arial;
+padding:20px;
+}
+button{
+margin:5px;
+padding:10px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎓 AI Teacher Learning Dashboard</h1>
+<p>Senior 1 - Senior 3 | Mathematics & Science</p>
+
+<button onclick="openNotes('Senior One Mathematics')">
+Senior One Mathematics
+</button>
+
+<button onclick="openNotes('Senior Two Physics')">
+Senior Two Physics
+</button>
+
+<button onclick="openNotes('Senior Three Biology')">
+Senior Three Biology
+</button>
+
 <script>
 function openNotes(subject){
 
-const pages = {
+let pages={
 "Senior One Mathematics":"senior1-mathematics.html",
-"Senior One Science":"senior1-science.html",
-
-"Senior Two Mathematics":"senior2-mathematics.html",
 "Senior Two Physics":"senior2-physics.html",
-"Senior Two Chemistry":"senior2-chemistry.html",
-"Senior Two Biology":"senior2-biology.html",
-
-"Senior Three Mathematics":"senior3-mathematics.html",
-"Senior Three Physics":"senior3-physics.html",
-"Senior Three Chemistry":"senior3-chemistry.html",
 "Senior Three Biology":"senior3-biology.html"
 };
 
 if(pages[subject]){
-window.location.href = pages[subject];
-}
-else{
-alert("Notes page not found");
+window.location.href=pages[subject];
+}else{
+alert("Page not found");
 }
 
 }
 </script>
+
+</body>
+</html>
