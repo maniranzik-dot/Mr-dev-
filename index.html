@@ -1,222 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
+ *{
+box-sizing:border-box;
+}
 
-<head>
 
-<meta charset="UTF-8">
+body{
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+font-family:Arial, sans-serif;
 
-<title>Mr Dev Learning Hub</title>
+background:#f1f5f9;
 
-<link rel="stylesheet" href="style.css">
+margin:0;
 
-</head>
+padding:15px;
 
+color:#222;
 
-<body>
+}
 
 
-<header>
 
-<h1>📚 Mr Dev Learning Hub</h1>
+header{
 
-<p>Free Education Platform For Everyone</p>
+background:linear-gradient(135deg,#0066ff,#00c6ff);
 
-</header>
+color:white;
 
+text-align:center;
 
+padding:25px;
 
+border-radius:15px;
 
-<div class="container">
+margin-bottom:20px;
 
+}
 
-<section class="card">
 
-<h2>🎓 Dashboard</h2>
 
+header h1{
 
-<button onclick="showClass('Senior One')">
-Senior One
-</button>
+font-size:32px;
 
+margin:0;
 
-<button onclick="showClass('Senior Two')">
-Senior Two
-</button>
+}
 
 
-<button onclick="showClass('Senior Three')">
-Senior Three
-</button>
 
+.container{
 
-</section>
+max-width:900px;
 
+margin:auto;
 
+}
 
 
 
-<section class="card">
+.card{
 
+background:white;
 
-<h2>🔎 Search Notes</h2>
+padding:20px;
 
+margin:15px 0;
 
-<input 
-type="text"
-id="search"
-placeholder="Search books or notes..."
-onkeyup="searchNotes()">
+border-radius:15px;
 
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 
-</section>
+}
 
 
 
+button{
 
+background:#0066ff;
 
+color:white;
 
-<section class="card">
+border:none;
 
+padding:12px 18px;
 
-<h2>📖 Notes & Books</h2>
+border-radius:8px;
 
+cursor:pointer;
 
-<div id="notes">
+margin:5px;
 
-Loading notes...
+font-size:16px;
 
-</div>
+}
 
 
-</section>
 
+button:hover{
 
+opacity:0.85;
 
+}
 
 
 
+.plus{
 
-<section class="card">
+background:#008000;
 
+}
 
-<h2>🤖 AI Teacher</h2>
 
 
-<button class="ai" onclick="aiTeacher()">
+.ai{
 
-Ask AI Teacher
+background:#8000ff;
 
-</button>
+}
 
 
-</section>
 
+.whatsapp{
 
+background:#25D366;
 
+}
 
 
 
+input{
 
+width:95%;
 
-<section class="card">
+padding:12px;
 
+margin:8px 0;
 
-<h2>💬 WhatsApp Support</h2>
+border:1px solid #ccc;
 
+border-radius:8px;
 
-<button class="whatsapp" onclick="whatsapp()">
+font-size:16px;
 
-Open WhatsApp
+}
 
-</button>
 
 
-</section>
+.note{
 
+background:#f8fafc;
 
+padding:15px;
 
+margin:10px 0;
 
+border-radius:10px;
 
+border-left:5px solid #0066ff;
 
+}
 
 
-<section class="card">
 
+.note h3{
 
-<h2>🔐 Owner Mode</h2>
+margin-top:0;
 
+}
 
-<button onclick="ownerLogin()">
 
-Login Owner
 
-</button>
+.note a{
 
+color:#0066ff;
 
-</section>
+font-weight:bold;
 
+}
 
 
 
+.subject{
 
+display:inline-block;
 
+background:#dbeafe;
 
+padding:10px;
 
-<section id="ownerPanel" class="card hidden">
+margin:5px;
 
+border-radius:8px;
 
-<h2>👑 Owner Upload Panel</h2>
+}
 
 
-<input 
-type="file"
-id="bookFile">
 
+.hidden{
 
+display:none;
 
-<input 
-type="text"
-id="bookTitle"
-placeholder="Book name">
+}
 
 
 
-<button class="plus" onclick="uploadBook()">
 
-➕ Upload Book
+@media(max-width:600px){
 
-</button>
 
+header h1{
 
-</section>
+font-size:24px;
 
+}
 
 
-</div>
+button{
 
+width:100%;
 
+}
 
 
+.card{
 
+padding:15px;
 
+}
 
-<!-- Firebase -->
 
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
-
-
-<script src="firebase-config.js"></script>
-
-<script src="script.js"></script>
-
-
-
-</body>
-
-</html>
+}
