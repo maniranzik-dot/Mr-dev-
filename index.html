@@ -1,154 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
+*{
+box-sizing:border-box;
+}
 
-<head>
 
-<meta charset="UTF-8">
+body{
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+font-family:Arial, sans-serif;
 
-<title>Mr Dev Learning Hub</title>
+background:#f1f5f9;
 
-<link rel="stylesheet" href="style.css">
+margin:0;
 
-</head>
+padding:15px;
 
+color:#222;
 
-<body>
+}
 
 
-<header>
 
-<h1>📚 Mr Dev Learning Hub</h1>
+header{
 
-<p>Free Education Platform For Everyone</p>
+background:linear-gradient(135deg,#0066ff,#00bfff);
 
-</header>
+color:white;
 
+padding:25px;
 
+text-align:center;
 
-<section class="dashboard">
+border-radius:15px;
 
-<div class="card">
+margin-bottom:20px;
 
-<h2>🎓 Dashboard</h2>
+}
 
-<button onclick="showClass('Senior One')">
-Senior One
-</button>
 
-<button onclick="showClass('Senior Two')">
-Senior Two
-</button>
 
-<button onclick="showClass('Senior Three')">
-Senior Three
-</button>
+header h1{
 
-</div>
+margin:0;
 
+font-size:32px;
 
+}
 
-<div class="card">
 
-<h2>🔎 Search Notes</h2>
 
-<input id="search"
-placeholder="Search notes..."
-onkeyup="searchNotes()">
+.dashboard{
 
-</div>
+max-width:900px;
 
+margin:auto;
 
+}
 
-<div class="card">
 
-<h2>📖 Available Notes & Books</h2>
 
-<div id="notes">
+.card{
 
-No notes uploaded yet
+background:white;
 
-</div>
+padding:20px;
 
-</div>
+margin:15px 0;
 
+border-radius:15px;
 
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 
-<div class="card">
+}
 
-<h2>🤖 AI Teacher</h2>
 
-<button class="ai" onclick="aiTeacher()">
 
-Ask AI Teacher
+button{
 
-</button>
+background:#0066ff;
 
-</div>
+color:white;
 
+border:none;
 
+padding:12px 18px;
 
-<div class="card">
+border-radius:8px;
 
-<h2>💬 WhatsApp Support</h2>
+margin:5px;
 
-<button class="whatsapp" onclick="whatsapp()">
+font-size:16px;
 
-Open WhatsApp
+cursor:pointer;
 
-</button>
+}
 
-</div>
 
 
+button:hover{
 
-<div class="card">
+opacity:0.8;
 
-<h2>🔐 Owner Mode</h2>
+}
 
-<button onclick="ownerLogin()">
 
-Login Owner
 
-</button>
+.plus{
 
+background:#00a000;
 
-</div>
+}
 
 
 
-<div id="ownerPanel" class="card hidden">
+.ai{
 
+background:#8000ff;
 
-<h2>👑 Owner Upload</h2>
+}
 
 
-<input id="bookTitle"
-placeholder="Book or Note name">
 
+.whatsapp{
 
-<input id="bookURL"
-placeholder="PDF link">
+background:#25D366;
 
+}
 
-<button class="plus" onclick="uploadNote()">
 
-➕ Add Note
 
-</button>
+input{
 
+width:95%;
 
-</div>
+padding:12px;
 
+margin:8px 0;
 
-</section>
+border:1px solid #ccc;
 
+border-radius:8px;
 
+font-size:16px;
 
-<script src="script.js"></script>
+}
 
 
-</body>
 
-</html>
+.note{
+
+background:#f8fafc;
+
+padding:15px;
+
+margin:10px 0;
+
+border-radius:10px;
+
+border-left:5px solid #0066ff;
+
+}
+
+
+
+.note a{
+
+color:#0066ff;
+
+font-weight:bold;
+
+}
+
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+
+.subject{
+
+display:inline-block;
+
+background:#e0f2fe;
+
+padding:10px;
+
+margin:5px;
+
+border-radius:8px;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+header h1{
+
+font-size:24px;
+
+}
+
+
+button{
+
+width:100%;
+
+margin:5px 0;
+
+}
+
+
+.card{
+
+padding:15px;
+
+}
+
+}
