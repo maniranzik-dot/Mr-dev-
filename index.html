@@ -1,223 +1,282 @@
-*{
-box-sizing:border-box;
-}
+// Mr Dev Learning Hub Script
 
 
-body{
-
-font-family:Arial, sans-serif;
-
-background:#f1f5f9;
-
-margin:0;
-
-padding:15px;
-
-color:#222;
-
-}
+// OWNER PASSWORD
+const ownerPassword = "kevin@2026";
 
 
 
-header{
+// Sample notes storage
+let notes = [];
 
-background:linear-gradient(135deg,#0066ff,#00bfff);
 
-color:white;
 
-padding:25px;
 
-text-align:center;
+// OWNER LOGIN
 
-border-radius:15px;
+function ownerLogin(){
 
-margin-bottom:20px;
+let password = prompt("Enter Owner Password");
+
+
+if(password === ownerPassword){
+
+
+document.getElementById("ownerPanel").style.display="block";
+
+
+alert("✅ Owner Mode Activated");
+
 
 }
 
+else{
 
 
-header h1{
+alert("❌ Wrong Password");
 
-margin:0;
 
-font-size:32px;
+}
+
 
 }
 
 
 
-.dashboard{
 
-max-width:900px;
+// OWNER ADD NOTE / BOOK
 
-margin:auto;
+function uploadNote(){
+
+
+let title = document.getElementById("bookTitle").value;
+
+let url = document.getElementById("bookURL").value;
+
+
+
+if(title==="" || url===""){
+
+
+alert("Please add book name and PDF link");
+
+return;
+
 
 }
 
 
 
-.card{
+let note = {
 
-background:white;
+title:title,
 
-padding:20px;
+url:url
 
-margin:15px 0;
+};
 
-border-radius:15px;
 
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+notes.push(note);
+
+
+
+displayNotes();
+
+
+
+document.getElementById("bookTitle").value="";
+
+document.getElementById("bookURL").value="";
+
+
+
+alert("📚 Note uploaded successfully");
+
 
 }
 
 
 
-button{
 
-background:#0066ff;
 
-color:white;
 
-border:none;
+// DISPLAY NOTES TO STUDENTS
 
-padding:12px 18px;
 
-border-radius:8px;
+function displayNotes(){
 
-margin:5px;
 
-font-size:16px;
+let box=document.getElementById("notes");
 
-cursor:pointer;
+
+box.innerHTML="";
+
+
+
+notes.forEach(function(item){
+
+
+box.innerHTML += `
+
+<div class="note">
+
+<h3>📖 ${item.title}</h3>
+
+<a href="${item.url}" target="_blank">
+
+Open Book
+
+</a>
+
+</div>
+
+`;
+
+
+});
+
 
 }
 
 
 
-button:hover{
 
-opacity:0.8;
+
+
+
+// SEARCH NOTES
+
+
+function searchNotes(){
+
+
+let value=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+
+let box=document.getElementById("notes");
+
+
+box.innerHTML="";
+
+
+
+notes.filter(function(item){
+
+
+return item.title
+.toLowerCase()
+.includes(value);
+
+
+
+}).forEach(function(item){
+
+
+box.innerHTML += `
+
+<div class="note">
+
+<h3>📖 ${item.title}</h3>
+
+<a href="${item.url}" target="_blank">
+
+Open Book
+
+</a>
+
+</div>
+
+`;
+
+
+});
+
 
 }
 
 
 
-.plus{
 
-background:#00a000;
+
+
+
+// CLASSES
+
+
+function showClass(className){
+
+
+let box=document.getElementById("notes");
+
+
+
+box.innerHTML=`
+
+<h2>${className}</h2>
+
+<div class="subject">Mathematics</div>
+
+<div class="subject">Physics</div>
+
+<div class="subject">Chemistry</div>
+
+<div class="subject">Biology</div>
+
+`;
+
 
 }
 
 
 
-.ai{
 
-background:#8000ff;
+
+
+
+// AI TEACHER
+
+
+function aiTeacher(){
+
+
+alert(
+
+"🤖 AI Teacher: Ask questions about Mathematics, Physics, Chemistry and Biology."
+
+);
+
 
 }
 
 
 
-.whatsapp{
 
-background:#25D366;
+
+
+// WHATSAPP
+
+
+function whatsapp(){
+
+
+window.open(
+
+"https://wa.me/250738939769",
+
+"_blank"
+
+);
+
 
 }
 
 
 
-input{
-
-width:95%;
-
-padding:12px;
-
-margin:8px 0;
-
-border:1px solid #ccc;
-
-border-radius:8px;
-
-font-size:16px;
-
-}
 
 
-
-.note{
-
-background:#f8fafc;
-
-padding:15px;
-
-margin:10px 0;
-
-border-radius:10px;
-
-border-left:5px solid #0066ff;
-
-}
-
-
-
-.note a{
-
-color:#0066ff;
-
-font-weight:bold;
-
-}
-
-
-
-.hidden{
-
-display:none;
-
-}
-
-
-
-.subject{
-
-display:inline-block;
-
-background:#e0f2fe;
-
-padding:10px;
-
-margin:5px;
-
-border-radius:8px;
-
-}
-
-
-
-@media(max-width:600px){
-
-
-header h1{
-
-font-size:24px;
-
-}
-
-
-button{
-
-width:100%;
-
-margin:5px 0;
-
-}
-
-
-.card{
-
-padding:15px;
-
-}
-
-}
+displayNotes();
