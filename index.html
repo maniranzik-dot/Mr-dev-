@@ -1,36 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr Dev Learning Hub</title>
 
-<section id="notes">
-<h2>📚 Notes</h2>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="card">
-<h2>📘 Senior One Notes</h2>
+<style>
+body{
+font-family:Arial;
+background:#f4f4f4;
+padding:15px;
+}
+
+h1{
+text-align:center;
+}
+
+.box{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:10px;
+}
+
+button{
+padding:10px;
+border:none;
+border-radius:6px;
+background:#0066ff;
+color:white;
+}
+
+.plus{
+background:green;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.ai{
+background:#8000ff;
+}
+
+input{
+padding:10px;
+width:90%;
+margin:5px;
+}
+
+.book{
+background:#eeeeee;
+padding:10px;
+margin:5px;
+border-radius:5px;
+}
+
+.hidden{
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<h1>📚 Mr Dev Learning Hub</h1>
+
+
+<div class="box">
+
+<h2>🟦 Senior One Notes</h2>
+
 <p>Mathematics</p>
 <p>Science</p>
-<a href="senior-one.html">
-<button>Open Senior One Notes</button>
-</a>
+
 </div>
 
-<div class="card">
-<h2>📗 Senior Two Notes</h2>
+
+
+<div class="box">
+
+<h2>🟩 Senior Two Notes</h2>
+
 <p>Mathematics</p>
 <p>Physics</p>
 <p>Chemistry</p>
 <p>Biology</p>
-<a href="senior-two.html">
-<button>Open Senior Two Notes</button>
-</a>
+
 </div>
 
-<div class="card">
-<h2>📙 Senior Three Notes</h2>
+
+
+<div class="box">
+
+<h2>🟧 Senior Three Notes</h2>
+
 <p>Mathematics</p>
 <p>Physics</p>
 <p>Chemistry</p>
 <p>Biology</p>
-<a href="senior-three.html">
-<button>Open Senior Three Notes</button>
-</a>
+
 </div>
 
-</section>
+
+
+<div class="box">
+
+<h2>📖 Books</h2>
+
+<div id="bookList">
+No books available
+</div>
+
+</div>
+
+
+
+<button onclick="ownerLogin()">
+🔐 Owner Mode
+</button>
+
+
+
+<div id="ownerPanel" class="box hidden">
+
+<h2>➕ Add Book</h2>
+
+<input id="title" placeholder="Book name">
+
+<input id="url" placeholder="PDF link">
+
+
+<button class="plus" onclick="addBook()">
+
++ Add Book
+
+</button>
+
+
+</div>
+
+
+
+<div class="box">
+
+<h2>🤖 AI Teacher</h2>
+
+<button class="ai" onclick="ai()">
+
+Ask AI Teacher
+
+</button>
+
+</div>
+
+
+
+<div class="box">
+
+<h2>💬 WhatsApp</h2>
+
+<button class="whatsapp"
+onclick="window.open('https://wa.me/YOUR_NUMBER')">
+
+Open WhatsApp
+
+</button>
+
+</div>
+
+
+
+
+<script>
+
+
+const ownerPassword="kevin@2026";
+
+
+
+function ownerLogin(){
+
+let p=prompt("Enter Owner Password");
+
+
+if(p===ownerPassword){
+
+document.getElementById("ownerPanel").style.display="block";
+
+alert("Owner Mode ON");
+
+}
+
+else{
+
+alert("Incorrect password");
+
+}
+
+}
+
+
+
+function addBook(){
+
+let title=document.getElementById("title").value;
+
+let url=document.getElementById("url").value;
+
+
+if(title=="" || url==""){
+
+alert("Enter book information");
+
+return;
+
+}
+
+
+let div=document.createElement("div");
+
+div.className="book";
+
+
+div.innerHTML=
+"📘 "+title+
+"<br><a href='"+url+"' target='_blank'>Open Book</a>";
+
+
+
+document.getElementById("bookList").appendChild(div);
+
+
+}
+
+
+
+function ai(){
+
+alert("AI Teacher is ready. Ask your learning question.");
+
+}
+
+
+</script>
+
+
+</body>
+</html>
