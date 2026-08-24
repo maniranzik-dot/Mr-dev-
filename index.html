@@ -1,137 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Mr Dev Learning Hub</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
 font-family:Arial;
-background:#f4f4f4;
+background:#f2f5f8;
+margin:0;
 padding:15px;
 }
 
-h1{
+header{
+background:#0066ff;
+color:white;
+padding:20px;
 text-align:center;
-}
-
-.box{
-background:white;
-padding:15px;
-margin:15px 0;
 border-radius:10px;
 }
 
+.card{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:12px;
+box-shadow:0 2px 8px #ccc;
+}
+
+
 button{
-padding:10px;
+padding:12px;
 border:none;
-border-radius:6px;
+border-radius:8px;
 background:#0066ff;
 color:white;
+cursor:pointer;
 }
+
 
 .plus{
 background:green;
 }
 
-.whatsapp{
-background:#25D366;
-}
 
 .ai{
 background:#8000ff;
 }
 
-input{
-padding:10px;
+
+.whatsapp{
+background:#25D366;
+}
+
+
+input,select{
 width:90%;
+padding:10px;
 margin:5px;
 }
+
 
 .book{
-background:#eeeeee;
+background:#eee;
 padding:10px;
-margin:5px;
-border-radius:5px;
+margin:8px;
+border-radius:8px;
 }
 
-.hidden{
+
+.owner{
 display:none;
+}
+
+
+a{
+text-decoration:none;
+color:white;
 }
 
 </style>
 
 </head>
 
+
 <body>
 
 
+<header>
+
 <h1>📚 Mr Dev Learning Hub</h1>
 
+<p>Free Education Platform For Everyone</p>
 
-<div class="box">
-
-<h2>🟦 Senior One Notes</h2>
-
-<p>Mathematics</p>
-<p>Science</p>
-
-</div>
+</header>
 
 
 
-<div class="box">
+<div class="card">
 
-<h2>🟩 Senior Two Notes</h2>
+<h2>🟦 Senior One</h2>
 
-<p>Mathematics</p>
-<p>Physics</p>
-<p>Chemistry</p>
-<p>Biology</p>
+<button onclick="showSubject('Senior One')">
+Open Notes
+</button>
 
 </div>
 
 
 
-<div class="box">
 
-<h2>🟧 Senior Three Notes</h2>
+<div class="card">
 
-<p>Mathematics</p>
-<p>Physics</p>
-<p>Chemistry</p>
-<p>Biology</p>
+<h2>🟩 Senior Two</h2>
+
+<button onclick="showSubject('Senior Two')">
+Open Notes
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>🟧 Senior Three</h2>
+
+<button onclick="showSubject('Senior Three')">
+Open Notes
+</button>
 
 </div>
 
 
 
-<div class="box">
 
-<h2>📖 Books</h2>
+<div class="card">
 
-<div id="bookList">
-No books available
+<h2>📖 Books And Notes</h2>
+
+<div id="books">
+
+No books uploaded yet
+
 </div>
 
 </div>
+
 
 
 
 <button onclick="ownerLogin()">
+
 🔐 Owner Mode
+
 </button>
 
 
 
-<div id="ownerPanel" class="box hidden">
 
-<h2>➕ Add Book</h2>
 
-<input id="title" placeholder="Book name">
+<div class="card owner" id="ownerPanel">
 
-<input id="url" placeholder="PDF link">
+
+<h2>➕ Owner Upload</h2>
+
+
+<input id="bookName" placeholder="Book name">
+
+
+<input id="bookLink" placeholder="PDF link">
 
 
 <button class="plus" onclick="addBook()">
@@ -145,32 +187,43 @@ No books available
 
 
 
-<div class="box">
+
+
+<div class="card">
 
 <h2>🤖 AI Teacher</h2>
 
-<button class="ai" onclick="ai()">
+
+<button class="ai" onclick="aiTeacher()">
 
 Ask AI Teacher
 
 </button>
 
+
 </div>
 
 
 
-<div class="box">
 
-<h2>💬 WhatsApp</h2>
+
+
+<div class="card">
+
+<h2>💬 WhatsApp Support</h2>
+
 
 <button class="whatsapp"
-onclick="window.open('https://wa.me/YOUR_NUMBER')">
+onclick="openWhatsapp()">
 
 Open WhatsApp
 
 </button>
 
+
 </div>
+
+
 
 
 
@@ -178,76 +231,121 @@ Open WhatsApp
 <script>
 
 
-const ownerPassword="kevin@2026";
+const password="kevin@2026";
 
 
 
 function ownerLogin(){
 
-let p=prompt("Enter Owner Password");
+
+let pass=prompt("Enter Owner Password");
 
 
-if(p===ownerPassword){
+if(pass===password){
+
 
 document.getElementById("ownerPanel").style.display="block";
 
-alert("Owner Mode ON");
+
+alert("Owner Mode Activated");
+
 
 }
 
 else{
 
-alert("Incorrect password");
+alert("Wrong Password");
 
 }
 
+
 }
+
+
 
 
 
 function addBook(){
 
-let title=document.getElementById("title").value;
 
-let url=document.getElementById("url").value;
+let name=document.getElementById("bookName").value;
+
+let link=document.getElementById("bookLink").value;
 
 
-if(title=="" || url==""){
 
-alert("Enter book information");
+if(name=="" || link==""){
+
+alert("Fill book information");
 
 return;
 
 }
 
 
+
+let box=document.getElementById("books");
+
+
+
 let div=document.createElement("div");
+
 
 div.className="book";
 
 
 div.innerHTML=
-"📘 "+title+
-"<br><a href='"+url+"' target='_blank'>Open Book</a>";
+
+"📘 "+name+
+
+"<br><br>"+
+
+"<a style='color:blue' href='"+link+"' target='_blank'>Open Book</a>";
 
 
 
-document.getElementById("bookList").appendChild(div);
+box.appendChild(div);
+
 
 
 }
 
 
 
-function ai(){
 
-alert("AI Teacher is ready. Ask your learning question.");
+function showSubject(className){
+
+alert(className+" Notes will appear here.");
 
 }
+
+
+
+
+function aiTeacher(){
+
+alert("AI Teacher: Ask questions about Mathematics, Physics, Chemistry and Biology.");
+
+}
+
+
+
+
+function openWhatsapp(){
+
+
+window.open(
+"https://wa.me/250738939769"
+);
+
+
+}
+
 
 
 </script>
 
 
 </body>
+
 </html>
