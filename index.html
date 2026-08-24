@@ -1,88 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
-<title>Mr Dev Learning Hub</title>
+<meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+<title>Mr Dev Learning Hub</title>
 
-body{
-font-family:Arial;
-background:#f2f5f8;
-margin:0;
-padding:15px;
-}
-
-header{
-background:#0066ff;
-color:white;
-padding:20px;
-text-align:center;
-border-radius:10px;
-}
-
-.card{
-background:white;
-padding:15px;
-margin:15px 0;
-border-radius:12px;
-box-shadow:0 2px 8px #ccc;
-}
-
-
-button{
-padding:12px;
-border:none;
-border-radius:8px;
-background:#0066ff;
-color:white;
-cursor:pointer;
-}
-
-
-.plus{
-background:green;
-}
-
-
-.ai{
-background:#8000ff;
-}
-
-
-.whatsapp{
-background:#25D366;
-}
-
-
-input,select{
-width:90%;
-padding:10px;
-margin:5px;
-}
-
-
-.book{
-background:#eee;
-padding:10px;
-margin:8px;
-border-radius:8px;
-}
-
-
-.owner{
-display:none;
-}
-
-
-a{
-text-decoration:none;
-color:white;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -100,92 +27,51 @@ color:white;
 
 
 
-<div class="card">
-
-<h2>🟦 Senior One</h2>
-
-<button onclick="showSubject('Senior One')">
-Open Notes
-</button>
-
-</div>
-
-
-
+<section class="dashboard">
 
 <div class="card">
 
-<h2>🟩 Senior Two</h2>
+<h2>🎓 Dashboard</h2>
 
-<button onclick="showSubject('Senior Two')">
-Open Notes
+<button onclick="showClass('Senior One')">
+Senior One
+</button>
+
+<button onclick="showClass('Senior Two')">
+Senior Two
+</button>
+
+<button onclick="showClass('Senior Three')">
+Senior Three
 </button>
 
 </div>
-
 
 
 
 <div class="card">
 
-<h2>🟧 Senior Three</h2>
+<h2>🔎 Search Notes</h2>
 
-<button onclick="showSubject('Senior Three')">
-Open Notes
-</button>
+<input id="search"
+placeholder="Search notes..."
+onkeyup="searchNotes()">
 
 </div>
-
 
 
 
 <div class="card">
 
-<h2>📖 Books And Notes</h2>
+<h2>📖 Available Notes & Books</h2>
 
-<div id="books">
+<div id="notes">
 
-No books uploaded yet
-
-</div>
+No notes uploaded yet
 
 </div>
 
-
-
-
-<button onclick="ownerLogin()">
-
-🔐 Owner Mode
-
-</button>
-
-
-
-
-
-<div class="card owner" id="ownerPanel">
-
-
-<h2>➕ Owner Upload</h2>
-
-
-<input id="bookName" placeholder="Book name">
-
-
-<input id="bookLink" placeholder="PDF link">
-
-
-<button class="plus" onclick="addBook()">
-
-+ Add Book
-
-</button>
-
-
 </div>
-
-
 
 
 
@@ -193,18 +79,13 @@ No books uploaded yet
 
 <h2>🤖 AI Teacher</h2>
 
-
 <button class="ai" onclick="aiTeacher()">
 
 Ask AI Teacher
 
 </button>
 
-
 </div>
-
-
-
 
 
 
@@ -212,11 +93,23 @@ Ask AI Teacher
 
 <h2>💬 WhatsApp Support</h2>
 
-
-<button class="whatsapp"
-onclick="openWhatsapp()">
+<button class="whatsapp" onclick="whatsapp()">
 
 Open WhatsApp
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🔐 Owner Mode</h2>
+
+<button onclick="ownerLogin()">
+
+Login Owner
 
 </button>
 
@@ -225,125 +118,35 @@ Open WhatsApp
 
 
 
+<div id="ownerPanel" class="card hidden">
 
 
+<h2>👑 Owner Upload</h2>
 
-<script>
 
+<input id="bookTitle"
+placeholder="Book or Note name">
 
-const password="kevin@2026";
 
+<input id="bookURL"
+placeholder="PDF link">
 
 
-function ownerLogin(){
+<button class="plus" onclick="uploadNote()">
 
+➕ Add Note
 
-let pass=prompt("Enter Owner Password");
+</button>
 
 
-if(pass===password){
+</div>
 
 
-document.getElementById("ownerPanel").style.display="block";
+</section>
 
 
-alert("Owner Mode Activated");
 
-
-}
-
-else{
-
-alert("Wrong Password");
-
-}
-
-
-}
-
-
-
-
-
-function addBook(){
-
-
-let name=document.getElementById("bookName").value;
-
-let link=document.getElementById("bookLink").value;
-
-
-
-if(name=="" || link==""){
-
-alert("Fill book information");
-
-return;
-
-}
-
-
-
-let box=document.getElementById("books");
-
-
-
-let div=document.createElement("div");
-
-
-div.className="book";
-
-
-div.innerHTML=
-
-"📘 "+name+
-
-"<br><br>"+
-
-"<a style='color:blue' href='"+link+"' target='_blank'>Open Book</a>";
-
-
-
-box.appendChild(div);
-
-
-
-}
-
-
-
-
-function showSubject(className){
-
-alert(className+" Notes will appear here.");
-
-}
-
-
-
-
-function aiTeacher(){
-
-alert("AI Teacher: Ask questions about Mathematics, Physics, Chemistry and Biology.");
-
-}
-
-
-
-
-function openWhatsapp(){
-
-
-window.open(
-"https://wa.me/250738939769"
-);
-
-
-}
-
-
-
-</script>
+<script src="script.js"></script>
 
 
 </body>
