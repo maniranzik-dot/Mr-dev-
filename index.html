@@ -1,143 +1,96 @@
-// Mr Dev Learning Hub Script
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
-// OWNER PASSWORD
-const ownerPassword = "kevin@2026";
+<meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Mr Dev Learning Hub</title>
 
-// Sample notes storage
-let notes = [];
+<link rel="stylesheet" href="style.css">
 
+</head>
 
 
+<body>
 
-// OWNER LOGIN
 
-function ownerLogin(){
+<header>
 
-let password = prompt("Enter Owner Password");
+<h1>📚 Mr Dev Learning Hub</h1>
 
+<p>Free Education Platform For Everyone</p>
 
-if(password === ownerPassword){
+</header>
 
 
-document.getElementById("ownerPanel").style.display="block";
 
 
-alert("✅ Owner Mode Activated");
+<div class="container">
 
 
-}
+<section class="card">
 
-else{
+<h2>🎓 Dashboard</h2>
 
 
-alert("❌ Wrong Password");
+<button onclick="showClass('Senior One')">
+Senior One
+</button>
 
 
-}
+<button onclick="showClass('Senior Two')">
+Senior Two
+</button>
 
 
-}
+<button onclick="showClass('Senior Three')">
+Senior Three
+</button>
 
 
+</section>
 
 
-// OWNER ADD NOTE / BOOK
 
-function uploadNote(){
 
 
-let title = document.getElementById("bookTitle").value;
+<section class="card">
 
-let url = document.getElementById("bookURL").value;
 
+<h2>🔎 Search Notes</h2>
 
 
-if(title==="" || url===""){
+<input 
+type="text"
+id="search"
+placeholder="Search books or notes..."
+onkeyup="searchNotes()">
 
 
-alert("Please add book name and PDF link");
+</section>
 
-return;
 
 
-}
 
 
 
-let note = {
+<section class="card">
 
-title:title,
 
-url:url
+<h2>📖 Notes & Books</h2>
 
-};
 
+<div id="notes">
 
-
-notes.push(note);
-
-
-
-displayNotes();
-
-
-
-document.getElementById("bookTitle").value="";
-
-document.getElementById("bookURL").value="";
-
-
-
-alert("📚 Note uploaded successfully");
-
-
-}
-
-
-
-
-
-
-// DISPLAY NOTES TO STUDENTS
-
-
-function displayNotes(){
-
-
-let box=document.getElementById("notes");
-
-
-box.innerHTML="";
-
-
-
-notes.forEach(function(item){
-
-
-box.innerHTML += `
-
-<div class="note">
-
-<h3>📖 ${item.title}</h3>
-
-<a href="${item.url}" target="_blank">
-
-Open Book
-
-</a>
+Loading notes...
 
 </div>
 
-`;
 
-
-});
-
-
-}
+</section>
 
 
 
@@ -145,138 +98,125 @@ Open Book
 
 
 
-// SEARCH NOTES
+<section class="card">
 
 
-function searchNotes(){
+<h2>🤖 AI Teacher</h2>
 
 
-let value=document
-.getElementById("search")
-.value
-.toLowerCase();
+<button class="ai" onclick="aiTeacher()">
+
+Ask AI Teacher
+
+</button>
 
 
-
-let box=document.getElementById("notes");
-
-
-box.innerHTML="";
+</section>
 
 
 
-notes.filter(function(item){
-
-
-return item.title
-.toLowerCase()
-.includes(value);
 
 
 
-}).forEach(function(item){
 
 
-box.innerHTML += `
+<section class="card">
 
-<div class="note">
 
-<h3>📖 ${item.title}</h3>
+<h2>💬 WhatsApp Support</h2>
 
-<a href="${item.url}" target="_blank">
 
-Open Book
+<button class="whatsapp" onclick="whatsapp()">
 
-</a>
+Open WhatsApp
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="card">
+
+
+<h2>🔐 Owner Mode</h2>
+
+
+<button onclick="ownerLogin()">
+
+Login Owner
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section id="ownerPanel" class="card hidden">
+
+
+<h2>👑 Owner Upload Panel</h2>
+
+
+<input 
+type="file"
+id="bookFile">
+
+
+
+<input 
+type="text"
+id="bookTitle"
+placeholder="Book name">
+
+
+
+<button class="plus" onclick="uploadBook()">
+
+➕ Upload Book
+
+</button>
+
+
+</section>
+
+
 
 </div>
 
-`;
-
-
-});
-
-
-}
 
 
 
 
 
 
+<!-- Firebase -->
 
-// CLASSES
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 
-function showClass(className){
-
-
-let box=document.getElementById("notes");
-
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
 
 
-box.innerHTML=`
+<script src="firebase-config.js"></script>
 
-<h2>${className}</h2>
-
-<div class="subject">Mathematics</div>
-
-<div class="subject">Physics</div>
-
-<div class="subject">Chemistry</div>
-
-<div class="subject">Biology</div>
-
-`;
-
-
-}
+<script src="script.js"></script>
 
 
 
+</body>
 
-
-
-
-// AI TEACHER
-
-
-function aiTeacher(){
-
-
-alert(
-
-"🤖 AI Teacher: Ask questions about Mathematics, Physics, Chemistry and Biology."
-
-);
-
-
-}
-
-
-
-
-
-
-// WHATSAPP
-
-
-function whatsapp(){
-
-
-window.open(
-
-"https://wa.me/250738939769",
-
-"_blank"
-
-);
-
-
-}
-
-
-
-
-
-displayNotes();
+</html>
