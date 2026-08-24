@@ -1,26 +1,212 @@
-// Mr Dev Learning Hub Professional Script
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mr Dev Learning Hub</title>
 
-// Owner password
-const ownerPassword = "kevin@2026";
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f5f8;
+padding:15px;
+}
+
+header{
+background:#0066ff;
+color:white;
+padding:20px;
+text-align:center;
+border-radius:12px;
+}
+
+.card{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:12px;
+box-shadow:0 3px 10px #ccc;
+}
+
+button{
+background:#0066ff;
+color:white;
+border:none;
+padding:12px;
+border-radius:8px;
+margin:5px;
+}
+
+.plus{
+background:green;
+}
+
+.ai{
+background:purple;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:5px;
+}
+
+.book{
+background:#eee;
+padding:10px;
+margin:8px;
+border-radius:8px;
+}
+
+#ownerPanel{
+display:none;
+}
+
+</style>
+
+</head>
 
 
-// Owner Mode
+<body>
+
+
+<header>
+
+<h1>📚 Mr Dev Learning Hub</h1>
+
+<p>Free Education Platform</p>
+
+</header>
+
+
+
+<div class="card">
+
+<h2>🎓 Dashboard</h2>
+
+<button onclick="openClass('Senior One')">
+Senior One
+</button>
+
+<button onclick="openClass('Senior Two')">
+Senior Two
+</button>
+
+<button onclick="openClass('Senior Three')">
+Senior Three
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>📖 Notes & Books</h2>
+
+<div id="books">
+
+No books added yet
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<button onclick="ownerLogin()">
+🔐 Owner Mode
+</button>
+
+</div>
+
+
+
+
+<div class="card" id="ownerPanel">
+
+<h2>👑 Owner Upload</h2>
+
+<input id="title" placeholder="Book name">
+
+<input id="link" placeholder="PDF link">
+
+
+<button class="plus" onclick="addBook()">
+
+➕ Add Book
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>🤖 AI Teacher</h2>
+
+<button class="ai" onclick="aiTeacher()">
+
+Ask AI Teacher
+
+</button>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>💬 WhatsApp</h2>
+
+<button class="whatsapp" onclick="whatsapp()">
+
+Open WhatsApp
+
+</button>
+
+</div>
+
+
+
+
+<script>
+
+
+const ownerPassword="kevin@2026";
+
+
+
 function ownerLogin(){
 
-let password = prompt("Enter Owner Password");
+let password=prompt("Enter Owner Password");
 
 
-if(password === ownerPassword){
+if(password===ownerPassword){
 
 document.getElementById("ownerPanel").style.display="block";
 
-alert("✅ Owner Mode Activated");
+alert("Owner Mode Activated");
 
 }
 
 else{
 
-alert("❌ Wrong Password");
+alert("Wrong Password");
 
 }
 
@@ -29,19 +215,16 @@ alert("❌ Wrong Password");
 
 
 
-// Add Book / Note (Owner only)
+function addBook(){
 
-function uploadBook(){
+let title=document.getElementById("title").value;
 
-let title = document.getElementById("bookTitle").value;
-
-let url = document.getElementById("bookURL").value;
+let link=document.getElementById("link").value;
 
 
+if(title==="" || link===""){
 
-if(title==="" || url===""){
-
-alert("Please fill book name and PDF link");
+alert("Add book name and link");
 
 return;
 
@@ -49,20 +232,16 @@ return;
 
 
 
-let box = document.getElementById("notes");
+document.getElementById("books").innerHTML +=
 
+`
 
-
-box.innerHTML += `
-
-<div class="note">
+<div class="book">
 
 <h3>📖 ${title}</h3>
 
-<a href="${url}" target="_blank">
-
+<a href="${link}" target="_blank">
 Open Book
-
 </a>
 
 </div>
@@ -70,87 +249,26 @@ Open Book
 `;
 
 
-
-alert("📚 Book added successfully");
-
 }
 
 
 
 
+function openClass(name){
 
-// Search
+document.getElementById("books").innerHTML=
 
-function searchNotes(){
+`
 
-let search = document
-.getElementById("search")
-.value
-.toLowerCase();
+<h2>${name}</h2>
 
+<p>📘 Mathematics</p>
 
-let notes = document.querySelectorAll(".note");
+<p>⚡ Physics</p>
 
+<p>🧪 Chemistry</p>
 
-notes.forEach(function(note){
-
-
-if(note.innerText.toLowerCase().includes(search)){
-
-
-note.style.display="block";
-
-
-}
-
-else{
-
-
-note.style.display="none";
-
-
-}
-
-
-});
-
-
-}
-
-
-
-
-
-// Classes
-
-function showClass(className){
-
-
-document.getElementById("notes").innerHTML = `
-
-
-<h2>${className}</h2>
-
-
-<div class="subject">
-📘 Mathematics
-</div>
-
-
-<div class="subject">
-⚡ Physics
-</div>
-
-
-<div class="subject">
-🧪 Chemistry
-</div>
-
-
-<div class="subject">
-🌱 Biology
-</div>
-
+<p>🌱 Biology</p>
 
 `;
 
@@ -159,31 +277,27 @@ document.getElementById("notes").innerHTML = `
 
 
 
-// AI Teacher
-
 function aiTeacher(){
 
-alert(
-
-"🤖 AI Teacher: Ask any question about your lessons."
-
-);
+alert("🤖 AI Teacher: Ask your question about lessons.");
 
 }
 
 
 
-
-// WhatsApp
 
 function whatsapp(){
 
 window.open(
-
 "https://wa.me/250738939769",
-
 "_blank"
-
 );
 
 }
+
+
+</script>
+
+
+</body>
+</html>
