@@ -1,13 +1,161 @@
-<html>
-     <head>
-          <title>
-               Kevin
-          </title>
-     <body>
-     <p1> Welcome to Mr-dev Learning Hub for the project</p1>
-     <table>
-          sign up 
-          password 
-     </table>
-     </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            text-align: center;
+        }
+
+        nav {
+            background: #123456;
+            padding: 20px;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        section {
+            display: none;
+            padding: 30px;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            margin: 15px auto;
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        input {
+            display: block;
+            width: 90%;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #123456;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('dashboard')">Dashboard</a>
+        <a onclick="showPage('login')">Login</a>
+        <a onclick="showPage('signup')">Sign Up</a>
+    </nav>
+
+    <section id="home" class="active">
+        <h1>Welcome to My Website</h1>
+        <p>My name is Kevin. I am learning Software Development.</p>
+        <button onclick="showPage('dashboard')">
+            Open Dashboard
+        </button>
+    </section>
+
+    <section id="about">
+        <h1>About Us</h1>
+        <p>This is my first digital website.</p>
+        <p>Created using HTML, CSS and JavaScript.</p>
+    </section>
+
+    <section id="dashboard">
+        <h1>Digital Dashboard</h1>
+
+        <div class="card">
+            <h3>Projects</h3>
+            <p>5</p>
+        </div>
+
+        <div class="card">
+            <h3>Tasks Completed</h3>
+            <p>12</p>
+        </div>
+
+        <div class="card">
+            <h3>Current Date</h3>
+            <p id="date"></p>
+        </div>
+    </section>
+
+    <section id="login">
+        <h1>Login Form</h1>
+
+        <form onsubmit="login(event)">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="signup">
+        <h1>Sign Up Form</h1>
+
+        <form onsubmit="signup(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password"
+                   minlength="8" required>
+            <button type="submit">Create Account</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 My Digital Dashboard</p>
+    </footer>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            document.getElementById(id).classList.add('active');
+        }
+
+        document.getElementById('date').textContent =
+            new Date().toLocaleDateString();
+
+        function login(event) {
+            event.preventDefault();
+            alert("Demo only: Real login requires authentication.");
+        }
+
+        function signup(event) {
+            event.preventDefault();
+            alert("Demo only: Account has not been saved.");
+        }
+    </script>
+
+</body>
 </html>
