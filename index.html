@@ -1,90 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Website</title>
-
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            background: lightblue;
-        }
-
-        nav {
-            background: navy;
-            padding: 15px;
-        }
-
-        a {
-            color: white;
-            margin: 8px;
-            cursor: pointer;
-        }
-
-        section {
-            display: none;
-            padding: 20px;
-        }
-
-        input, button {
-            padding: 10px;
-            margin: 5px;
-        }
-    </style>
-</head>
-
-<body>
-
-<nav>
-    <a onclick="show('home')">Home</a>
-    <a onclick="show('about')">About Us</a>
-    <a onclick="show('dashboard')">Dashboard</a>
-    <a onclick="show('login')">Login</a>
-    <a onclick="show('signup')">Sign Up</a>
-</nav>
-
-<section id="home">
-    <h1>Welcome to My Website</h1>
-    <p>My name is Kevin.</p>
-</section>
-
-<section id="about">
-    <h1>About Us</h1>
-    <p>I am learning Software Development.</p>
-</section>
-
-<section id="dashboard">
-    <h1>Digital Dashboard</h1>
-    <p>Projects: 5</p>
-    <p>Tasks: 12</p>
-</section>
-
-<section id="login">
-    <h1>Login</h1>
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button onclick="alert('Demo login')">Login</button>
-</section>
-
-<section id="signup">
-    <h1>Sign Up</h1>
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button onclick="alert('Demo signup')">Create Account</button>
-</section>
-
-<script>
-    function show(page) {
-        document.querySelectorAll('section').forEach(s => {
-            s.style.display = 'none';
-        });
-
-        document.getElementById(page).style.display = 'block';
-    }
-
-    show('home');
-</script>
-
-</body>
-</html>
+<table>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            name         </th>
+    </tr>
+    <tr>
+        <td>
+            123444444666 </td>
+        <td> Kevin Dev </td>
+    </tr>
+</table>
+    
