@@ -1,19 +1,81 @@
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>School</th>
-    </tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <tr>
-        <td>Kevin</td>
-        <td>18</td>
-        <td>GS Rugando</td>
-    </tr>
+    <title>Nexus AI</title>
 
-    <tr>
-        <td>John</td>
-        <td>17</td>
-        <td>GS Kigali</td>
-    </tr>
-</table>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+
+            <h2>NEXUS AI</h2>
+
+            <button onclick="newChat()">+ New Chat</button>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Explore AI</a>
+                <a href="#">History</a>
+                <a href="#">Settings</a>
+            </nav>
+
+            <div class="profile">
+                <p>Free Account</p>
+            </div>
+
+        </aside>
+
+        <main class="main">
+
+            <header>
+                <h3>Welcome to Nexus AI</h3>
+                <button class="account">My Account</button>
+            </header>
+
+            <section class="welcome">
+
+                <h1>What can I help you with?</h1>
+
+                <p>Your intelligent AI assistant.</p>
+
+            </section>
+
+            <section class="chat-box" id="chatBox">
+
+                <div class="message">
+                    Hello! I am Nexus AI. How can I help you today?
+                </div>
+
+            </section>
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask Nexus AI anything..."
+                >
+
+                <button onclick="sendMessage()">Send</button>
+
+            </div>
+
+            <footer>
+                Nexus AI © 2026
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
